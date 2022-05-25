@@ -1,0 +1,831 @@
+doctype html
+html(lang="ru")
+	head
+		title Askona
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='viewport' content='width=device-width, initial-scale=1')
+		meta(name='format-detection' content='telephone=no')
+		link(rel='shortcut icon' href='assets/favicon.png')
+		link(rel='stylesheet' href='assets/css/styles.css')
+	body
+		.banner
+			img.banner__img(src="assets/img/banner.jpg" alt="")
+
+		header.header
+			.container
+				.header__top
+					a.logo(href="./")
+						svg.logo__icon
+							use(xlink:href="assets/icons/icons.svg#logo")
+
+					.cities-menu.header__cities-menu
+						button.link.cities-menu__btn
+							| Алматы
+							svg.icon.icon_primary.cities-menu__btn-icon
+								use(xlink:href="assets/icons/icons.svg#down")
+
+
+					.header__count Магазины:
+						span.header__count-value 30
+
+					form.search-form.header__search
+						input.field.search-form__field(type="text" placeholder="Поиск по товарам")
+						button.search-form__submit
+							svg.icon.icon_primary.search-form__submit-icon
+								use(xlink:href="assets/icons/icons.svg#search")
+
+					button.callback-btn
+						svg.icon.icon_gray.callback-btn__icon
+							use(xlink:href="assets/icons/icons.svg#phone")
+						| Перезвоните мне
+
+					a.phone-link.phone-link_hidden.header__phone(data-phone="+7 700 700 70 07")
+						span.phone-link__value +7 700
+						button.phone-link__show-btn показать номер
+
+					.user-controls.header__user-controls
+						a.icon-btn.user-controls__btn.user-controls__btn_profile(href="#")
+							svg.icon.icon-btn__icon
+								use(xlink:href="assets/icons/icons.svg#user")
+						a.icon-btn.user-controls__btn(href="#")
+							svg.icon.icon-btn__icon
+								use(xlink:href="assets/icons/icons.svg#compare")
+						a.icon-btn.user-controls__btn(href="#")
+							svg.icon.icon-btn__icon
+								use(xlink:href="assets/icons/icons.svg#heart")
+							span.icon-btn__value 13
+						a.icon-btn.user-controls__btn(href="#")
+							svg.icon.icon-btn__icon
+								use(xlink:href="assets/icons/icons.svg#cart")
+							span.icon-btn__value 2
+
+				.header__bottom
+					button.catalog-btn
+						svg.catalog-btn__icon
+							use(xlink:href="assets/icons/icons.svg#menu")
+						| Все товары
+
+					nav.menu.header__menu
+						ul.menu__list
+							li.menu__item
+								a.link.menu__link(href="#") Матрасы
+							li.menu__item
+								a.link.menu__link(href="#") Диваны и кресла
+							li.menu__item
+								a.link.menu__link(href="#") Подушки
+							li.menu__item
+								a.link.menu__link(href="#") Кровати
+							li.menu__item
+								a.link.menu__link(href="#") Одеяла
+							li.menu__item
+								a.link.menu__link(href="#") Детские товары
+							li.menu__item
+								a.link.menu__link(href="#") Для дома
+							li.menu__item
+								a.link.menu__link.menu__link_special(href="#")
+									svg.icon.icon_second.menu__item-icon
+										use(xlink:href="assets/icons/icons.svg#discount")
+									| Акции
+
+		main.main
+			section.events
+				.container 
+					.events__slider
+						.events__slider-main.swiper.js-events-slider
+							.swiper-wrapper
+								.swiper-slide
+									a.events__slider-item(href="#")
+										img.events__slider-img(src="assets/img/events/1.jpg" alt="")
+								.swiper-slide
+									a.events__slider-item(href="#")
+										img.events__slider-img(src="assets/img/events/2.jpg" alt="")
+								.swiper-slide
+									a.events__slider-item(href="#")
+										img.events__slider-img(src="assets/img/events/3.jpg" alt="")
+								.swiper-slide
+									a.events__slider-item(href="#")
+										img.events__slider-img(src="assets/img/events/4.jpg" alt="")
+								.swiper-slide
+									a.events__slider-item(href="#")
+										img.events__slider-img(src="assets/img/events/1.jpg" alt="")
+							.swiper-pagination.events__slider-pagination.js-events-slider-pagination
+
+			section.categories.main__categories
+				.container
+					.categories__slider
+						.categories__slider-main.swiper.js-categories-slider
+							.swiper-wrapper
+								.swiper-slide
+									a.category.categories__item(href="#") 
+										.category__header
+											h3.category__title Матрасы
+											span.category__count Товаров: 241
+										.category__price
+											span.category__price-text от
+											span.category__price-value 90 400 ₸
+											span.category__price-arrow
+										img.category__img(src="temp/categories/1.png" alt="")
+
+								.swiper-slide
+									a.category.categories__item(href="#") 
+										.category__header
+											h3.category__title Диваны
+											span.category__count Товаров: 155
+										.category__price
+											span.category__price-text от
+											span.category__price-value 290 100 ₸
+											span.category__price-arrow
+										img.category__img(src="temp/categories/2.png" alt="")
+
+								.swiper-slide
+									a.category.categories__item(href="#") 
+										.category__header
+											h3.category__title Кровати
+											span.category__count Товаров: 57
+										.category__price
+											span.category__price-text от
+											span.category__price-value 370 000 ₸
+											span.category__price-arrow
+										img.category__img(src="temp/categories/3.png" alt="")
+
+								.swiper-slide
+									a.category.categories__item(href="#") 
+										.category__header
+											h3.category__title Одеяла
+											span.category__count Товаров: 49
+										.category__price
+											span.category__price-text от
+											span.category__price-value 49 200 ₸
+											span.category__price-arrow
+										img.category__img(src="temp/categories/4.png" alt="")
+
+								.swiper-slide
+									a.category.categories__item(href="#") 
+										.category__header
+											h3.category__title Подушки
+											span.category__count Товаров: 124
+										.category__price
+											span.category__price-text от
+											span.category__price-value 23 500 ₸
+											span.category__price-arrow
+										img.category__img(src="temp/categories/5.png" alt="")
+
+								.swiper-slide
+									a.category.categories__item(href="#") 
+										.category__header
+											h3.category__title Матрасы
+											span.category__count Товаров: 241
+										.category__price
+											span.category__price-text от
+											span.category__price-value 90 400 ₸
+											span.category__price-arrow
+										img.category__img(src="temp/categories/1.png" alt="")
+
+						.swiper-pagination.categories__slider-pagination.js-categories-slider-pagination
+						.categories__slider-navigation
+							button.btn-next.categories__slider-next.js-categories-slider-next
+								svg.icon.icon_primary.btn-next__icon
+									use(xlink:href="assets/icons/icons.svg#next")
+							button.btn-prev.categories__slider-prev.js-categories-slider-prev
+								svg.icon.icon_primary.btn-prev__icon
+									use(xlink:href="assets/icons/icons.svg#prev")
+
+			section.section.products
+				.container
+					h2.title2.products__title Хиты продаж
+					.products__slider
+						.products__slider-main.js-products-slider.swiper
+							.swiper-wrapper
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/1.jpg" alt="Прямой диван Talo")
+											span.discount.product__discount
+												span.discount__value -50%
+												span.discount__arrow
+											span.product-label.product-label_new.product__label Новинка
+										.product__inf
+											h3.product__name
+												a.link(href="#") Прямой диван Talo
+											.product__price 
+												| от
+												span.product__price-value 329 400 ₸
+												span.product__price-old 658 800 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color1")
+															.color-switcher__elem(style="background-color: #877669;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color1")
+															.color-switcher__elem(style="background-color: #3f935d;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color1")
+															.color-switcher__elem(style="background-color: #75a0a7;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color1")
+															.color-switcher__elem(style="background-color: #78622f;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color1")
+															.color-switcher__elem(style="background-color: #212532;")
+													.color-switcher__count +7
+												.product__status.product__status_have В наличии
+											
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/2.jpg" alt="Прямой диван Loko")
+											span.discount.product__discount
+												span.discount__value -55%
+												span.discount__arrow
+											span.product-label.product-label_week.product__label Товар недели											
+										.product__inf
+											h3.product__name
+												a.link(href="#") Прямой диван Loko
+											.product__price 
+												| от
+												span.product__price-value 655 232 ₸
+												span.product__price-old 1 191 300 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color2")
+															.color-switcher__elem(style="background-color: #a99f91;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color2")
+															.color-switcher__elem(style="background-color: #3f5259;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color2")
+															.color-switcher__elem(style="background-color: #21403e;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color2")
+															.color-switcher__elem(style="background-color: #81726e;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color2")
+															.color-switcher__elem(style="background-color: #80765d;")
+													.color-switcher__count +12
+												.product__status.product__status_have В наличии
+												
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/3.jpg" alt="Прямой диван Sunset Nova")
+											span.discount.product__discount
+												span.discount__value -40%
+												span.discount__arrow
+										.product__inf
+											h3.product__name
+												a.link(href="#") Прямой диван Sunset Nova
+											.product__price 
+												| от
+												span.product__price-value 956 812 ₸
+												span.product__price-old 1 594 686 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color3")
+															.color-switcher__elem(style="background-color: #3e3530;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color3")
+															.color-switcher__elem(style="background-color: #9b8b72;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color3")
+															.color-switcher__elem(style="background-color: #837961;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color3")
+															.color-switcher__elem(style="background-color: #4f7176;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color3")
+															.color-switcher__elem(style="background-color: #757178;")
+													.color-switcher__count +12
+												.product__status Под заказ
+												
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/4.jpg" alt="Прямой диван Talo")
+											span.discount.product__discount
+												span.discount__value -50%
+												span.discount__arrow
+										.product__inf
+											h3.product__name
+												a.link(href="#") Прямой диван Talo
+											.product__price 
+												| от
+												span.product__price-value 329 400 ₸
+												span.product__price-old 658 800 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color4")
+															.color-switcher__elem(style="background-color: #877669;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color4")
+															.color-switcher__elem(style="background-color: #3f935d;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color4")
+															.color-switcher__elem(style="background-color: #75a0a7;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color4")
+															.color-switcher__elem(style="background-color: #78622f;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color4")
+															.color-switcher__elem(style="background-color: #212532;")
+													.color-switcher__count +7
+												.product__status.product__status_have В наличии
+												
+
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/1.jpg" alt="Прямой диван Talo")
+											span.discount.product__discount
+												span.discount__value -50%
+												span.discount__arrow
+											span.product-label.product-label_new.product__label Товар недели														
+										.product__inf
+											h3.product__name
+												a.link(href="#") Прямой диван Talo
+											.product__price 
+												| от
+												span.product__price-value 329 400 ₸
+												span.product__price-old 658 800 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color5")
+															.color-switcher__elem(style="background-color: #877669;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color5")
+															.color-switcher__elem(style="background-color: #3f935d;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color5")
+															.color-switcher__elem(style="background-color: #75a0a7;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color5")
+															.color-switcher__elem(style="background-color: #78622f;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color5")
+															.color-switcher__elem(style="background-color: #212532;")
+													.color-switcher__count +7
+												.product__status.product__status_have В наличии
+
+						.swiper-pagination.products__slider-pagination.js-products-slider-pagination
+						.products__slider-navigation
+							button.btn-next.products__slider-next.js-products-slider-next
+								svg.icon.icon_primary.btn-next__icon
+									use(xlink:href="assets/icons/icons.svg#next")
+							button.btn-prev.products__slider-prev.js-products-slider-prev
+								svg.icon.icon_primary.btn-prev__icon
+									use(xlink:href="assets/icons/icons.svg#prev")
+
+			section.section.products
+				.container
+					h2.title2.products__title Новинки
+					.products__slider
+						.products__slider-main.js-products-slider.swiper
+							.swiper-wrapper
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/4.jpg" alt="Прямой диван Talo")
+											span.discount.product__discount
+												span.discount__value -50%
+												span.discount__arrow
+										.product__inf
+											h3.product__name
+												a.link(href="#") Прямой диван Talo
+											.product__price 
+												| от
+												span.product__price-value 329 400 ₸
+												span.product__price-old 658 800 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color6")
+															.color-switcher__elem(style="background-color: #877669;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color6")
+															.color-switcher__elem(style="background-color: #3f935d;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color6")
+															.color-switcher__elem(style="background-color: #75a0a7;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color6")
+															.color-switcher__elem(style="background-color: #78622f;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color6")
+															.color-switcher__elem(style="background-color: #212532;")
+													.color-switcher__count +7
+
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/5.jpg" alt="Угловой диван Mare")
+											span.discount.product__discount
+												span.discount__value -55%
+												span.discount__arrow
+											span.product-label.product-label_best.product__label Лучшая оценка													
+										.product__inf
+											h3.product__name
+												a.link(href="#") Угловой диван Mare
+											.product__price 
+												| от
+												span.product__price-value 655 232 ₸
+												span.product__price-old 1 191 300 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color7")
+															.color-switcher__elem(style="background-color: #a99f91;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color7")
+															.color-switcher__elem(style="background-color: #3f5259;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color7")
+															.color-switcher__elem(style="background-color: #21403e;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color7")
+															.color-switcher__elem(style="background-color: #81726e;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color7")
+															.color-switcher__elem(style="background-color: #80765d;")
+													.color-switcher__count +12
+												.product__status.product__status_have В наличии
+
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/6.jpg" alt="Прямой диван Sunset Nova")
+											span.discount.product__discount
+												span.discount__value -40%
+												span.discount__arrow
+										.product__inf
+											h3.product__name
+												a.link(href="#") Прямой диван Sunset Nova
+											.product__price 
+												| от
+												span.product__price-value 956 812 ₸
+												span.product__price-old 1 594 686 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color8")
+															.color-switcher__elem(style="background-color: #3e3530;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color8")
+															.color-switcher__elem(style="background-color: #9b8b72;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color8")
+															.color-switcher__elem(style="background-color: #837961;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color8")
+															.color-switcher__elem(style="background-color: #4f7176;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color8")
+															.color-switcher__elem(style="background-color: #757178;")
+													.color-switcher__count +12
+												.product__status Под заказ
+
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/5.jpg" alt="Угловой диван Mare")
+											span.discount.product__discount
+												span.discount__value -55%
+												span.discount__arrow
+										.product__inf
+											h3.product__name
+												a.link(href="#") Угловой диван Mare
+											.product__price 
+												| от
+												span.product__price-value 655 232 ₸
+												span.product__price-old 1 191 300 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color9")
+															.color-switcher__elem(style="background-color: #a99f91;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color9")
+															.color-switcher__elem(style="background-color: #3f5259;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color9")
+															.color-switcher__elem(style="background-color: #21403e;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color9")
+															.color-switcher__elem(style="background-color: #81726e;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color9")
+															.color-switcher__elem(style="background-color: #80765d;")
+													.color-switcher__count +12
+												.product__status Под заказ
+												
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/4.jpg" alt="Прямой диван Talo")
+											span.discount.product__discount
+												span.discount__value -50%
+												span.discount__arrow
+										.product__inf
+											h3.product__name
+												a.link(href="#") Прямой диван Talo
+											.product__price 
+												| от
+												span.product__price-value 329 400 ₸
+												span.product__price-old 658 800 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color6")
+															.color-switcher__elem(style="background-color: #877669;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color6")
+															.color-switcher__elem(style="background-color: #3f935d;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color6")
+															.color-switcher__elem(style="background-color: #75a0a7;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color6")
+															.color-switcher__elem(style="background-color: #78622f;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color6")
+															.color-switcher__elem(style="background-color: #212532;")
+													.color-switcher__count +7
+													
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/5.jpg" alt="Угловой диван Mare")
+											span.discount.product__discount
+												span.discount__value -55%
+												span.discount__arrow
+											span.product-label.product-label_best.product__label Лучшая оценка													
+										.product__inf
+											h3.product__name
+												a.link(href="#") Угловой диван Mare
+											.product__price 
+												| от
+												span.product__price-value 655 232 ₸
+												span.product__price-old 1 191 300 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color7")
+															.color-switcher__elem(style="background-color: #a99f91;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color7")
+															.color-switcher__elem(style="background-color: #3f5259;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color7")
+															.color-switcher__elem(style="background-color: #21403e;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color7")
+															.color-switcher__elem(style="background-color: #81726e;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color7")
+															.color-switcher__elem(style="background-color: #80765d;")
+													.color-switcher__count +12
+												.product__status.product__status_have В наличии
+												
+								.swiper-slide
+									.product.products__item
+										.product__img-box
+											img.product__img(src="temp/products/6.jpg" alt="Прямой диван Sunset Nova")
+											span.discount.product__discount
+												span.discount__value -40%
+												span.discount__arrow
+										.product__inf
+											h3.product__name
+												a.link(href="#") Прямой диван Sunset Nova
+											.product__price 
+												| от
+												span.product__price-value 956 812 ₸
+												span.product__price-old 1 594 686 ₸
+											.product__meta
+												.color-switcher.product__colors
+													.color-switcher__list
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color8")
+															.color-switcher__elem(style="background-color: #3e3530;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color8")
+															.color-switcher__elem(style="background-color: #9b8b72;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color8")
+															.color-switcher__elem(style="background-color: #837961;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color8")
+															.color-switcher__elem(style="background-color: #4f7176;")
+														label.color-switcher__label
+															input.color-switcher__input(type="radio" name="color8")
+															.color-switcher__elem(style="background-color: #757178;")
+													.color-switcher__count +12
+												.product__status Под заказ
+												
+						.swiper-pagination.products__slider-pagination.js-products-slider-pagination
+						.products__slider-navigation
+							button.btn-next.products__slider-next.js-products-slider-next
+								svg.icon.icon_primary.btn-next__icon
+									use(xlink:href="assets/icons/icons.svg#next")
+							button.btn-prev.products__slider-prev.js-products-slider-prev
+								svg.icon.icon_primary.btn-prev__icon
+									use(xlink:href="assets/icons/icons.svg#prev")
+
+			section.section.advantages
+				.container
+					.advantages__list
+						.advantages__item
+							svg.advantages__item-icon
+								use(xlink:href="assets/icons/icons.svg#location")
+							h3.advantages__item-title Адреса магазинов
+							p.advantages__item-text 
+								| Найдите ближайший салон 
+								| или удобный для вас пункт самовывоза
+							button.btn.btn_white.advantages__item-btn Показать на карте
+
+						.advantages__item.advantages__item_main
+							img.advantages__item-img(src="assets/img/advantages/discount.jpg" alt="")
+							button.btn.btn_white.advantages__item-btn Узнать больше
+
+						.advantages__item
+							svg.advantages__item-icon
+								use(xlink:href="assets/icons/icons.svg#club")
+							h3.advantages__item-title Клуб здорового сна
+							p.advantages__item-text 
+								| Вступайте в клуб и получайте скидки 
+								| и дополнительные привилегии
+							button.btn.btn_white.advantages__item-btn Получить скидку								
+
+			section.section.features 
+				.container 
+					.features__content
+						.features__header 
+							h2.title2 Askona заряжает сном
+							p.text.features__text
+								| Мы постоянно разрабатываем инновационные решения и выпускаем только такую продукцию, в которой уверены на 100%.
+								| День за днем мы работаем для того, чтобы каждую ночь вы погружались в здоровый сон, набираясь сил для новых свершений.
+						.features__list 
+							.features__item
+								.features__item-icon-box
+									svg.features__item-icon
+										use(xlink:href="assets/icons/icons.svg#microscope")
+								h3.title3.features__item-title Единственная в России лаборатория сна
+								p.text.features__item-text
+									| Сертифицированная по стандартам ISO. В ней мы создаем будущее.
+									| И тестируем все новые модели матрасов, диванов и кроватей Askona.
+
+							.features__item
+								.features__item-icon-box
+									svg.features__item-icon
+										use(xlink:href="assets/icons/icons.svg#like")
+								h3.title3.features__item-title Марка №1 в России
+								p.text.features__item-text
+									| По результатам народного голосования. Мы прошли 
+									| стажировку в лучших немецких и  шведских компаниях, 
+									| чтобы перенять стандарты качества и поднять их на еще более высокий уровень.
+
+							.features__item
+								.features__item-icon-box
+									svg.features__item-icon
+										use(xlink:href="assets/icons/icons.svg#ecology")
+								h3.title3.features__item-title Забота об окружающей среде
+								p.text.features__item-text
+									| Мы максимально бережно взаимодействуем с природой, обеспечивая её сохранность.
+									| Доля перерабатываемых отходов в Askona составляет 100%.			
+
+			section.section.features
+				.container
+					.features__content.features__content_gray
+						.features__header 
+							h2.title2 Всегда на связи
+							p.text.features__text
+								| Мы постоянно разрабатываем инновационные решения и выпускаем только такую продукцию, в которой уверены на 100%.
+								| День за днем мы работаем для того, чтобы каждую ночь вы погружались в здоровый сон, набираясь сил для новых свершений.
+						.features__list 
+							.features__item
+								.features__item-icon-box
+									svg.features__item-icon
+										use(xlink:href="assets/icons/icons.svg#call")
+								h3.title3.features__item-title Напишите или позвоните нам
+								p.text.features__item-text
+									| Констультанты Askona готовы ответить на любой <br>
+									| ваш вопрос в режиме онлайн.
+								a.link.link_primary.features__item-link(href="#") Задать вопрос
+
+							.features__item
+								.features__item-icon-box
+									svg.features__item-icon
+										use(xlink:href="assets/icons/icons.svg#consult")
+								h3.title3.features__item-title Получите видеоконсультацию
+								p.text.features__item-text
+									| Констультанты Askona покажут вам товар онлайн <br>
+									| и ответят на любые вопросы.
+								a.link.link_primary.features__item-link(href="#") Позвонить по видео
+
+							.features__item
+								.features__item-icon-box
+									svg.features__item-icon
+										use(xlink:href="assets/icons/icons.svg#answer")
+								h3.title3.features__item-title Узнайте ответы на частые вопросы
+								p.text.features__item-text
+									| Мы собрали самые популярные вопросы пользователей <br>
+									| в одном удобном разделе.
+								a.link.link_primary.features__item-link(href="#") Открыть раздел
+
+		footer.footer
+			.container
+				.footer__top
+
+					.footer__column
+						.footer__title Подписаться на рассылку
+						p.text.footer__text Всегда будьте в курсе новых акций и спецпредложений!
+						form.mailing-form.footer__mailing
+							input.field.mailing-form__field(placeholder="Введите ваш E-mail...")
+							button.mailing-form__submit
+								svg.mailing-form__submit-icon
+									use(xlink:href="assets/icons/icons.svg#arrow")
+						.footer__social
+							.footer__title.footer__title_social Следите за новостями
+							.social-links
+								.social-links__list
+									.social-links__item
+										a.social-links__link(href="#") 
+											svg.social-links__icon
+												use(xlink:href="assets/icons/icons.svg#vk")
+									.social-links__item
+										a.social-links__link(href="#") 
+											svg.social-links__icon
+												use(xlink:href="assets/icons/icons.svg#facebook")
+									.social-links__item
+										a.social-links__link(href="#") 
+											svg.social-links__icon
+												use(xlink:href="assets/icons/icons.svg#instagram")
+
+					.footer__column
+						.footer__title Компания
+						ul.footer__menu
+							li.footer__menu-item
+								a.link.footer__menu-link(href="#")  Принципы и миссия
+							li.footer__menu-item
+								a.link.footer__menu-link(href="#")  Производство
+							li.footer__menu-item
+								a.link.footer__menu-link(href="#")  Сертификаты и инструкции
+					
+					.footer__column
+						.footer__title Покупателям
+						.footer__menu-group
+							ul.footer__menu
+								li.footer__menu-item
+									a.link.footer__menu-link(href="#")  Статус заказа
+								li.footer__menu-item
+									a.link.footer__menu-link(href="#")  Акции и скидки
+								li.footer__menu-item
+									a.link.footer__menu-link(href="#")  Гарантия
+								li.footer__menu-item
+									a.link.footer__menu-link(href="#")  Доставка и оплата
+								li.footer__menu-item
+									a.link.footer__menu-link(href="#")  Обмен и возврат товара
+
+							ul.footer__menu
+								li.footer__menu-item
+									a.link.footer__menu-link(href="#")  Политика конфиденциальности
+								li.footer__menu-item
+									a.link.footer__menu-link(href="#")  Договор публичной Оферты
+								li.footer__menu-item
+									a.link.footer__menu-link(href="#")  Правила программы лояльности
+								li.footer__menu-item
+									a.link.footer__menu-link(href="#")  Приемка и сборка заказов
+								li.footer__menu-item
+									a.link.footer__menu-link(href="#")  Подача претензии
+
+				.footer__bottom
+					.footer__agreement
+						p.text.footer__text © 2022. ТОО «Askona Life Kazakhstan»
+						a.link.footer__privacy(href="#") Политика конфиденциальности
+					.footer__partners
+						img.footer__partners-item(src="assets/img/footer/hilding-anders.png", alt="")
+						.footer__payments.footer__partners-item
+							svg.footer__payment(width="66" height="42")
+								use(xlink:href="assets/icons/icons.svg#mastercard")
+							svg.footer__payment(width="81" height="28")
+								use(xlink:href="assets/icons/icons.svg#visa")
+						img.footer__partners-item(src="assets/img/footer/number-one.png", alt="")
+						svg.footer__partners-item(width="86" height="36")
+							use(xlink:href="assets/icons/icons.svg#denisov")
+
+					
+	script(src='assets/js/app.js')

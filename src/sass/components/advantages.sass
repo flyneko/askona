@@ -1,0 +1,57 @@
+.advantages
+  position: relative
+
+  &__list
+    display: flex
+    margin: -16px
+
+  &__item
+    position: relative
+    background-color: $color-primary
+    border-radius: 4px
+    text-align: center
+    padding: 30px 24px 32px
+    margin: 16px
+    flex: 1 1 392px
+    min-height: 260px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    &_main
+      flex: 1 1 560px
+      align-items: flex-start
+
+      .advantages__item-btn
+        margin-top: auto
+
+  &__item-icon
+    display: block
+    margin: 0 auto 15px
+    stroke: #fff
+    max-width: 53px
+    max-height: 53px
+
+  &__item-title
+    font-size: 28px
+    line-height: 1.15
+    color: #fff
+    font-weight: 600
+
+  &__item-text
+    line-height: 1.25
+    color: #fff
+    max-width: 300px
+    margin: 12px auto 0
+
+  &__item-btn
+    margin-top: 20px
+    position: relative
+    z-index: 1
+
+  &__item-img
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    max-height: 100%

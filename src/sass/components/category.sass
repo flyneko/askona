@@ -1,0 +1,80 @@
+.category
+  padding: 23px 23px 16px
+  background: #f4f3f3
+  border-radius: 4px
+  position: relative
+  display: block
+  overflow: hidden
+
+  &:hover &__title
+    color: $color-primary
+
+  &:hover &__img
+    transform: scale(1.07)
+
+  
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: relative
+    z-index: 1
+  
+  &__title
+    font-size: 18px
+    font-weight: 500
+    color: #262626
+    transition: color .3s
+
+  &__count
+    font-size: 12px
+    color: #7e7e7e
+  
+  &__price
+    margin-top: 170px
+    margin-left: 15px
+    position: relative
+    z-index: 1
+    background-color: #fff
+    border-top-right-radius: 8px
+    border-bottom-right-radius: 8px
+    color: #7e7e7e
+    width: 110px
+    padding: 7px 12px 7px 7px
+    text-align: center
+    font-weight: 500
+    white-space: nowrap
+
+  &__price-text
+    position: relative
+    z-index: 1
+    font-size: 12px
+
+  &__price-value
+    color: $color-primary
+    margin-left: 4px
+
+  &__price-arrow
+    position: absolute
+    height: 32px
+    width: 20px
+    overflow: hidden
+    left: -15px
+    top: 0
+
+    &:before
+      content: ''
+      position: absolute
+      width: 32px
+      height: 32px
+      left: 5px
+      top: 0
+      background: #fff
+      transform: rotate(45deg)
+      border-radius: 4px
+
+  &__img
+    position: absolute
+    right: 0
+    bottom: 0
+    transition: transform .4s

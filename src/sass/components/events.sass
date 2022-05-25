@@ -1,0 +1,23 @@
+.events
+  padding-top: 32px
+
+  &__slider
+    user-select: none
+  
+  &__slider-main
+    padding-bottom: 40px
+  
+  &__slider-item
+    display: block
+    overflow: hidden
+    border-radius: 4px
+
+  &__slider-img
+    transition: transform .4s
+    display: block
+    height: 280px
+    object-fit: cover
+    object-position: left top
+
+    &:hover
+      transform: scale(1.04) translate(5px, 5px)

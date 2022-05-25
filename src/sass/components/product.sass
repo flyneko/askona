@@ -1,0 +1,142 @@
+.product
+  border: 1px solid #eeeeee
+  border-radius: 4px
+  background: #fff
+  position: relative
+  padding-bottom: 24px
+
+  // &:hover
+    // box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.13)
+    // border-bottom: none
+
+  &:hover &__addition-content
+    display: block
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.13)
+
+  &__img-box
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 208px
+    border-bottom: 1px solid #eeeeee
+
+  &__discount
+    position: absolute
+    left: 34px
+    bottom: 16px
+
+  &__label
+    position: absolute
+    right: 23px
+    bottom: 16px
+
+  &__inf
+    position: relative
+    z-index: 3
+    background: #fff
+    padding: 20px 22px 0
+
+  &__name
+    font-size: 16px
+    font-weight: 500
+    color: #262626
+
+  &__price
+    margin-top: 12px
+    font-size: 14px
+    color: #7e7e7e
+
+  &__price-value
+    font-size: 18px
+    font-weight: 500
+    color: $color-primary
+    margin-left: 5px
+
+  &__price-old
+    text-decoration: line-through
+    margin-left: 10px
+
+  &__meta
+    margin-top: 12px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__status
+    font-size: 14px
+    line-height: 16px
+    color: #7e7e7e
+    flex: 0 0 auto
+    margin-left: 20px
+
+    &:before
+      content: ''
+      display: inline-block
+      width: 8px
+      height: 8px
+      background-color: #999
+      border-radius: 50%
+      margin-right: 6px
+
+    &_have
+      &:before
+        background-color: #b6e5ff
+
+  &__addition
+    // padding-bottom: 24px
+
+  &__addition-content
+    display: none
+    border-top: none
+    position: absolute
+    width: 100%
+    left: 0
+    z-index: 2
+    background: #fff
+    padding: 0 22px 24px
+    border-bottom: 1px solid #eeeeee
+    border-bottom-left-radius: 4px
+    border-bottom-right-radius: 4px
+    
+
+  &__pay-part
+    color: #262626
+    font-size: 15px
+    text-decoration: underline
+    margin-left: 4px
+
+  &__code
+    font-size: 13px
+    color: #7e7e7e
+
+  &__select
+    margin-top: 12px
+    width: 100%
+
+  &__btn-group
+    display: flex
+    margin-left: -4px
+    margin-right: -4px
+
+  &__btn-group &__btn
+    margin-left: 4px
+    margin-right: 4px
+
+  &__btn
+    margin-top: 12px
+    flex: 1 1 auto
+    transition: box-shadow .2s
+
+    &:hover
+      box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.15)
+
+    &_primary
+      &:hover
+        background-color: $color-primary
+        color: #fff
+
+    &_transparent
+      &:hover
+        background-color: #fff
+        color: $color-primary

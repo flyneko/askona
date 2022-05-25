@@ -1,0 +1,303 @@
+.container
+  max-width: 1440px
+  margin: 0 auto
+  padding: 0 16px
+
+.icon
+  width: 1.25em
+  height: 1.25em
+  stroke: #323232
+  transition: stroke .3s
+
+  &_primary
+    stroke: $color-primary
+
+  &_second
+    stroke: $color-secondary
+  
+  &_gray
+    stroke: #c7c7c7
+
+  &_white
+    stroke: #fff
+
+.field
+  appearance: none
+  padding: 0 16px
+  height: 40px
+  border: 1px solid #d8d8d8
+  border-radius: 4px
+  font-size: 14px
+  transition: border .2s
+  width: 100%
+
+  &::placeholder
+    color: #7e7e7e
+
+  &:focus
+    outline: none
+    border-color: $color-primary
+
+.link
+  transition: color .3s
+
+  &:hover
+    color: $color-primary
+
+  &_primary
+    color: $color-primary
+
+.btn
+  height: 40px
+  border-radius: 4px
+  padding: 0 24px
+  background-color: $color-primary
+  color: #fff
+  font-size: 14px
+  font-weight: 500
+  transition: background .3s, color .3s, border .3s
+  border: 1px solid transparent
+
+  &:hover
+    color: $color-primary
+    border-color: $color-primary
+    background-color: #fff
+
+  &_white
+    background-color: #fff
+    color: $color-primary
+
+    &:hover
+      color: #fff
+      border-color: #fff
+      background-color: $color-primary
+
+  &_transparent
+    background-color: transparent
+    color: $color-primary
+    border-color: $color-primary
+
+    &:hover
+      color: #fff
+      background-color: $color-primary
+
+.btn-next,
+.btn-prev
+  width: 32px
+  height: 32px
+  border: 1px solid #d8d8d8
+  background-color: #fff
+  border-radius: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: border .3s
+
+  &:hover
+    border-color: $color-primary
+
+  &__icon
+    width: 6px
+    height: 10px
+
+.callback-btn
+  font-size: 14px
+  color: #212121
+  height: 40px
+  border: 1px solid #eee
+  border-radius: 4px
+  display: flex
+  align-items: center
+  padding-right: 14px
+  padding-left: 16px
+  white-space: nowrap
+  transition: border .2s
+
+  &:hover
+    border-color: $color-primary
+
+  &:hover &__icon
+    stroke: $color-primary
+
+  &__icon
+    margin-right: 10px
+
+.phone-link
+  display: flex
+  align-items: center
+  font-size: 18px
+  line-height: 1
+  color: #7e7e7e
+  transition: color .3s
+
+  &:hover
+    color: $color-primary
+
+  &__show-btn
+    width: 50px
+    font-size: 12px
+    color: $color-primary
+    margin-left: 5px
+    line-height: 10px
+    text-align: left
+    display: none
+
+  &_hidden
+    &:hover
+      color: #7e7e7e
+
+  &_hidden &__show-btn
+    display: inline-block
+
+.user-controls
+  &__btn
+    &:not(:last-child)
+      margin-right: 25px
+
+    &_profile:not(:last-child)
+      margin-right: 30px
+
+.icon-btn
+  position: relative
+
+  &:hover &__icon
+    stroke: $color-primary
+
+  &__value
+    position: absolute
+    top: -12px
+    right: -10px
+    font-size: 10px
+    line-height: 17px
+    text-align: center
+    color: #f6f6f6
+    background-color: $color-primary
+    width: 17px
+    height: 17px
+    border-radius: 50%
+
+.catalog-btn
+  background-color: $color-primary
+  color: #fff
+  font-size: 17px
+  line-height: 1
+  font-weight: 500
+  padding: 11px 16px 12px
+  display: flex
+  align-items: center
+  border-radius: 4px
+
+  &__icon
+    margin-right: 12px
+    fill: #fff
+    width: 16px
+    height: 14px
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal
+  bottom: 0
+
+.swiper-pagination-bullet
+  background-color: #d8d8d8
+  opacity: 1
+
+.swiper-pagination-bullet-active
+  background-color: $color-primary
+
+.title2
+  font-size: 36px
+  font-weight: 600
+  line-height: 0.9
+  color: #212121
+  text-align: center
+
+.title3
+  font-size: 18px
+  line-height: 1.33
+  font-weight: 500
+  color: #262626
+
+.text
+  font-size: 14px
+  line-height: 1.43
+  color: #878787
+
+.discount
+  font-size: 12px
+  line-height: 1
+  font-weight: 600
+  color: #fff
+  padding: 6px 8px 6px 0
+  min-width: 34px
+  background-color: $color-secondary
+  border-top-right-radius: 4px
+  border-bottom-right-radius: 4px
+
+  &__value
+    position: relative
+    z-index: 1
+
+  &__arrow
+    position: absolute
+    height: 24px
+    width: 20px
+    overflow: hidden
+    left: -12px
+    top: 0
+
+    &:before
+      content: ''
+      position: absolute
+      width: 24px
+      height: 24px
+      left: 5px
+      top: 0
+      background: $color-secondary
+      transform: rotate(45deg)
+      border-radius: 4px
+
+.product-label
+  border-radius: 4px
+  font-size: 12px
+  line-height: 1
+  font-weight: 600
+  color: #fff
+  background-color: #7e7e7e
+  padding: 6px 8px
+
+  &_new
+    background-color: #98ce1e
+  
+  &_week
+    background-color: #ffcd0f
+    color: #000
+  
+  &_best
+    background-color: #ff7200
+
+.select
+  position: relative
+
+  &:after
+    +before-icon('../icons/icons.svg#down-primary', 8px, 8px)
+    position: absolute
+    right: 16px
+    top: 50%
+    transform: translateY(-50%)
+
+  &__field
+    font-size: 13px
+    height: 32px
+    border: 1px solid #d8d8d8
+    border-radius: 4px
+    width: 100%
+    appearance: none
+    padding-left: 16px
+    padding-right: 20px
+    outline: none
+
+.logo
+  &__icon
+    display: block
+    max-width: 152px
+    max-height: 43px

@@ -1,0 +1,24 @@
+.categories
+  padding-top: 25px
+  position: relative
+  z-index: 55
+
+  &__slider
+    user-select: none
+    position: relative
+
+  &__slider-main
+    padding-bottom: 40px
+
+  &__slider-next,
+  &__slider-prev
+    position: absolute
+    z-index: 1
+    top: calc(50% - 20px)
+    transform: translateY(-50%)
+
+  &__slider-next
+    right: -48px
+
+  &__slider-prev
+    left: -48px

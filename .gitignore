@@ -1,7 +1,1 @@
 node_modules/
-src/
-gulp/
-.babelrc
-gulpfile.js
-package-lock.json
-package.json

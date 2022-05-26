@@ -1,46 +1,68 @@
-<!DOCTYPE html><html lang="ru"><head><title>Askona</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="assets/favicon.png"><link rel="stylesheet" href="assets/css/styles.css"><script src="assets/js/app.js"></script><style type="text/css">body {
-	color: #272727;
-	font-size: 16px;
-	background: #ccc;
-}
-
-.all-pages {
-	width: 100%;
-	max-width: 600px;
-	overflow: hidden;
-	border-radius: 10px;
-	background: #fff;
-	display: inline-block;
-	margin: 20px auto;
-}
-
-.all-pages__title {
-	font-size: 30px;
-	padding: 10px 0;
-	border-bottom: 1px solid #ebebeb;
-	text-align: center;
-}
-
-.all-pages__list {
-	counter-reset: list;
-	list-style: none;
-}
-
-.all-pages__item {
-	display: block;
-	text-align: left;
-	border-bottom: 1px solid #ebebeb;
-}
-
-.all-pages__link {
-	padding: 10px 20px;
-	display: block;
-	color: rgb(0, 170, 145);
-	text-decoration: none;
-}
-
-.all-pages__item .all-pages__link:before {
-	counter-increment: list;
-	content: counter(list) ". ";
-	color: #272727;
-}</style></head><body></body><div class="all-pages"><div class="all-pages__title">Список страниц</div><ul class="all-pages__list"><li class="all-pages__item"><a class="all-pages__link" href="home.html">Главная </a></li></ul></div></html>
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Askona</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/app.js"></script>
+    <style type="text/css">
+      body {
+      	color: #272727;
+      	font-size: 16px;
+      	background: #ccc;
+      }
+      
+      .all-pages {
+      	width: 100%;
+      	max-width: 600px;
+      	overflow: hidden;
+      	border-radius: 10px;
+      	background: #fff;
+      	display: inline-block;
+      	margin: 20px auto;
+      }
+      
+      .all-pages__title {
+      	font-size: 30px;
+      	padding: 10px 0;
+      	border-bottom: 1px solid #ebebeb;
+      	text-align: center;
+      }
+      
+      .all-pages__list {
+      	counter-reset: list;
+      	list-style: none;
+      }
+      
+      .all-pages__item {
+      	display: block;
+      	text-align: left;
+      	border-bottom: 1px solid #ebebeb;
+      }
+      
+      .all-pages__link {
+      	padding: 10px 20px;
+      	display: block;
+      	color: rgb(0, 170, 145);
+      	text-decoration: none;
+      }
+      
+      .all-pages__item .all-pages__link:before {
+      	counter-increment: list;
+      	content: counter(list) ". ";
+      	color: #272727;
+      }
+    </style>
+  </head>
+  <body></body>
+  <div class="all-pages">
+    <div class="all-pages__title">Список страниц</div>
+    <ul class="all-pages__list">
+      <li class="all-pages__item"><a class="all-pages__link" href="home.html">Главная </a></li>
+    </ul>
+  </div>
+</html>

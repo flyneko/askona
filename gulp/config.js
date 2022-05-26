@@ -11,6 +11,7 @@ export const path = {
     src: {
         pug       : `${srcFolder}/pug`,
         sass      : `${srcFolder}/sass`,
+        sassGen   : `${srcFolder}/sass/generated`,
         js        : `${srcFolder}/js`,
         img       : `${srcFolder}/img`,
         fonts     : `${srcFolder}/fonts`,

@@ -1,0 +1,69 @@
+
+.banner
+	img.banner__img(src="assets/img/banner.jpg" alt="")
+
+header.header
+	.container
+		.header__top
+			a.logo(href="./")
+				img.logo__img(src="assets/img/logo.svg")
+
+			.cities-menu.header__cities-menu
+				button.link.cities-menu__btn
+					| Алматы
+					+icon('arrow_right', 'icon--primary cities-menu__btn-icon')
+
+
+			.header__count Магазины:
+				span.header__count-value 30
+
+			form.search-form.header__search
+				input.field.search-form__field(type="text" placeholder="Поиск по товарам")
+				button.search-form__submit
+					+icon('search', 'icon--primary search-form__submit-icon')
+
+			button.callback-btn
+				+icon('phone', 'icon--gray callback-btn__icon')
+				| Перезвоните мне
+
+			a.phone-link.phone-link--hidden.header__phone(data-phone="+7 700 700 70 07")
+				span.phone-link__value +7 700
+				button.phone-link__show-btn показать номер
+
+			.user-controls.header__user-controls
+				a.icon-btn.user-controls__btn.user-controls__btn--profile(href="#")
+					+icon('login', 'icon-btn__icon')
+				a.icon-btn.user-controls__btn(href="#")
+					+icon('sravnenie', 'icon-btn__icon')
+				a.icon-btn.user-controls__btn(href="#")
+					+icon('izbrannoe', 'icon-btn__icon')
+					span.icon-btn__value 13
+				a.icon-btn.user-controls__btn(href="#")
+					+icon('cart', 'icon-btn__icon')
+					span.icon-btn__value 2
+
+		.header__bottom
+			button.catalog-btn
+				span.catalog-btn__icon
+				| Все товары
+
+			nav.menu.header__menu
+				ul.menu__list
+					li.menu__item
+						a.link.menu__link(href="#") Матрасы
+					li.menu__item
+						a.link.menu__link(href="#") Диваны и кресла
+					li.menu__item
+						a.link.menu__link(href="#") Подушки
+					li.menu__item
+						a.link.menu__link(href="#") Кровати
+					li.menu__item
+						a.link.menu__link(href="#") Одеяла
+					li.menu__item
+						a.link.menu__link(href="#") Детские товары
+					li.menu__item
+						a.link.menu__link(href="#") Для дома
+					li.menu__item
+						a.link.menu__link.menu__link--special(href="#")
+							+icon('akcii', 'icon--second menu__item-icon')
+							| Акции

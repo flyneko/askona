@@ -1,0 +1,78 @@
+footer.footer
+	.container
+		.footer__top
+
+			.footer__column
+				.footer__title Подписаться на рассылку
+				p.text.footer__text Всегда будьте в курсе новых акций и спецпредложений!
+				form.mailing-form.footer__mailing
+					input.field.mailing-form__field(placeholder="Введите ваш E-mail...")
+					button.mailing-form__submit
+						+icon('arrow_podpiska', 'icon--primary mailing-form__submit-icon')
+				.footer__social
+					.footer__title.footer__title--social Следите за новостями
+					.social-links
+						.social-links__list
+							.social-links__item
+								a.social-links__link(href="#") 
+									+icon('vk', 'social-links__icon')
+							.social-links__item
+								a.social-links__link(href="#") 
+									+icon('fb', 'social-links__icon')
+							.social-links__item
+								a.social-links__link(href="#") 
+									+icon('inst', 'social-links__icon')
+
+			.footer__column
+				.footer__title Компания
+				ul.footer__menu
+					li.footer__menu-item
+						a.link.footer__menu-link(href="#")  Принципы и миссия
+					li.footer__menu-item
+						a.link.footer__menu-link(href="#")  Производство
+					li.footer__menu-item
+						a.link.footer__menu-link(href="#")  Сертификаты и инструкции
+			
+			.footer__column
+				.footer__title Покупателям
+				.footer__menu-group
+					ul.footer__menu
+						li.footer__menu-item
+							a.link.footer__menu-link(href="#")  Статус заказа
+						li.footer__menu-item
+							a.link.footer__menu-link(href="#")  Акции и скидки
+						li.footer__menu-item
+							a.link.footer__menu-link(href="#")  Гарантия
+						li.footer__menu-item
+							a.link.footer__menu-link(href="#")  Доставка и оплата
+						li.footer__menu-item
+							a.link.footer__menu-link(href="#")  Обмен и возврат товара
+
+					ul.footer__menu
+						li.footer__menu-item
+							a.link.footer__menu-link(href="#")  Политика конфиденциальности
+						li.footer__menu-item
+							a.link.footer__menu-link(href="#")  Договор публичной Оферты
+						li.footer__menu-item
+							a.link.footer__menu-link(href="#")  Правила программы лояльности
+						li.footer__menu-item
+							a.link.footer__menu-link(href="#")  Приемка и сборка заказов
+						li.footer__menu-item
+							a.link.footer__menu-link(href="#")  Подача претензии
+
+		.footer__bottom
+			.footer__agreement
+				p.text.footer__text © 2022. ТОО «Askona Life Kazakhstan»
+				a.link.footer__privacy(href="#") Политика конфиденциальности
+			.footer__partners
+				.footer__partners-item
+					+picon('hilding-anders')
+				.footer__payments.footer__partners-item
+					.footer__payment
+						+picon('mastercard')
+					.footer__payment
+						+picon('visa')
+				.footer__partners-item
+					+picon('number-one')
+				a.footer__partners-item(href="https://sdvv.ru" target="_blank")
+					+icon('denisov', 'footer__partners-icon')

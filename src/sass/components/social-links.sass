@@ -2,6 +2,7 @@
   &__list
     margin: -4px
     display: flex
+    align-items: center
 
   &__item
     margin: 4px
@@ -9,22 +10,14 @@
   &__link
     width: 40px
     height: 40px
-    display: flex
-    align-items: center
-    justify-content: center
-    border: 1px solid #adadad
-    border-radius: 50%
-    padding: 8px
-    transition: border .3s
-
-    &:hover
-      border-color: $color-primary
-
-      .social-links__icon
-        fill: $color-primary
+    display: block
 
   &__icon
     fill: #adadad
-    max-width: 100%
-    max-height: 100%
+    width: 100%
+    height: 100%
     transition: fill .3s
+
+    &:hover
+      fill: $color-primary
+      

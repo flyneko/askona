@@ -1,0 +1,122 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+  */
+$sprite-image: '../img/'
+$denisov-logo-x: 69px
+$denisov-logo-y: 40px
+$denisov-logo-offset-x: -69px
+$denisov-logo-offset-y: -40px
+$denisov-logo-width: 88px
+$denisov-logo-height: 33px
+$denisov-logo-total-width: 182px
+$denisov-logo-total-height: 149px
+$denisov-logo-image: '../img/spritesheet.png'
+$denisov-logo: 69px 40px -69px -40px 88px 33px 182px 149px '../img/spritesheet.png'
+$hilding-anders-x: 0px
+$hilding-anders-y: 0px
+$hilding-anders-offset-x: 0px
+$hilding-anders-offset-y: 0px
+$hilding-anders-width: 182px
+$hilding-anders-height: 40px
+$hilding-anders-total-width: 182px
+$hilding-anders-total-height: 149px
+$hilding-anders-image: '../img/spritesheet.png'
+$hilding-anders: 0px 0px 0px 0px 182px 40px 182px 149px '../img/spritesheet.png'
+$mastercard-x: 0px
+$mastercard-y: 109px
+$mastercard-offset-x: 0px
+$mastercard-offset-y: -109px
+$mastercard-width: 66px
+$mastercard-height: 40px
+$mastercard-total-width: 182px
+$mastercard-total-height: 149px
+$mastercard-image: '../img/spritesheet.png'
+$mastercard: 0px 109px 0px -109px 66px 40px 182px 149px '../img/spritesheet.png'
+$number-one-x: 0px
+$number-one-y: 40px
+$number-one-offset-x: 0px
+$number-one-offset-y: -40px
+$number-one-width: 69px
+$number-one-height: 69px
+$number-one-total-width: 182px
+$number-one-total-height: 149px
+$number-one-image: '../img/spritesheet.png'
+$number-one: 0px 40px 0px -40px 69px 69px 182px 149px '../img/spritesheet.png'
+$visa-x: 69px
+$visa-y: 73px
+$visa-offset-x: -69px
+$visa-offset-y: -73px
+$visa-width: 81px
+$visa-height: 26px
+$visa-total-width: 182px
+$visa-total-height: 149px
+$visa-image: '../img/spritesheet.png'
+$visa: 69px 73px -69px -73px 81px 26px 182px 149px '../img/spritesheet.png'
+
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+  */
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@function str-replace($string, $search, $replace: '')
+  $index: str-index($string, $search)
+  @if $index
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
+  @return $string
+
+@mixin sprite-image($sprite)
+  $random: random(999999999)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image}?#{$random})
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    background-image: url(#{str-replace($sprite-image, '.png', '')}@2x.png?#{$random})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+.picon
+  display: inline-block
+  vertical-align: middle
+  line-height: 1
+  font-size: 0
+  position: relative
+  top: -1px
+.picon-denisov-logo
+  +sprite($denisov-logo)
+  background-size: 182px 149px
+.picon-hilding-anders
+  +sprite($hilding-anders)
+  background-size: 182px 149px
+.picon-mastercard
+  +sprite($mastercard)
+  background-size: 182px 149px
+.picon-number-one
+  +sprite($number-one)
+  background-size: 182px 149px
+.picon-visa
+  +sprite($visa)
+  background-size: 182px 149px

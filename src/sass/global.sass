@@ -6,20 +6,19 @@
 .icon
   width: 1.25em
   height: 1.25em
-  stroke: #323232
-  transition: stroke .3s
+  transition: fill .3s
 
-  &_primary
-    stroke: $color-primary
+  &--primary
+    fill: $color-primary
 
-  &_second
-    stroke: $color-secondary
-  
-  &_gray
-    stroke: #c7c7c7
+  &--second
+    fill: $color-secondary
 
-  &_white
-    stroke: #fff
+  &--gray
+    fill: #c7c7c7
+
+  &--white
+    fill: #fff
 
 .field
   appearance: none
@@ -39,12 +38,10 @@
     border-color: $color-primary
 
 .link
-  transition: color .3s
-
   &:hover
-    color: $color-primary
+    text-decoration: underline
 
-  &_primary
+  &--primary
     color: $color-primary
 
 .btn
@@ -63,7 +60,7 @@
     border-color: $color-primary
     background-color: #fff
 
-  &_white
+  &--white
     background-color: #fff
     color: $color-primary
 
@@ -72,7 +69,7 @@
       border-color: #fff
       background-color: $color-primary
 
-  &_transparent
+  &--transparent
     background-color: transparent
     color: $color-primary
     border-color: $color-primary
@@ -114,10 +111,10 @@
   transition: border .2s
 
   &:hover
-    border-color: $color-primary
+    border-color: #d4d4d4
 
   &:hover &__icon
-    stroke: $color-primary
+    fill: #323232
 
   &__icon
     margin-right: 10px
@@ -142,26 +139,29 @@
     text-align: left
     display: none
 
-  &_hidden
+  &--hidden
     &:hover
       color: #7e7e7e
 
-  &_hidden &__show-btn
+  &--hidden &__show-btn
     display: inline-block
 
 .user-controls
   &__btn
     &:not(:last-child)
-      margin-right: 25px
+      margin-right: 22px
 
-    &_profile:not(:last-child)
-      margin-right: 30px
+    &--profile:not(:last-child)
+      margin-right: 25px
 
 .icon-btn
   position: relative
 
   &:hover &__icon
-    stroke: $color-primary
+    fill: #adadad
+
+  &:active &__icon
+    fill: #323232
 
   &__value
     position: absolute
@@ -186,12 +186,39 @@
   display: flex
   align-items: center
   border-radius: 4px
+  transition: color .3s, background .3s
+
+  &:hover
+    background-color: $color-primary-light
+
+  &:active
+    background-color: $color-primary
 
   &__icon
     margin-right: 12px
-    fill: #fff
-    width: 16px
-    height: 14px
+    position: relative
+
+    &,
+    &:before,
+    &:after
+      content: ''
+      height: 2px
+      transition: transform .3s, width .3s
+      border-radius: 3px
+      background: #fff
+      display: block
+      transform: rotate(0)
+      width: 16px
+
+    &:before
+      position: absolute
+      transform: translateY(-6px)
+      right: 0
+
+    &:after
+      position: absolute
+      transform: translateY(6px)
+      right: 0
 
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal
@@ -223,38 +250,25 @@
   color: #878787
 
 .discount
+  position: relative
+  z-index: 1
   font-size: 12px
   line-height: 1
   font-weight: 600
   color: #fff
-  padding: 6px 8px 6px 0
-  min-width: 34px
-  background-color: $color-secondary
-  border-top-right-radius: 4px
-  border-bottom-right-radius: 4px
+  padding: 6px 0 6px 2px
+  width: 44px
+  height: 24px
+  text-align: center
 
-  &__value
-    position: relative
-    z-index: 1
-
-  &__arrow
+  &__bg
     position: absolute
-    height: 24px
-    width: 20px
-    overflow: hidden
-    left: -12px
+    left: 0
     top: 0
-
-    &:before
-      content: ''
-      position: absolute
-      width: 24px
-      height: 24px
-      left: 5px
-      top: 0
-      background: $color-secondary
-      transform: rotate(45deg)
-      border-radius: 4px
+    z-index: -1
+    width: 100%
+    height: 100%
+    fill: $color-secondary
 
 .product-label
   border-radius: 4px
@@ -265,14 +279,14 @@
   background-color: #7e7e7e
   padding: 6px 8px
 
-  &_new
+  &--new
     background-color: #98ce1e
-  
-  &_week
+
+  &--week
     background-color: #ffcd0f
     color: #000
-  
-  &_best
+
+  &--best
     background-color: #ff7200
 
 .select

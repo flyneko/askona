@@ -1,28 +1,20 @@
-import webpack from 'webpack-stream';
-import named from 'vinyl-named';
+import uglify from 'gulp-uglify';
+import concat from 'gulp-concat';
+import merge from 'merge-stream';
 
 export const scripts = () => {
-  return app.gulp.src(`${app.path.src.js}/app.js`)
-    .pipe(named())
-    .pipe(webpack({
-      module: {
-        rules: [
-          {
-            test: /\.js$/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                presets: ["@babel/preset-env"]
-              }
-            }
-          }
-        ]
-      },
-      mode: app.isProd ? 'production' : 'development',
-      devtool: app.isDev ? 'inline-source-map' : false,
-      output: {
-        filename: '[name].js'
-      }
-    }))
-    .pipe(app.gulp.dest(app.path.build.js))
+  const vendors = app.gulp.src([
+    'node_modules/swiper/swiper-bundle.min.js'
+  ])
+  .pipe(concat('vendors.min.js'))
+  .pipe(uglify())
+  .pipe(app.gulp.dest(app.path.build.js))
+
+  const scripts = app.gulp.src([
+    `${app.path.src.js}/*.js`
+  ])
+  .pipe(concat('app.js'))
+  .pipe(app.gulp.dest(app.path.build.js))
+
+  return merge(vendors, scripts)
 }

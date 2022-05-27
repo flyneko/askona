@@ -83,4 +83,25 @@ window.addEventListener('load', () => {
     });
   });
 
+
+  const $products = document.querySelectorAll('.product');
+  $products.forEach($product => {
+    const $slider = $product.querySelector('.product__slider');
+    if (!$slider)
+      return;
+    
+    const $pagination = $slider.querySelector('.js-product-slider-pagination');
+    $product.addEventListener('mouseenter', () => {
+      new Swiper($slider, {
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+          el: $pagination,
+          clickable: true
+        },
+      });
+    }, {once: true})
+  });
 });

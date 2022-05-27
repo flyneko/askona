@@ -1,0 +1,41 @@
+.pagination
+  &__list
+    display: flex
+    align-items: center
+
+  &__link,
+  &__active
+    width: 40px
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 50%
+    font-size: 15px
+
+  &__link
+    &--next,
+    &--prev
+      width: auto
+      color: #7e7e7e
+
+    &--next
+      margin-left: 18px
+
+    &--prev
+      margin-right: 18px
+
+  &__active
+    border: 1px solid #221c1c
+
+
+
+  &__icon
+    width: 8px
+    height: 8px
+
+    &--next
+      margin-left: 9px
+
+    &--prev
+      margin-right: 9px

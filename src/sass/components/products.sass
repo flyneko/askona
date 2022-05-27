@@ -1,5 +1,6 @@
 .products
   position: relative
+  margin-top: 25px
 
   &__title
     margin-bottom: 25px
@@ -11,6 +12,10 @@
 
     .swiper-slide
       height: auto
+  
+  &__slider-main
+    margin: -30px 0
+    padding: 30px 0
 
   &__slider-next,
   &__slider-prev
@@ -25,5 +30,37 @@
   &__slider-prev
     left: -48px
 
-  &__item
+  &__slider-item
     height: 100%
+
+  &__sub-categories
+    margin-top: 25px
+
+  &__filters
+    margin-top: 38px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__sorts
+    display: flex
+    align-items: center
+
+  &__list
+    margin: -16px
+    padding-top: 32px
+    display: flex
+    flex-wrap: wrap
+  
+  &__item
+    width: calc(100% / 12 * 3 - 32px)
+    margin: 16px
+
+  &__footer
+    margin-top: 32px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__more-btn
+    padding: 0 33px

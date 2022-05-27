@@ -1,0 +1,861 @@
+extends layouts/_layout.pug
+
+block title
+	| Каталог - Матрасы
+
+block content
+	main.main
+		.container
+			.breadcrumbs
+				a.link.link--line.breadcrumbs__link(href="#") Каталог
+				span.breadcrumbs__current Матрасы
+
+		section.products
+			.container
+				h2.title2.products__title Матрасы
+
+				.sub-categories.products__sub-categories
+					.sub-categories__list
+						a.sub-categories__item(href="#") 
+							.sub-categories__item-img-box
+								img.sub-categories__item-img(src="temp/sub-categories/matrasi/1.jpg")
+							.sub-categories__item-name Беспружинный
+						a.sub-categories__item(href="#") 
+							.sub-categories__item-img-box
+								img.sub-categories__item-img(src="temp/sub-categories/matrasi/2.jpg")
+							.sub-categories__item-name Независимый пружинный блок
+						a.sub-categories__item(href="#") 
+							.sub-categories__item-img-box
+								img.sub-categories__item-img(src="temp/sub-categories/matrasi/3.jpg")
+							.sub-categories__item-name Зависимый пружинный блок
+						a.sub-categories__item(href="#") 
+							.sub-categories__item-img-box
+								img.sub-categories__item-img(src="temp/sub-categories/matrasi/4.jpg")
+							.sub-categories__item-name В скрутке
+
+				.products__filters
+					.filters
+						button.btn.btn--filter.filters__btn
+							+icon('filter', 'btn__icon filters__btn-icon')
+							| Все фильтры
+						.select.filters__select
+							select.select__field
+								option(value="price") Цена
+								option(value="price") Цена
+								option(value="price") Цена
+							+icon('arrow_right', 'icon--primary select__icon')
+						.select.filters__select
+							select.select__field
+								option(value="size") Размер матраса
+								option(value="size") Размер матраса
+								option(value="size") Размер матраса
+							+icon('arrow_right', 'icon--primary select__icon')
+						.select.filters__select
+							select.select__field
+								option(value="type") Тип
+								option(value="type") Тип
+								option(value="type") Тип
+							+icon('arrow_right', 'icon--primary select__icon')
+						.select.filters__select
+							select.select__field
+								option(value="stiffness") Жесткость
+								option(value="stiffness") Жесткость
+								option(value="stiffness") Жесткость
+							+icon('arrow_right', 'icon--primary select__icon')
+
+					.products__sorts
+						span.text.products__count Товаров: 346
+						.select.select--sort.filters__select
+							select.select__field
+								option(value="popular") Самые популярные
+								option(value="popular") Самые популярные
+								option(value="popular") Самые популярные
+							+icon('arrow_right', 'icon--primary select__icon')
+
+
+				.products__list
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -50%
+								+icon('skidka', 'discount__bg')
+							span.product-label.product-label--new.product__label Новинка
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Flash
+							span.text.product__type С массажным эффектом
+							.product__price 
+								| от
+								span.product__price-value 329 400 ₸
+								span.product__price-old 658 800 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 19 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Средняя, Выше средней
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value свыше 140 кг.
+								.product__status.product__status--have В наличии
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn Подробнее
+
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -65%
+								+icon('skidka', 'discount__bg')
+							span.product-label.product-label--week.product__label Товар недели
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Basic Easy Duo Side
+							span.text.product__type 7 зон поддержки
+							.product__price 
+								| от
+								span.product__price-value 249 360 ₸
+								span.product__price-old 831 200 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 22 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Низкая
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value свыше 120 кг.
+								.product__status.product__status--have В наличии
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик						
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -70%
+								+icon('skidka', 'discount__bg')
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Basic iComfort Plus
+							span.text.product__type Базовая модель
+							.product__price 
+								| от
+								span.product__price-value 249 360 ₸
+								span.product__price-old 831 200 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 22 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Средняя
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value до 90 кг.
+								.product__status.product__status--have В наличии
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -45%
+								+icon('skidka', 'discount__bg')
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Basic iComfort Plus
+							span.text.product__type Базовая модель
+							.product__price 
+								| от
+								span.product__price-value 75 560 ₸
+								span.product__price-old 136 400 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 14 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Средняя
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value до 90 кг.
+								.product__status Под заказ
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -45%
+								+icon('skidka', 'discount__bg')
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Basic iComfort Plus
+							span.text.product__type Базовая модель
+							.product__price 
+								| от
+								span.product__price-value 75 560 ₸
+								span.product__price-old 136 400 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 14 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Средняя
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value до 90 кг.
+								.product__status Под заказ
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -70%
+								+icon('skidka', 'discount__bg')
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Basic iComfort Plus
+							span.text.product__type Базовая модель
+							.product__price 
+								| от
+								span.product__price-value 249 360 ₸
+								span.product__price-old 831 200 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 22 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Средняя
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value до 90 кг.
+								.product__status.product__status--have В наличии
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -65%
+								+icon('skidka', 'discount__bg')
+							span.product-label.product-label--week.product__label Товар недели	
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Basic Easy Duo Side
+							span.text.product__type 7 зон поддержки
+							.product__price 
+								| от
+								span.product__price-value 249 360 ₸
+								span.product__price-old 831 200 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 22 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Низкая
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value свыше 120 кг.
+								.product__status.product__status--have В наличии
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -50%
+								+icon('skidka', 'discount__bg')
+							span.product-label.product-label--new.product__label Новинка
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Flash
+							span.text.product__type С массажным эффектом
+							.product__price 
+								| от
+								span.product__price-value 329 400 ₸
+								span.product__price-old 658 800 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 19 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Средняя, Выше средней
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value свыше 140 кг.
+								.product__status.product__status--have В наличии
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/1.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -50%
+								+icon('skidka', 'discount__bg')
+							span.product-label.product-label--new.product__label Новинка	
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Flash
+							span.text.product__type С массажным эффектом
+							.product__price 
+								| от
+								span.product__price-value 329 400 ₸
+								span.product__price-old 658 800 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 19 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Средняя, Выше средней
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value свыше 140 кг.
+								.product__status.product__status--have В наличии
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/2.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -65%
+								+icon('skidka', 'discount__bg')
+							span.product-label.product-label--week.product__label Товар недели
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Basic Easy Duo Side
+							span.text.product__type 7 зон поддержки
+							.product__price 
+								| от
+								span.product__price-value 249 360 ₸
+								span.product__price-old 831 200 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 22 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Низкая
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value свыше 120 кг.
+								.product__status.product__status--have В наличии
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -70%
+								+icon('skidka', 'discount__bg')
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Basic iComfort Plus
+							span.text.product__type Базовая модель
+							.product__price 
+								| от
+								span.product__price-value 249 360 ₸
+								span.product__price-old 831 200 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 22 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Средняя
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value до 90 кг.
+								.product__status.product__status--have В наличии
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик
+					.product.products__item
+						.product__img-box
+							.product__slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+									.swiper-slide
+										img.product__img(src="temp/products/matrasi/3.jpg")
+								.product__slider-pagination.js-product-slider-pagination
+							span.discount.product__discount
+								| -45%
+								+icon('skidka', 'discount__bg')
+							button.icon-btn.icon-btn--gray.product__wishlist
+								+icon('izbrannoe', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.product__compare
+								+icon('sravnenie', 'icon-btn__icon')
+						.product__inf
+							h3.product__name
+								a.link(href="#") Анатомический матрас <br> Basic iComfort Plus
+							span.text.product__type Базовая модель
+							.product__price 
+								| от
+								span.product__price-value 75 560 ₸
+								span.product__price-old 136 400 ₸
+							.product__meta
+								.product__features
+									.product__feature
+										+icon('matras_visota', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Высота:
+											span.text.product__feature-value 14 см
+									.product__feature
+										+icon('matras_jestkost', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Жесткость:
+											span.text.product__feature-value Средняя
+									.product__feature
+										+icon('matras_ves', 'icon--gray product__feature-icon')
+										.product__feature-inf
+											span.product__feature-name Вес на спальное место:
+											span.text.product__feature-value до 90 кг.
+								.product__status Под заказ	
+						.product__addition
+							.product__addition-content
+								.product__meta
+									span.text
+										| Рассрочка от
+										span.product__pay-part 1200 ₸
+									span.product__code Код товара: 13241
+								.select.product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+								.product__btn-group
+									button.btn.product__btn В корзину
+									button.btn.btn--transparent.product__btn Купить в 1 клик
+				.products__footer
+					.pagination
+						.pagination__list
+							//- a.link.pagination__link.pagination__link--prev(href="#")
+							//- 	+icon('arrow_left', 'icon--primary pagination__icon pagination__icon--prev')
+							//- 	| Пред
+							span.pagination__active(href="#") 1
+							a.link.pagination__link(href="#") 2
+							a.link.pagination__link(href="#") 3
+							a.link.pagination__link.pagination__link--next(href="#")
+								| След
+								+icon('arrow_right', 'icon--primary pagination__icon pagination__icon--next')
+					button.btn.btn--dark.products__more-btn Показать ещё
+					span.text Вы посмотрели 24 из 98 товаров
+
+		section.about
+			.container
+				.about__content
+					p.text.about__text
+						| Интернет-магазин Askona - предлагает большой выбор стильных диванов в Казахстане.
+						| Только мы осуществляем быструю доставку товара в удобное для покупателя время.
+					p.text.about__text
+						| Изысканный дизайн каждой детали позволяет подобрать модель под существующий интерьер:
+					ul
+						li диван для кухни - выполнен из качественного материала с кожаной и тканевой обивкой;
+						li прямые диваны - создадут уют в гостиной;
+						li диван кресло или диван кровать дополнят небольшую комнату решив проблему с размещением гостей и экономией пространства;
+						li в качестве спального дивана подойдет еврософа с выдвижным бельевым шкафом;
+						li детские диваны выполнены из гипоаллергенных материалов с яркими принтами и вместительными ящиками для игрушек.
+					h3 Как купить матрас в Алматы?
+					p 
+						| Оплатить товар можно банковской картой, наличными и безналичными средствами.
+						| Бонусом для покупателей с ограниченными финансовыми возможностями является покупка товара в кредит или рассрочку.
+						| По городу Алматы и области доставка мебели осуществляется собственной курьерской службой. В другие города доставляем
+					p Магазин постоянно проводит акции и распродажи с существенным снижением цены. Следите за предложениями и не пропустите акции.

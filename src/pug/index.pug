@@ -1,3 +1,5 @@
+include data/_pages.pug
+
 doctype html
 html(lang="ru")
 	head
@@ -8,7 +10,6 @@ html(lang="ru")
 		meta(name='format-detection' content='telephone=no')
 		link(rel='shortcut icon' href='assets/favicon.png')
 		link(rel='stylesheet' href='assets/css/styles.css')
-		script(src='assets/js/app.js')
 		style(type='text/css').
 			body {
 				color: #272727;
@@ -19,6 +20,7 @@ html(lang="ru")
 			.all-pages {
 				width: 100%;
 				max-width: 600px;
+				max-height: calc(100% - 40px);
 				overflow: hidden;
 				border-radius: 10px;
 				background: #fff;
@@ -36,6 +38,7 @@ html(lang="ru")
 			.all-pages__list {
 				counter-reset: list;
 				list-style: none;
+				overflow-y: auto
 			}
 
 			.all-pages__item {
@@ -57,8 +60,9 @@ html(lang="ru")
 				color: #272727;
 			}
 	body
-	.all-pages
-			.all-pages__title Список страниц
-			ul.all-pages__list
-				li.all-pages__item
-					a.all-pages__link(href="home.html") Главная 
+		.all-pages
+				.all-pages__title Список страниц
+				ul.all-pages__list
+					each item in pages_list
+						li.all-pages__item
+							a.all-pages__link(href=item.url) #{item.title}

@@ -8,7 +8,6 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/app.js"></script>
     <style type="text/css">
       body {
       	color: #272727;
@@ -19,6 +18,7 @@
       .all-pages {
       	width: 100%;
       	max-width: 600px;
+      	max-height: calc(100% - 40px);
       	overflow: hidden;
       	border-radius: 10px;
       	background: #fff;
@@ -36,6 +36,7 @@
       .all-pages__list {
       	counter-reset: list;
       	list-style: none;
+      	overflow-y: auto
       }
       
       .all-pages__item {
@@ -58,11 +59,14 @@
       }
     </style>
   </head>
-  <body></body>
-  <div class="all-pages">
-    <div class="all-pages__title">Список страниц</div>
-    <ul class="all-pages__list">
-      <li class="all-pages__item"><a class="all-pages__link" href="home.html">Главная </a></li>
-    </ul>
-  </div>
+  <body>
+    <div class="all-pages">
+      <div class="all-pages__title">Список страниц</div>
+      <ul class="all-pages__list">
+        <li class="all-pages__item"><a class="all-pages__link" href="home.html">Главная</a></li>
+        <li class="all-pages__item"><a class="all-pages__link" href="catalog-divany.html">Каталог - Диваны</a></li>
+        <li class="all-pages__item"><a class="all-pages__link" href="catalog-matrasi.html">Каталог - Матрасы</a></li>
+      </ul>
+    </div>
+  </body>
 </html>

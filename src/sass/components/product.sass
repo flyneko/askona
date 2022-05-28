@@ -39,22 +39,32 @@
       align-items: center
       justify-content: center
 
+  .swiper-pagination--clone
+    pointer-events: none
+    padding: 0 19px
+
+    .swiper-pagination-bullet
+      border-bottom: 1px solid #000
+
+    .swiper-pagination-bullet-active
+      border-width: 3px
+
   &__slider-pagination
     display: none
     position: absolute
     justify-content: center
     align-items: flex-end
-    z-index: 4
-    padding: 0 19px
+    z-index: 100
+    height: 100%
 
     .swiper-pagination-bullet
-      height: 1px
-      width: 64px
-      background: #000
+      background: transparent
       border-radius: 0
+      height: 100%
+      width: 100%
+      opacity: 1
+      border-radius: unset
 
-    .swiper-pagination-bullet-active
-      height: 3px
 
   &__discount,
   &__label,

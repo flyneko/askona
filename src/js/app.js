@@ -20,7 +20,6 @@ window.addEventListener('load', () => {
       $link.setAttribute('href', `tel:${tel}`);
       $link.removeAttribute('data-phone');
       $link.classList.remove('phone-link--hidden');
-
     });
   });
 
@@ -45,12 +44,10 @@ window.addEventListener('load', () => {
     loop: true,
     slidesPerView: 5,
     spaceBetween: 32,
-
     pagination: {
       el: '.js-categories-slider-pagination',
       clickable: true
     },
-
     navigation: {
       nextEl: '.js-categories-slider-next',
       prevEl: '.js-categories-slider-prev',
@@ -74,7 +71,6 @@ window.addEventListener('load', () => {
         el: $pagination,
         clickable: true
       },
-
       navigation: {
         nextEl: $nextBtn,
         prevEl: $prevBtn,
@@ -83,25 +79,72 @@ window.addEventListener('load', () => {
     });
   });
 
+  const $productSliders = document.querySelectorAll('.product__slider');
+  $productSliders.forEach($slider => {
+    let sliderCard = null;
+    let $paginationClone = null
+    console.log($slider);
+    $slider.addEventListener('mouseenter', function () {
+      if (window.innerWidth <= 768) {
+        return false;
+      }
 
-  const $products = document.querySelectorAll('.product');
-  $products.forEach($product => {
-    const $slider = $product.querySelector('.product__slider');
-    if (!$slider)
-      return;
-    
-    const $pagination = $slider.querySelector('.js-product-slider-pagination');
-    $product.addEventListener('mouseenter', () => {
-      new Swiper($slider, {
-        direction: 'horizontal',
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        pagination: {
-          el: $pagination,
-          clickable: true
-        },
-      });
-    }, {once: true})
-  });
+      const $pagination = $slider.querySelector('.js-product-slider-pagination');
+      console.log($slider);
+      if (!$slider.classList.contains('swiper-initialized')) {
+        sliderCard = new Swiper($slider, {
+          init: true,
+          loop: true,
+          slidesPerView: 1,
+          pagination: {
+            el: $pagination,
+            clickable: true,
+          },
+          on: {
+            afterInit: function () {
+              clonePagination(this)
+            },
+            slideChange: function () {
+              clonePagination(this)
+            }
+          }
+        });
+
+        console.log(sliderCard);
+      }
+
+      const $sliderBullets = $pagination.querySelectorAll('.swiper-pagination-bullet');
+      $sliderBullets.forEach($bullet => {
+        $bullet.addEventListener('mouseenter', () => {
+          $bullet.click();
+        });
+      })
+    });
+
+    $slider.addEventListener('mouseleave', function () {
+      if (window.innerWidth <= 768 || !sliderCard) {
+        return false;
+      }
+
+      const $paginationClone = this.querySelector('.swiper-pagination--clone');
+      $paginationClone.remove();
+
+      sliderCard.destroy();
+    });
+
+    function clonePagination($slider) {
+      const $pagination = $slider.pagination.el;
+      if (!$pagination) {
+        return
+      }
+
+      if ($paginationClone !== null) {
+        $paginationClone.remove()
+      }
+
+      $paginationClone = $pagination.cloneNode(true);
+      $paginationClone.classList.add('swiper-pagination--clone');
+      $pagination.parentNode.appendChild($paginationClone);
+    };
+  })
 });

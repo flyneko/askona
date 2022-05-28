@@ -4,7 +4,8 @@ import merge from 'merge-stream';
 
 export const scripts = () => {
   const vendors = app.gulp.src([
-    'node_modules/swiper/swiper-bundle.min.js'
+    'node_modules/swiper/swiper-bundle.min.js',
+    'node_modules/choices.js/public/assets/scripts/choices.min.js'
   ])
   .pipe(concat('vendors.min.js'))
   .pipe(uglify())

@@ -83,14 +83,12 @@ window.addEventListener('load', () => {
   $productSliders.forEach($slider => {
     let sliderCard = null;
     let $paginationClone = null
-    console.log($slider);
     $slider.addEventListener('mouseenter', function () {
       if (window.innerWidth <= 768) {
         return false;
       }
 
       const $pagination = $slider.querySelector('.js-product-slider-pagination');
-      console.log($slider);
       if (!$slider.classList.contains('swiper-initialized')) {
         sliderCard = new Swiper($slider, {
           init: true,
@@ -109,8 +107,6 @@ window.addEventListener('load', () => {
             }
           }
         });
-
-        console.log(sliderCard);
       }
 
       const $sliderBullets = $pagination.querySelectorAll('.swiper-pagination-bullet');
@@ -148,3 +144,29 @@ window.addEventListener('load', () => {
     };
   })
 });
+
+/**
+ * Селекты
+ */
+ const $simpleFields = document.querySelectorAll('.select__field');
+ $simpleFields.forEach($field => {
+   new Choices($field, {
+     searchEnabled: false,
+     itemSelectText: '',
+     placeholder: true,
+     allowHTML: true,
+     position: 'select-one',
+     noResultsText: 'Не найдено',
+   });
+
+   $field.addEventListener('addItem', (e) => {
+    const text = $field.dataset.selectText;
+    if (!text || !e.detail.value) {
+      return;
+    }
+  
+    const $select = $field.closest('.select');
+    const $innerItem = $select.querySelector('.choices__inner .choices__item');
+    $innerItem.childNodes[0].textContent = `${text}: ${e.detail.label}`;
+  }, false);
+ });

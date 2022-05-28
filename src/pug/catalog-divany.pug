@@ -39,28 +39,32 @@ block content
 							+icon('filter', 'btn__icon filters__btn-icon')
 							| Все фильтры
 						.select.filters__select
-							select.select__field
-								option(value="price") Цена
-								option(value="price") Цена
-								option(value="price") Цена
+							select.select__field(data-select-text="Цена")
+								option(value="") Цена
+								option(value="price") 1
+								option(value="price") 2
+								option(value="price") 3
 							+icon('arrow_right', 'icon--primary select__icon')
 						.select.filters__select
-							select.select__field
-								option(value="size") Размер спального места
-								option(value="size") Размер спального места
-								option(value="size") Размер спального места
+							select.select__field(data-select-text="Размер спального места")
+								option(value="") Размер спального места
+								option(value="size") 1
+								option(value="size") 2
+								option(value="size") 3
 							+icon('arrow_right', 'icon--primary select__icon')
 						.select.filters__select
-							select.select__field
-								option(value="type") Тип
-								option(value="type") Тип
-								option(value="type") Тип
+							select.select__field(data-select-text="Тип")
+								option(value="") Тип
+								option(value="type") 1
+								option(value="type") 2
+								option(value="type") 3
 							+icon('arrow_right', 'icon--primary select__icon')
 						.select.filters__select
-							select.select__field
-								option(value="color") Цвет
-								option(value="color") Цвет
-								option(value="color") Цвет
+							select.select__field(data-select-text="Цвет")
+								option(value="") Цвет
+								option(value="color") 1
+								option(value="color") 2
+								option(value="color") 3
 							+icon('arrow_right', 'icon--primary select__icon')
 
 					.products__sorts
@@ -68,8 +72,9 @@ block content
 						.select.select--sort.filters__select
 							select.select__field
 								option(value="popular") Самые популярные
-								option(value="popular") Самые популярные
-								option(value="popular") Самые популярные
+								option(value="new") Самые новые
+								option(value="price") Самые недорогие
+								option(value="price") Самые дорогие
 							+icon('arrow_right', 'icon--primary select__icon')
 
 

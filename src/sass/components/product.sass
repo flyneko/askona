@@ -12,9 +12,6 @@
     display: block
     transform: translateY(-7px)
     z-index: 10
-    margin-left: 9px
-    margin-right: 9px
-    width: calc(100% / 12 * 3 - 18px)
 
   &:hover &__img-box,
   &:hover &__inf
@@ -85,10 +82,12 @@
   &__discount
     left: 24px
     bottom: 16px
+    pointer-events: none
 
   &__label
     right: 23px
     bottom: 16px
+    pointer-events: none
 
   &__wishlist
     display: none
@@ -111,7 +110,7 @@
     font-weight: 500
     color: #262626
   
-  &__type
+  &__desc
     display: inline-block
     font-size: 12px
     margin-top: 5px

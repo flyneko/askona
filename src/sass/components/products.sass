@@ -10,12 +10,25 @@
     padding-bottom: 46px
     user-select: none
 
+    .swiper-wrapper
+      z-index: 11
+
     .swiper-slide
       height: auto
   
   &__slider-main
-    margin: -30px 0
-    padding: 30px 0
+    margin: -15px -15px -150px
+    padding: 15px 15px 150px
+
+  &__slider-item
+    &:hover
+      position: absolute
+      left: -7px
+      right: -7px
+
+  &__slider-pagination
+    &.swiper-pagination-bullets.swiper-pagination-horizontal
+      bottom: 105px
 
   &__slider-next,
   &__slider-prev
@@ -55,6 +68,11 @@
   &__item
     width: calc(100% / 12 * 3 - 32px)
     margin: 16px
+
+    &:hover
+      margin-left: 9px
+      margin-right: 9px
+      width: calc(100% / 12 * 3 - 18px)
 
   &__footer
     margin-top: 32px

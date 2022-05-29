@@ -11,10 +11,12 @@
     border-bottom-right-radius: 0
     display: block
     transform: translateY(-7px)
+    padding-top: 7px
+    margin-bottom: 9px
     z-index: 10
 
   &:hover &__img-box,
-  &:hover &__inf
+  &:hover &__inf-content
     margin-left: 7px
     margin-right: 7px
 
@@ -25,6 +27,9 @@
   &:hover &__wishlist,
   &:hover &__compare
     display: block
+
+  &:hover &__status
+    right: 31px
 
   &__img-box
     position: relative
@@ -103,6 +108,8 @@
     position: relative
     z-index: 3
     background: #fff
+
+  &__inf-content
     padding: 20px 22px 24px
 
   &__name
@@ -113,11 +120,13 @@
   &__desc
     display: inline-block
     font-size: 12px
-    margin-top: 5px
+    line-height: 1
+    margin-top: 7px
 
   &__price
-    margin-top: 12px
+    margin-top: 14px
     font-size: 14px
+    line-height: 1
     color: #7e7e7e
 
   &__price-value
@@ -163,8 +172,8 @@
 
   &__status
     position: absolute
-    bottom: 23px
-    right: 23px
+    bottom: 24px
+    right: 24px
     font-size: 14px
     line-height: 16px
     color: #7e7e7e

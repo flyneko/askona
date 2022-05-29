@@ -29,35 +29,36 @@ mixin card(index, options = {})
             button.icon-btn.icon-btn--gray.product__compare
                 +icon('sravnenie', 'icon-btn__icon')
         .product__inf
-            h3.product__name
-                a.link(href="#") !{item.name}
-            if item.desc
-                span.text.product__desc !{item.desc}
-            .product__price 
-                | от
-                span.product__price-value #{item.price} ₸
-                span.product__price-old #{item.price_old} ₸
-            if item.features
-                .product__meta
-                    .product__features
-                        each feature in item.features
-                            .product__feature
-                                +icon(feature.icon, 'icon--gray product__feature-icon')
-                                .product__feature-inf
-                                    span.product__feature-name #{feature.name}:
-                                    span.text.product__feature-value #{feature.value}
-            if item.colors
-                .product__meta
-                    .color-switcher.product__colors
-                        .color-switcher__list
-                            each color in item.colors
-                                label.color-switcher__label
-                                    input.color-switcher__input(type='radio' name='color' + item.id)
-                                    .color-switcher__elem(style='background-color: ' + color)
-                        if item.colors_count
-                            .color-switcher__count +#{item.colors_count}
-            if item.status
-                .product__status(class='product__status--' + item.status.type) #{item.status.text}
+            .product__inf-content
+                h3.product__name
+                    a.link(href="#") !{item.name}
+                if item.desc
+                    span.text.product__desc !{item.desc}
+                .product__price 
+                    | от
+                    span.product__price-value #{item.price} ₸
+                    span.product__price-old #{item.price_old} ₸
+                if item.features
+                    .product__meta
+                        .product__features
+                            each feature in item.features
+                                .product__feature
+                                    +icon(feature.icon, 'icon--gray product__feature-icon')
+                                    .product__feature-inf
+                                        span.product__feature-name #{feature.name}:
+                                        span.text.product__feature-value #{feature.value}
+                if item.colors
+                    .product__meta
+                        .color-switcher.product__colors
+                            .color-switcher__list
+                                each color in item.colors
+                                    label.color-switcher__label
+                                        input.color-switcher__input(type='radio' name='color' + item.id)
+                                        .color-switcher__elem(style='background-color: ' + color)
+                            if item.colors_count
+                                .color-switcher__count +#{item.colors_count}
+                if item.status
+                    .product__status(class='product__status--' + item.status.type) #{item.status.text}
         .product__addition
             .product__addition-content
                 .product__meta

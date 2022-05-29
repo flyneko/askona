@@ -67,6 +67,8 @@ window.addEventListener('load', () => {
       loop: true,
       slidesPerView: 4,
       spaceBetween: 32,
+      watchSlidesProgress: true,
+      preventClicks: false,
       pagination: {
         el: $pagination,
         clickable: true
@@ -148,25 +150,28 @@ window.addEventListener('load', () => {
 /**
  * Селекты
  */
- const $simpleFields = document.querySelectorAll('.select__field');
- $simpleFields.forEach($field => {
-   new Choices($field, {
-     searchEnabled: false,
-     itemSelectText: '',
-     placeholder: true,
-     allowHTML: true,
-     position: 'select-one',
-     noResultsText: 'Не найдено',
-   });
+const $simpleFields = document.querySelectorAll('.select__field');
+$simpleFields.forEach($field => {
+  new Choices($field, {
+    searchEnabled: false,
+    itemSelectText: '',
+    placeholder: true,
+    allowHTML: true,
+    position: 'select-one',
+    noResultsText: 'Не найдено',
+    classNames: {
+      containerOuter: 'choices swiper-no-swiping',
+    }
+  });
 
-   $field.addEventListener('addItem', (e) => {
+  $field.addEventListener('addItem', (e) => {
     const text = $field.dataset.selectText;
     if (!text || !e.detail.value) {
       return;
     }
-  
+
     const $select = $field.closest('.select');
     const $innerItem = $select.querySelector('.choices__inner .choices__item');
     $innerItem.childNodes[0].textContent = `${text}: ${e.detail.label}`;
   }, false);
- });
+});

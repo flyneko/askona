@@ -61,14 +61,14 @@ window.addEventListener('load', () => {
     const $pagination = $box.querySelector('.js-products-slider-pagination');
     const $nextBtn = $box.querySelector('.js-products-slider-next');
     const $prevBtn = $box.querySelector('.js-products-slider-prev');
+    const loop = $slider.dataset.loop === 'false' ? false : true;
 
     new Swiper($slider, {
       direction: 'horizontal',
-      loop: true,
+      loop: false,
       slidesPerView: 4,
       spaceBetween: 32,
       watchSlidesProgress: true,
-      preventClicks: false,
       pagination: {
         el: $pagination,
         clickable: true
@@ -77,6 +77,11 @@ window.addEventListener('load', () => {
         nextEl: $nextBtn,
         prevEl: $prevBtn,
         clickable: true
+      },
+      scrollbar: {
+        el: '.products__slider-scrollbar',
+        draggable: true,
+        dragSize: 372,
       },
     });
   });
@@ -144,34 +149,177 @@ window.addEventListener('load', () => {
       $paginationClone.classList.add('swiper-pagination--clone');
       $pagination.parentNode.appendChild($paginationClone);
     };
-  })
-});
-
-/**
- * Селекты
- */
-const $simpleFields = document.querySelectorAll('.select__field');
-$simpleFields.forEach($field => {
-  new Choices($field, {
-    searchEnabled: false,
-    itemSelectText: '',
-    placeholder: true,
-    allowHTML: true,
-    position: 'select-one',
-    noResultsText: 'Не найдено',
-    classNames: {
-      containerOuter: 'choices swiper-no-swiping',
-    }
   });
 
-  $field.addEventListener('addItem', (e) => {
-    const text = $field.dataset.selectText;
-    if (!text || !e.detail.value) {
-      return;
+  const singleProdNavSlider = new Swiper('.single-product__nav-slider', {
+    direction: 'vertical',
+    slidesPerView: 6,
+    spaceBetween: 16,
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+    mousewheel: true,
+    allowTouchMove: false,
+    touchRatio: 0,
+    slideToClickedSlide: true,
+    updateOnWindowResize: false,
+    centeredSlidesBounds: true,
+    watchOverflow: true,
+    navigation: {
+      prevEl: '.single-product__nav-prev',
+      nextEl: '.single-product__nav-next',
+      clickable: true
+    }
+  });
+  if (singleProdNavSlider.params.slidesPerView < singleProdNavSlider.slides.length) {
+    const $singleProductSliders = document.querySelector('.single-product__sliders');
+    $singleProductSliders.classList.add('single-product__sliders--center')
+  }
+
+  const big = new Swiper('.single-product__big-slider', {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    thumbs: {
+      swiper: singleProdNavSlider,
+    },
+    mousewheel: {
+      sensitivity: 1.4,
+    },
+  });
+  big.controller.control = singleProdNavSlider;
+
+  new Swiper('.reviews__common-images', {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    scrollbar: {
+      el: '.reviews__common-scrollbar',
+      draggable: true,
+      dragSize: 372,
+    },
+  });
+
+
+  /**
+   * Селекты
+   */
+  const $simpleFields = document.querySelectorAll('.select__field');
+  $simpleFields.forEach($field => {
+    new Choices($field, {
+      searchEnabled: false,
+      itemSelectText: '',
+      placeholder: true,
+      allowHTML: true,
+      position: 'select-one',
+      noResultsText: 'Не найдено',
+      classNames: {
+        containerOuter: 'choices swiper-no-swiping',
+      }
+    });
+
+    $field.addEventListener('addItem', (e) => {
+      const text = $field.dataset.selectText;
+      if (!text || !e.detail.value) {
+        return;
+      }
+
+      const $select = $field.closest('.select');
+      const $innerItem = $select.querySelector('.choices__inner .choices__item');
+      $innerItem.childNodes[0].textContent = `${text}: ${e.detail.label}`;
+    }, false);
+  });
+
+  /**
+   * Плавная прокрутка для якорей
+   */
+  const $anchors = document.querySelectorAll('a[href*="#"]');
+  $anchors.forEach($anchor => {
+    $anchor.addEventListener('click', e => {
+      e.preventDefault();
+
+      const id = $anchor.getAttribute('href');
+      if (id === '#') {
+        return;
+      }
+
+      const $elem = document.querySelector(id);
+      if ($elem) {
+        const offsetTop = $elem.getBoundingClientRect().top;
+        window.scrollBy({ top: (offsetTop), left: 0, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /**
+   * Конфигураторы карточки товара
+   */
+  const $openConfigureBtns = document.querySelectorAll('.js-open-configure');
+  $openConfigureBtns.forEach($btn => {
+    configureName = $btn.dataset.name
+    const $configure = document.querySelector(`.configure[data-name="${configureName}"]`);
+
+    if (!configureName || !$configure) {
+      return
     }
 
-    const $select = $field.closest('.select');
-    const $innerItem = $select.querySelector('.choices__inner .choices__item');
-    $innerItem.childNodes[0].textContent = `${text}: ${e.detail.label}`;
-  }, false);
+    $btn.addEventListener('click', () => {
+      closeShowedConfigure();
+      closeProductConfig();
+      $configure.classList.add('configure--show');
+    });
+  });
+
+  const $configures = document.querySelectorAll('.configure');
+  $configures.forEach($configure => {
+    const $closeBtn = $configure.querySelector('.configure__close');
+    $closeBtn.addEventListener('click', () => {
+      $configure.classList.remove('configure--show');
+    });
+  });
+
+  setProductConfigPosition();
+  window.addEventListener('resize', setProductConfigPosition);
+  function setProductConfigPosition() {
+    const $productConfig = document.querySelector('.product-config');
+    if ($productConfig) {
+      const bannerHeight = document.querySelector('.banner').offsetHeight;
+      const headerHeight = document.querySelector('.header').offsetHeight;
+      const offsetTop = bannerHeight + headerHeight + 1;
+      $productConfig.style.top = `${offsetTop}px`;
+      $productConfig.style.height = `calc(100vh - ${offsetTop}px`;
+    }
+  }
+
+  const $productConfig = document.querySelector('.product-config');
+  if ($productConfig) {
+    const $body = document.body;
+
+    const $openProductConfigBtns = document.querySelectorAll('.js-open-product-config');
+    $openProductConfigBtns.forEach($btn => {
+      $btn.addEventListener('click', () => {
+        window.scrollTo(0,0);
+        $body.classList.add('body--lock');
+        $productConfig.classList.add('product-config--show');
+        closeShowedConfigure();
+      });
+    });
+
+    const $closeBtn = $productConfig.querySelector('.product-config__close');
+    $closeBtn.addEventListener('click', closeProductConfig);
+  }
+
+  function closeShowedConfigure() {
+    const $showedConfigure = document.querySelector('.configure--show');
+    if ($showedConfigure) {
+      $showedConfigure.classList.remove('configure--show');
+    }
+  }
+
+  function closeProductConfig() {
+    const $body = document.body;
+    const $productConfig = document.querySelector('.product-config');
+    if ($productConfig) {
+      $body.classList.remove('body--lock');
+      $productConfig.classList.remove('product-config--show');
+    }
+  }
 });
+

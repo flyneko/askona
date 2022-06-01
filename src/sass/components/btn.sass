@@ -1,0 +1,97 @@
+.btn
+  height: 40px
+  border-radius: 4px
+  padding: 0 24px
+  background-color: $color-primary
+  color: #fff
+  font-size: 14px
+  font-weight: 500
+  transition: background .3s, color .3s, border .3s
+  border: 1px solid transparent
+  display: flex
+  align-items: center
+  justify-content: center
+  white-space: nowrap
+  line-height: 1
+
+  &:hover
+    background-color: $color-primary-light
+
+  &:active
+    background-color: $color-primary
+
+  &__icon
+    margin-right: 12px
+    flex: 0 0 auto
+
+  &--white
+    background-color: #fff
+    color: $color-primary
+
+    &:hover
+      color: #fff
+      border-color: #fff
+      background-color: $color-primary
+
+  &--transparent
+    background-color: transparent
+    color: $color-primary
+    border-color: $color-primary
+
+    &:hover
+      color: #fff
+      background-color: $color-primary
+
+    &:active
+      background-color: $color-primary-light
+
+  &--catalog
+    font-size: 17px
+    padding: 0 16px
+  
+  &--filter
+    padding-right: 29px
+
+  &--dark
+    background-color: transparent
+    border-color: #212121
+    color: #212121
+
+    &:hover
+      border-color: #d8d8d8
+      background: transparent
+
+    &:active
+      border-color: #212121
+
+  &--neutral
+    background-color: transparent
+    border-color: #d8d8d8
+    color: #212121
+
+    &:hover
+      border-color: #aaaaaa
+      background-color: transparent
+
+    &:active
+      border-color: #d8d8d8
+      
+  &--gray
+    background-color: #f4f3f3
+    color: #212121
+
+    &:hover
+      background-color: #e8e8e8
+
+    &:active
+      background-color: #f4f3f3
+
+  &--black
+    background-color: #212121
+    color: #fff
+
+    &:hover
+      background-color: #404040
+
+    &:active
+      background-color: #212121

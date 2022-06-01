@@ -1,0 +1,70 @@
+.product-config
+  position: fixed
+  left: 0
+  width: 100%
+  background: #fff
+  z-index: 17
+  opacity: 0
+  visibility: hidden
+  transform: translateX(-100%)
+  transition: visibility .5s, transform .5s, opacity .5s
+  
+  &__content
+    position: relative
+    display: flex
+
+  &__left
+    flex: 1 1 67%
+    padding-top: 30px
+
+  &__close
+    display: flex
+    align-items: center
+    font-size: 14px
+    color: #212121
+    margin-bottom: 22px
+  
+  &__close-arrow
+    width: 5px
+    height: 8px
+    margin-right: 11px
+
+  &__title
+    text-align: left
+
+  &__price
+    margin-top: 12px
+    display: flex
+    align-items: center
+  
+  &__price-value
+    font-size: 28px
+    font-weight: 600
+    color: $color-primary
+
+  &__price-old
+    margin-left: 32px
+    font-size: 18px
+    color: #7e7e7e
+    text-decoration: line-through
+
+  &__discount
+    margin-left: 28px
+
+  &__img
+    max-height: 70%
+
+  &__right
+    flex: 1 1 33%
+    border-left: 1px solid #eeeeee
+    padding-top: 30px
+
+  &__play-btns
+    position: absolute
+    bottom: 54px
+    left: 0
+
+  &--show
+    visibility: visible
+    transform: translateX(0)
+    opacity: 1

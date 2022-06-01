@@ -1,0 +1,152 @@
+.configure
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 16
+  height: 100%
+  opacity: 0
+  transform: translateX(100%)
+  visibility: hidden
+  transition: opacity .3s, transform .3s, visibility .3s
+
+  &__content
+    position: relative
+    display: flex
+    flex-direction: column
+    width: 528px
+    height: 100%
+    padding: 40px 32px 0
+    background: #fff
+    box-shadow: -2px 0 9px rgba(0, 0, 0, 0.1)
+    overflow: hidden
+
+  &__title
+    padding-right: 18px
+    font-size: 30px
+    font-weight: 600
+    color: #212121
+
+  &__text
+    margin-top: 10px
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin: 15px -8px -10px
+    padding-right: 24px
+    max-height: calc(100vh - 180px)
+    overflow-y: auto
+    scrollbar-width: thin
+    scrollbar-color: $color-primary #efefef
+    position: relative
+
+    &::-webkit-scrollbar
+      width: 2px
+
+    &::-webkit-scrollbar-track
+      background: #efefef
+
+    &::-webkit-scrollbar-thumb
+      background-color: $color-primary
+      border: 2px solid $color-primary
+        
+  &__item
+    margin: 10px 8px
+    width: calc(100% / 12 * 4 - 16px)
+
+    &--big
+      border: 1px solid #eeeeee
+      border-radius: 4px
+      width: 100%
+      padding: 18px 24px
+
+      &.configure__item--active
+        border-color: #212121
+
+  &__item--big &__item-inf
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__item--active &__item-img-box
+    border-color: #212121
+    padding: 8px
+
+  &__item--big &__item-img-box
+    border: none
+    padding: 0
+    margin: 0 auto
+
+  &__item--big &__item-name
+    margin-top: 0
+
+  &__item-img-box
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 136px
+    height: 136px
+    border: 1px solid #eeeeee
+    border-radius: 4px
+    overflow: hidden
+
+  &__item-img
+    width: 100%
+
+  &__item-name
+    margin-top: 10px
+    display: block
+    font-weight: 500
+    color: #262626
+
+  &__item-desc
+    margin-top: 3px
+    font-size: 12px
+    font-weight: 500
+    line-height: 1.33
+    color: #7e7e7e
+
+  &__item-price
+    margin-top: 3px
+    font-weight: 500
+    color: $color-primary
+
+  &__item-status
+    font-size: 12px
+
+    &:before
+      margin-right: 4px
+
+  &__footer
+    margin-top: auto
+    display: flex
+    position: relative
+    z-index: 11111
+    background: #fff
+    padding: 16px 0
+
+    &--shadow
+      box-shadow: 0px -40px 25px rgb(255 255 255 / 90%)
+
+  &__btn
+    height: 48px
+    padding: 0 51px
+    font-size: 16px
+
+    &:not(:last-child)
+      margin-right: 16px
+
+  &__close
+    position: absolute
+    top: 48px
+    right: 24px
+
+  &__close-icon
+    stroke: $color-primary
+    width: 16px
+    height: 16px
+
+  &--show
+    transform: translateX(0)
+    opacity: 1
+    visibility: visible

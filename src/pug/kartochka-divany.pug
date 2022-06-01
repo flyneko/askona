@@ -1,0 +1,648 @@
+extends layouts/_layout.pug
+
+block title
+	| Карточка товара - Диваны
+
+block content
+	main.main
+		.container
+			.breadcrumbs
+				a.link.link--line.breadcrumbs__link(href="#") Каталог
+				a.link.link--line.breadcrumbs__link(href="#") Диваны
+				span.breadcrumbs__current DayNight Nova
+
+		section.single-product
+			.container
+				.single-product__content
+					.single-product__main
+						.single-product__sliders
+							.single-product__nav-slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img(src="temp/single-products/divany/1.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/2.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/3.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/4.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/1.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/2.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/3.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/4.jpg" alt="")
+								button.single-product__nav-next
+									+icon('arrow_right', 'icon--primary btn-next__icon')
+								button.single-product__nav-prev
+									+icon('arrow_left', 'icon--primary btn-prev__icon')
+							.single-product__big-slider.swiper
+								.swiper-wrapper
+									.swiper-slide
+										img(src="temp/single-products/divany/1.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/2.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/3.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/4.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/1.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/2.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/3.jpg" alt="")
+									.swiper-slide
+										img(src="temp/single-products/divany/4.jpg" alt="")
+								.single-product__labels
+									.single-product__label.single-product__label--week Товар недели
+									.single-product__label.single-product__label--delivery Доставка 1 день
+								.single-product__play-btns
+									button.btn-play.single-product__play-btn
+										+icon('play_video', 'btn-play__icon')
+									button.btn-360.single-product__play-btn
+										+icon('360', 'btn-360__icon')
+						.details.single-product__details#details
+							.title3 Характеристики
+							.details__list
+								.details__column
+									.details__item
+										span.text.details__item-name Бельевой короб
+										span.text.details__item-value Да
+									.details__item
+										span.text.details__item-name Бренд
+										span.text.details__item-value Askona
+									.details__item
+										span.text.details__item-name Страна производитель
+										span.text.details__item-value Россия
+									.details__item
+										span.text.details__item-name Глубина посадки
+										span.text.details__item-value 60 см.
+									.details__item
+										span.text.details__item-name Макс. нагрузка, кг
+										span.text.details__item-value до 80 кг.	
+								.details__column
+									.details__item
+										span.text.details__item-name Бельевой короб
+										span.text.details__item-value Да
+									.details__item
+										span.text.details__item-name Бренд
+										span.text.details__item-value Askona
+									.details__item
+										span.text.details__item-name Страна производитель
+										span.text.details__item-value Россия
+									.details__item
+										span.text.details__item-name Глубина посадки
+										span.text.details__item-value 60 см.
+									.details__item
+										span.text.details__item-name Макс. нагрузка, кг
+										span.text.details__item-value до 80 кг.	
+							.details__footer
+								.title3.details__footer-title Инструкции
+								a.link.link--line.link--icon.details__download(href="#") 
+									+icon('skachat', 'icon--primary link__icon')
+									| Скачать инструкцию по сборке
+
+						.single-product__desc#desc
+							h3 Описание
+							.single-product__desc-main
+								img(src="temp/single-products/divany/desc/1.jpg" alt="")
+								p
+									| Прямой анатомический диван Talo – мягкий и на высоких деревянных ножках, в духе ультрамодных тенденций.
+									| Сдержанный дизайн и продуманная до мелочей функциональность – в актуальном скандинавском стиле.
+									| Компактный Talo освободит пространство даже на небольших площадях. Диван трансформируется в полноценную кровать,
+									| с ровным, без заломов спальным местом. Усиленный механизм «Клик-кляк» обеспечит ежедневную трансформацию без 
+									| особых усилий. Геометрическая стежка чехла подчеркивает лаконичность и выразительность модели.
+									| Плавные линии, мягкие углы и ребра делают Talo безопасным даже для детей.
+
+							h4 Важно знать
+							p В базовую комплектацию входят диван, матрас, бельевой короб и чехол.
+							h4 Матрас:
+							p
+								| Высокий анатомический матрас – 16 см. В его основе – 7-зональный блок независимых пружин и высокоэластичная пена Orto Foam,
+								| поддерживают тело в физиологически правильном положении. Периметр матраса усилен пеной повышенной плотности и защищает края от провисания.
+								| Жесткость матраса – средняя (Medium).
+							h4 Ткани
+							.img-text.single-product__img-text
+								img(src="temp/single-products/divany/desc/tkani/1.jpg" alt="")
+								.img-text__content
+									h5 Sky velvel
+									p 
+										| Sky velvet (микровелюр) изготовлена по инновационным технологиям. Ее главное преимущество – водоотталкивающая поверхность.
+										| Ткань практична в уходе: самые стойкие загрязнения можно отчистить водой. Sky velvet устойчива к истиранию (60 тыс. циклов)
+										| и прямым солнечным лучам, срок ее службы значительно выше, чем у стандартных мебельных тканей. Гипоаллергенная и экологичная.
+							.img-text.single-product__img-text
+								img(src="temp/single-products/divany/desc/tkani/2.jpg" alt="")
+								.img-text__content
+									h5 Sky velvel
+									p 
+										| Sky velvet (микровелюр) изготовлена по инновационным технологиям. Ее главное преимущество – водоотталкивающая поверхность.
+										| Ткань практична в уходе: самые стойкие загрязнения можно отчистить водой. Sky velvet устойчива к истиранию (60 тыс. циклов)
+										| и прямым солнечным лучам, срок ее службы значительно выше, чем у стандартных мебельных тканей. Гипоаллергенная и экологичная.
+							.img-text.single-product__img-text
+								img(src="temp/single-products/divany/desc/tkani/3.jpg" alt="")
+								.img-text__content
+									h5 Sky velvel
+									p Sky velvet (микровелюр) изготовлена по инновационным технологиям. Ее главное преимущество – водоотталкивающая поверхность. Ткань практична в уходе: самые стойкие загрязнения можно отчистить водой. Sky velvet устойчива к истиранию (60 тыс. циклов) и прямым солнечным лучам, срок ее службы значительно выше, чем у стандартных мебельных тканей. Гипоаллергенная и экологичная.
+							h4 Подушки
+							p 2 мягкие, но упругие подушки под спину в форме перевернутых трапеций создают дополнительный комфорт. Современный наполнитель – синтетическое волокно и поролоновая крошка надолго сохраняют форму. На ночь подушки можно убрать в бельевой короб. Чехлы подушек – съемные, на молнии: «бегунок» скрыт, что предотвращает повреждение ткани.
+							h4 Чехол
+							p Чехол посадочной части полностью съемный, что делает диван-кровать Lily практичным в уходе. Мебельные липучки обеспечивают надежную фиксацию чехла к основанию дивана. Ткань Casanova – микрофибра (100% полиэстер) с мягким ворсом и пластичной структурой из тончайших полимерных волокон. Внешне похожа на натуральную замшу. Главная особенность – покрытие Ever Clean Plus: создает водоотталкивающий эффект и делает ткань устойчивой к маслянистым и водным загрязнениям. Покрытие не стирается при химчистке. Безопасно для человека, сохраняет свойства ткани.
+							br
+							p Casanova практична в уходе: стойкие загрязнения легко удалить – тефлоновое покрытие не пропускает их внутрь волокна.
+							br
+							p Диван-кровать Lily: динамичный дизайн – для новых граней комфорта!
+
+						.reviews.single-product__reviews#reviews
+							.reviews__common
+								.reviews__common-header
+									.reviews__common-inf
+										h3.title3
+											| Отзывы
+											sup.reviews__common-count 24
+										.reviews__rate
+											.rate
+												.rate__stars
+													span.rate__star 
+													span.rate__star 
+													span.rate__star 
+													span.rate__star 
+													span.rate__star 
+													.rate__active(style="width: 90%;")
+														span.rate__star 
+														span.rate__star 
+														span.rate__star 
+														span.rate__star 
+														span.rate__star
+											span.reviews__rate-value 4.9
+									button.btn.reviews__add-btn Добавить отзыв
+								.reviews__common-images.swiper
+									.swiper-wrapper
+										.swiper-slide
+											img.reviews__common-img(src="temp/single-products/reviews/all/1.jpg", alt="")
+										.swiper-slide
+											img.reviews__common-img(src="temp/single-products/reviews/all/2.jpg", alt="")
+										.swiper-slide
+											img.reviews__common-img(src="temp/single-products/reviews/all/3.jpg", alt="")
+										.swiper-slide
+											img.reviews__common-img(src="temp/single-products/reviews/all/4.jpg", alt="")
+										.swiper-slide
+											img.reviews__common-img(src="temp/single-products/reviews/all/5.jpg", alt="")
+										.swiper-slide
+											img.reviews__common-img(src="temp/single-products/reviews/all/6.jpg", alt="")
+										.swiper-slide
+											img.reviews__common-img(src="temp/single-products/reviews/all/7.jpg", alt="")
+										.swiper-slide
+											img.reviews__common-img(src="temp/single-products/reviews/all/1.jpg", alt="")
+										.swiper-slide
+											img.reviews__common-img(src="temp/single-products/reviews/all/2.jpg", alt="")
+									.swiper-scrollbar.reviews__common-scrollbar
+							.reviews__list
+								.review.reviews__item
+									.title4.review__author Анна
+									.review__meta
+										.rate
+											.rate__stars
+												span.rate__star 
+												span.rate__star 
+												span.rate__star 
+												span.rate__star 
+												span.rate__star 
+												.rate__active(style="width: 100%;")
+													span.rate__star 
+													span.rate__star 
+													span.rate__star 
+													span.rate__star 
+													span.rate__star
+										span.text.review__date 18 декабря 2020
+									.review__content
+										p.text.review__text Приобретали данную кровать в комплекте с матрасом sleep style form. Кровать просто потрясающая! Основание с лёгкостью поднимается, места для хранения вещей под кроватью предостаточно))) покупкой очень довольны! Огромное спасибо менеджеру Хацкевич Анне! Анна была очень внимательна к нашим пожеланиям и помогла нам выбрать подходящую модель кровати!
+									.review__images
+										img.review__img(src="temp/single-products/reviews/1/1.jpg", alt="")
+										img.review__img(src="temp/single-products/reviews/1/2.jpg", alt="")
+										img.review__img(src="temp/single-products/reviews/1/3.jpg", alt="")
+									.review__footer
+										span.review__footer-text Полезный отзыв?
+										button.review__like
+											+icon('polezni_otziv', 'icon--primary icon-btn__icon')
+										span.review__likes-value 1
+										button.link.link--line.review__reply Ответить
+
+								.review.reviews__item
+									.title4.review__author Сергей
+									.review__meta
+										.rate
+											.rate__stars
+												span.rate__star 
+												span.rate__star 
+												span.rate__star 
+												span.rate__star 
+												span.rate__star 
+												.rate__active(style="width: 100%;")
+													span.rate__star 
+													span.rate__star 
+													span.rate__star 
+													span.rate__star 
+													span.rate__star
+										span.text.review__date 14 ноября 2021
+									.review__content
+										p.text.review__text Приобретали данную кровать в комплекте с матрасом sleep style form. Кровать просто потрясающая! Основание с лёгкостью поднимается, места для хранения вещей под кроватью предостаточно))) покупкой очень довольны! Огромное спасибо менеджеру Хацкевич Анне! Анна была очень внимательна к нашим пожеланиям и помогла нам выбрать подходящую модель кровати!
+									.review__images
+										img.review__img(src="temp/single-products/reviews/2/1.jpg", alt="")
+										img.review__img(src="temp/single-products/reviews/2/2.jpg", alt="")
+										img.review__img(src="temp/single-products/reviews/2/3.jpg", alt="")
+										img.review__img(src="temp/single-products/reviews/2/4.jpg", alt="")
+									.review__footer
+										span.review__footer-text Полезный отзыв?
+										button.review__like
+											+icon('polezni_otziv', 'icon--primary icon-btn__icon')
+										span.review__likes-value 4
+										button.link.link--line.review__reply Ответить
+
+								.review.reviews__item
+									.title4.review__author Иван
+									.review__meta
+										.rate
+											.rate__stars
+												span.rate__star 
+												span.rate__star 
+												span.rate__star 
+												span.rate__star 
+												span.rate__star 
+												.rate__active(style="width: 100%;")
+													span.rate__star 
+													span.rate__star 
+													span.rate__star 
+													span.rate__star 
+													span.rate__star
+										span.text.review__date 04 февраля 2022
+									.review__content
+										p.text.review__text Приобретали данную кровать в комплекте с матрасом sleep style form. Кровать просто потрясающая! Основание с лёгкостью поднимается, места для хранения вещей под кроватью предостаточно))) покупкой очень довольны! Огромное спасибо менеджеру Хацкевич Анне! Анна была очень внимательна к нашим пожеланиям и помогла нам выбрать подходящую модель кровати!
+									.review__images
+										img.review__img(src="temp/single-products/reviews/1/1.jpg", alt="")
+										img.review__img(src="temp/single-products/reviews/1/2.jpg", alt="")
+										img.review__img(src="temp/single-products/reviews/1/3.jpg", alt="")
+									.review__footer
+										span.review__footer-text Полезный отзыв?
+										button.review__like
+											+icon('polezni_otziv', 'icon--primary icon-btn__icon')
+										span.review__likes-value 1
+										button.link.link--line.review__reply Ответить
+
+							button.btn.btn--dark.reviews__more Показать ещё (22)
+					aside.single-product__sidebar
+						.single-product__icon-btns
+							button.icon-btn.icon-btn--gray.single-product__icon-btn
+								+icon('sravnenie', 'icon-btn__icon')
+							button.icon-btn.icon-btn--gray.single-product__icon-btn
+								+icon('izbrannoe', 'icon-btn__icon')
+						h1.title2.single-product__title DayNight Nova
+						.text.single-product__code Код товара: 13241
+						.single-product__event
+							| До конца акции осталось:
+							span.single-product__event-value 3 дня 10:16:31
+						.single-product__price
+							span.single-product__price-value 874 197 ₸
+							span.single-product__price-old 1 456 995 ₸
+							span.discount.single-product__discount
+								| -45%
+								+icon('skidka', 'discount__bg')
+						.text.single-product__installment
+							| Рассрочка от
+							span.single-product__installment-value 1200 ₸
+						.text.single-product__scores
+							+icon('bonusi', 'icon--primary single-product__scores-icon')
+							span.single-product__scores-value + 1590
+							| бонусных баллов за покупку
+						.single-product__form
+							.single-product__form-group
+								.single-product__form-text Размер:
+								.select.single-product__select
+									select.select__field
+										option(value="140x220") 140 см х 220 см 
+										option(value="141x220") 141 см х 220 см 
+										option(value="142x220") 142 см х 220 см
+									+icon('arrow_right', 'icon--primary select__icon')
+							.single-product__form-group
+								.single-product__form-text Вариант:
+								button.variation-field.single-product__form-variation.js-open-configure(data-name="color-1")
+									img.variation-field__img(src="temp/single-products/divany/1.jpg", alt="")
+									| Серый, микровелюр
+									+icon('arrow_right', 'icon--primary variation-field__arrow')
+							.single-product__form-group
+								.single-product__form-text Вариант:
+								button.variation-field.single-product__form-variation.js-open-configure(data-name="color-2")
+									img.variation-field__img(src="temp/single-products/divany/1.jpg", alt="")
+									| Серый, микровелюр
+									+icon('arrow_right', 'icon--primary variation-field__arrow')
+							.single-product__form-btns
+								button.btn.btn--gray.single-product__form-btn.js-open-product-config
+									+icon('configurator', 'icon--gray btn__icon')
+									| Изменить конфигурацию
+								.single-product__form-btn-group
+									button.btn.single-product__form-btn Добавить в корзину
+									button.btn.btn--neutral.single-product__form-btn Купить в 1 клик
+								button.btn.btn--neutral.single-product__form-btn Рассрочка/Кредит
+								.single-product__form-footer
+										.text.single-product__addition
+											| В наличии:
+											span.single-product__have 12
+										.text.single-product__addition
+											| Под заказ: 
+											span.single-product__delivery-time 10 дней
+						.single-product__menu
+							.single-product__menu-item
+								a.single-product__menu-link(href="#")
+									+icon('rekomenduem', 'icon--primary single-product__menu-icon')
+									| Мы рекомендуем к товару
+									+icon('arrow_right', 'icon--primary single-product__menu-arrow')
+							.single-product__menu-item
+								a.single-product__menu-link(href="#")
+									+icon('dostavka', 'icon--primary single-product__menu-icon')
+									| Доставка и самовывоз
+									+icon('arrow_right', 'icon--primary single-product__menu-arrow')
+							.single-product__menu-item
+								a.single-product__menu-link(href="#details") Характеристики
+							.single-product__menu-item
+								a.single-product__menu-link(href="#desc") Описание
+							.single-product__menu-item
+								a.single-product__menu-link(href="#reviews") Отзывы (24)
+						.single-product__aside-footer
+							.title3 Заинтересовал товар?
+							.text.single-product__aside-footer-text Вы можете пообщаться по видео с нашим продавцом. Он покажет товар онлайн и ответит на ваши вопросы. Вам не понадобиться включать камеру.
+							button.btn.btn--black.single-product__video-btn
+								+icon('pozvonit_video', 'icon--white btn__icon')
+								| Позвонить по видео
+
+		section.section.products
+			.container
+				h2.title2.products__title.products__title--left Вы смотрели
+				.products__slider
+					.products__slider-main.js-products-slider.swiper(data-loop="false")
+						.swiper-wrapper
+							each i in [13, 11, 7, 12, 1, 2, 3]
+								.swiper-slide
+									+card(i, {class: 'products__slider-item', discount_class: 'discount--white'})
+						.swiper-scrollbar.products__slider-scrollbar
+
+	.configure(data-name="color-1")
+		.configure__content
+			.configure__title Цвет обивки, материал
+			.configure__list
+				.configure__item.configure__item--active
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/1.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet
+						.configure__item-desc Серый <br> Микровелюр
+						.configure__item-price 25 000 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/2.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Arbus
+						.configure__item-desc Серый <br> Рогожка
+						.configure__item-price 27 000 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/3.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Casanova
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 23 400 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/4.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 23
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 21 100 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/5.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 15
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 17 600 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/6.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Bluemarin
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 18 900 ₸
+						.status.status--have.configure__item-status В наличии
+					
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/7.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 23
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 21 100 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/8.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 15
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 17 600 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/9.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Bluemarin
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 18 900 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/4.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 23
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 21 100 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/5.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 15
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 17 600 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors/6.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Bluemarin
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 18 900 ₸
+						.status.status--have.configure__item-status В наличии
+
+			.configure__footer
+				button.btn.configure__btn В корзину  +25 000 ₸
+				button.btn.btn--transparent.configure__btn Выбрать
+
+			button.configure__close
+				+icon('exit', 'configure__close-icon')
+
+	.configure(data-name="color-2")
+		.configure__content
+			.configure__title Цвет обивки, материал
+			.configure__list
+				.configure__item.configure__item--active
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/1.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet
+						.configure__item-desc Серый <br> Микровелюр
+						.configure__item-price 25 000 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/2.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Arbus
+						.configure__item-desc Серый <br> Рогожка
+						.configure__item-price 27 000 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/3.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Casanova
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 23 400 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/4.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 23
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 21 100 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/5.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 15
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 17 600 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/6.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Bluemarin
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 18 900 ₸
+						.status.status--have.configure__item-status В наличии
+					
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/7.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 23
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 21 100 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/8.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 15
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 17 600 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/9.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Bluemarin
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 18 900 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/4.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 23
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 21 100 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/5.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Sky Velvet 15
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 17 600 ₸
+						.status.status--have.configure__item-status В наличии
+
+				.configure__item
+					a.configure__item-img-box(href="#") 
+						img.configure__item-img(src="temp/single-products/divany/colors-2/6.jpg", alt="")
+					.configure__item-inf
+						a.configure__item-name(href="#")  Bluemarin
+						.configure__item-desc Шоколадный <br> Микровелюр
+						.configure__item-price 18 900 ₸
+						.status.status--have.configure__item-status В наличии
+
+			.configure__footer
+				button.btn.configure__btn В корзину  +25 000 ₸
+				button.btn.btn--transparent.configure__btn Выбрать
+
+			button.configure__close
+				+icon('exit', 'configure__close-icon')
+
+	.product-config
+		.container
+			.product-config__content
+				.product-config__left
+					button.product-config__close
+						+icon('arrow_left', 'icon--primary product-config__close-arrow')
+						| Назад к товару
+					.title2.product-config__title DayNight Nova
+					.product-config__price
+						span.product-config__price-value 874 197 ₸
+						span.product-config__price-old 1 456 995 ₸
+						span.discount.product-config__discount
+							| -45%
+							+icon('skidka', 'discount__bg')
+					img.product-config__img(src="temp/single-products/divany/1.jpg", alt="")
+					.product-config__play-btns
+						button.btn-play.single-product__play-btn
+							+icon('play_video', 'btn-play__icon')
+						button.btn-360.single-product__play-btn
+							+icon('360', 'btn-360__icon')
+				.product-config__right

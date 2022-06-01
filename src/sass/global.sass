@@ -1,3 +1,7 @@
+.body
+  &--lock
+    overflow: hidden
+
 .container
   max-width: 1440px
   margin: 0 auto
@@ -66,6 +70,9 @@
   &:hover
     text-decoration: underline
 
+  &__icon
+    margin-right: 11px
+
   &--primary
     color: $color-primary
 
@@ -75,67 +82,9 @@
     &:hover
       text-decoration: none
 
-.btn
-  height: 40px
-  border-radius: 4px
-  padding: 0 24px
-  background-color: $color-primary
-  color: #fff
-  font-size: 14px
-  font-weight: 500
-  transition: background .3s, color .3s, border .3s
-  border: 1px solid transparent
-  display: flex
-  align-items: center
-  justify-content: center
-  white-space: nowrap
-
-  &:hover
-    background-color: $color-primary-light
-
-  &:active
-    background-color: $color-primary
-
-  &__icon
-    margin-right: 12px
-    flex: 0 0 auto
-
-  &--white
-    background-color: #fff
-    color: $color-primary
-
-    &:hover
-      color: #fff
-      border-color: #fff
-      background-color: $color-primary
-
-  &--transparent
-    background-color: transparent
-    color: $color-primary
-    border-color: $color-primary
-
-    &:hover
-      color: #fff
-      background-color: $color-primary
-
-  &--catalog
-    font-size: 17px
-    padding: 0 16px
-  
-  &--filter
-    padding-right: 29px
-
-  &--dark
-    background-color: transparent
-    border-color: #212121
-    color: #212121
-
-    &:hover
-      border-color: #d8d8d8
-      background: transparent
-
-    &:active
-      border-color: #212121
+  &--icon
+    display: inline-flex
+    align-items: center
 
 .btn-next,
 .btn-prev
@@ -240,9 +189,19 @@
 
   &--gray:hover &__icon
     fill: #323232
-    
+
   &--gray:active &__icon
     fill: #adadad
+
+.btn-play
+  &__icon
+    width: 40px
+    height: 40px
+
+.btn-360
+  &__icon
+    width: 44px
+    height: 40px
 
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal
@@ -255,17 +214,37 @@
 .swiper-pagination-bullet-active
   background-color: $color-primary
 
+.swiper-horizontal > .swiper-scrollbar
+  height: 2px
+  left: 0
+  width: 100%
+  z-index: 10
+
+.swiper-scrollbar-drag
+  background-color: $color-primary
+
 .title2
   font-size: 36px
   font-weight: 600
-  line-height: 0.9
+  line-height: 1.33
   color: #212121
   text-align: center
 
 .title3
+  font-size: 24px
+  line-height: 1.33
+  font-weight: 600
+  color: #212121
+
+.title4
   font-size: 18px
   line-height: 1.33
   font-weight: 500
+  color: #212121
+
+.title5
+  font-size: 14px
+  line-height: 1.33
   color: #262626
 
 .text
@@ -297,6 +276,13 @@
     height: 100%
     fill: $color-secondary
 
+  &--white
+    color: #262626
+    
+  &--white &__bg
+    fill: transparent
+    stroke: #d8d8d8
+
 .product-label
   border-radius: 4px
   font-size: 12px
@@ -321,3 +307,57 @@
     display: block
     max-width: 152px
     max-height: 43px
+
+.img-text
+  display: flex
+  align-items: center
+
+  img
+    margin-right: 16px
+    border-radius: 4px
+    width: 120px
+
+  p
+    @extend .text
+    line-height: 1.71
+
+.variation-field
+  height: 40px
+  padding: 0 16px
+  border-radius: 4px
+  border: 1px solid #d8d8d8
+  display: flex
+  align-items: center
+  width: 100%
+  font-size: 14px
+  font-weight: 500
+  color: #212121
+
+  &__img
+    max-height: 100%
+    max-width: 45px
+    margin-right: 10px
+
+  &__arrow
+    width: 5px
+    height: 8px
+    margin-left: auto
+
+.status
+  font-size: 14px
+  line-height: 16px
+  color: #7e7e7e
+  flex: 0 0 auto
+
+  &:before
+    content: ''
+    display: inline-block
+    width: 8px
+    height: 8px
+    background-color: #999
+    border-radius: 50%
+    margin-right: 6px
+
+  &--have
+    &:before
+      background-color: #b6e5ff

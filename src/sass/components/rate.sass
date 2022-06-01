@@ -1,0 +1,26 @@
+.rate
+  color: #e5e5e5
+
+  &__stars
+    margin: 0 -2px
+    position: relative
+    display: inline-flex
+    align-items: center
+    
+  &__star
+    margin: 0 2px
+
+    &:before
+      content: ''
+      font-family: "iconfont"
+
+  &__active
+    color: #ffb400
+    position: absolute
+    z-index: 1
+    left: 0
+    top: 0
+    height: 100%
+    display: flex
+    align-items: center
+    overflow: hidden

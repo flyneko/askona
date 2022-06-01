@@ -1,9 +1,12 @@
 .products
   position: relative
-  margin-top: 25px
+  padding-top: 25px
 
   &__title
     margin-bottom: 25px
+
+    &--left
+      text-align: left
 
   &__slider
     position: relative
@@ -29,6 +32,12 @@
   &__slider-pagination
     &.swiper-pagination-bullets.swiper-pagination-horizontal
       bottom: 105px
+
+  &__slider-scrollbar
+    &.swiper-scrollbar
+      bottom: 129px
+      width: calc(100% - 30px)
+      left: 15px
 
   &__slider-next,
   &__slider-prev

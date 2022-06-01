@@ -1,0 +1,308 @@
+.single-product
+  padding-top: 30px
+
+  &__content
+    display: flex
+    justify-content: space-between
+    min-width: 0
+
+  &__main
+    overflow: hidden
+
+  &__sliders
+    position: relative
+    display: flex
+    min-width: 0
+
+    &--center
+      align-items: center
+
+  &__nav-slider
+    height: 465px
+    max-width: 104px
+    margin-right: 16px
+    position: static
+
+    .swiper-slide
+      border-radius: 4px
+      border: 1px solid #eeeeee
+      display: flex
+      align-items: center
+      justify-content: center
+      overflow: hidden
+
+    .swiper-slide-thumb-active
+      border-color: #212121
+
+  &__nav-next,
+  &__nav-prev
+    position: absolute
+    left: 52px
+    z-index: 1
+    transform: rotate(90deg)
+
+  &__nav-next
+    bottom: 2px
+
+  &__nav-prev
+    top: 2px
+
+  &__big-slider
+    height: 520px
+    border: 1px solid #eeeeee
+    border-radius: 4px
+
+    .swiper-slide
+      display: flex
+      align-items: center
+      justify-content: center
+
+  &__labels
+    position: absolute
+    z-index: 1
+    top: 24px
+    right: 24px
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+
+  &__label
+    height: 32px
+    font-size: 14px
+    color: #fff
+    padding: 0 15px
+    border-radius: 4px
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &:not(:first-child)
+      margin-top: 8px
+
+    &--week
+      background-color: #4fb7ff
+
+    &--delivery
+      background-color: #ffcd33
+      padding: 0 20px
+
+  &__play-btns
+    position: absolute
+    z-index: 1
+    bottom: 24px
+    left: 24px
+    display: flex
+    align-items: center
+
+  &__play-btn
+    &:not(:first-child)
+      margin-left: 8px
+
+  &__details
+    margin-top: 16px
+
+  &__desc
+    margin-top: 40px
+
+    h3
+      @extend .title3
+
+    h4
+      margin-top: 22px
+      @extend .title4
+
+    h5
+      @extend .title5
+
+    p
+      margin-top: 5px
+      @extend .text
+
+  &__desc-main
+    margin-top: 18px
+    display: flex
+
+    img
+      max-width: 345px
+      margin-right: 18px
+      border-radius: 4px
+      border: 1px solid #eee
+
+    p
+      margin-top: 16px
+      line-height: 1.71
+
+  &__img-text
+    margin-top: 16px
+
+  &__reviews
+    margin-top: 45px
+    padding-top: 45px
+    border-top: 1px solid #eee
+
+  &__sidebar
+    flex: 0 0 448px
+    margin-left: 32px
+
+  &__icon-btns
+    display: flex
+    justify-content: flex-end
+
+  &__icon-btn
+    &:not(:last-child)
+      margin-right: 20px
+
+  &__title
+    text-align: left
+    line-height: 1.33
+
+  &__code
+    margin-top: 6px
+
+  &__event
+    margin-top: 14px
+    color: $color-secondary
+    font-size: 14px
+
+  &__event-value
+    margin-left: 5px
+    color: #212121
+    font-weight: 500
+
+  &__price
+    margin-top: 12px
+    display: flex
+    align-items: center
+  
+  &__price-value
+    font-size: 28px
+    font-weight: 600
+    color: $color-primary
+
+  &__price-old
+    margin-left: 32px
+    font-size: 18px
+    color: #7e7e7e
+    text-decoration: line-through
+    align-self: flex-end
+
+  &__discount
+    margin-left: 28px
+
+  &__installment
+    margin-top: 12px
+
+  &__installment-value
+    font-size: 15px
+    color: #262626
+    text-decoration: underline
+    margin-left: 5px
+
+  &__scores
+    margin-top: 16px
+    display: flex
+    align-items: center
+
+  &__scores-icon
+    margin-right: 7px
+
+  &__scores-value
+    margin-right: 5px
+    font-size: 16px
+    font-weight: 500
+    color: #212121
+
+  &__form
+    padding-top: 20px
+    margin-top: 24px
+    border-top: 1px solid #eeeeee
+
+  &__form-group
+    &:not(:first-child)
+      margin-top: 20px
+
+  &__form-text
+    margin-bottom: 12px
+    font-weight: 500
+    color: #262626
+
+  &__select
+    height: 40px
+
+  &__form-btns
+    margin-top: 24px
+
+  &__form-btn-group
+    display: flex
+    margin: 0 -8px
+
+  &__form-btn-group &__form-btn
+    margin-left: 8px
+    margin-right: 8px
+
+  &__form-btn
+    margin-top: 16px
+    width: 100%
+    flex: 1 1 auto
+    font-size: 16px
+    height: 48px
+
+  &__form-footer
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    padding: 28px 0
+
+  &__addition
+    color: #919191
+
+    &:not(:last-child)
+      &::after
+        content: '/'
+        margin: 0 12px
+
+  &__have
+    color: #212121
+    margin-left: 4px
+
+  &__delivery-time
+    color: #444
+    margin-left: 4px
+
+  &__menu-item
+    height: 64px
+    border-bottom: 1px solid #eeeeee
+    display: flex
+    align-items: center
+
+  &__menu-link
+    flex: 1 1 auto
+    display: flex
+    align-items: center
+    font-weight: 500
+    color: #212121
+    transition: color .3s
+
+    &:hover
+      color: $color-primary
+
+  &__menu-icon
+    margin-right: 11px
+
+  &__menu-arrow
+    width: 5px
+    height: 8px
+    margin-left: auto
+
+  &__aside-footer
+    margin-top: 32px
+
+  &__aside-footer-text
+    margin-top: 5px
+    line-height: 1.71
+
+  &__video-btn
+    margin-top: 20px
+    height: 48px
+    width: 100%

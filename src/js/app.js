@@ -352,9 +352,13 @@ window.addEventListener('load', () => {
    */
   const $singleBigSliderWrapper = document.querySelector('.single-product__big-slider .swiper-wrapper');
   lightGallery($singleBigSliderWrapper, {
+    plugins: [lgThumbnail],
     speed: 500,
     selector: '.swiper-slide',
     download: false,
+    thumbnail: true,
+    thumbHeight: '63px',
+    showThumbByDefault: true,
     loop: true,
     mousewheel: true,
     slideEndAnimation: false,
@@ -362,20 +366,26 @@ window.addEventListener('load', () => {
 
   const $reviewsCommonImages = document.querySelector('.reviews__common-images .swiper-wrapper');
   lightGallery($reviewsCommonImages, {
+    plugins: [lgThumbnail],
     speed: 500,
     selector: '.swiper-slide',
     download: false,
+    thumbnail: true,
+    thumbHeight: '63px',
     loop: true,
     mousewheel: true,
     slideEndAnimation: false,
+    thumbnail: true,
   });
 
   const $reviewImagesBoxes = document.querySelectorAll('.review__images');
   $reviewImagesBoxes.forEach($imagesBox => {
     lightGallery($imagesBox, {
-      thumbnail: true,
+      plugins: [lgThumbnail],
       speed: 500,
       download: false,
+      thumbnail: true,
+      thumbHeight: '63px',
       loop: true,
       mousewheel: true,
       slideEndAnimation: false,

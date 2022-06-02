@@ -292,9 +292,8 @@ window.addEventListener('load', () => {
     }
 
     $configure.addEventListener('click', e => {
-      if (e.target.classList.contains('configure__item-img-box') ||
-        e.target.classList.contains('configure__item-name') ||
-        e.target.classList.contains('configure__item-img')) {
+      if (e.target.classList.contains('configure__item-btn') ||
+          e.target.closest('.configure__item-btn')) {
         const $activeItem = $configure.querySelector('.is-selected')
         $activeItem.classList.remove('configure__item--active', 'is-selected');
 

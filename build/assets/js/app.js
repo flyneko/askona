@@ -404,5 +404,13 @@ window.addEventListener('load', () => {
       slideEndAnimation: false,
     });
   });
+
+  /**
+   * Скроллбар
+   */
+  new PerfectScrollbar('.configure__list', {
+    wheelSpeed: 1,
+    wheelPropagation: false,
+  });
 });
 

@@ -44,6 +44,7 @@
     "gulp-sass-glob": "^1.1.0",
     "lightgallery": "^2.4.0",
     "normalize.css": "^8.0.1",
+    "perfect-scrollbar": "^1.5.5",
     "pug": "^3.0.2",
     "swiper": "^8.1.6"
   }

@@ -382,3 +382,18 @@
 
 .lg-outer .lg-item:not(.lg-start-end-progress)
   background: url("../img/loading.gif") no-repeat scroll center center transparent
+
+.ps--active-x > .ps__rail-x, .ps--active-y > .ps__rail-y
+  background-color: #efefef
+
+.ps__rail-y
+  width: 2px
+  opacity: 1
+
+.ps__thumb-y
+  width: 2px
+  right: 0
+  background-color: $color-primary
+
+.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y
+  background-color: $color-primary

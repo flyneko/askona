@@ -12,6 +12,9 @@
   .choices__placeholder
     opacity: 1
 
+  .choices__list--single
+    padding-left: 0
+
   .choices__list--dropdown .choices__placeholder
     display: none
 
@@ -24,6 +27,7 @@
   .choices__list--dropdown .choices__item--selectable,
   .choices__list[aria-expanded] .choices__item--selectable
     padding-right: 10px
+    padding-left: 15px
 
   .is-open
     .choices__inner
@@ -49,7 +53,7 @@
     height: 100%
     min-height: auto
     appearance: none
-    padding: 0 15px 0 12px
+    padding: 0 15px
     outline: none
     display: flex
     align-items: center

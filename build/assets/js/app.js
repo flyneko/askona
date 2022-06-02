@@ -190,6 +190,9 @@ window.addEventListener('load', () => {
   new Swiper('.reviews__common-images', {
     slidesPerView: 'auto',
     spaceBetween: 16,
+    mousewheel: {
+      sensitivity: 1.4,
+    },
     scrollbar: {
       el: '.reviews__common-scrollbar',
       draggable: true,
@@ -273,6 +276,28 @@ window.addEventListener('load', () => {
     $closeBtn.addEventListener('click', () => {
       $configure.classList.remove('configure--show');
     });
+
+    const $configureItems = $configure.querySelectorAll('.configure__item');
+    $configureItems.forEach($item => {
+      const $img = $item.querySelector('.configure__item-img-box');
+      const $name = $item.querySelector('.configure__item-name');
+      [$img, $name].forEach($elem => {
+        $elem.addEventListener('click', e => {
+          const $activeItem = $configure.querySelector('.is-selected')
+          $activeItem.classList.remove('configure__item--active', 'is-selected');
+          $item.classList.add('configure__item--active', 'is-selected');
+        });
+      });
+    });
+  });
+  window.addEventListener('click', e => {
+    if (e.target.closest('.js-open-configure') || e.target.classList.contains('js-open-configure')) {
+      return;
+    }
+
+    if (!e.target.closest('.configure')) {
+      closeShowedConfigure();
+    }
   });
 
   setProductConfigPosition();
@@ -295,7 +320,7 @@ window.addEventListener('load', () => {
     const $openProductConfigBtns = document.querySelectorAll('.js-open-product-config');
     $openProductConfigBtns.forEach($btn => {
       $btn.addEventListener('click', () => {
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
         $body.classList.add('body--lock');
         $productConfig.classList.add('product-config--show');
         closeShowedConfigure();
@@ -321,5 +346,40 @@ window.addEventListener('load', () => {
       $productConfig.classList.remove('product-config--show');
     }
   }
+
+  /**
+   * Галерея изображений
+   */
+  const $singleBigSliderWrapper = document.querySelector('.single-product__big-slider .swiper-wrapper');
+  lightGallery($singleBigSliderWrapper, {
+    speed: 500,
+    selector: '.swiper-slide',
+    download: false,
+    loop: true,
+    mousewheel: true,
+    slideEndAnimation: false,
+  });
+
+  const $reviewsCommonImages = document.querySelector('.reviews__common-images .swiper-wrapper');
+  lightGallery($reviewsCommonImages, {
+    speed: 500,
+    selector: '.swiper-slide',
+    download: false,
+    loop: true,
+    mousewheel: true,
+    slideEndAnimation: false,
+  });
+
+  const $reviewImagesBoxes = document.querySelectorAll('.review__images');
+  $reviewImagesBoxes.forEach($imagesBox => {
+    lightGallery($imagesBox, {
+      thumbnail: true,
+      speed: 500,
+      download: false,
+      loop: true,
+      mousewheel: true,
+      slideEndAnimation: false,
+    });
+  });
 });
 

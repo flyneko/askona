@@ -30,6 +30,7 @@
       align-items: center
       justify-content: center
       overflow: hidden
+      cursor: pointer
 
     .swiper-slide-thumb-active
       border-color: #212121
@@ -40,6 +41,10 @@
     left: 52px
     z-index: 1
     transform: rotate(90deg)
+
+    &.swiper-button-disabled .icon
+      fill: #ccc
+      cursor: default
 
   &__nav-next
     bottom: 2px

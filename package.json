@@ -42,6 +42,7 @@
   "dependencies": {
     "choices.js": "^10.1.0",
     "gulp-sass-glob": "^1.1.0",
+    "lightgallery": "^2.4.0",
     "normalize.css": "^8.0.1",
     "pug": "^3.0.2",
     "swiper": "^8.1.6"

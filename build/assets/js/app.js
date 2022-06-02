@@ -292,6 +292,7 @@ window.addEventListener('load', () => {
     }
 
     $configure.addEventListener('click', e => {
+      console.log(e.target);
       if (e.target.classList.contains('configure__item-btn') ||
           e.target.closest('.configure__item-btn')) {
         const $activeItem = $configure.querySelector('.is-selected')

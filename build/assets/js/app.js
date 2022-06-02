@@ -277,17 +277,30 @@ window.addEventListener('load', () => {
       $configure.classList.remove('configure--show');
     });
 
-    const $configureItems = $configure.querySelectorAll('.configure__item');
-    $configureItems.forEach($item => {
-      const $img = $item.querySelector('.configure__item-img-box');
-      const $name = $item.querySelector('.configure__item-name');
-      [$img, $name].forEach($elem => {
-        $elem.addEventListener('click', e => {
-          const $activeItem = $configure.querySelector('.is-selected')
-          $activeItem.classList.remove('configure__item--active', 'is-selected');
-          $item.classList.add('configure__item--active', 'is-selected');
-        });
+    const $footer = $configure.querySelector('.configure__footer');
+    if ($footer.classList.contains('configure__footer--shadow')) {
+      const $list = $configure.querySelector('.configure__list');
+      $list.addEventListener('scroll', e => {
+        if ($footer.classList.contains('configure__footer--shadow') &&
+          ($list.scrollTop + 10) >= ($list.scrollHeight - $list.offsetHeight)) {
+          $footer.classList.remove('configure__footer--shadow');
+        } else if (!$footer.classList.contains('configure__footer--shadow') &&
+          ($list.scrollTop + 10) < ($list.scrollHeight - $list.offsetHeight)) {
+          $footer.classList.add('configure__footer--shadow');
+        }
       });
+    }
+
+    $configure.addEventListener('click', e => {
+      if (e.target.classList.contains('configure__item-img-box') ||
+        e.target.classList.contains('configure__item-name') ||
+        e.target.classList.contains('configure__item-img')) {
+        const $activeItem = $configure.querySelector('.is-selected')
+        $activeItem.classList.remove('configure__item--active', 'is-selected');
+
+        const $item = e.target.closest('.configure__item');
+        $item.classList.add('configure__item--active', 'is-selected');
+      }
     });
   });
   window.addEventListener('click', e => {

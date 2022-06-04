@@ -24,7 +24,7 @@ mixin card(index, options = {})
                     +icon('skidka', 'discount__bg')
             if item.label
                 span.product-label.product__label(class='product-label--' + item.label.type) #{item.label.text}
-            button.wishlist-btn.product__wishlist
+            button.wishlist-btn.product__wishlist(class=`${item.wishlist ? 'wishlist-btn--active' : ''}`)
                 +icon('izbrannoe', 'wishlist-btn__icon')
             button.icon-btn.icon-btn--gray.product__compare
                 +icon('sravnenie', 'icon-btn__icon')

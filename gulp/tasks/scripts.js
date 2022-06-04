@@ -9,6 +9,7 @@ export const scripts = () => {
     'node_modules/lightgallery/lightgallery.min.js',
     'node_modules/lightgallery/plugins/thumbnail/lg-thumbnail.min.js',
     'node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js',
+    'node_modules/@fancyapps/ui/dist/fancybox.umd.js',
   ])
   .pipe(concat('vendors.min.js'))
   .pipe(uglify())

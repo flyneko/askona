@@ -1,0 +1,13 @@
+header.header.header--order
+	.container.container--small
+		.header__top
+			a.logo(href="index.html")
+				img.logo__img(src="assets/img/logo.svg")
+
+			button.callback-btn.header__callback-btn
+				+icon('phone', 'icon--gray callback-btn__icon')
+				| Перезвоните мне
+
+			a.phone-link.phone-link--hidden.header__phone(data-phone="+7 700 700 70 07")
+				span.phone-link__value +7 700
+				button.phone-link__show-btn показать номер

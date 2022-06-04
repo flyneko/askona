@@ -63,10 +63,11 @@ window.addEventListener('load', () => {
     const $prevBtn = $box.querySelector('.js-products-slider-prev');
     const loop = $slider.dataset.loop === 'false' ? false : true;
 
+    const slidesPerView = $slider.dataset.perView || 4;
     new Swiper($slider, {
       direction: 'horizontal',
-      loop: false,
-      slidesPerView: 4,
+      loop,
+      slidesPerView,
       spaceBetween: 32,
       watchSlidesProgress: true,
       pagination: {
@@ -206,8 +207,12 @@ window.addEventListener('load', () => {
    */
   const $simpleFields = document.querySelectorAll('.select__field');
   $simpleFields.forEach($field => {
+    const searchText = $field.dataset.searchText || null;
+
     new Choices($field, {
-      searchEnabled: false,
+      // searchEnabled: false,
+      searchPlaceholderValue: searchText,
+      paste: true,
       itemSelectText: '',
       placeholder: true,
       allowHTML: true,
@@ -292,9 +297,8 @@ window.addEventListener('load', () => {
     }
 
     $configure.addEventListener('click', e => {
-      console.log(e.target);
       if (e.target.classList.contains('configure__item-btn') ||
-          e.target.closest('.configure__item-btn')) {
+        e.target.closest('.configure__item-btn')) {
         const $activeItem = $configure.querySelector('.is-selected')
         $activeItem.classList.remove('configure__item--active', 'is-selected');
 
@@ -408,9 +412,63 @@ window.addEventListener('load', () => {
   /**
    * Скроллбар
    */
-  new PerfectScrollbar('.configure__list', {
-    wheelSpeed: 1,
-    wheelPropagation: false,
+  const $configureLists = document.querySelectorAll('.configure__list');
+  $configureLists.forEach($list => {
+    new PerfectScrollbar($list, {
+      wheelSpeed: 1,
+      wheelPropagation: false,
+    });
+  });
+
+  /**
+   * Корзина/Оформление заказа
+   */
+  const $discount = document.querySelector('.cart__discount');
+  if ($discount) {
+    const $toggleDiscount = document.querySelector('.cart__discount-btn');
+    $toggleDiscount.addEventListener('click', () => {
+      $discount.classList.toggle('cart__discount--show');
+    });
+  }
+
+  /**
+   * Счётчик
+   */
+  const $counters = document.querySelectorAll('.counter');
+  $counters.forEach($counter => {
+    const $input = $counter.querySelector('.counter__value');
+    const $minus = $counter.querySelector('.counter__btn--minus');
+    const $plus = $counter.querySelector('.counter__btn--plus');
+
+    $minus.addEventListener('click', () => {
+      if (+$input.value <= 0) {
+        $input.value = 0
+      } else {
+        $input.value = +$input.value - 1;
+      }
+    });
+
+    $plus.addEventListener('click', () => {
+      $input.value = +$input.value + 1;
+    });
+
+    $input.addEventListener('input', e => {
+      if (+$input.value < 0)
+        $input.value = 0
+    });
+  });
+
+  /**
+   * Модальные окна
+   */
+  Fancybox.bind("[data-fancybox]", {
+    template: {
+      closeButton: `
+        <svg class="icon"> 
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#exit"></use>
+        </svg>`,
+    },
+    dragToClose: false
   });
 });
 

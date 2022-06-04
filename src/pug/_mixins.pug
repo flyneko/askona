@@ -36,8 +36,8 @@ mixin card(index, options = {})
                     span.text.product__desc !{item.desc}
                 .product__price 
                     | от
-                    span.product__price-value #{item.price} ₸
-                    span.product__price-old #{item.price_old} ₸
+                    span.price-new.product__price-value #{item.price} ₸
+                    span.price-old.product__price-old #{item.price_old} ₸
                 if item.features
                     .product__meta
                         .product__features

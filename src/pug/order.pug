@@ -1,0 +1,224 @@
+
+extends layouts/_layout.pug
+
+block vars
+	- var header_name = 'order'
+	- var hide_footer = true
+
+block title
+	| Оформление заказа
+
+block content
+	main.main
+		section.cart
+			.container.container--small 
+				h1.title2.cart__title Корзина
+				.cart__list
+					.cart-item.cart__item
+						a.cart-item__img-box(href="#") 
+							img.cart-item__img(src="temp/products/divany/1.jpg")
+						.cart-item__inf
+							h2.title4.cart-item__name
+								a(href="#") Прямой диван Talo
+							.text.cart-item__desc 140x220
+							.cart-item__status.cart-item__status--have В наличии
+						.cart-item__count
+							.counter.cart-item__counter
+								.counter__content
+									.counter__btn.counter__btn--minus
+									input.counter__value(type="number" value="1" readonly)
+									.counter__btn.counter__btn--plus
+							.cart-item__price-one 329 400 ₸/шт.
+						.cart-item__price
+							.cart-item__price-old 1 191 300 ₸
+							.cart-item__price-new 329 400 ₸
+						button.cart-item__delete
+							+icon('exit', 'cart-item__delete-icon')
+					.cart-item.cart__item
+						a.cart-item__img-box(href="#") 
+							img.cart-item__img(src="temp/products/divany/6.jpg")
+						.cart-item__inf
+							h2.title4.cart-item__name
+								a(href="#") Прямой диван Sunset Nova
+							.text.cart-item__desc 160x200
+							.cart-item__status Под заказ
+						.cart-item__count
+							.counter.cart-item__counter
+								.counter__content
+									.counter__btn.counter__btn--minus
+									input.counter__value(type="number" value="2")
+									.counter__btn.counter__btn--plus
+							.cart-item__price-one 956 812 ₸/шт.
+						.cart-item__price
+							.cart-item__price-old 3 189 372 ₸
+							.cart-item__price-new 1 913 624 ₸
+						button.cart-item__delete
+							+icon('exit', 'cart-item__delete-icon')
+				.cart__footer
+					.cart__discount
+						button.cart__discount-btn У меня есть скидочный купон
+						form.cart__discount-form(action="#") 
+							input.field.cart__discount-field(type="text" placeholder="Введите промокод...")
+							button.btn.btn--black.cart__discount-submit Применить
+
+					.cart__total
+						.price-old.cart__price-old 4 249 572 ₸
+						.cart__price
+							| Итого:
+							.price-new.cart__price-value 2 243 024 ₸
+						button.btn.cart__submit Оформить заказ
+
+		section.section.products
+			.container.container--small
+				h2.title2.title2--left.products__title Вам может понравиться
+				.products__slider
+					.products__slider-main.js-products-slider.swiper(data-per-view="3")
+						.swiper-wrapper
+							each i in [11, 7, 12, 13, 5]
+								.swiper-slide
+									+card(i, {class: 'products__slider-item'})
+					.products__slider-navigation
+						button.btn-next.products__slider-next.js-products-slider-next
+							+icon('arrow_right', 'icon--primary btn-next__icon')
+						button.btn-prev.products__slider-prev.js-products-slider-prev
+							+icon('arrow_left', 'icon--primary btn-prev__icon')
+
+		section.bonus.main__bonus
+			.container.container--small
+				h2.title2.title2--left Бонусная программа
+				//- button.bonus__login-btn(data-fancybox data-src="#modal-login") Авторизуйтесь, чтобы потратить бонусы
+				.bonus__main
+					.bonus__info
+						.bonus__text.bonus__text--dark
+							| Сумма бонусов на счету:
+							span.bonus__total-value 20 000
+						.bonus__text.bonus__text--dark Укажите количество бонусов,которые вы хотите снять:
+						.bonus__form
+							.counter.bonus__counter
+								.counter__content
+									.counter__btn.counter__btn--minus
+									input.counter__value(type="number" value="1900")
+									.counter__btn.counter__btn--plus
+							button.btn.bonus__form-submit Списать бонусы
+						.text.bonus__text
+							| Использовано бонусов:
+							span.bonus__value 0
+						.text.bonus__text
+							| Осталось бонусов:
+							span.bonus__value 0
+						.text.bonus__text Вы можете использовать при покупке товаров до 50% активных бонусов от общей суммы
+					img.bonus__img(src="assets/img/bonus-card.png", alt="")
+
+		section.order
+			.container.container--small
+				h2.title2.title2--left.order__title Оформление заказа
+				.order__main
+					.order-form.order__form
+						.order-form__group
+							label.order-form__label
+								.order-form__text Телефон:
+								input.field.order-form__field(type="text" placeholder="Например, + 7 (963) 000-00-00")
+							label.order-form__label
+								.order-form__text Имя:
+								input.field.order-form__field(type="text" placeholder="Введите ваше Имя")
+							label.order-form__label
+								.order-form__text Эл. почта:
+								input.field.order-form__field(type="text" placeholder="Введите адрес электронной почты")
+						.order-form__title Регион доставки
+						.order-form__group
+							label.order-form__label
+								.order-form__text Город:
+								.select.order-form__select
+									select.select__field(data-search-text="Введите название города")
+										option(value="") Введите или выберите свой город...
+										option(value="price") 1
+										option(value="price") 2
+										option(value="price") 3
+									+icon('arrow_right', 'icon--primary select__icon')
+						.order-form__title Способы доставки
+						.order-form__group
+							label.checkbox.order-form__checkbox
+								input.checkbox__input(type="radio" name="delivery-method" checked)
+								.checkbox__switcher
+								.checkbox__text Доставка курьером от 1 дня
+							label.checkbox.order-form__checkbox
+								input.checkbox__input(type="radio" name="delivery-method")
+								.checkbox__switcher
+								.checkbox__text Самовывоз из пункта выдачи
+							label.order-form__label
+								.order-form__text Адрес:
+								input.field.order-form__field(type="text")
+							label.order-form__label
+								.order-form__text Комментарий:
+								textarea.field.order-form__area
+							.text.order-form__message
+								| Доставка осуществляется в течении 5-7 дней <br>
+								| с момента оплаты. Курьер позвонить вам за 1 день <br>
+								| до даты доставки. 
+						.order-form__title Способы оплаты
+						.order-form__group
+							label.checkbox.order-form__checkbox
+								input.checkbox__input(type="radio" name="pay-method" checked)
+								.checkbox__switcher
+								.checkbox__text При получении (Наличными или картой)
+							label.checkbox.order-form__checkbox
+								input.checkbox__input(type="radio" name="pay-method")
+								.checkbox__switcher
+								.checkbox__text Оплата по счету (для ИП и юр. лиц)
+							.text.order-form__message Оплата осуществляется только картой или наличными. Заранее проговорите этот момент с менеджером.
+						label.checkbox.checkbox--accept.order-form__accept
+							input.checkbox__input(type="checkbox" name="accept")
+							.checkbox__switcher
+								+icon('check', 'checkbox__icon')
+							.checkbox__text Получать специальные предложения и новости
+						button.btn.order-form__submit Оформить заказ
+						.order-form__privacy
+							| Нажимая на кнопку вы соглашаетесь с 
+							a.link.link--primary(href="#") договором-оферты
+							|  и 
+							a.link.link--primary(href="#") политикой обработки и защиты персональных данных
+					
+					.order-result.order__result
+						h3.title3 Ваш заказ
+						.order-result__list
+							.cart-item.cart-item--order.order-result__item
+								a.cart-item__img-box(href="#") 
+									img.cart-item__img(src="temp/products/divany/1.jpg")
+								.cart-item__inf
+									h2.title4.cart-item__name
+										a(href="#") Прямой диван <br> Talo
+									.text.cart-item__desc 140x220
+								.cart-item__count
+									.cart-item__count-value x1
+								.cart-item__price
+									.cart-item__price-old 1 191 300 ₸
+									.cart-item__price-new 329 400 ₸
+							.cart-item.cart-item--order.order-result__item
+								a.cart-item__img-box(href="#") 
+									img.cart-item__img(src="temp/products/divany/6.jpg")
+								.cart-item__inf
+									h2.title4.cart-item__name
+										a(href="#") Прямой диван Sunset Nova
+									.text.cart-item__desc 160x200
+								.cart-item__count
+									.cart-item__count-value x1
+								.cart-item__price
+									.cart-item__price-old 3 189 372 ₸
+									.cart-item__price-new 1 913 624 ₸
+						.order-result__promo
+							span.order-result__text.order-result__promo-text Использован промокод:
+							span.order-result__promo-value FREEDOM43
+						.order-result__bonus
+							.order-result__bonus-item
+								span.order-result__text Списать бонусы:
+								span.order-result__text.order-result__bonus-value - 20 000 ₸
+							.order-result__bonus-item
+								span.order-result__text Бонусы после покупки:
+								span.order-result__text.order-result__bonus-value + 9 000 ₸
+						.order-result__total
+							.order-result__text Итого:
+							.order-result__price
+								.price-old.order-result__price-old 4 249 572 ₸
+								.price-new.order-result__price-new 2 243 024 ₸
+block modals 
+	include modals/_login.pug

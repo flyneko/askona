@@ -7,6 +7,9 @@
   margin: 0 auto
   padding: 0 16px
 
+  &--small
+    max-width: 1056px
+
 .icon
   width: 1.25rem
   height: 1.25rem
@@ -230,6 +233,9 @@
   color: #212121
   text-align: center
 
+  &--left
+    text-align: left
+
 .title3
   font-size: 24px
   line-height: 1.33
@@ -362,6 +368,16 @@
     &:before
       background-color: #b6e5ff
 
+.price-old
+  font-size: 14px
+  color: #7e7e7e
+  text-decoration: line-through
+
+.price-new
+  font-size: 18px
+  font-weight: 500
+  color: #00b9c0
+
 .lg-backdrop
   background-color: rgba(#000, 0.5)
 
@@ -411,3 +427,67 @@
 
 .ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y
   background-color: $color-primary
+
+.fancybox__backdrop
+  background: rgba(#000, 0.6)
+
+.fancybox__content :focus:not(.carousel__button.is-close)
+  outline: none
+
+.checkbox
+  display: flex
+  align-items: center
+
+  &__switcher
+    position: relative
+    width: 24px
+    height: 24px
+    border: 1px solid $color-primary
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+
+    &:before
+      content: ''
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      width: 14px
+      height: 14px
+      background-color: $color-primary
+      border-radius: 50%
+      display: none
+
+  &__text
+    margin-left: 8px
+    font-weight: 500
+    color: #262626
+    user-select: none
+
+  &__icon
+    width: 11px
+    height: 12px
+    stroke: $color-primary
+    display: none
+
+  &__input
+    display: none
+
+  &__input:checked + &__switcher:before,
+  &__input:checked + &__switcher &__icon
+    display: block
+
+  &--accept &__switcher
+    border-radius: 4px
+
+  &--accept &__input:checked + &__switcher:before
+    display: none
+      
+
+  &--accept &__text
+    font-size: 14px
+    font-weight: 400
+

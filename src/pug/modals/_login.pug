@@ -1,0 +1,15 @@
+.modal#modal-login
+    .modal__title Авторизация
+    form.modal-form.modal__form(action="#") 
+        .modal-form__group
+            .modal-form__text Электронная почта:
+            input.field.modal-form__field(type="text")
+        .modal-form__group
+            .modal-form__text Пароль:
+            input.field.modal-form__field(type="text")
+        .modal-form__forgot
+            a.link.link--primary.link--line(href="#") Забыли пароль?
+        button.btn.modal-form__submit Войти
+        .modal-form__reg-text
+            | Если у вас нет аккаунта, то 
+            a.link.link--primary.link--line.modal-form__reg-link(href="#") Зарегистрируйтесь

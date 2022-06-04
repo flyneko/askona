@@ -1,0 +1,62 @@
+.cart
+  padding: 20px 0 65px
+  border-bottom: 1px solid #eeeeee
+
+  &__title
+    text-align: left
+
+  &__item
+    &:first-child
+      padding-top: 17px
+
+  &__footer
+    border-top: 1px solid #eeeeee
+    margin-top: 8px
+    padding-top: 25px
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+
+  &__discount-btn
+    font-weight: 500
+    color: #262626
+    text-decoration: underline dotted
+  
+  &__discount-form
+    margin-top: 12px
+    display: flex
+    visibility: hidden
+
+  &__discount-field
+    height: 48px
+    width: 344px
+    max-width: 100%
+
+  &__discount-submit
+    background-color: #2c2c2c
+    height: 48px
+    padding: 0 62px
+    margin-left: 16px
+
+  &__discount--show &__discount-form
+    visibility: visible
+
+  &__price-old
+    text-align: right
+    margin-bottom: 10px
+    
+  &__price
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    font-size: 16px
+    font-weight: 500
+
+  &__price-value
+    font-size: 24px
+
+  &__submit
+    margin-top: 12px
+    height: 48px
+    padding: 0 78px
+    font-size: 16px

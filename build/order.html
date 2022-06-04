@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Оформление заказа
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="assets/css/styles.css?v=10910674">
+  </head>
+  <body class="body">
+    <header class="header header--order">
+      <div class="container container--small">
+        <div class="header__top"><a class="logo" href="index.html"><img class="logo__img" src="assets/img/logo.svg"></a>
+          <button class="callback-btn header__callback-btn">
+            <svg class="icon icon--gray callback-btn__icon"> 
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#phone"></use>
+            </svg>Перезвоните мне
+          </button><a class="phone-link phone-link--hidden header__phone" data-phone="+7 700 700 70 07"><span class="phone-link__value">+7 700</span>
+            <button class="phone-link__show-btn">показать номер</button></a>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="cart">
+        <div class="container container--small"> 
+          <h1 class="title2 cart__title">Корзина</h1>
+          <div class="cart__list">
+            <div class="cart-item cart__item"><a class="cart-item__img-box" href="#"> <img class="cart-item__img" src="temp/products/divany/1.jpg"></a>
+              <div class="cart-item__inf">
+                <h2 class="title4 cart-item__name"><a href="#">Прямой диван Talo</a></h2>
+                <div class="text cart-item__desc">140x220</div>
+                <div class="cart-item__status cart-item__status--have">В наличии</div>
+              </div>
+              <div class="cart-item__count">
+                <div class="counter cart-item__counter">
+                  <div class="counter__content">
+                    <div class="counter__btn counter__btn--minus"></div>
+                    <input class="counter__value" type="number" value="1" readonly>
+                    <div class="counter__btn counter__btn--plus"></div>
+                  </div>
+                </div>
+                <div class="cart-item__price-one">329 400 ₸/шт.</div>
+              </div>
+              <div class="cart-item__price">
+                <div class="cart-item__price-old">1 191 300 ₸</div>
+                <div class="cart-item__price-new">329 400 ₸</div>
+              </div>
+              <button class="cart-item__delete">
+                <svg class="icon cart-item__delete-icon"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#exit"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="cart-item cart__item"><a class="cart-item__img-box" href="#"> <img class="cart-item__img" src="temp/products/divany/6.jpg"></a>
+              <div class="cart-item__inf">
+                <h2 class="title4 cart-item__name"><a href="#">Прямой диван Sunset Nova</a></h2>
+                <div class="text cart-item__desc">160x200</div>
+                <div class="cart-item__status">Под заказ</div>
+              </div>
+              <div class="cart-item__count">
+                <div class="counter cart-item__counter">
+                  <div class="counter__content">
+                    <div class="counter__btn counter__btn--minus"></div>
+                    <input class="counter__value" type="number" value="2">
+                    <div class="counter__btn counter__btn--plus"></div>
+                  </div>
+                </div>
+                <div class="cart-item__price-one">956 812 ₸/шт.</div>
+              </div>
+              <div class="cart-item__price">
+                <div class="cart-item__price-old">3 189 372 ₸</div>
+                <div class="cart-item__price-new">1 913 624 ₸</div>
+              </div>
+              <button class="cart-item__delete">
+                <svg class="icon cart-item__delete-icon"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#exit"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="cart__footer">
+            <div class="cart__discount">
+              <button class="cart__discount-btn">У меня есть скидочный купон</button>
+              <form class="cart__discount-form" action="#"> 
+                <input class="field cart__discount-field" type="text" placeholder="Введите промокод...">
+                <button class="btn btn--black cart__discount-submit">Применить</button>
+              </form>
+            </div>
+            <div class="cart__total">
+              <div class="price-old cart__price-old">4 249 572 ₸</div>
+              <div class="cart__price">Итого:
+                <div class="price-new cart__price-value">2 243 024 ₸</div>
+              </div>
+              <button class="btn cart__submit">Оформить заказ</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section products">
+        <div class="container container--small">
+          <h2 class="title2 title2--left products__title">Вам может понравиться</h2>
+          <div class="products__slider">
+            <div class="products__slider-main js-products-slider swiper" data-per-view="3">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="product products__slider-item"><a class="product__img-box" href="#"> 
+                      <div class="product__slider swiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/4.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/4.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/4.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/4.jpg"/></div>
+                        </div>
+                        <div class="product__slider-pagination js-product-slider-pagination"></div>
+                      </div><span class="discount product__discount">-50%
+                        <svg class="icon discount__bg"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
+                        </svg></span>
+                      <button class="icon-btn icon-btn--gray product__wishlist">
+                        <svg class="icon icon-btn__icon"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
+                        </svg>
+                      </button>
+                      <button class="icon-btn icon-btn--gray product__compare">
+                        <svg class="icon icon-btn__icon"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#sravnenie"></use>
+                        </svg>
+                      </button></a>
+                    <div class="product__inf">
+                      <div class="product__inf-content">
+                        <h3 class="product__name"><a class="link" href="#">Прямой диван Talo</a></h3>
+                        <div class="product__price">
+                           от<span class="price-new product__price-value">329 400 ₸</span><span class="price-old product__price-old">658 800 ₸</span></div>
+                        <div class="product__meta">
+                          <div class="color-switcher product__colors">
+                            <div class="color-switcher__list">
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color12"/>
+                                <div class="color-switcher__elem" style="background-color: #877669"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color12"/>
+                                <div class="color-switcher__elem" style="background-color: #3f935d"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color12"/>
+                                <div class="color-switcher__elem" style="background-color: #75a0a7"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color12"/>
+                                <div class="color-switcher__elem" style="background-color: #78622f"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color12"/>
+                                <div class="color-switcher__elem" style="background-color: #212532"></div>
+                              </label>
+                            </div>
+                            <div class="color-switcher__count">+7</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product__addition">
+                      <div class="product__addition-content">
+                        <div class="product__meta"><span class="text">Рассрочка от<span class="product__installment">1200 ₸</span></span><span class="product__code">Код товара: 13241</span></div>
+                        <div class="select select--small product__select">
+                          <select class="select__field">
+                            <option value="80x220">80 см х 220 см </option>
+                            <option value="81x220">81 см х 220 см </option>
+                            <option value="82x220">82 см х 220 см</option>
+                          </select>
+                          <svg class="icon icon--primary select__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                          </svg>
+                        </div>
+                        <div class="product__btn-group">
+                          <button class="btn product__btn">Подробнее</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product products__slider-item"><a class="product__img-box" href="#"> 
+                      <div class="product__slider swiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/5.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/5.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/5.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/5.jpg"/></div>
+                        </div>
+                        <div class="product__slider-pagination js-product-slider-pagination"></div>
+                      </div><span class="discount product__discount">-55%
+                        <svg class="icon discount__bg"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
+                        </svg></span>
+                      <button class="icon-btn icon-btn--gray product__wishlist">
+                        <svg class="icon icon-btn__icon"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
+                        </svg>
+                      </button>
+                      <button class="icon-btn icon-btn--gray product__compare">
+                        <svg class="icon icon-btn__icon"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#sravnenie"></use>
+                        </svg>
+                      </button></a>
+                    <div class="product__inf">
+                      <div class="product__inf-content">
+                        <h3 class="product__name"><a class="link" href="#">Угловой диван Mare</a></h3>
+                        <div class="product__price">
+                           от<span class="price-new product__price-value">655 232 ₸</span><span class="price-old product__price-old">1 191 300 ₸</span></div>
+                        <div class="product__meta">
+                          <div class="color-switcher product__colors">
+                            <div class="color-switcher__list">
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color8"/>
+                                <div class="color-switcher__elem" style="background-color: #a99f91"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color8"/>
+                                <div class="color-switcher__elem" style="background-color: #3f5259"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color8"/>
+                                <div class="color-switcher__elem" style="background-color: #21403e"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color8"/>
+                                <div class="color-switcher__elem" style="background-color: #81726e"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color8"/>
+                                <div class="color-switcher__elem" style="background-color: #80765d"></div>
+                              </label>
+                            </div>
+                            <div class="color-switcher__count">+12</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product__addition">
+                      <div class="product__addition-content">
+                        <div class="product__meta"><span class="text">Рассрочка от<span class="product__installment">1200 ₸</span></span><span class="product__code">Код товара: 13241</span></div>
+                        <div class="select select--small product__select">
+                          <select class="select__field">
+                            <option value="80x220">80 см х 220 см </option>
+                            <option value="81x220">81 см х 220 см </option>
+                            <option value="82x220">82 см х 220 см</option>
+                          </select>
+                          <svg class="icon icon--primary select__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                          </svg>
+                        </div>
+                        <div class="product__btn-group">
+                          <button class="btn product__btn">Подробнее</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product products__slider-item"><a class="product__img-box" href="#"> 
+                      <div class="product__slider swiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/6.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/6.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/6.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/6.jpg"/></div>
+                        </div>
+                        <div class="product__slider-pagination js-product-slider-pagination"></div>
+                      </div><span class="discount product__discount">-40%
+                        <svg class="icon discount__bg"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
+                        </svg></span>
+                      <button class="icon-btn icon-btn--gray product__wishlist">
+                        <svg class="icon icon-btn__icon"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
+                        </svg>
+                      </button>
+                      <button class="icon-btn icon-btn--gray product__compare">
+                        <svg class="icon icon-btn__icon"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#sravnenie"></use>
+                        </svg>
+                      </button></a>
+                    <div class="product__inf">
+                      <div class="product__inf-content">
+                        <h3 class="product__name"><a class="link" href="#">Прямой диван Sunset Nova</a></h3>
+                        <div class="product__price">
+                           от<span class="price-new product__price-value">956 812 ₸</span><span class="price-old product__price-old">1 594 686 ₸</span></div>
+                        <div class="product__meta">
+                          <div class="color-switcher product__colors">
+                            <div class="color-switcher__list">
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color13"/>
+                                <div class="color-switcher__elem" style="background-color: #3e3530"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color13"/>
+                                <div class="color-switcher__elem" style="background-color: #9b8b72"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color13"/>
+                                <div class="color-switcher__elem" style="background-color: #837961"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color13"/>
+                                <div class="color-switcher__elem" style="background-color: #4f7176"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color13"/>
+                                <div class="color-switcher__elem" style="background-color: #757178"></div>
+                              </label>
+                            </div>
+                            <div class="color-switcher__count">+12</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product__addition">
+                      <div class="product__addition-content">
+                        <div class="product__meta"><span class="text">Рассрочка от<span class="product__installment">1200 ₸</span></span><span class="product__code">Код товара: 13241</span></div>
+                        <div class="select select--small product__select">
+                          <select class="select__field">
+                            <option value="80x220">80 см х 220 см </option>
+                            <option value="81x220">81 см х 220 см </option>
+                            <option value="82x220">82 см х 220 см</option>
+                          </select>
+                          <svg class="icon icon--primary select__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                          </svg>
+                        </div>
+                        <div class="product__btn-group">
+                          <button class="btn product__btn">Подробнее</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product products__slider-item"><a class="product__img-box" href="#"> 
+                      <div class="product__slider swiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/7.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/7.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/7.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/7.jpg"/></div>
+                        </div>
+                        <div class="product__slider-pagination js-product-slider-pagination"></div>
+                      </div><span class="discount product__discount">-45%
+                        <svg class="icon discount__bg"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
+                        </svg></span>
+                      <button class="icon-btn icon-btn--gray product__wishlist">
+                        <svg class="icon icon-btn__icon"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
+                        </svg>
+                      </button>
+                      <button class="icon-btn icon-btn--gray product__compare">
+                        <svg class="icon icon-btn__icon"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#sravnenie"></use>
+                        </svg>
+                      </button></a>
+                    <div class="product__inf">
+                      <div class="product__inf-content">
+                        <h3 class="product__name"><a class="link" href="#">Прямой диван Lily</a></h3>
+                        <div class="product__price">
+                           от<span class="price-new product__price-value">186 202 ₸</span><span class="price-old product__price-old">465 504 ₸</span></div>
+                        <div class="product__meta">
+                          <div class="color-switcher product__colors">
+                            <div class="color-switcher__list">
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color14"/>
+                                <div class="color-switcher__elem" style="background-color: #756c74"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color14"/>
+                                <div class="color-switcher__elem" style="background-color: #876d64"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color14"/>
+                                <div class="color-switcher__elem" style="background-color: #507277"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color14"/>
+                                <div class="color-switcher__elem" style="background-color: #4f7176"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color14"/>
+                                <div class="color-switcher__elem" style="background-color: #b9c4c5"></div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product__addition">
+                      <div class="product__addition-content">
+                        <div class="product__meta"><span class="text">Рассрочка от<span class="product__installment">1200 ₸</span></span><span class="product__code">Код товара: 13241</span></div>
+                        <div class="select select--small product__select">
+                          <select class="select__field">
+                            <option value="80x220">80 см х 220 см </option>
+                            <option value="81x220">81 см х 220 см </option>
+                            <option value="82x220">82 см х 220 см</option>
+                          </select>
+                          <svg class="icon icon--primary select__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                          </svg>
+                        </div>
+                        <div class="product__btn-group">
+                          <button class="btn product__btn">Подробнее</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product products__slider-item"><a class="product__img-box" href="#"> 
+                      <div class="product__slider swiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/5.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/5.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/5.jpg"/></div>
+                          <div class="swiper-slide"><img class="product__img" src="temp/products/divany/5.jpg"/></div>
+                        </div>
+                        <div class="product__slider-pagination js-product-slider-pagination"></div>
+                      </div><span class="discount product__discount">-55%
+                        <svg class="icon discount__bg"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
+                        </svg></span><span class="product-label product__label product-label--best">Лучшая оценка</span>
+                      <button class="icon-btn icon-btn--gray product__wishlist">
+                        <svg class="icon icon-btn__icon"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
+                        </svg>
+                      </button>
+                      <button class="icon-btn icon-btn--gray product__compare">
+                        <svg class="icon icon-btn__icon"> 
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#sravnenie"></use>
+                        </svg>
+                      </button></a>
+                    <div class="product__inf">
+                      <div class="product__inf-content">
+                        <h3 class="product__name"><a class="link" href="#">Угловой диван Mare</a></h3>
+                        <div class="product__price">
+                           от<span class="price-new product__price-value">655 232 ₸</span><span class="price-old product__price-old">1 191 300 ₸</span></div>
+                        <div class="product__meta">
+                          <div class="color-switcher product__colors">
+                            <div class="color-switcher__list">
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color6"/>
+                                <div class="color-switcher__elem" style="background-color: #a99f91"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color6"/>
+                                <div class="color-switcher__elem" style="background-color: #3f5259"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color6"/>
+                                <div class="color-switcher__elem" style="background-color: #21403e"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color6"/>
+                                <div class="color-switcher__elem" style="background-color: #81726e"></div>
+                              </label>
+                              <label class="color-switcher__label">
+                                <input class="color-switcher__input" type="radio" name="color6"/>
+                                <div class="color-switcher__elem" style="background-color: #80765d"></div>
+                              </label>
+                            </div>
+                            <div class="color-switcher__count">+12</div>
+                          </div>
+                        </div>
+                        <div class="status product__status status--have">В наличии</div>
+                      </div>
+                    </div>
+                    <div class="product__addition">
+                      <div class="product__addition-content">
+                        <div class="product__meta"><span class="text">Рассрочка от<span class="product__installment">1200 ₸</span></span><span class="product__code">Код товара: 13241</span></div>
+                        <div class="select select--small product__select">
+                          <select class="select__field">
+                            <option value="80x220">80 см х 220 см </option>
+                            <option value="81x220">81 см х 220 см </option>
+                            <option value="82x220">82 см х 220 см</option>
+                          </select>
+                          <svg class="icon icon--primary select__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                          </svg>
+                        </div>
+                        <div class="product__btn-group">
+                          <button class="btn product__btn">Подробнее</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="products__slider-navigation">
+              <button class="btn-next products__slider-next js-products-slider-next">
+                <svg class="icon icon--primary btn-next__icon"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                </svg>
+              </button>
+              <button class="btn-prev products__slider-prev js-products-slider-prev">
+                <svg class="icon icon--primary btn-prev__icon"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_left"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bonus main__bonus">
+        <div class="container container--small">
+          <h2 class="title2 title2--left">Бонусная программа</h2>
+          <div class="bonus__main">
+            <div class="bonus__info">
+              <div class="bonus__text bonus__text--dark">Сумма бонусов на счету:<span class="bonus__total-value">20 000</span></div>
+              <div class="bonus__text bonus__text--dark">Укажите количество бонусов,которые вы хотите снять:</div>
+              <div class="bonus__form">
+                <div class="counter bonus__counter">
+                  <div class="counter__content">
+                    <div class="counter__btn counter__btn--minus"></div>
+                    <input class="counter__value" type="number" value="1900">
+                    <div class="counter__btn counter__btn--plus"></div>
+                  </div>
+                </div>
+                <button class="btn bonus__form-submit">Списать бонусы</button>
+              </div>
+              <div class="text bonus__text">Использовано бонусов:<span class="bonus__value">0</span></div>
+              <div class="text bonus__text">Осталось бонусов:<span class="bonus__value">0</span></div>
+              <div class="text bonus__text">Вы можете использовать при покупке товаров до 50% активных бонусов от общей суммы</div>
+            </div><img class="bonus__img" src="assets/img/bonus-card.png" alt="">
+          </div>
+        </div>
+      </section>
+      <section class="order">
+        <div class="container container--small">
+          <h2 class="title2 title2--left order__title">Оформление заказа</h2>
+          <div class="order__main">
+            <div class="order-form order__form">
+              <div class="order-form__group">
+                <label class="order-form__label">
+                  <div class="order-form__text">Телефон:</div>
+                  <input class="field order-form__field" type="text" placeholder="Например, + 7 (963) 000-00-00">
+                </label>
+                <label class="order-form__label">
+                  <div class="order-form__text">Имя:</div>
+                  <input class="field order-form__field" type="text" placeholder="Введите ваше Имя">
+                </label>
+                <label class="order-form__label">
+                  <div class="order-form__text">Эл. почта:</div>
+                  <input class="field order-form__field" type="text" placeholder="Введите адрес электронной почты">
+                </label>
+              </div>
+              <div class="order-form__title">Регион доставки</div>
+              <div class="order-form__group">
+                <label class="order-form__label">
+                  <div class="order-form__text">Город:</div>
+                  <div class="select order-form__select">
+                    <select class="select__field" data-search-text="Введите название города">
+                      <option value="">Введите или выберите свой город...</option>
+                      <option value="price">1</option>
+                      <option value="price">2</option>
+                      <option value="price">3</option>
+                    </select>
+                    <svg class="icon icon--primary select__icon"> 
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                    </svg>
+                  </div>
+                </label>
+              </div>
+              <div class="order-form__title">Способы доставки</div>
+              <div class="order-form__group">
+                <label class="checkbox order-form__checkbox">
+                  <input class="checkbox__input" type="radio" name="delivery-method" checked>
+                  <div class="checkbox__switcher"></div>
+                  <div class="checkbox__text">Доставка курьером от 1 дня</div>
+                </label>
+                <label class="checkbox order-form__checkbox">
+                  <input class="checkbox__input" type="radio" name="delivery-method">
+                  <div class="checkbox__switcher"></div>
+                  <div class="checkbox__text">Самовывоз из пункта выдачи</div>
+                </label>
+                <label class="order-form__label">
+                  <div class="order-form__text">Адрес:</div>
+                  <input class="field order-form__field" type="text">
+                </label>
+                <label class="order-form__label">
+                  <div class="order-form__text">Комментарий:</div>
+                  <textarea class="field order-form__area"></textarea>
+                </label>
+                <div class="text order-form__message">
+                  Доставка осуществляется в течении 5-7 дней <br>
+                  с момента оплаты. Курьер позвонить вам за 1 день <br>
+                  до даты доставки. 
+                </div>
+              </div>
+              <div class="order-form__title">Способы оплаты</div>
+              <div class="order-form__group">
+                <label class="checkbox order-form__checkbox">
+                  <input class="checkbox__input" type="radio" name="pay-method" checked>
+                  <div class="checkbox__switcher"></div>
+                  <div class="checkbox__text">При получении (Наличными или картой)</div>
+                </label>
+                <label class="checkbox order-form__checkbox">
+                  <input class="checkbox__input" type="radio" name="pay-method">
+                  <div class="checkbox__switcher"></div>
+                  <div class="checkbox__text">Оплата по счету (для ИП и юр. лиц)</div>
+                </label>
+                <div class="text order-form__message">Оплата осуществляется только картой или наличными. Заранее проговорите этот момент с менеджером.</div>
+              </div>
+              <label class="checkbox checkbox--accept order-form__accept">
+                <input class="checkbox__input" type="checkbox" name="accept">
+                <div class="checkbox__switcher">
+                  <svg class="icon checkbox__icon"> 
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                  </svg>
+                </div>
+                <div class="checkbox__text">Получать специальные предложения и новости</div>
+              </label>
+              <button class="btn order-form__submit">Оформить заказ</button>
+              <div class="order-form__privacy">Нажимая на кнопку вы соглашаетесь с <a class="link link--primary" href="#">договором-оферты</a> и <a class="link link--primary" href="#">политикой обработки и защиты персональных данных</a></div>
+            </div>
+            <div class="order-result order__result">
+              <h3 class="title3">Ваш заказ</h3>
+              <div class="order-result__list">
+                <div class="cart-item cart-item--order order-result__item"><a class="cart-item__img-box" href="#"> <img class="cart-item__img" src="temp/products/divany/1.jpg"></a>
+                  <div class="cart-item__inf">
+                    <h2 class="title4 cart-item__name"><a href="#">Прямой диван <br> Talo</a></h2>
+                    <div class="text cart-item__desc">140x220</div>
+                  </div>
+                  <div class="cart-item__count">
+                    <div class="cart-item__count-value">x1</div>
+                  </div>
+                  <div class="cart-item__price">
+                    <div class="cart-item__price-old">1 191 300 ₸</div>
+                    <div class="cart-item__price-new">329 400 ₸</div>
+                  </div>
+                </div>
+                <div class="cart-item cart-item--order order-result__item"><a class="cart-item__img-box" href="#"> <img class="cart-item__img" src="temp/products/divany/6.jpg"></a>
+                  <div class="cart-item__inf">
+                    <h2 class="title4 cart-item__name"><a href="#">Прямой диван Sunset Nova</a></h2>
+                    <div class="text cart-item__desc">160x200</div>
+                  </div>
+                  <div class="cart-item__count">
+                    <div class="cart-item__count-value">x1</div>
+                  </div>
+                  <div class="cart-item__price">
+                    <div class="cart-item__price-old">3 189 372 ₸</div>
+                    <div class="cart-item__price-new">1 913 624 ₸</div>
+                  </div>
+                </div>
+              </div>
+              <div class="order-result__promo"><span class="order-result__text order-result__promo-text">Использован промокод:</span><span class="order-result__promo-value">FREEDOM43</span></div>
+              <div class="order-result__bonus">
+                <div class="order-result__bonus-item"><span class="order-result__text">Списать бонусы:</span><span class="order-result__text order-result__bonus-value">- 20 000 ₸</span></div>
+                <div class="order-result__bonus-item"><span class="order-result__text">Бонусы после покупки:</span><span class="order-result__text order-result__bonus-value">+ 9 000 ₸</span></div>
+              </div>
+              <div class="order-result__total">
+                <div class="order-result__text">Итого:</div>
+                <div class="order-result__price">
+                  <div class="price-old order-result__price-old">4 249 572 ₸</div>
+                  <div class="price-new order-result__price-new">2 243 024 ₸</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="modal" id="modal-login">
+      <div class="modal__title">Авторизация</div>
+      <form class="modal-form modal__form" action="#"> 
+        <div class="modal-form__group">
+          <div class="modal-form__text">Электронная почта:</div>
+          <input class="field modal-form__field" type="text">
+        </div>
+        <div class="modal-form__group">
+          <div class="modal-form__text">Пароль:</div>
+          <input class="field modal-form__field" type="text">
+        </div>
+        <div class="modal-form__forgot"><a class="link link--primary link--line" href="#">Забыли пароль?</a></div>
+        <button class="btn modal-form__submit">Войти</button>
+        <div class="modal-form__reg-text">Если у вас нет аккаунта, то <a class="link link--primary link--line modal-form__reg-link" href="#">Зарегистрируйтесь</a></div>
+      </form>
+    </div>
+    <script src="assets/js/vendors.min.js"></script>
+    <script src="assets/js/app.js?v=55954844"></script>
+  </body>
+</html>

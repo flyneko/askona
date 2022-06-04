@@ -1,0 +1,115 @@
+.cart-item
+  display: flex
+  align-items: center
+  padding: 32px 0
+  
+  &:not(:last-child)
+    border-bottom: 1px solid #eeeeee
+
+  &__img-box
+    margin-right: 40px
+    margin-top: 15px
+    flex: 0 0 auto
+
+  &__img
+    width: 135px
+
+  &__inf
+    width: 335px
+    max-width: 100%
+
+  &__name
+    color: #262626
+
+  &__status
+    margin-top: 6px
+    background-color: #adadad
+    border-radius: 4px
+    height: 24px
+    padding: 0 12px
+    font-size: 12px
+    line-height: 1
+    font-weight: 600
+    color: #fff
+    display: inline-flex
+    align-items: center
+    justify-content: center
+
+    &--have
+      background-color: #b6e5ff
+      color: #000
+
+  &__count
+    text-align: center
+    width: 110px
+
+  &__count-value
+    width: 25px
+    margin: 0 10px
+    font-size: 14px
+    color: #878787
+
+  &__price-one
+    margin-top: 10px
+    color: #878787
+
+  &__price
+    margin: 0 auto
+    white-space: nowrap
+
+  &__price-old
+    font-size: 14px
+    color: #7e7e7e
+    text-decoration: line-through
+    margin-bottom: 5px
+
+  &__price-new
+    font-size: 18px
+    font-weight: 500
+    color: #00b9c0
+
+  &__delete
+    width: 32px
+    height: 32px
+    border: 1px solid #d9d9d9
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: border .3s
+
+    &:hover
+      border-color: #797979
+
+  &__delete-icon
+    width: 8px
+    height: 8px
+    stroke: #2d2d2d
+    stroke-width: 2px
+
+  &--order
+    padding-bottom: 15px
+
+  &--order &__img-box
+    margin-top: 0
+    margin-right: 15px
+
+  &--order &__img
+    width: 90px
+
+  &--order &__inf
+    width: 175px
+    flex: 0 0 auto
+
+  &--order &__name
+    font-size: 16px
+    line-height: 1
+
+  &--order &__desc
+    margin-top: 5px
+
+  &--order &__price
+    text-align: right
+
+  &--order &__price-new
+    font-size: 10px

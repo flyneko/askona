@@ -1,5 +1,7 @@
 include ../_mixins.pug
 
+block vars
+
 doctype html
 html(lang="ru")
     head
@@ -13,13 +15,17 @@ html(lang="ru")
         link(rel='stylesheet' href='assets/css/styles.css?v=' + Math.round(Math.random() * 100000000))
     body.body
 
-        block modals
-
-        include ../partials/_header.pug
-
+        if header_name === 'order'
+            include ../partials/_header-order.pug
+        else
+            include ../partials/_header.pug
+        
         block content
 
-        include ../partials/_footer.pug
+        if !hide_footer
+            include ../partials/_footer.pug
+
+        block modals
 
         block scripts
         script(src='assets/js/vendors.min.js')

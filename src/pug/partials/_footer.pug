@@ -5,7 +5,7 @@ footer.footer
 			.footer__column
 				.footer__title Подписаться на рассылку
 				p.text.footer__text Всегда будьте в курсе новых акций и спецпредложений!
-				form.mailing-form.footer__mailing
+				form.mailing-form.footer__mailing(autocomplete="off")
 					input.field.mailing-form__field(placeholder="Введите ваш E-mail...")
 					button.mailing-form__submit
 						+icon('arrow_podpiska', 'icon--primary mailing-form__submit-icon')

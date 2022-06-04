@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css?v=40183040">
+    <link rel="stylesheet" href="assets/css/styles.css?v=93828557">
   </head>
   <body class="body">
     <header class="header header--order">
@@ -84,7 +84,7 @@
           <div class="cart__footer">
             <div class="cart__discount">
               <button class="cart__discount-btn">У меня есть скидочный купон</button>
-              <form class="cart__discount-form" action="#"> 
+              <form class="cart__discount-form" action="#" autocomplete="off"> 
                 <input class="field cart__discount-field" type="text" placeholder="Введите промокод...">
                 <button class="btn btn--black cart__discount-submit">Применить</button>
               </form>
@@ -119,8 +119,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -197,8 +197,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -275,8 +275,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -353,8 +353,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -430,8 +430,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span><span class="product-label product__label product-label--best">Лучшая оценка</span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -561,7 +561,7 @@
                 <label class="order-form__label">
                   <div class="order-form__text">Город:</div>
                   <div class="select order-form__select">
-                    <select class="select__field" data-search-text="Введите название города">
+                    <select class="select__field" data-search="on" data-search-text="Введите название города">
                       <option value="">Введите или выберите свой город...</option>
                       <option value="price">1</option>
                       <option value="price">2</option>
@@ -674,7 +674,7 @@
     </main>
     <div class="modal" id="modal-login">
       <div class="modal__title">Авторизация</div>
-      <form class="modal-form modal__form" action="#"> 
+      <form class="modal-form modal__form" action="#" autocomplete="off"> 
         <div class="modal-form__group">
           <div class="modal-form__text">Электронная почта:</div>
           <input class="field modal-form__field" type="text">
@@ -689,6 +689,6 @@
       </form>
     </div>
     <script src="assets/js/vendors.min.js"></script>
-    <script src="assets/js/app.js?v=88986862"></script>
+    <script src="assets/js/app.js?v=15872284"></script>
   </body>
 </html>

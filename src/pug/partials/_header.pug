@@ -16,7 +16,7 @@ header.header
 			.header__count Магазины:
 				span.header__count-value 30
 
-			form.search-form.header__search
+			form.search-form.header__search(autocomplete="off") 
 				input.field.search-form__field(type="text" placeholder="Поиск по товарам")
 				button.search-form__submit
 					+icon('search', 'icon--primary search-form__submit-icon')
@@ -30,7 +30,7 @@ header.header
 				button.phone-link__show-btn показать номер
 
 			.user-controls.header__user-controls
-				a.icon-btn.user-controls__btn.user-controls__btn--profile(href="#")
+				button.icon-btn.user-controls__btn.user-controls__btn--profile(data-fancybox data-src="#modal-login")
 					+icon('login', 'icon-btn__icon')
 				a.icon-btn.user-controls__btn(href="#")
 					+icon('sravnenie', 'icon-btn__icon')

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css?v=25019242">
+    <link rel="stylesheet" href="assets/css/styles.css?v=27030809">
   </head>
   <body class="body">
     <div class="banner"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
@@ -23,7 +23,7 @@
             </button>
           </div>
           <div class="header__count">Магазины:<span class="header__count-value">30</span></div>
-          <form class="search-form header__search">
+          <form class="search-form header__search" autocomplete="off"> 
             <input class="field search-form__field" type="text" placeholder="Поиск по товарам">
             <button class="search-form__submit">
               <svg class="icon icon--primary search-form__submit-icon"> 
@@ -37,10 +37,12 @@
             </svg>Перезвоните мне
           </button><a class="phone-link phone-link--hidden header__phone" data-phone="+7 700 700 70 07"><span class="phone-link__value">+7 700</span>
             <button class="phone-link__show-btn">показать номер</button></a>
-          <div class="user-controls header__user-controls"><a class="icon-btn user-controls__btn user-controls__btn--profile" href="#">
+          <div class="user-controls header__user-controls">
+            <button class="icon-btn user-controls__btn user-controls__btn--profile" data-fancybox data-src="#modal-login">
               <svg class="icon icon-btn__icon"> 
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#login"></use>
-              </svg></a><a class="icon-btn user-controls__btn" href="#">
+              </svg>
+            </button><a class="icon-btn user-controls__btn" href="#">
               <svg class="icon icon-btn__icon"> 
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#sravnenie"></use>
               </svg></a><a class="icon-btn user-controls__btn" href="#">
@@ -49,7 +51,8 @@
               </svg><span class="icon-btn__value">13</span></a><a class="icon-btn user-controls__btn" href="#">
               <svg class="icon icon-btn__icon"> 
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#cart"></use>
-              </svg><span class="icon-btn__value">2</span></a></div>
+              </svg><span class="icon-btn__value">2</span></a>
+          </div>
         </div>
         <div class="header__bottom">
           <button class="btn btn--catalog"><span class="icon-menu btn__icon"></span>Все товары</button>
@@ -307,8 +310,8 @@
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#sravnenie"></use>
                   </svg>
                 </button>
-                <button class="icon-btn icon-btn--gray single-product__icon-btn">
-                  <svg class="icon icon-btn__icon"> 
+                <button class="wishlist-btn single-product__icon-btn">
+                  <svg class="icon wishlist-btn__icon"> 
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                   </svg>
                 </button>
@@ -409,8 +412,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -486,8 +489,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -564,8 +567,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -642,8 +645,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -720,8 +723,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span><span class="product-label product__label product-label--week">Товар недели</span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -799,8 +802,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -878,8 +881,8 @@
                         <svg class="icon discount__bg"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
                         </svg></span>
-                      <button class="icon-btn icon-btn--gray product__wishlist">
-                        <svg class="icon icon-btn__icon"> 
+                      <button class="wishlist-btn product__wishlist">
+                        <svg class="icon wishlist-btn__icon"> 
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
                         </svg>
                       </button>
@@ -986,7 +989,7 @@
           <div class="footer__column">
             <div class="footer__title">Подписаться на рассылку</div>
             <p class="text footer__text">Всегда будьте в курсе новых акций и спецпредложений!</p>
-            <form class="mailing-form footer__mailing">
+            <form class="mailing-form footer__mailing" autocomplete="off">
               <input class="field mailing-form__field" placeholder="Введите ваш E-mail...">
               <button class="mailing-form__submit">
                 <svg class="icon icon--primary mailing-form__submit-icon"> 
@@ -1064,7 +1067,23 @@
         </div>
       </div>
     </footer>
+    <div class="modal" id="modal-login">
+      <div class="modal__title">Авторизация</div>
+      <form class="modal-form modal__form" action="#" autocomplete="off"> 
+        <div class="modal-form__group">
+          <div class="modal-form__text">Электронная почта:</div>
+          <input class="field modal-form__field" type="text">
+        </div>
+        <div class="modal-form__group">
+          <div class="modal-form__text">Пароль:</div>
+          <input class="field modal-form__field" type="text">
+        </div>
+        <div class="modal-form__forgot"><a class="link link--primary link--line" href="#">Забыли пароль?</a></div>
+        <button class="btn modal-form__submit">Войти</button>
+        <div class="modal-form__reg-text">Если у вас нет аккаунта, то <a class="link link--primary link--line modal-form__reg-link" href="#">Зарегистрируйтесь</a></div>
+      </form>
+    </div>
     <script src="assets/js/vendors.min.js"></script>
-    <script src="assets/js/app.js?v=55441743"></script>
+    <script src="assets/js/app.js?v=41432010"></script>
   </body>
 </html>

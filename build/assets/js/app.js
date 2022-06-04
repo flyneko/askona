@@ -101,6 +101,7 @@ window.addEventListener('load', () => {
         sliderCard = new Swiper($slider, {
           init: true,
           loop: true,
+          effect: 'creative',
           slidesPerView: 1,
           pagination: {
             el: $pagination,
@@ -208,9 +209,10 @@ window.addEventListener('load', () => {
   const $simpleFields = document.querySelectorAll('.select__field');
   $simpleFields.forEach($field => {
     const searchText = $field.dataset.searchText || null;
+    const searchEnabled = $field.dataset.search === 'on' ? true : false
 
     new Choices($field, {
-      // searchEnabled: false,
+      searchEnabled,
       searchPlaceholderValue: searchText,
       paste: true,
       itemSelectText: '',
@@ -469,6 +471,16 @@ window.addEventListener('load', () => {
         </svg>`,
     },
     dragToClose: false
+  });
+
+  /**
+   * Кнопки "Добавить в избранное"
+   */
+  const $wishlistBtns = document.querySelectorAll('.wishlist-btn');
+  $wishlistBtns.forEach($btn => {
+    $btn.addEventListener('click', () => {
+      $btn.classList.toggle('wishlist-btn--active');
+    });
   });
 });
 

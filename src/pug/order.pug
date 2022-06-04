@@ -57,7 +57,7 @@ block content
 				.cart__footer
 					.cart__discount
 						button.cart__discount-btn У меня есть скидочный купон
-						form.cart__discount-form(action="#") 
+						form.cart__discount-form(action="#" autocomplete="off") 
 							input.field.cart__discount-field(type="text" placeholder="Введите промокод...")
 							button.btn.btn--black.cart__discount-submit Применить
 
@@ -129,7 +129,7 @@ block content
 							label.order-form__label
 								.order-form__text Город:
 								.select.order-form__select
-									select.select__field(data-search-text="Введите название города")
+									select.select__field(data-search="on" data-search-text="Введите название города")
 										option(value="") Введите или выберите свой город...
 										option(value="price") 1
 										option(value="price") 2
@@ -220,5 +220,3 @@ block content
 							.order-result__price
 								.price-old.order-result__price-old 4 249 572 ₸
 								.price-new.order-result__price-new 2 243 024 ₸
-block modals 
-	include modals/_login.pug

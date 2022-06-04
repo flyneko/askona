@@ -425,8 +425,19 @@
   right: 0
   background-color: $color-primary
 
-.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y
-  background-color: $color-primary
+.ps__rail-y
+  transition: background-color 0.2s linear, width 0.2s ease-in-out
+
+  &:hover,
+  &:focus,
+  &.ps--clicking
+    width: 8px
+
+    & > .ps__thumb-y,
+    & > .ps__thumb-y,
+    & .ps__thumb-y
+      background-color: $color-primary
+      width: 8px
 
 .fancybox__backdrop
   background: rgba(#000, 0.6)
@@ -485,7 +496,6 @@
 
   &--accept &__input:checked + &__switcher:before
     display: none
-      
 
   &--accept &__text
     font-size: 14px

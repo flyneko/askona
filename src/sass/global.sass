@@ -417,6 +417,25 @@
 .ps--active-x > .ps__rail-x, .ps--active-y > .ps__rail-y
   background-color: #efefef
 
+.ps
+  &--shadow-top
+    &:before
+      content: ''
+      display: block
+      position: sticky
+      top: 0
+      width: 100%
+      box-shadow: 0px 5px 22px 40px rgba(255, 255, 255, 0.9)
+
+  &--shadow-bottom
+    &:after
+      content: ''
+      display: block
+      position: sticky
+      bottom: 0
+      width: 100%
+      box-shadow: 0px -15px 22px 40px rgba(255, 255, 255, 0.9)
+
 .ps__rail-y
   width: 2px
   opacity: 1

@@ -284,20 +284,6 @@ window.addEventListener('load', () => {
       $configure.classList.remove('configure--show');
     });
 
-    const $footer = $configure.querySelector('.configure__footer');
-    if ($footer.classList.contains('configure__footer--shadow')) {
-      const $list = $configure.querySelector('.configure__list');
-      $list.addEventListener('scroll', e => {
-        if ($footer.classList.contains('configure__footer--shadow') &&
-          ($list.scrollTop + 10) >= ($list.scrollHeight - $list.offsetHeight)) {
-          $footer.classList.remove('configure__footer--shadow');
-        } else if (!$footer.classList.contains('configure__footer--shadow') &&
-          ($list.scrollTop + 10) < ($list.scrollHeight - $list.offsetHeight)) {
-          $footer.classList.add('configure__footer--shadow');
-        }
-      });
-    }
-
     $configure.addEventListener('click', e => {
       if (e.target.classList.contains('configure__item-btn') ||
         e.target.closest('.configure__item-btn')) {
@@ -421,6 +407,36 @@ window.addEventListener('load', () => {
       wheelPropagation: false,
     });
   });
+
+  const $scrollbars = document.querySelectorAll('.ps');
+  $scrollbars.forEach($scrollbar => {
+    scrollbarShadowHandler($scrollbar);
+
+    $scrollbar.addEventListener('scroll', e => {
+      scrollbarShadowHandler($scrollbar)
+    });
+  });
+
+  function scrollbarShadowHandler($scrollbar) {
+    const scrollTop = $scrollbar.scrollTop;
+    const scrollHeight = $scrollbar.scrollHeight - $scrollbar.offsetHeight
+
+    if ($scrollbar.classList.contains('ps--shadow-top') &&
+      (scrollTop - 10) <= 0) {
+      $scrollbar.classList.remove('ps--shadow-top');
+    } else if (!$scrollbar.classList.contains('ps--shadow-top') &&
+      (scrollTop - 10) >= 0) {
+      $scrollbar.classList.add('ps--shadow-top');
+    }
+
+    if ($scrollbar.classList.contains('ps--shadow-bottom') &&
+      (scrollTop + 10) >= scrollHeight) {
+      $scrollbar.classList.remove('ps--shadow-bottom');
+    } else if (!$scrollbar.classList.contains('ps--shadow-bottom') &&
+      (scrollTop + 10) < scrollHeight) {
+      $scrollbar.classList.add('ps--shadow-bottom');
+    }
+  }
 
   /**
    * Корзина/Оформление заказа

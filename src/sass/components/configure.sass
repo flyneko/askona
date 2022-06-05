@@ -15,10 +15,12 @@
     flex-direction: column
     width: 528px
     height: 100%
-    padding: 40px 32px 0
     background: #fff
     box-shadow: -2px 0 9px rgba(0, 0, 0, 0.1)
     overflow: hidden
+
+  &__header
+    padding: 40px 32px 0
 
   &__title
     padding-right: 18px
@@ -34,6 +36,8 @@
     flex-wrap: wrap
     margin: 15px -8px -10px
     padding-right: 24px
+    margin-right: 24px
+    padding-left: 32px
     max-height: calc(100vh - 180px)
     position: relative
         
@@ -108,16 +112,16 @@
     &:before
       margin-right: 4px
 
+  .ps__rail-y
+    z-index: 99999
+
   &__footer
     margin-top: auto
     display: flex
     position: relative
     z-index: 11111
     background: #fff
-    padding: 16px 0
-
-    &--shadow
-      box-shadow: 0px -40px 25px rgb(255 255 255 / 90%)
+    padding: 16px 32px
 
   &__btn
     height: 48px

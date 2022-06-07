@@ -1,6 +1,8 @@
 .filters-modal
   width: 415px
   max-height: 100%
+  display: flex
+  flex-direction: column
 
   &__header
     padding: 36px 56px 0 32px
@@ -15,7 +17,7 @@
     margin-top: 30px
     margin-right: 12px
     padding: 0 44px 0 32px
-    max-height: calc(100vh - 270px)
+    max-height: calc(100vh - 260px)
 
   &__accordion
     padding: 25px 0
@@ -40,8 +42,9 @@
     margin: 8px
 
   &__footer
-    margin-top: 24px
+    margin-top: auto
     padding: 0 56px 0 32px
+    margin-bottom: 24px
 
   &__btn
     width: 100%

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css?v=33842240">
+    <link rel="stylesheet" href="assets/css/styles.css?v=14123905">
   </head>
   <body class="body">
     <div class="banner"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="header__bottom">
-          <button class="btn btn--catalog"><span class="icon-menu btn__icon"></span>Все товары</button>
+          <button class="btn btn--catalog js-open-catalog-menu"><span class="icon-menu btn__icon"></span>Все товары</button>
           <nav class="menu header__menu">
             <ul class="menu__list">
               <li class="menu__item"><a class="link menu__link" href="#">Матрасы</a></li>
@@ -339,7 +339,7 @@
                 </div>
                 <div class="single-product__form-group">
                   <div class="single-product__form-text">Вариант:</div>
-                  <button class="variation-field single-product__form-variation js-open-configure" data-name="color-1"><img class="variation-field__img" src="temp/single-products/krovati/1.jpg" alt="">Мебельный велюр, бирюзовый
+                  <button class="variation-field single-product__form-variation js-open-popup" data-popup-name="configure-1"><img class="variation-field__img" src="temp/single-products/krovati/1.jpg" alt="">Мебельный велюр, бирюзовый
                     <svg class="icon icon--primary variation-field__arrow"> 
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
                     </svg>
@@ -954,58 +954,60 @@
         </div>
       </section>
     </main>
-    <div class="configure" data-name="color-1">
-      <div class="configure__content">
-        <div class="configure__header">
-          <div class="configure__title">Выберите основание</div>
-          <div class="text configure__text">Указана итоговая стоимость кровати</div>
+    <div class="popup" data-name="configure-1">
+      <div class="popup__content configure">
+        <div class="configure__content">
+          <div class="configure__header">
+            <div class="configure__title">Выберите основание</div>
+            <div class="text configure__text">Указана итоговая стоимость кровати</div>
+          </div>
+          <div class="configure__list js-custom-scrollbar">
+            <div class="configure__item configure__item--big configure__item--active is-selected">
+              <button class="configure__item-content configure__item-btn"><a class="configure__item-img-box" href="#"> <img class="configure__item-img" src="temp/single-products/krovati/osnovanie/1.jpg" alt=""></a>
+                <div class="configure__item-inf"><a class="configure__item-name" href="#">База с рамой</a>
+                  <div class="price-new configure__item-price">25 000 ₸</div>
+                </div>
+              </button>
+            </div>
+            <div class="configure__item configure__item--big">
+              <button class="configure__item-content configure__item-btn"><a class="configure__item-img-box" href="#"> <img class="configure__item-img" src="temp/single-products/krovati/osnovanie/2.jpg" alt=""></a>
+                <div class="configure__item-inf"><a class="configure__item-name" href="#">Без основания</a>
+                  <div class="price-new configure__item-price">0 ₸</div>
+                </div>
+              </button>
+            </div>
+            <div class="configure__item configure__item--big">
+              <button class="configure__item-content configure__item-btn"><a class="configure__item-img-box" href="#"> <img class="configure__item-img" src="temp/single-products/krovati/osnovanie/2.jpg" alt=""></a>
+                <div class="configure__item-inf"><a class="configure__item-name" href="#">Без основания</a>
+                  <div class="price-new configure__item-price">0 ₸</div>
+                </div>
+              </button>
+            </div>
+            <div class="configure__item configure__item--big">
+              <button class="configure__item-content configure__item-btn"><a class="configure__item-img-box" href="#"> <img class="configure__item-img" src="temp/single-products/krovati/osnovanie/2.jpg" alt=""></a>
+                <div class="configure__item-inf"><a class="configure__item-name" href="#">Без основания</a>
+                  <div class="price-new configure__item-price">0 ₸</div>
+                </div>
+              </button>
+            </div>
+            <div class="configure__item configure__item--big">
+              <button class="configure__item-content configure__item-btn"><a class="configure__item-img-box" href="#"> <img class="configure__item-img" src="temp/single-products/krovati/osnovanie/2.jpg" alt=""></a>
+                <div class="configure__item-inf"><a class="configure__item-name" href="#">Без основания</a>
+                  <div class="price-new configure__item-price">0 ₸</div>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="configure__footer">
+            <button class="btn configure__btn">В корзину  +25 000 ₸</button>
+            <button class="btn btn--transparent configure__btn">Выбрать</button>
+          </div>
+          <button class="popup__close configure__close">
+            <svg class="icon popup__close-icon"> 
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#exit"></use>
+            </svg>
+          </button>
         </div>
-        <div class="configure__list">
-          <div class="configure__item configure__item--big configure__item--active is-selected">
-            <button class="configure__item-content configure__item-btn"><a class="configure__item-img-box" href="#"> <img class="configure__item-img" src="temp/single-products/krovati/osnovanie/1.jpg" alt=""></a>
-              <div class="configure__item-inf"><a class="configure__item-name" href="#">База с рамой</a>
-                <div class="price-new configure__item-price">25 000 ₸</div>
-              </div>
-            </button>
-          </div>
-          <div class="configure__item configure__item--big">
-            <button class="configure__item-content configure__item-btn"><a class="configure__item-img-box" href="#"> <img class="configure__item-img" src="temp/single-products/krovati/osnovanie/2.jpg" alt=""></a>
-              <div class="configure__item-inf"><a class="configure__item-name" href="#">Без основания</a>
-                <div class="price-new configure__item-price">0 ₸</div>
-              </div>
-            </button>
-          </div>
-          <div class="configure__item configure__item--big">
-            <button class="configure__item-content configure__item-btn"><a class="configure__item-img-box" href="#"> <img class="configure__item-img" src="temp/single-products/krovati/osnovanie/2.jpg" alt=""></a>
-              <div class="configure__item-inf"><a class="configure__item-name" href="#">Без основания</a>
-                <div class="price-new configure__item-price">0 ₸</div>
-              </div>
-            </button>
-          </div>
-          <div class="configure__item configure__item--big">
-            <button class="configure__item-content configure__item-btn"><a class="configure__item-img-box" href="#"> <img class="configure__item-img" src="temp/single-products/krovati/osnovanie/2.jpg" alt=""></a>
-              <div class="configure__item-inf"><a class="configure__item-name" href="#">Без основания</a>
-                <div class="price-new configure__item-price">0 ₸</div>
-              </div>
-            </button>
-          </div>
-          <div class="configure__item configure__item--big">
-            <button class="configure__item-content configure__item-btn"><a class="configure__item-img-box" href="#"> <img class="configure__item-img" src="temp/single-products/krovati/osnovanie/2.jpg" alt=""></a>
-              <div class="configure__item-inf"><a class="configure__item-name" href="#">Без основания</a>
-                <div class="price-new configure__item-price">0 ₸</div>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div class="configure__footer">
-          <button class="btn configure__btn">В корзину  +25 000 ₸</button>
-          <button class="btn btn--transparent configure__btn">Выбрать</button>
-        </div>
-        <button class="configure__close">
-          <svg class="icon configure__close-icon"> 
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#exit"></use>
-          </svg>
-        </button>
       </div>
     </div>
     <div class="product-config">
@@ -1139,7 +1141,170 @@
         <div class="modal-form__reg-text">Если у вас нет аккаунта, то <a class="link link--primary link--line modal-form__reg-link" href="#">Зарегистрируйтесь</a></div>
       </form>
     </div>
+    <div class="catalog-menu">
+      <div class="catalog-menu__list">
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/divany.png">Диваны</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Диваны</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/krovati.png">Кровати</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Кровати</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/matrasi.png">Матрасы</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Матрасы</div>
+              <div class="catalog-submenu__columns">
+                <div class="catalog-submenu__column">
+                  <div class="catalog-submenu__title2">По категориям</div>
+                  <ul class="catalog-submenu__list">
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Все матрасы</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Американские матрасы</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Элитные матрасы</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Круглые матрасы</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Наматрасники</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Детские матрасы</a></div>
+                  </ul>
+                </div>
+                <div class="catalog-submenu__column">
+                  <div class="catalog-submenu__title2">По бренду</div>
+                  <ul class="catalog-submenu__list">
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Askona</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">King Koil</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Mediflex</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Serta</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Sleep Professor</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Sleep.8</a></div>
+                  </ul>
+                </div>
+                <div class="catalog-submenu__column">
+                  <div class="catalog-submenu__title2">По размеру</div>
+                  <ul class="catalog-submenu__list">
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">080x200</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">090x200</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">120x190</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">120x200</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">140x190</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">140x200</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">160x190</a></div>
+                  </ul>
+                </div>
+                <div class="catalog-submenu__column">
+                  <div class="catalog-submenu__title2">По свойстам</div>
+                  <ul class="catalog-submenu__list">
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Беспружинный</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Блок независимых пружин</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Зависимый (боннель)</a></div>
+                  </ul>
+                </div>
+              </div>
+            </div><a class="catalog-submenu__special" href="#"> <img class="catalog-submenu__special-img" src="temp/catalog-menu/special-matrasi.png" alt=""></a>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/odeyala.png">Одеяла</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Одеяла</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/podushki.png">Подушки</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Подушки</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/chekhly.png">Чехлы</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Чехлы</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/tekstil.png">Текстиль</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Текстиль</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/mebel.png">Мебель</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Мебель</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/banketki.png">Банкетки</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Банкетки</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/komody.png">Комоды</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Комоды</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/tualetnye-stoliki.png">Туалетные столики</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Туалетные столики</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/tumby.png">Тумбы</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Тумбы</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/pufy.png">Пуфы</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Пуфы</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/tovary-dlya-doma.png">Товары для дома</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Товары для дома</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/odezhda.png">Одежда</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Одежда</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#">
+            <svg class="icon icon--second catalog-menu__icon"> 
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#akcii"></use>
+            </svg>Акции</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Акции</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="assets/js/vendors.min.js"></script>
-    <script src="assets/js/app.js?v=61639331"></script>
+    <script src="assets/js/app.js?v=92976832"></script>
   </body>
 </html>

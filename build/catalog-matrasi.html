@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css?v=98780921">
+    <link rel="stylesheet" href="assets/css/styles.css?v=60940449">
   </head>
   <body class="body">
     <div class="banner"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="header__bottom">
-          <button class="btn btn--catalog"><span class="icon-menu btn__icon"></span>Все товары</button>
+          <button class="btn btn--catalog js-open-catalog-menu"><span class="icon-menu btn__icon"></span>Все товары</button>
           <nav class="menu header__menu">
             <ul class="menu__list">
               <li class="menu__item"><a class="link menu__link" href="#">Матрасы</a></li>
@@ -92,56 +92,137 @@
                 <div class="sub-categories__item-img-box"><img class="sub-categories__item-img" src="temp/sub-categories/matrasi/4.jpg"></div>
                 <div class="sub-categories__item-name">В скрутке</div></a></div>
           </div>
-          <form class="products__filters" autocomplete="off">
+          <form class="products__filters" autocomplete="off"> 
             <div class="filters">
-              <button class="btn btn--filter filters__btn">
+              <button class="btn btn--filter filters__btn js-open-popup" type="button" data-popup-name="filters">
                 <svg class="icon btn__icon filters__btn-icon"> 
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#filter"></use>
                 </svg>Все фильтры
               </button>
-              <div class="select filters__select">
-                <select class="select__field" data-select-text="Цена">
-                  <option value="">Цена</option>
-                  <option value="price">1</option>
-                  <option value="price">2</option>
-                  <option value="price">3</option>
-                </select>
-                <svg class="icon icon--primary select__icon"> 
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
-                </svg>
+              <div class="filter-menu filters__item">
+                <button class="filter-menu__btn" type="button">Цена
+                  <svg class="icon icon--primary filter-menu__btn-icon"> 
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                  </svg>
+                </button>
+                <div class="filter-menu__content">
+                  <div class="dark-text">Цена</div>
+                  <div class="filter-menu__main" data-speed="0.2">
+                    <div class="price-filter">
+                      <div class="price-filter__fields">
+                        <div class="price-filter__group"><span class="price-filter__text">от</span>
+                          <input class="price-filter__field price-filter__field--min" type="text">
+                        </div>
+                        <div class="price-filter__group"><span class="price-filter__text">до</span>
+                          <input class="price-filter__field price-filter__field--max" type="text">
+                        </div>
+                      </div>
+                      <div class="price-filter__slider" data-min="201000" data-max="490000" data-start-min="201000" data-start-max="490000" data-step="1000"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="select filters__select">
-                <select class="select__field" data-select-text="Размер матраса">
-                  <option value="">Размер матраса</option>
-                  <option value="size">1</option>
-                  <option value="size">2</option>
-                  <option value="size">3</option>
-                </select>
-                <svg class="icon icon--primary select__icon"> 
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
-                </svg>
+              <div class="filter-menu filters__item">
+                <button class="filter-menu__btn" type="button">Размер матраса
+                  <svg class="icon icon--primary filter-menu__btn-icon"> 
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                  </svg>
+                </button>
+                <div class="filter-menu__content">
+                  <div class="dark-text">Размер матраса</div>
+                  <div class="filter-menu__main js-custom-scrollbar" data-speed="0.2">
+                    <div class="filter-menu__item">
+                      <label class="checkbox checkbox--accept">
+                        <input class="checkbox__input" type="checkbox" name="size">
+                        <div class="checkbox__switcher">
+                          <svg class="icon checkbox__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                          </svg>
+                        </div>
+                        <div class="checkbox__text">Размер 1</div>
+                      </label>
+                    </div>
+                    <div class="filter-menu__item">
+                      <label class="checkbox checkbox--accept">
+                        <input class="checkbox__input" type="checkbox" name="size">
+                        <div class="checkbox__switcher">
+                          <svg class="icon checkbox__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                          </svg>
+                        </div>
+                        <div class="checkbox__text">Размер 2</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="select filters__select">
-                <select class="select__field" data-select-text="Тип">
-                  <option value="">Тип</option>
-                  <option value="type">1</option>
-                  <option value="type">2</option>
-                  <option value="type">3</option>
-                </select>
-                <svg class="icon icon--primary select__icon"> 
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
-                </svg>
+              <div class="filter-menu filters__item">
+                <button class="filter-menu__btn" type="button">Тип
+                  <svg class="icon icon--primary filter-menu__btn-icon"> 
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                  </svg>
+                </button>
+                <div class="filter-menu__content">
+                  <div class="dark-text">Тип</div>
+                  <div class="filter-menu__main js-custom-scrollbar" data-speed="0.2">
+                    <div class="filter-menu__item">
+                      <label class="checkbox checkbox--accept">
+                        <input class="checkbox__input" type="checkbox" name="type">
+                        <div class="checkbox__switcher">
+                          <svg class="icon checkbox__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                          </svg>
+                        </div>
+                        <div class="checkbox__text">Тип 1</div>
+                      </label>
+                    </div>
+                    <div class="filter-menu__item">
+                      <label class="checkbox checkbox--accept">
+                        <input class="checkbox__input" type="checkbox" name="type">
+                        <div class="checkbox__switcher">
+                          <svg class="icon checkbox__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                          </svg>
+                        </div>
+                        <div class="checkbox__text">Тип 2</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="select filters__select">
-                <select class="select__field" data-select-text="Жесткость">
-                  <option value="">Жесткость</option>
-                  <option value="stiffness">1</option>
-                  <option value="stiffness">2</option>
-                  <option value="stiffness">3</option>
-                </select>
-                <svg class="icon icon--primary select__icon"> 
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
-                </svg>
+              <div class="filter-menu filters__item">
+                <button class="filter-menu__btn" type="button">Жесткость
+                  <svg class="icon icon--primary filter-menu__btn-icon"> 
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                  </svg>
+                </button>
+                <div class="filter-menu__content">
+                  <div class="dark-text">Жесткость</div>
+                  <div class="filter-menu__main js-custom-scrollbar" data-speed="0.2">
+                    <div class="filter-menu__item">
+                      <label class="checkbox checkbox--accept">
+                        <input class="checkbox__input" type="checkbox" name="type">
+                        <div class="checkbox__switcher">
+                          <svg class="icon checkbox__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                          </svg>
+                        </div>
+                        <div class="checkbox__text">Жесткость 1</div>
+                      </label>
+                    </div>
+                    <div class="filter-menu__item">
+                      <label class="checkbox checkbox--accept">
+                        <input class="checkbox__input" type="checkbox" name="type">
+                        <div class="checkbox__switcher">
+                          <svg class="icon checkbox__icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                          </svg>
+                        </div>
+                        <div class="checkbox__text">Жесткость 2</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="products__sorts"><span class="text products__count">Товаров: 346</span>
@@ -1145,6 +1226,423 @@
         </div>
       </div>
     </footer>
+    <div class="popup" data-name="filters">
+      <div class="filters-modal popup__content">
+        <div class="filters-modal__header">
+          <div class="filters-modal__title">Все фильтры</div>
+        </div>
+        <div class="filters-modal__main js-custom-scrollbar">
+          <div class="accordion filters-modal__accordion">
+            <div class="accordion__header">
+              <div class="accordion__text">Цена</div>
+              <svg class="icon icon--primary accordion__header-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg>
+            </div>
+            <div class="accordion__main">
+              <div class="price-filter">
+                <div class="price-filter__fields">
+                  <div class="price-filter__group"><span class="price-filter__text">от</span>
+                    <input class="price-filter__field price-filter__field--min" type="text">
+                  </div>
+                  <div class="price-filter__group"><span class="price-filter__text">до</span>
+                    <input class="price-filter__field price-filter__field--max" type="text">
+                  </div>
+                </div>
+                <div class="price-filter__slider" data-min="201000" data-max="490000" data-start-min="201000" data-start-max="490000" data-step="1000"></div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion filters-modal__accordion">
+            <div class="accordion__header">
+              <div class="accordion__text">Размер спального места</div>
+              <svg class="icon icon--primary accordion__header-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg>
+            </div>
+            <div class="accordion__main">
+              <div class="filters-modal__list filters-modal__list--2">
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="size">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">100х200</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="size">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">120х200</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="size">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">140х200</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="size">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">160х200</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="size">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">180х200</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="size">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">200х200</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="size">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">80х200</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="size">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">90х200</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="size">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Круглые</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion filters-modal__accordion">
+            <div class="accordion__header">
+              <div class="accordion__text">Тип</div>
+              <svg class="icon icon--primary accordion__header-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg>
+            </div>
+            <div class="accordion__main">
+              <div class="filters-modal__list filters-modal__list--2">
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="type">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Тип 1</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="type">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Тип 2</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="type">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Тип 3</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="type">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Тип 4</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion filters-modal__accordion">
+            <div class="accordion__header">
+              <div class="accordion__text">Цвет</div>
+              <svg class="icon icon--primary accordion__header-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg>
+            </div>
+            <div class="accordion__main">
+              <div class="filters-modal__list">
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="color">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div><span class="checkbox__color" style="background-color: #e5d8d2"></span>
+                    <div class="checkbox__text">Бежевый</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="color">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div><span class="checkbox__color" style="background-color: #ae8979"></span>
+                    <div class="checkbox__text">Персиковый</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="color">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div><span class="checkbox__color" style="background-color: #9d9f9e"></span>
+                    <div class="checkbox__text">Серый</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="color">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div><span class="checkbox__color" style="background-color: #6c685a"></span>
+                    <div class="checkbox__text">Хаки</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="color">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div><span class="checkbox__color" style="background-color: #6e6872"></span>
+                    <div class="checkbox__text">Фиолетовый</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="color">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div><span class="checkbox__color" style="background-color: #a9adb8"></span>
+                    <div class="checkbox__text">Светлосерый</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="color">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div><span class="checkbox__color" style="background-color: #a9adb8"></span>
+                    <div class="checkbox__text">Светлосерый</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion filters-modal__accordion">
+            <div class="accordion__header">
+              <div class="accordion__text">Стиль</div>
+              <svg class="icon icon--primary accordion__header-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg>
+            </div>
+            <div class="accordion__main">
+              <div class="filters-modal__list filters-modal__list--2">
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="style">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Стиль 1</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="style">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Стиль 2</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="style">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Стиль 3</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="style">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Стиль 4</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion filters-modal__accordion">
+            <div class="accordion__header">
+              <div class="accordion__text">Бренд</div>
+              <svg class="icon icon--primary accordion__header-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg>
+            </div>
+            <div class="accordion__main">
+              <div class="filters-modal__list">
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="brand">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Brand 1</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="brand">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Brand 2</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion filters-modal__accordion">
+            <div class="accordion__header">
+              <div class="accordion__text">Тип механизма дивана</div>
+              <svg class="icon icon--primary accordion__header-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg>
+            </div>
+            <div class="accordion__main">
+              <div class="filters-modal__list">
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="type-sofa-mechanism">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Тип механизма дивана 1</div>
+                  </label>
+                </div>
+                <div class="filters-modal__item">
+                  <label class="checkbox checkbox--accept">
+                    <input class="checkbox__input" type="checkbox" name="type-sofa-mechanism">
+                    <div class="checkbox__switcher">
+                      <svg class="icon checkbox__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#check"></use>
+                      </svg>
+                    </div>
+                    <div class="checkbox__text">Тип механизма дивана 2</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn filters-modal__btn">Применить фильтр</button>
+          <button class="btn btn--neutral filters-modal__btn">Сбросить фильтр</button>
+        </div>
+        <button class="popup__close filters-modal__close">
+          <svg class="icon popup__close-icon"> 
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#exit"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
     <div class="modal" id="modal-login">
       <div class="modal__title">Авторизация</div>
       <form class="modal-form modal__form" action="#" autocomplete="off"> 
@@ -1161,7 +1659,170 @@
         <div class="modal-form__reg-text">Если у вас нет аккаунта, то <a class="link link--primary link--line modal-form__reg-link" href="#">Зарегистрируйтесь</a></div>
       </form>
     </div>
+    <div class="catalog-menu">
+      <div class="catalog-menu__list">
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/divany.png">Диваны</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Диваны</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/krovati.png">Кровати</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Кровати</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/matrasi.png">Матрасы</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Матрасы</div>
+              <div class="catalog-submenu__columns">
+                <div class="catalog-submenu__column">
+                  <div class="catalog-submenu__title2">По категориям</div>
+                  <ul class="catalog-submenu__list">
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Все матрасы</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Американские матрасы</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Элитные матрасы</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Круглые матрасы</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Наматрасники</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Детские матрасы</a></div>
+                  </ul>
+                </div>
+                <div class="catalog-submenu__column">
+                  <div class="catalog-submenu__title2">По бренду</div>
+                  <ul class="catalog-submenu__list">
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Askona</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">King Koil</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Mediflex</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Serta</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Sleep Professor</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Sleep.8</a></div>
+                  </ul>
+                </div>
+                <div class="catalog-submenu__column">
+                  <div class="catalog-submenu__title2">По размеру</div>
+                  <ul class="catalog-submenu__list">
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">080x200</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">090x200</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">120x190</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">120x200</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">140x190</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">140x200</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">160x190</a></div>
+                  </ul>
+                </div>
+                <div class="catalog-submenu__column">
+                  <div class="catalog-submenu__title2">По свойстам</div>
+                  <ul class="catalog-submenu__list">
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Беспружинный</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Блок независимых пружин</a></div>
+                    <div class="catalog-submenu__item"><a class="link catalog-submenu__link" href="#">Зависимый (боннель)</a></div>
+                  </ul>
+                </div>
+              </div>
+            </div><a class="catalog-submenu__special" href="#"> <img class="catalog-submenu__special-img" src="temp/catalog-menu/special-matrasi.png" alt=""></a>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/odeyala.png">Одеяла</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Одеяла</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/podushki.png">Подушки</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Подушки</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/chekhly.png">Чехлы</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Чехлы</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/tekstil.png">Текстиль</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Текстиль</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/mebel.png">Мебель</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Мебель</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/banketki.png">Банкетки</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Банкетки</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/komody.png">Комоды</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Комоды</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/tualetnye-stoliki.png">Туалетные столики</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Туалетные столики</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/tumby.png">Тумбы</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Тумбы</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/pufy.png">Пуфы</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Пуфы</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/tovary-dlya-doma.png">Товары для дома</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Товары для дома</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#"><img class="catalog-menu__img" src="temp/catalog-menu/categories/odezhda.png">Одежда</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Одежда</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-menu__item"><a class="catalog-menu__link" href="#">
+            <svg class="icon icon--second catalog-menu__icon"> 
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#akcii"></use>
+            </svg>Акции</a>
+          <div class="catalog-submenu catalog-menu__sub">
+            <div class="catalog-submenu__main">
+              <div class="catalog-submenu__title">Акции</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="assets/js/vendors.min.js"></script>
-    <script src="assets/js/app.js?v=31950706"></script>
+    <script src="assets/js/app.js?v=24103885"></script>
   </body>
 </html>

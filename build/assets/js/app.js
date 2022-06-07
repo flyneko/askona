@@ -261,29 +261,8 @@ window.addEventListener('load', () => {
   /**
    * Конфигураторы карточки товара
    */
-  const $openConfigureBtns = document.querySelectorAll('.js-open-configure');
-  $openConfigureBtns.forEach($btn => {
-    configureName = $btn.dataset.name
-    const $configure = document.querySelector(`.configure[data-name="${configureName}"]`);
-
-    if (!configureName || !$configure) {
-      return
-    }
-
-    $btn.addEventListener('click', () => {
-      closeShowedConfigure();
-      closeProductConfig();
-      $configure.classList.add('configure--show');
-    });
-  });
-
   const $configures = document.querySelectorAll('.configure');
   $configures.forEach($configure => {
-    const $closeBtn = $configure.querySelector('.configure__close');
-    $closeBtn.addEventListener('click', () => {
-      $configure.classList.remove('configure--show');
-    });
-
     $configure.addEventListener('click', e => {
       if (e.target.classList.contains('configure__item-btn') ||
         e.target.closest('.configure__item-btn')) {
@@ -295,24 +274,13 @@ window.addEventListener('load', () => {
       }
     });
   });
-  window.addEventListener('click', e => {
-    if (e.target.closest('.js-open-configure') || e.target.classList.contains('js-open-configure')) {
-      return;
-    }
-
-    if (!e.target.closest('.configure')) {
-      closeShowedConfigure();
-    }
-  });
 
   setProductConfigPosition();
   window.addEventListener('resize', setProductConfigPosition);
   function setProductConfigPosition() {
     const $productConfig = document.querySelector('.product-config');
     if ($productConfig) {
-      const bannerHeight = document.querySelector('.banner').offsetHeight;
-      const headerHeight = document.querySelector('.header').offsetHeight;
-      const offsetTop = bannerHeight + headerHeight + 1;
+      const offsetTop = getBannerHeaderHeight() + 1;
       $productConfig.style.top = `${offsetTop}px`;
       $productConfig.style.height = `calc(100vh - ${offsetTop}px`;
     }
@@ -334,13 +302,6 @@ window.addEventListener('load', () => {
 
     const $closeBtn = $productConfig.querySelector('.product-config__close');
     $closeBtn.addEventListener('click', closeProductConfig);
-  }
-
-  function closeShowedConfigure() {
-    const $showedConfigure = document.querySelector('.configure--show');
-    if ($showedConfigure) {
-      $showedConfigure.classList.remove('configure--show');
-    }
   }
 
   function closeProductConfig() {
@@ -400,10 +361,12 @@ window.addEventListener('load', () => {
   /**
    * Скроллбар
    */
-  const $configureLists = document.querySelectorAll('.configure__list');
-  $configureLists.forEach($list => {
+  const $customScrollbars = document.querySelectorAll('.js-custom-scrollbar');
+  $customScrollbars.forEach($list => {
+    const wheelSpeed = $list.dataset.speed ? +$list.dataset.speed : 1;
+
     new PerfectScrollbar($list, {
-      wheelSpeed: 1,
+      wheelSpeed,
       wheelPropagation: false,
     });
   });
@@ -498,5 +461,202 @@ window.addEventListener('load', () => {
       $btn.classList.toggle('wishlist-btn--active');
     });
   });
+
+  /**
+   * Меню "Все товары"
+   */
+  const $catalogMenu = document.querySelector('.catalog-menu');
+  if ($catalogMenu) {
+    setCatalogMenuPosition();
+    window.addEventListener('resize', setCatalogMenuPosition)
+
+    const $openCatalogMenuBtns = document.querySelectorAll('.js-open-catalog-menu');
+    $openCatalogMenuBtns.forEach($btn => {
+      $btn.addEventListener('click', () => {
+        $catalogMenu.classList.toggle('catalog-menu--show');
+
+        const $icon = $btn.querySelector('.icon-menu');
+        if ($icon) {
+          $icon.classList.toggle('icon-menu--active')
+        }
+      });
+    });
+
+    window.addEventListener('click', e => {
+      if (e.target.closest('.js-open-catalog-menu') || e.target.classList.contains('js-open-catalog-menu')) {
+        return;
+      }
+  
+      const ignoreClass = 'swiper-pagination-bullet';
+      if (!e.target.closest('.catalog-menu') && !e.target.closest(`.${ignoreClass}`)) {
+        closeCatalogMenu();
+      }
+    });
+
+    function closeCatalogMenu() {
+      const $catalogMenu = document.querySelector('.catalog-menu');
+      if (!$catalogMenu.classList.contains('catalog-menu--show')) {
+        return;
+      }
+
+      $catalogMenu.classList.remove('catalog-menu--show');
+
+      const $openBtns = document.querySelectorAll('.js-open-catalog-menu');
+      $openBtns.forEach($btn => {
+        const $icon = $btn.querySelector('.icon-menu');
+        if ($icon) {
+          $icon.classList.remove('icon-menu--active')
+        }
+      });
+    }
+
+    function setCatalogMenuPosition() {
+      const $catalogMenu = document.querySelector('.catalog-menu');
+      const offsetTop = getBannerHeaderHeight() - 1;
+      $catalogMenu.style.top = `${offsetTop}px`;
+    }
+  }
+
+  /**
+   * Custom range input
+   */
+  const $priceFilters = document.querySelectorAll('.price-filter');
+  $priceFilters.forEach($filter => {
+    const $slider = $filter.querySelector('.price-filter__slider');
+
+    const data = {
+      min: +$slider.dataset.min,
+      max: +$slider.dataset.max,
+      startMin: +$slider.dataset.startMin,
+      startMax: +$slider.dataset.startMax,
+      step: +$slider.dataset.step,
+    };
+
+    noUiSlider.create($slider, {
+      start: [data.startMin, data.startMax],
+      connect: true,
+      step: data.step,
+      range: {
+        'min': data.min,
+        'max': data.max
+      },
+      format: {
+        from: function (value) {
+          return parseInt(value);
+        },
+        to: function (value) {
+          return parseInt(value);
+        }
+      }
+    });
+
+    const $minInput = $filter.querySelector('.price-filter__field--min');
+    const $maxInput = $filter.querySelector('.price-filter__field--max');
+    $minInput.addEventListener('blur', () => {
+      $slider.noUiSlider.set($minInput.value);
+    });
+
+    $maxInput.addEventListener('blur', () => {
+      $slider.noUiSlider.set([null, $maxInput.value]);
+    });
+
+    $slider.noUiSlider.on('update', function (values, handle, unencoded) {
+      $minInput.value = `${values[0]} ₸`;
+      $maxInput.value = `${values[1]} ₸`;
+    });
+  });
+
+  /**
+   * Попапы: фильтры, конфигурации
+   */
+  const $openPopupBtns = document.querySelectorAll('.js-open-popup');
+  $openPopupBtns.forEach($btn => {
+    popupName = $btn.dataset.popupName
+    const $popup = document.querySelector(`.popup[data-name="${popupName}"]`);
+
+    if (!popupName || !$popup) {
+      return
+    }
+
+    $btn.addEventListener('click', () => {
+      closeShowedPopup();
+      $popup.classList.add('popup--show');
+    });
+  });
+
+  const $popups = document.querySelectorAll('.popup');
+  $popups.forEach($popup => {
+    const $closeBtn = $popup.querySelector('.popup__close');
+    if ($closeBtn) {
+      $closeBtn.addEventListener('click', () => {
+        $popup.classList.remove('popup--show');
+      });
+    }
+  });
+
+  window.addEventListener('click', e => {
+    if (e.target.closest('.js-open-popup') || e.target.classList.contains('js-open-popup')) {
+      return;
+    }
+
+    const ignoreClass = 'swiper-pagination-bullet';
+
+    if (!e.target.closest('.popup') && !e.target.closest(`.${ignoreClass}`)) {
+      closeShowedPopup();
+    }
+  });
+
+  function closeShowedPopup() {
+    const $popup = document.querySelector('.popup--show');
+    if ($popup) {
+      $popup.classList.remove('popup--show');
+    }
+  }
+
+  /**
+   * Аккордеон
+   */
+  const $accordions = document.querySelectorAll('.accordion');
+  $accordions.forEach($accordion => {
+    const $header = $accordion.querySelector('.accordion__header');
+    $header.addEventListener('click', () => {
+      $accordion.classList.toggle('accordion--active');
+    });
+  });
+
+  /**
+   * Фильтры с всплывающим меню
+   */
+  const $filterMenus = document.querySelectorAll('.filter-menu');
+  $filterMenus.forEach($menu => {
+    const $btn = $menu.querySelector('.filter-menu__btn');
+    $btn.addEventListener('click', () => {
+      $menu.classList.toggle('filter-menu--active');
+    })
+  });
+  window.addEventListener('click', e => {
+    const ignoreClass = 'swiper-pagination-bullet';
+    if (e.target.closest(`.${ignoreClass}`)) {
+      return;
+    }
+
+    const $activeFilterMenus = document.querySelectorAll('.filter-menu--active');
+    if (e.target.closest('.filter-menu')) {
+      const $thisFilter = e.target.closest('.filter-menu');
+      $activeFilterMenus.forEach($filter => {
+        if ($filter !== $thisFilter) {
+          $filter.classList.remove('filter-menu--active')
+        }
+      })
+    } else {
+      $activeFilterMenus.forEach($filter => $filter.classList.remove('filter-menu--active'));
+    }
+  });
 });
 
+function getBannerHeaderHeight() {
+  const bannerHeight = document.querySelector('.banner').offsetHeight;
+  const headerHeight = document.querySelector('.header').offsetHeight;
+
+  return bannerHeight + headerHeight + 1;
+}

@@ -1,23 +1,10 @@
 .configure
-  position: fixed
-  right: 0
-  top: 0
-  z-index: 16
-  height: 100%
-  opacity: 0
-  transform: translateX(100%)
-  visibility: hidden
-  transition: opacity .3s, transform .3s, visibility .3s
-
-  &__content
-    position: relative
-    display: flex
-    flex-direction: column
-    width: 528px
-    height: 100%
-    background: #fff
-    box-shadow: -2px 0 9px rgba(0, 0, 0, 0.1)
-    overflow: hidden
+  display: flex
+  flex-direction: column
+  width: 528px
+  background: #fff
+  box-shadow: -2px 0 9px rgba(0, 0, 0, 0.1)
+  overflow: hidden
 
   &__header
     padding: 40px 32px 0
@@ -40,7 +27,7 @@
     padding-left: 32px
     max-height: calc(100vh - 180px)
     position: relative
-        
+
   &__item
     margin: 10px 8px
     width: calc(100% / 12 * 4 - 16px)
@@ -130,18 +117,3 @@
 
     &:not(:last-child)
       margin-right: 16px
-
-  &__close
-    position: absolute
-    top: 48px
-    right: 24px
-
-  &__close-icon
-    stroke: $color-primary
-    width: 16px
-    height: 16px
-
-  &--show
-    transform: translateX(0)
-    opacity: 1
-    visibility: visible

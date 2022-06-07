@@ -33,39 +33,95 @@ block content
 								img.sub-categories__item-img(src="temp/sub-categories/matrasi/4.jpg")
 							.sub-categories__item-name В скрутке
 
-				form.products__filters(autocomplete="off")
+				form.products__filters(autocomplete="off") 
 					.filters
-						button.btn.btn--filter.filters__btn
+						button.btn.btn--filter.filters__btn.js-open-popup(type="button" data-popup-name="filters")
 							+icon('filter', 'btn__icon filters__btn-icon')
 							| Все фильтры
-						.select.filters__select
-							select.select__field(data-select-text="Цена")
-								option(value="") Цена
-								option(value="price") 1
-								option(value="price") 2
-								option(value="price") 3
-							+icon('arrow_right', 'icon--primary select__icon')
-						.select.filters__select
-							select.select__field(data-select-text="Размер матраса")
-								option(value="") Размер матраса
-								option(value="size") 1
-								option(value="size") 2
-								option(value="size") 3
-							+icon('arrow_right', 'icon--primary select__icon')
-						.select.filters__select
-							select.select__field(data-select-text="Тип")
-								option(value="") Тип
-								option(value="type") 1
-								option(value="type") 2
-								option(value="type") 3
-							+icon('arrow_right', 'icon--primary select__icon')
-						.select.filters__select
-							select.select__field(data-select-text="Жесткость")
-								option(value="") Жесткость
-								option(value="stiffness") 1
-								option(value="stiffness") 2
-								option(value="stiffness") 3
-							+icon('arrow_right', 'icon--primary select__icon')
+
+						.filter-menu.filters__item
+							button.filter-menu__btn(type="button")
+								| Цена
+								+icon('arrow_right', 'icon--primary filter-menu__btn-icon')
+							.filter-menu__content
+								.dark-text Цена
+								.filter-menu__main(data-speed="0.2")
+									.price-filter
+										.price-filter__fields
+											.price-filter__group
+												span.price-filter__text от
+												input.price-filter__field.price-filter__field--min(type="text")
+											.price-filter__group
+												span.price-filter__text до
+												input.price-filter__field.price-filter__field--max(type="text")
+										.price-filter__slider(
+											data-min="201000"
+											data-max="490000"
+											data-start-min="201000"
+											data-start-max="490000"
+											data-step="1000"
+										)
+
+						.filter-menu.filters__item
+							button.filter-menu__btn(type="button")
+								| Размер матраса
+								+icon('arrow_right', 'icon--primary filter-menu__btn-icon')
+							.filter-menu__content
+								.dark-text Размер матраса
+								.filter-menu__main.js-custom-scrollbar(data-speed="0.2")
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="size")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Размер 1
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="size")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Размер 2
+
+						.filter-menu.filters__item
+							button.filter-menu__btn(type="button")
+								| Тип
+								+icon('arrow_right', 'icon--primary filter-menu__btn-icon')
+							.filter-menu__content
+								.dark-text Тип
+								.filter-menu__main.js-custom-scrollbar(data-speed="0.2")
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="type")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Тип 1
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="type")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Тип 2
+
+						.filter-menu.filters__item
+							button.filter-menu__btn(type="button")
+								| Жесткость
+								+icon('arrow_right', 'icon--primary filter-menu__btn-icon')
+							.filter-menu__content
+								.dark-text Жесткость
+								.filter-menu__main.js-custom-scrollbar(data-speed="0.2")
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="type")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Жесткость 1
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="type")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Жесткость 2
+
 
 					.products__sorts
 						span.text.products__count Товаров: 346
@@ -115,3 +171,6 @@ block content
 						| Бонусом для покупателей с ограниченными финансовыми возможностями является покупка товара в кредит или рассрочку.
 						| По городу Алматы и области доставка мебели осуществляется собственной курьерской службой. В другие города доставляем
 					p Магазин постоянно проводит акции и распродажи с существенным снижением цены. Следите за предложениями и не пропустите акции.
+
+block modals 
+	include modals/_filters.pug

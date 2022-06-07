@@ -1,0 +1,241 @@
+.popup(data-name="filters")
+    .filters-modal.popup__content
+        .filters-modal__header
+            .filters-modal__title Все фильтры
+        .filters-modal__main.js-custom-scrollbar
+            .accordion.filters-modal__accordion
+                .accordion__header
+                    .accordion__text Цена
+                    +icon('arrow_right', 'icon--primary accordion__header-icon')
+                .accordion__main
+                    .price-filter
+                        .price-filter__fields
+                            .price-filter__group
+                                span.price-filter__text от
+                                input.price-filter__field.price-filter__field--min(type="text")
+                            .price-filter__group
+                                span.price-filter__text до
+                                input.price-filter__field.price-filter__field--max(type="text")
+                        .price-filter__slider(
+                            data-min="201000"
+                            data-max="490000"
+                            data-start-min="201000"
+                            data-start-max="490000"
+                            data-step="1000"
+                        )
+            .accordion.filters-modal__accordion
+                .accordion__header
+                    .accordion__text Размер спального места
+                    +icon('arrow_right', 'icon--primary accordion__header-icon')
+                .accordion__main
+                    .filters-modal__list.filters-modal__list--2
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="size")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text 100х200
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="size")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text 120х200
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="size")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text 140х200
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="size")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text 160х200
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="size")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text 180х200
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="size")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text 200х200
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="size")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text 80х200
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="size")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text 90х200
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="size")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Круглые
+            .accordion.filters-modal__accordion
+                .accordion__header
+                    .accordion__text Тип
+                    +icon('arrow_right', 'icon--primary accordion__header-icon')
+                .accordion__main
+                    .filters-modal__list.filters-modal__list--2
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Тип 1
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Тип 2
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Тип 3
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Тип 4
+            .accordion.filters-modal__accordion
+                .accordion__header
+                    .accordion__text Цвет
+                    +icon('arrow_right', 'icon--primary accordion__header-icon')
+                .accordion__main
+                    .filters-modal__list
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="color")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                span.checkbox__color(style="background-color: #e5d8d2")
+                                .checkbox__text Бежевый
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="color")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                span.checkbox__color(style="background-color: #ae8979")
+                                .checkbox__text Персиковый
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="color")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                span.checkbox__color(style="background-color: #9d9f9e")
+                                .checkbox__text Серый
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="color")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                span.checkbox__color(style="background-color: #6c685a")
+                                .checkbox__text Хаки
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="color")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                span.checkbox__color(style="background-color: #6e6872")
+                                .checkbox__text Фиолетовый
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="color")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                span.checkbox__color(style="background-color: #a9adb8")
+                                .checkbox__text Светлосерый
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="color")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                span.checkbox__color(style="background-color: #a9adb8")
+                                .checkbox__text Светлосерый
+            .accordion.filters-modal__accordion
+                .accordion__header
+                    .accordion__text Стиль
+                    +icon('arrow_right', 'icon--primary accordion__header-icon')
+                .accordion__main
+                    .filters-modal__list.filters-modal__list--2
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="style")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Стиль 1
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="style")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Стиль 2
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="style")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Стиль 3
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="style")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Стиль 4
+            .accordion.filters-modal__accordion
+                .accordion__header
+                    .accordion__text Бренд
+                    +icon('arrow_right', 'icon--primary accordion__header-icon')
+                .accordion__main
+                    .filters-modal__list
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="brand")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Brand 1
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="brand")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Brand 2
+            .accordion.filters-modal__accordion
+                .accordion__header
+                    .accordion__text Тип механизма дивана
+                    +icon('arrow_right', 'icon--primary accordion__header-icon')
+                .accordion__main
+                    .filters-modal__list
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type-sofa-mechanism")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Тип механизма дивана 1
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type-sofa-mechanism")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Тип механизма дивана 2
+            button.btn.filters-modal__btn Применить фильтр
+            button.btn.btn--neutral.filters-modal__btn Сбросить фильтр
+
+        button.popup__close.filters-modal__close
+            +icon('exit', 'popup__close-icon')    

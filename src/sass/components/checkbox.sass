@@ -1,0 +1,63 @@
+.checkbox
+  display: inline-flex
+  align-items: center
+  cursor: pointer
+  user-select: none
+
+  &__switcher
+    position: relative
+    width: 24px
+    height: 24px
+    border: 1px solid $color-primary
+    border-radius: 50%
+
+    &:before
+      content: ''
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      width: 14px
+      height: 14px
+      background-color: $color-primary
+      border-radius: 50%
+      display: none
+
+  &__color
+    width: 24px
+    height: 24px
+    border-radius: 50%
+    margin-left: 8px
+
+  &__text
+    margin-left: 8px
+    font-weight: 500
+    color: #262626
+    user-select: none
+
+  &__icon
+    width: 11px
+    height: 12px
+    stroke: $color-primary
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    display: none
+
+  &__input
+    display: none
+
+  &__input:checked + &__switcher:before,
+  &__input:checked + &__switcher &__icon
+    display: block
+
+  &--accept &__switcher
+    border-radius: 4px
+
+  &--accept &__input:checked + &__switcher:before
+    display: none
+
+  &--accept &__text
+    font-size: 14px
+    font-weight: 400

@@ -1,0 +1,72 @@
+.catalog-menu
+  position: absolute
+  top: 248px
+  left: 0
+  display: none
+  width: 100%
+  background: #fff
+  z-index: 60
+  border-bottom: 1px solid #e8e8e8
+  box-shadow: 2px 2px 4px rgba(#000, 0.15)
+
+  &::before
+    content: ''
+    position: absolute
+    left: calc((100vw - $container-width + $container-offset) / 2 + 72px)
+    width: 9px
+    height: 9px
+    border: 1px solid #e8e8e8
+    background: #fff
+    transform: rotate(45deg)
+    border-radius: 2px
+    top: -5px
+      
+  &__list
+    position: relative
+    width: calc(((100vw - $container-width + $container-offset) / 2) + 345px)
+    border-right: 1px solid #eeeeee
+    background: #fff
+
+  &__item
+    padding-left: calc((100vw - $container-width + $container-offset) / 2)
+
+    &:hover
+      background-color: #f4f4f4
+
+  &__item:not(:last-child) &__link
+    border-bottom: 1px solid #eeeeee
+
+  &__item:first-child &__sub
+    display: flex
+
+  &__item:hover &__sub
+    display: flex
+
+  &__link
+    font-size: 14px
+    font-weight: 500
+    color: #212121
+    height: 56px
+    display: flex
+    align-items: center
+
+  &__img
+    width: 42px
+    max-height: 35px
+    object-fit: contain
+    margin-right: 12px
+
+  &__icon
+    width: 45px
+    margin-right: 10px
+
+  &__sub
+    position: absolute
+    left: calc(((100vw - $container-width + $container-offset) / 2) + 345px)
+    top: 0
+    width: calc($container-width - $container-offset * 2 - 345px)
+    height: 100%
+    display: none
+
+  &--show
+    display: block

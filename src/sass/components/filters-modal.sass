@@ -1,0 +1,51 @@
+.filters-modal
+  width: 415px
+  max-height: 100%
+
+  &__header
+    padding: 36px 56px 0 32px
+
+  &__title
+    font-size: 30px
+    font-weight: 600
+    color: #212121
+
+  &__main
+    position: relative
+    margin-top: 30px
+    margin-right: 12px
+    padding: 0 44px 0 32px
+    max-height: calc(100vh - 135px)
+
+  &__accordion
+    padding: 25px 0
+    border-top: 1px solid #eeeeee
+
+  &__list
+    margin: -8px 0
+
+  &__item
+    margin: 8px 0
+    
+  &__list--2
+    display: flex
+    flex-wrap: wrap
+    margin: -8px
+
+  &__list--2 &__item
+    width: calc(50% - 16px)
+    margin: 8px
+
+  &__footer
+    height: 200px
+
+  &__btn
+    width: 100%
+    height: 48px
+    font-size: 16px
+
+    &:not(:first-child)
+      margin-top: 16px
+
+  &__close.popup__close
+    right: 56px

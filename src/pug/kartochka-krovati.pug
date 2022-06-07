@@ -304,7 +304,7 @@ block content
 									+icon('arrow_right', 'icon--primary select__icon')
 							.single-product__form-group
 								.single-product__form-text Вариант:
-								button.variation-field.single-product__form-variation.js-open-configure(data-name="color-1")
+								button.variation-field.single-product__form-variation.js-open-popup(data-popup-name="configure-1")
 									img.variation-field__img(src="temp/single-products/krovati/1.jpg", alt="")
 									| Мебельный велюр, бирюзовый
 									+icon('arrow_right', 'icon--primary variation-field__arrow')
@@ -358,53 +358,54 @@ block content
 									+card(i, {class: 'products__slider-item', discount_class: 'discount--white'})
 						.swiper-scrollbar.products__slider-scrollbar
 
-	.configure(data-name="color-1")
-		.configure__content
-			.configure__header
-				.configure__title Выберите основание
-				.text.configure__text Указана итоговая стоимость кровати
-			.configure__list
-				.configure__item.configure__item--big.configure__item--active.is-selected
-					button.configure__item-content.configure__item-btn
-						a.configure__item-img-box(href="#") 
-							img.configure__item-img(src="temp/single-products/krovati/osnovanie/1.jpg", alt="")
-						.configure__item-inf
-							a.configure__item-name(href="#") База с рамой
-							.price-new.configure__item-price 25 000 ₸
-				.configure__item.configure__item--big
-					button.configure__item-content.configure__item-btn
-						a.configure__item-img-box(href="#") 
-							img.configure__item-img(src="temp/single-products/krovati/osnovanie/2.jpg", alt="")
-						.configure__item-inf
-							a.configure__item-name(href="#") Без основания
-							.price-new.configure__item-price 0 ₸
-				.configure__item.configure__item--big
-					button.configure__item-content.configure__item-btn
-						a.configure__item-img-box(href="#") 
-							img.configure__item-img(src="temp/single-products/krovati/osnovanie/2.jpg", alt="")
-						.configure__item-inf
-							a.configure__item-name(href="#") Без основания
-							.price-new.configure__item-price 0 ₸
-				.configure__item.configure__item--big
-					button.configure__item-content.configure__item-btn
-						a.configure__item-img-box(href="#") 
-							img.configure__item-img(src="temp/single-products/krovati/osnovanie/2.jpg", alt="")
-						.configure__item-inf
-							a.configure__item-name(href="#") Без основания
-							.price-new.configure__item-price 0 ₸
-				.configure__item.configure__item--big
-					button.configure__item-content.configure__item-btn
-						a.configure__item-img-box(href="#") 
-							img.configure__item-img(src="temp/single-products/krovati/osnovanie/2.jpg", alt="")
-						.configure__item-inf
-							a.configure__item-name(href="#") Без основания
-							.price-new.configure__item-price 0 ₸
-			.configure__footer
-				button.btn.configure__btn В корзину  +25 000 ₸
-				button.btn.btn--transparent.configure__btn Выбрать
+	.popup(data-name="configure-1")
+		.popup__content.configure
+			.configure__content
+				.configure__header
+					.configure__title Выберите основание
+					.text.configure__text Указана итоговая стоимость кровати
+				.configure__list.js-custom-scrollbar
+					.configure__item.configure__item--big.configure__item--active.is-selected
+						button.configure__item-content.configure__item-btn
+							a.configure__item-img-box(href="#") 
+								img.configure__item-img(src="temp/single-products/krovati/osnovanie/1.jpg", alt="")
+							.configure__item-inf
+								a.configure__item-name(href="#") База с рамой
+								.price-new.configure__item-price 25 000 ₸
+					.configure__item.configure__item--big
+						button.configure__item-content.configure__item-btn
+							a.configure__item-img-box(href="#") 
+								img.configure__item-img(src="temp/single-products/krovati/osnovanie/2.jpg", alt="")
+							.configure__item-inf
+								a.configure__item-name(href="#") Без основания
+								.price-new.configure__item-price 0 ₸
+					.configure__item.configure__item--big
+						button.configure__item-content.configure__item-btn
+							a.configure__item-img-box(href="#") 
+								img.configure__item-img(src="temp/single-products/krovati/osnovanie/2.jpg", alt="")
+							.configure__item-inf
+								a.configure__item-name(href="#") Без основания
+								.price-new.configure__item-price 0 ₸
+					.configure__item.configure__item--big
+						button.configure__item-content.configure__item-btn
+							a.configure__item-img-box(href="#") 
+								img.configure__item-img(src="temp/single-products/krovati/osnovanie/2.jpg", alt="")
+							.configure__item-inf
+								a.configure__item-name(href="#") Без основания
+								.price-new.configure__item-price 0 ₸
+					.configure__item.configure__item--big
+						button.configure__item-content.configure__item-btn
+							a.configure__item-img-box(href="#") 
+								img.configure__item-img(src="temp/single-products/krovati/osnovanie/2.jpg", alt="")
+							.configure__item-inf
+								a.configure__item-name(href="#") Без основания
+								.price-new.configure__item-price 0 ₸
+				.configure__footer
+					button.btn.configure__btn В корзину  +25 000 ₸
+					button.btn.btn--transparent.configure__btn Выбрать
 
-			button.configure__close
-				+icon('exit', 'configure__close-icon')
+				button.popup__close.configure__close
+					+icon('exit', 'popup__close-icon')
 
 	.product-config
 		.container

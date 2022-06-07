@@ -337,13 +337,13 @@ block content
 									+icon('arrow_right', 'icon--primary select__icon')
 							.single-product__form-group
 								.single-product__form-text Вариант:
-								button.variation-field.single-product__form-variation.js-open-configure(data-name="color-1")
+								button.variation-field.single-product__form-variation.js-open-popup(data-popup-name="configure-1")
 									img.variation-field__img(src="temp/single-products/divany/1.jpg", alt="")
 									| Серый, микровелюр
 									+icon('arrow_right', 'icon--primary variation-field__arrow')
 							.single-product__form-group
 								.single-product__form-text Вариант:
-								button.variation-field.single-product__form-variation.js-open-configure(data-name="color-2")
+								button.variation-field.single-product__form-variation.js-open-popup(data-popup-name="configure-2")
 									img.variation-field__img(src="temp/single-products/divany/1.jpg", alt="")
 									| Серый, микровелюр
 									+icon('arrow_right', 'icon--primary variation-field__arrow')
@@ -397,245 +397,247 @@ block content
 									+card(i, {class: 'products__slider-item', discount_class: 'discount--white'})
 						.swiper-scrollbar.products__slider-scrollbar
 
-	.configure(data-name="color-1")
-		.configure__content
-			.configure__header
-				.configure__title Цвет обивки, материал
-			.configure__list
-				.configure__item.configure__item--active.is-selected
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/1.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet
-						.configure__item-desc Серый <br> Микровелюр
-						.price-new.configure__item-price 25 000 ₸
-						.status.status--have.configure__item-status В наличии
+	.popup(data-name="configure-1")
+		.popup__content.configure
+			.configure__content
+				.configure__header
+					.configure__title Цвет обивки, материал
+				.configure__list.js-custom-scrollbar
+					.configure__item.configure__item--active.is-selected
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/1.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet
+							.configure__item-desc Серый <br> Микровелюр
+							.price-new.configure__item-price 25 000 ₸
+							.status.status--have.configure__item-status В наличии
 
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/2.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Arbus
-						.configure__item-desc Серый <br> Рогожка
-						.price-new.configure__item-price 27 000 ₸
-						.status.status--have.configure__item-status В наличии
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/2.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Arbus
+							.configure__item-desc Серый <br> Рогожка
+							.price-new.configure__item-price 27 000 ₸
+							.status.status--have.configure__item-status В наличии
 
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/3.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Casanova
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 23 400 ₸
-						.status.status--have.configure__item-status В наличии
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/3.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Casanova
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 23 400 ₸
+							.status.status--have.configure__item-status В наличии
 
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/4.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 21 100 ₸
-						.status.status--have.configure__item-status В наличии
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/4.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 21 100 ₸
+							.status.status--have.configure__item-status В наличии
 
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/5.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 17 600 ₸
-						.status.status--have.configure__item-status В наличии
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/5.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 17 600 ₸
+							.status.status--have.configure__item-status В наличии
 
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/6.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Bluemarin
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 18 900 ₸
-						.status.status--have.configure__item-status В наличии
-					
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/7.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 21 100 ₸
-						.status.status--have.configure__item-status В наличии
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/6.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Bluemarin
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 18 900 ₸
+							.status.status--have.configure__item-status В наличии
+						
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/7.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 21 100 ₸
+							.status.status--have.configure__item-status В наличии
 
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/8.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 17 600 ₸
-						.status.status--have.configure__item-status В наличии
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/8.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 17 600 ₸
+							.status.status--have.configure__item-status В наличии
 
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/9.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Bluemarin
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 18 900 ₸
-						.status.status--have.configure__item-status В наличии
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/9.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Bluemarin
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 18 900 ₸
+							.status.status--have.configure__item-status В наличии
 
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/4.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 21 100 ₸
-						.status.status--have.configure__item-status В наличии
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/4.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 21 100 ₸
+							.status.status--have.configure__item-status В наличии
 
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/5.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 17 600 ₸
-						.status.status--have.configure__item-status В наличии
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/5.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 17 600 ₸
+							.status.status--have.configure__item-status В наличии
 
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors/6.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Bluemarin
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 18 900 ₸
-						.status.status--have.configure__item-status В наличии
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors/6.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Bluemarin
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 18 900 ₸
+							.status.status--have.configure__item-status В наличии
+
+				.configure__footer
+					button.btn.configure__btn В корзину  +25 000 ₸
+					button.btn.btn--transparent.configure__btn Выбрать
+
+				button.popup__close.configure__close
+					+icon('exit', 'popup__close-icon')
+
+	.popup(data-name="configure-2")
+		.popup__content.configure
+			.configure__content
+				.configure__header
+					.configure__title Цвет обивки, материал
+				.configure__list.js-custom-scrollbar
+					.configure__item.configure__item--active.is-selected
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/1.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet
+							.configure__item-desc Серый <br> Микровелюр
+							.price-new.configure__item-price 25 000 ₸
+							.status.status--have.configure__item-status В наличии
+
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/2.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Arbus
+							.configure__item-desc Серый <br> Рогожка
+							.price-new.configure__item-price 27 000 ₸
+							.status.status--have.configure__item-status В наличии
+
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/3.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Casanova
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 23 400 ₸
+							.status.status--have.configure__item-status В наличии
+
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/4.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 21 100 ₸
+							.status.status--have.configure__item-status В наличии
+
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/5.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 17 600 ₸
+							.status.status--have.configure__item-status В наличии
+
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/6.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Bluemarin
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 18 900 ₸
+							.status.status--have.configure__item-status В наличии
+						
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/7.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 21 100 ₸
+							.status.status--have.configure__item-status В наличии
+
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/8.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 17 600 ₸
+							.status.status--have.configure__item-status В наличии
+
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/9.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Bluemarin
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 18 900 ₸
+							.status.status--have.configure__item-status В наличии
+
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/4.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 21 100 ₸
+							.status.status--have.configure__item-status В наличии
+
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/5.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 17 600 ₸
+							.status.status--have.configure__item-status В наличии
+
+					.configure__item
+						a.configure__item-img-box.configure__item-btn(href="#") 
+							img.configure__item-img(src="temp/single-products/divany/colors-2/6.jpg", alt="")
+						.configure__item-inf
+							a.configure__item-name.configure__item-btn(href="#")  Bluemarin
+							.configure__item-desc Шоколадный <br> Микровелюр
+							.price-new.configure__item-price 18 900 ₸
+							.status.status--have.configure__item-status В наличии
 
 			.configure__footer
 				button.btn.configure__btn В корзину  +25 000 ₸
 				button.btn.btn--transparent.configure__btn Выбрать
 
-			button.configure__close
-				+icon('exit', 'configure__close-icon')
-
-	.configure(data-name="color-2")
-		.configure__content
-			.configure__header
-				.configure__title Цвет обивки, материал
-			.configure__list
-				.configure__item.configure__item--active.is-selected
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/1.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet
-						.configure__item-desc Серый <br> Микровелюр
-						.price-new.configure__item-price 25 000 ₸
-						.status.status--have.configure__item-status В наличии
-
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/2.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Arbus
-						.configure__item-desc Серый <br> Рогожка
-						.price-new.configure__item-price 27 000 ₸
-						.status.status--have.configure__item-status В наличии
-
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/3.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Casanova
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 23 400 ₸
-						.status.status--have.configure__item-status В наличии
-
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/4.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 21 100 ₸
-						.status.status--have.configure__item-status В наличии
-
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/5.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 17 600 ₸
-						.status.status--have.configure__item-status В наличии
-
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/6.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Bluemarin
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 18 900 ₸
-						.status.status--have.configure__item-status В наличии
-					
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/7.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 21 100 ₸
-						.status.status--have.configure__item-status В наличии
-
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/8.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 17 600 ₸
-						.status.status--have.configure__item-status В наличии
-
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/9.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Bluemarin
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 18 900 ₸
-						.status.status--have.configure__item-status В наличии
-
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/4.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 21 100 ₸
-						.status.status--have.configure__item-status В наличии
-
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/5.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 17 600 ₸
-						.status.status--have.configure__item-status В наличии
-
-				.configure__item
-					a.configure__item-img-box.configure__item-btn(href="#") 
-						img.configure__item-img(src="temp/single-products/divany/colors-2/6.jpg", alt="")
-					.configure__item-inf
-						a.configure__item-name.configure__item-btn(href="#")  Bluemarin
-						.configure__item-desc Шоколадный <br> Микровелюр
-						.price-new.configure__item-price 18 900 ₸
-						.status.status--have.configure__item-status В наличии
-
-			.configure__footer
-				button.btn.configure__btn В корзину  +25 000 ₸
-				button.btn.btn--transparent.configure__btn Выбрать
-
-			button.configure__close
-				+icon('exit', 'configure__close-icon')
+			button.popup__close.configure__close
+				+icon('exit', 'popup__close-icon')
 
 	.product-config
 		.container

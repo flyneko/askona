@@ -18,10 +18,29 @@
 
   &__main
     display: none
-    padding-top: 18px
 
   &--active &__header-icon
     transform: rotate(-90deg)
 
   &--active &__main
     display: block
+
+  &--mobile &__main
+    display: block
+    padding-top: 0
+
+    &.footer__menu-group
+      display: flex
+
+  &--mobile &__header-icon
+    display: none
+
+  @media screen and (max-width: 767px)
+    &--mobile &__main
+      display: none
+
+    &--mobile.accordion--active &__main
+      display: block
+
+    &--mobile &__header-icon
+      display: inline-block

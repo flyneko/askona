@@ -12,7 +12,7 @@ block content
 
 		section.products
 			.container
-				h2.title2.products__title Диваны
+				h2.title2.products__title Диваны и кресла
 
 				.sub-categories.products__sub-categories
 					.sub-categories__list
@@ -20,24 +20,33 @@ block content
 							.sub-categories__item-img-box
 								img.sub-categories__item-img(src="temp/sub-categories/divany/1.jpg")
 							.sub-categories__item-name Прямые диваны
+							+icon('arrow_right', 'icon--gray sub-categories__item-arrow')
 						a.sub-categories__item(href="#") 
 							.sub-categories__item-img-box
 								img.sub-categories__item-img(src="temp/sub-categories/divany/2.jpg")
 							.sub-categories__item-name Угловые диваны
+							+icon('arrow_right', 'icon--gray sub-categories__item-arrow')
 						a.sub-categories__item(href="#") 
 							.sub-categories__item-img-box
 								img.sub-categories__item-img(src="temp/sub-categories/divany/3.jpg")
 							.sub-categories__item-name Кресло-кровать
+							+icon('arrow_right', 'icon--gray sub-categories__item-arrow')
 						a.sub-categories__item(href="#") 
 							.sub-categories__item-img-box
 								img.sub-categories__item-img(src="temp/sub-categories/divany/4.jpg")
 							.sub-categories__item-name Кресло
+							+icon('arrow_right', 'icon--gray sub-categories__item-arrow')
 
 				form.products__filters(autocomplete="off") 
 					.filters
 						button.btn.btn--filter.filters__btn.js-open-popup(type="button" data-popup-name="filters")
 							+icon('filter', 'btn__icon filters__btn-icon')
 							| Все фильтры
+
+						button.filters__mobile-btn.js-open-popup(type="button" data-popup-name="filters")
+							+icon('filter', 'filters__mobile-btn-icon')
+							span.value.filters__mobile-btn-value 7
+							| Фильтры
 
 						.filter-menu.filters__item
 							button.filter-menu__btn(type="button")
@@ -71,16 +80,58 @@ block content
 								.filter-menu__main.js-custom-scrollbar(data-speed="0.2")
 									.filter-menu__item
 										label.checkbox.checkbox--accept
-											input.checkbox__input(type="checkbox" name="size")
+											input.checkbox__input(type="checkbox" name="size" checked)
 											.checkbox__switcher
 												+icon('check', 'checkbox__icon')
-											.checkbox__text Размер 1
+											.checkbox__text 100х200
 									.filter-menu__item
 										label.checkbox.checkbox--accept
 											input.checkbox__input(type="checkbox" name="size")
 											.checkbox__switcher
 												+icon('check', 'checkbox__icon')
-											.checkbox__text Размер 2
+											.checkbox__text 120х200
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="size")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text 140х200
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="size")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text 160х200
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="size")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text 180х200
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="size")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text 200х200
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="size")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text 80х200
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="size")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text 90х200
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="size")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Круглые
 
 						.filter-menu.filters__item
 							button.filter-menu__btn(type="button")
@@ -91,16 +142,40 @@ block content
 								.filter-menu__main.js-custom-scrollbar(data-speed="0.2")
 									.filter-menu__item
 										label.checkbox.checkbox--accept
-											input.checkbox__input(type="checkbox" name="type")
+											input.checkbox__input(type="checkbox" name="type" checked)
 											.checkbox__switcher
 												+icon('check', 'checkbox__icon')
-											.checkbox__text Тип 1
+											.checkbox__text Угловой диван
 									.filter-menu__item
 										label.checkbox.checkbox--accept
 											input.checkbox__input(type="checkbox" name="type")
 											.checkbox__switcher
 												+icon('check', 'checkbox__icon')
-											.checkbox__text Тип 2
+											.checkbox__text Кресло
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="type")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Прямой диван
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="type" checked)
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Кресло-реклайнер
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="type")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Кресло-кровать
+									.filter-menu__item
+										label.checkbox.checkbox--accept
+											input.checkbox__input(type="checkbox" name="type")
+											.checkbox__switcher
+												+icon('check', 'checkbox__icon')
+											.checkbox__text Кресло-трансформер
 
 						.filter-menu.filters__item
 							button.filter-menu__btn(type="button")
@@ -109,69 +184,66 @@ block content
 							.filter-menu__content
 								.dark-text Цвет
 								.filter-menu__main.js-custom-scrollbar(data-speed="0.2")
-									.filter-menu__item
-										label.checkbox.checkbox--accept
-											input.checkbox__input(type="checkbox" name="color")
-											.checkbox__switcher
-												+icon('check', 'checkbox__icon')
-											span.checkbox__color(style="background-color: #e5d8d2")
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
+											input.checkbox__input(type="checkbox" name="color" checked)
+											span.checkbox__color(style="background-color: #e4bb99")
 											.checkbox__text Бежевый
-									.filter-menu__item
-										label.checkbox.checkbox--accept
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
 											input.checkbox__input(type="checkbox" name="color")
-											.checkbox__switcher
-												+icon('check', 'checkbox__icon')
-											span.checkbox__color(style="background-color: #ae8979")
-											.checkbox__text Персиковый
-									.filter-menu__item
-										label.checkbox.checkbox--accept
+											span.checkbox__color(style="background-color: #cc0000")
+											.checkbox__text Красный
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
+											input.checkbox__input(type="checkbox" name="color" checked)
+											span.checkbox__color(style="background-color: #ffffff")
+											.checkbox__text Белый
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
 											input.checkbox__input(type="checkbox" name="color")
-											.checkbox__switcher
-												+icon('check', 'checkbox__icon')
-											span.checkbox__color(style="background-color: #9d9f9e")
+											span.checkbox__color(style="background-color: #ff9901")
+											.checkbox__text Оранжевый
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
+											input.checkbox__input(type="checkbox" name="color")
+											span.checkbox__color(style="background-color: #6ea8dc")
+											.checkbox__text Голубой
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
+											input.checkbox__input(type="checkbox" name="color" checked)
+											span.checkbox__color(style="background-color: #e99899")
+											.checkbox__text Розовый
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
+											input.checkbox__input(type="checkbox" name="color")
+											span.checkbox__color(style="background-color: #ffd966")
+											.checkbox__text Желтый
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
+											input.checkbox__input(type="checkbox" name="color")
+											span.checkbox__color(style="background-color: #cccccc")
 											.checkbox__text Серый
-									.filter-menu__item
-										label.checkbox.checkbox--accept
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
 											input.checkbox__input(type="checkbox" name="color")
-											.checkbox__switcher
-												+icon('check', 'checkbox__icon')
-											span.checkbox__color(style="background-color: #6c685a")
-											.checkbox__text Хаки
-									.filter-menu__item
-										label.checkbox.checkbox--accept
+											span.checkbox__color(style="background-color: #6aa84f")
+											.checkbox__text Зеленый
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
 											input.checkbox__input(type="checkbox" name="color")
-											.checkbox__switcher
-												+icon('check', 'checkbox__icon')
-											span.checkbox__color(style="background-color: #6e6872")
+											span.checkbox__color(style="background-color: #1c4587")
+											.checkbox__text Синий
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
+											input.checkbox__input(type="checkbox" name="color")
+											span.checkbox__color(style="background-color: #40200b")
+											.checkbox__text Голубой
+									.filter-menu__item.filter-menu__item--color
+										label.checkbox.checkbox--color
+											input.checkbox__input(type="checkbox" name="color")
+											span.checkbox__color(style="background-color: #9900ff")
 											.checkbox__text Фиолетовый
-									.filter-menu__item
-										label.checkbox.checkbox--accept
-											input.checkbox__input(type="checkbox" name="color")
-											.checkbox__switcher
-												+icon('check', 'checkbox__icon')
-											span.checkbox__color(style="background-color: #a9adb8")
-											.checkbox__text Светлосерый
-									.filter-menu__item
-										label.checkbox.checkbox--accept
-											input.checkbox__input(type="checkbox" name="color")
-											.checkbox__switcher
-												+icon('check', 'checkbox__icon')
-											span.checkbox__color(style="background-color: #a9adb8")
-											.checkbox__text Светлосерый
-									.filter-menu__item
-										label.checkbox.checkbox--accept
-											input.checkbox__input(type="checkbox" name="color")
-											.checkbox__switcher
-												+icon('check', 'checkbox__icon')
-											span.checkbox__color(style="background-color: #a9adb8")
-											.checkbox__text Светлосерый
-									.filter-menu__item
-										label.checkbox.checkbox--accept
-											input.checkbox__input(type="checkbox" name="color")
-											.checkbox__switcher
-												+icon('check', 'checkbox__icon')
-											span.checkbox__color(style="background-color: #a9adb8")
-											.checkbox__text Светлосерый
 
 					.products__sorts
 						span.text.products__count Товаров: 346
@@ -190,21 +262,23 @@ block content
 				.products__footer
 					.pagination
 						.pagination__list
-							//- a.link.pagination__link.pagination__link--prev(href="#")
-							//- 	+icon('arrow_left', 'icon--primary pagination__icon pagination__icon--prev')
-							//- 	| Пред
+							a.link.pagination__link.pagination__link--prev.pagination__link--disabled(href="#")
+								+icon('arrow_left', 'icon--primary pagination__icon pagination__icon--prev')
+								span.pagination__link-text Пред
 							span.pagination__active(href="#") 1
 							a.link.pagination__link(href="#") 2
 							a.link.pagination__link(href="#") 3
+							span.pagination__dots ...
+							a.link.pagination__link(href="#") 12
 							a.link.pagination__link.pagination__link--next(href="#")
-								| След
+								span.pagination__link-text След
 								+icon('arrow_right', 'icon--primary pagination__icon pagination__icon--next')
 					button.btn.btn--dark.products__more-btn Показать ещё
-					span.text Вы посмотрели 24 из 98 товаров
+					span.text.products__viewed Вы посмотрели 24 из 98 товаров
 
 		section.about
 			.container
-				.about__content
+				.about__content.about__content--desktop
 					p.text.about__text
 						| Интернет-магазин Askona - предлагает большой выбор стильных диванов в Казахстане.
 						| Только мы осуществляем быструю доставку товара в удобное для покупателя время.
@@ -222,6 +296,12 @@ block content
 						| Бонусом для покупателей с ограниченными финансовыми возможностями является покупка товара в кредит или рассрочку.
 						| По городу Алматы и области доставка мебели осуществляется собственной курьерской службой. В другие города доставляем
 					p Магазин постоянно проводит акции и распродажи с существенным снижением цены. Следите за предложениями и не пропустите акции.
-
+				.about__content.about__content--mobile
+					h3 Как купить диван в Алматы?
+					p 
+						| Оплатить товар можно банковской картой, наличными и безналичными средствами.
+						| Бонусом для покупателей с ограниченными финансовыми возможностями является покупка товара в кредит или рассрочку.
+						| По городу Алматы и области доставка мебели...
+					a.link.link--primary.link--line.about__more(href="#") Подробнее
 block modals 
 	include modals/_filters.pug

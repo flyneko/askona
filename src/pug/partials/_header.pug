@@ -4,7 +4,7 @@
 header.header
 	.container
 		.header__top
-			a.logo(href="index.html")
+			a.logo.header__logo(href="index.html")
 				img.logo__img(src="assets/img/logo.svg")
 
 			.cities-menu.header__cities-menu
@@ -12,8 +12,7 @@ header.header
 					| Алматы
 					+icon('arrow_right', 'icon--primary cities-menu__btn-icon')
 
-
-			.header__count Магазины:
+			a.link.header__count(href="#")  Магазины: 
 				span.header__count-value 30
 
 			form.search-form.header__search(autocomplete="off") 
@@ -23,9 +22,12 @@ header.header
 
 			button.callback-btn.header__callback-btn
 				+icon('phone', 'icon--gray callback-btn__icon')
-				| Перезвоните мне
+				span.callback-btn__text Перезвоните мне
 
-			a.phone-link.phone-link--hidden.header__phone(data-phone="+7 700 700 70 07")
+			button.header__callback-mobile-btn
+				+icon('phone-2', 'header__callback-mobile-icon')
+
+			a.phone-link.header__phone(data-phone="+7 700 700 70 07")
 				span.phone-link__value +7 700
 				button.phone-link__show-btn показать номер
 
@@ -41,8 +43,11 @@ header.header
 					+icon('cart', 'icon-btn__icon')
 					span.icon-btn__value 2
 
+			button.header__menu-btn.js-open-mobile-menu
+				.icon-menu.header__catalog-icon
+
 		.header__bottom
-			button.btn.btn--catalog.js-open-catalog-menu
+			button.btn.btn--catalog.header__catalog-btn.js-open-catalog-menu
 				span.icon-menu.btn__icon
 				| Все товары
 
@@ -66,3 +71,8 @@ header.header
 						a.link.menu__link.menu__link--special(href="#")
 							+icon('akcii', 'icon--second menu__item-icon')
 							| Акции
+
+			form.search-form.header__mobile-search(autocomplete="off") 
+				input.field.search-form__field(type="text" placeholder="Найти товар или категорию...")
+				button.search-form__submit
+					+icon('search', 'icon--dark search-form__submit-icon')

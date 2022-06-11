@@ -1,0 +1,116 @@
+.mobile-menu
+    .mobile-menu__content.js-custom-scrollbar(data-speed="0.5")
+        a.text.mobile-menu__city(href="#") 
+            +icon('location', 'mobile-menu__city-icon')
+            | Ваш город:
+            .dark-text.mobile-menu__city-value Алматы
+            +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+        .mobile-menu__body
+            ul.mobile-menu__list
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/divany.png")
+                        | Диваны
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/krovati.png")
+                        | Кровати
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/matrasi.png")
+                        | Матрасы
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/odeyala.png")
+                        | Одеяла
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/podushki.png")
+                        | Подушки
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/chekhly.png")
+                        | Чехлы
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/tekstil.png")
+                        | Текстиль
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/mebel.png")
+                        | Мебель
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/banketki.png")
+                        | Банкетки
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/komody.png")
+                        | Комоды
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/tualetnye-stoliki.png")
+                        | Туалетные столики
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/tumby.png")
+                        | Тумбы
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/pufy.png")
+                        | Пуфы
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/tovary-dlya-doma.png")
+                        | Товары для дома
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#") 
+                        img.mobile-menu__img(src="temp/catalog-menu/categories/odezhda.png")
+                        | Одежда
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+                li.mobile-menu__item
+                    a.dark-text.mobile-menu__link(href="#")
+                        +icon('akcii', 'icon--second mobile-menu__icon')
+                        | Акции
+                        +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                    +mobileSubmenu()
+            .mobile-menu__footer
+                a.dark-text.mobile-menu__shops(href="#") 
+                    +icon('shop', 'mobile-menu__shops-icon')
+                    | Магазины
+                    +icon('arrow_right', 'icon--gray mobile-menu__arrow')
+                a.phone-link.mobile-menu__phone-link(data-phone="+7 700 700 70 07")
+                    +icon('phone', 'phone-link__icon')
+                    span.phone-link__value +7 700
+                    button.phone-link__show-btn показать номер
+                button.callback-btn.callback-btn--dark.mobile-menu__callback-btn
+                    span.callback-btn__text Перезвоните мне

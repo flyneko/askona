@@ -17,9 +17,20 @@
     width: 88px
     text-align: center
     padding-bottom: 3px
+    outline: none
 
   &__text
     color: #7e7e7e
 
   &__slider
     margin-top: 25px
+
+  @media screen and (max-width: 580px)
+    &__field
+      border: 1px solid #d8d8d8
+      height: 32px
+      border-radius: 4px
+      font-size: 13px
+
+    &__text
+      margin-right: 10px

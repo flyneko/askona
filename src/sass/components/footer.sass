@@ -92,7 +92,6 @@
     &:hover
       fill: #c23c38
       
-
   &__payments
     display: flex
     align-items: center
@@ -100,3 +99,164 @@
   &__payment
     &:not(:last-child)
       margin-right: 15px
+
+  @media screen and (max-width: 1360px)
+    &__top
+      padding-right: 0
+
+    &__column
+      &:last-child
+        width: 440px
+
+    &__partners-item
+      &:nth-child(1)
+        margin-left: 15%
+
+  @media screen and (max-width: 1140px)
+    &__top
+      flex-wrap: wrap
+      justify-content: flex-start
+
+    &__column
+      &:not(:last-child)
+        margin-right: 100px
+
+      &--mailing
+        width: 100%
+        margin-bottom: 30px
+
+    &__title
+      &--social
+        max-width: 100%
+
+    &__bottom
+      flex-wrap: wrap
+
+    &__partners-item
+      &:nth-child(1)
+        margin-left: 8%
+
+      &:nth-child(2)
+        margin-left: 8%
+
+  @media screen and (max-width: 991px)
+    &__bottom
+      flex-wrap: wrap
+
+    &__agreement
+      width: 100%
+      margin-bottom: 20px
+
+    &__partners-item
+      &:nth-child(1)
+        margin-left: 0
+
+      &:nth-child(2)
+        margin-left: auto
+
+  @media screen and (max-width: 860px)
+    &__column
+      &:not(:last-child)
+        margin-right: 50px
+
+  @media screen and (max-width: 767px)
+    padding: 30px 0 32px
+
+    &__top
+      margin: 0 -#{$container-offset}
+      justify-content: center
+
+    &__column
+      width: 100%
+      text-align: center
+      border-top: 1px solid #d8d8d8
+      padding: 0 16px
+
+      &:not(:last-child)
+        margin-right: 0
+
+      &:last-child
+        width: 100%
+        border-bottom: 1px solid #d8d8d8
+
+      &--mailing
+        border-top: none
+
+        &:last-child
+          border-bottom: none
+      
+    &__title
+      margin-bottom: 12px
+      font-weight: 600
+
+      &--social
+        font-size: 16px
+
+    &__column-header
+      font-size: 16px
+      text-align: left
+      height: 55px
+      display: flex
+      align-items: center
+      margin-bottom: 0
+
+    &__column-icon
+      top: 50%
+      transform: translateY(-50%) rotate(90deg)
+
+    &__social
+      margin-top: 18px
+      flex-direction: column
+      align-items: center
+
+    &__menu
+      text-align: left
+      width: 100%
+      padding-bottom: 10px
+
+      &:last-child
+        padding-bottom: 20px
+
+    &__menu-item
+      &:not(:last-child)
+        margin-bottom: 10px
+
+    &__bottom
+      border-top: none
+      margin-top: 24px
+      padding-top: 0
+
+    &__agreement
+      text-align: center
+      margin-bottom: 12px
+
+    &__privacy
+      margin-top: 3px
+      font-size: 12px
+
+    &__partners
+      flex-wrap: wrap
+
+    &__partners-item
+      text-align: center
+
+      &:nth-child(1)
+        width: 100%
+        margin-bottom: 10px
+
+      &:nth-child(3)
+        margin-right: auto
+        margin-left: 15px
+
+      &:last-child
+        margin-top: 16px
+        width: 100%
+
+      .picon-visa,
+      .picon-mastercard,
+      .picon-number-one
+        zoom: 0.6
+
+    &__payment
+      &:not(:last-child)
+        margin-right: 9px

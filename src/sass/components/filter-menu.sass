@@ -32,18 +32,23 @@
 
   &__main
     position: relative
-    margin-top: 12px
-    max-height: 216px
+    margin: -5px
+    padding: 17px 5px 5px
+    max-height: 218px
 
-    &::before
+    &.ps--active-y:before
       box-shadow: 0px 6px 22px 20px rgba(#fff, 0.9)
 
-    &:after
+    &.ps--active-y:after
       box-shadow: 0px -6px 22px 20px rgba(#fff, 0.9)
 
   &__item
     &:not(:first-child)
       margin-top: 5px
+
+    &--color
+      &:not(:first-child)
+        margin-top: 10px
 
   &--active &__content
     visibility: visible

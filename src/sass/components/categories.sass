@@ -22,3 +22,18 @@
 
   &__slider-prev
     left: -48px
+
+  @media screen and (max-width: 1520px)
+    &__slider-navigation
+      display: none
+
+  @media screen and (max-width: 520px)
+    &__slider
+      margin-right: -#{$container-offset}
+
+    &__slider-main
+      padding-right: 63px
+      padding-bottom: 30px
+
+    &__slider-navigation
+      display: none

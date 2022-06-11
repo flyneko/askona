@@ -6,7 +6,8 @@
   &__field
     height: 47px
 
-  &__submit
+  &__submit,
+  &__mobile-submit
     position: absolute
     top: 50%
     right: 16px
@@ -18,3 +19,20 @@
   &__submit-icon
     width: 18px
     height: 13px
+
+  &__mobile-submit
+    display: none
+    right: 4px
+
+  @media screen and (max-width: 767px)
+    width: 100%
+
+    &__field
+      height: 40px
+      padding-right: 120px
+
+    &__submit
+      display: none
+    
+    &__mobile-submit
+      display: inline-block

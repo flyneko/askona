@@ -18,7 +18,6 @@
       &::marker
         color: $color-primary
 
-
     p
       &:not(:first-child)
         margin-top: 8px
@@ -26,6 +25,43 @@
     h3
       font-size: 24px
       color: #2c2c2c
+      font-weight: 600
 
       &:not(:first-child)
         margin-top: 18px
+
+    &--mobile
+      display: none
+
+  @media screen and (max-width: 991px)
+    padding-top: 45px
+
+  @media screen and (max-width: 767px)
+    padding: 28px 0 32px
+
+    &__content
+      padding-right: 0
+
+      p, li
+        font-size: 12px
+        line-height: 1.33
+
+      h3
+        text-align: center
+
+      &--desktop
+        display: none
+
+      &--mobile
+        display: block
+
+    &__more
+      font-size: 12px
+      margin-top: 4px
+      display: inline-block
+
+  @media screen and (max-width: 420px)
+    &__content
+      h3
+        max-width: 200px
+        margin: 0 auto

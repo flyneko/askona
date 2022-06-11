@@ -109,3 +109,25 @@
     .choices__list[aria-expanded] .choices__item
       padding-top: 6px
       padding-bottom: 6px
+
+  @media screen and (max-width: 767px)
+    height: 28px
+
+    .choices__inner
+      padding: 0 12px
+
+    .choices__list--dropdown .choices__item,
+    .choices__list[aria-expanded] .choices__item
+      font-size: 12px
+
+    .choices__list--dropdown .choices__item--selectable,
+    .choices__list[aria-expanded] .choices__item--selectable
+      padding-left: 12px
+      padding-right: 12px
+
+    &--sort
+      .choices__list--single
+        padding-right: 5px
+
+      .choices > .choices__list
+        top: calc(100% + 5px)

@@ -1,6 +1,13 @@
 .products
   position: relative
   padding-top: 25px
+  z-index: 4
+
+  & + &
+    z-index: 3
+
+  & + & + &
+    z-index: 2
 
   &__title
     margin-bottom: 25px
@@ -15,16 +22,10 @@
 
     .swiper-slide
       height: auto
-  
-  &__slider-main
-    margin: -15px -15px -150px
-    padding: 15px 15px 150px
 
-  &__slider-item
-    &:hover
-      position: absolute
-      left: -7px
-      right: -7px
+  &__slider-main
+    margin: -15px -15px -160px
+    padding: 15px 15px 160px
 
   &__slider-pagination
     &.swiper-pagination-bullets.swiper-pagination-horizontal
@@ -52,9 +53,6 @@
   &__slider-item
     height: 100%
 
-    &:hover
-      margin-top: -7px
-
   &__sub-categories
     margin-top: 25px
 
@@ -73,16 +71,10 @@
     padding-top: 32px
     display: flex
     flex-wrap: wrap
-  
+
   &__item
     width: calc(100% / 12 * 3 - 32px)
     margin: 16px
-
-    &:hover
-      margin-top: 9px
-      margin-left: 9px
-      margin-right: 9px
-      width: calc(100% / 12 * 3 - 18px)
 
   &__footer
     margin-top: 32px
@@ -92,3 +84,53 @@
 
   &__more-btn
     padding: 0 33px
+
+  @media screen and (max-width: 1520px)
+    &__slider-navigation
+      display: none
+
+  @media screen and (max-width: 1140px)
+    &__item
+      width: calc(100% / 12 * 4 - 32px)
+
+  @media screen and (max-width: 860px)
+    &__list
+      margin: -12px
+
+    &__item
+      margin: 12px
+      width: calc(50% - 24px)
+
+  @media screen and (max-width: 767px)
+    padding-top: 12px
+
+    &__sub-categories
+      margin: 10px -#{$container-offset} 0
+      padding: 0 $container-offset 22px
+      border-bottom: 1px solid #eeeeee
+
+    &__filters
+      margin-top: 25px
+
+    &__count,
+    &__more-btn,
+    &__viewed
+      display: none
+
+    &__footer
+      justify-content: center
+
+  @media screen and (max-width: 580px)
+    &__title
+      margin-bottom: 0
+
+    .products__slider-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
+      bottom: 125px
+
+    &__list
+      padding-top: 20px
+      margin: -4px
+
+    &__item
+      margin: 4px
+      width: calc(50% - 8px)

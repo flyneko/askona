@@ -1,4 +1,4 @@
-.popup(data-name="filters")
+.popup(data-name="filters" data-lock-width="580")
     .filters-modal.popup__content
         .filters-modal__header
             .filters-modal__title Все фильтры
@@ -7,8 +7,8 @@
                 .accordion__header
                     .accordion__text Цена
                     +icon('arrow_right', 'icon--primary accordion__header-icon')
-                .accordion__main
-                    .price-filter
+                .accordion__main.filters-modal__accordion-main
+                    .price-filter.filters-modal__price
                         .price-filter__fields
                             .price-filter__group
                                 span.price-filter__text от
@@ -27,11 +27,11 @@
                 .accordion__header
                     .accordion__text Размер спального места
                     +icon('arrow_right', 'icon--primary accordion__header-icon')
-                .accordion__main
+                .accordion__main.filters-modal__accordion-main
                     .filters-modal__list.filters-modal__list--2
                         .filters-modal__item
                             label.checkbox.checkbox--accept
-                                input.checkbox__input(type="checkbox" name="size")
+                                input.checkbox__input(type="checkbox" name="size" checked)
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
                                 .checkbox__text 100х200
@@ -87,156 +87,227 @@
                 .accordion__header
                     .accordion__text Тип
                     +icon('arrow_right', 'icon--primary accordion__header-icon')
-                .accordion__main
+                .accordion__main.filters-modal__accordion-main
                     .filters-modal__list.filters-modal__list--2
                         .filters-modal__item
                             label.checkbox.checkbox--accept
-                                input.checkbox__input(type="checkbox" name="type")
+                                input.checkbox__input(type="checkbox" name="type" checked)
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
-                                .checkbox__text Тип 1
+                                .checkbox__text Угловой диван
                         .filters-modal__item
                             label.checkbox.checkbox--accept
                                 input.checkbox__input(type="checkbox" name="type")
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
-                                .checkbox__text Тип 2
+                                .checkbox__text Кресло
                         .filters-modal__item
                             label.checkbox.checkbox--accept
                                 input.checkbox__input(type="checkbox" name="type")
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
-                                .checkbox__text Тип 3
+                                .checkbox__text Прямой диван
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type" checked)
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Кресло-реклайнер
                         .filters-modal__item
                             label.checkbox.checkbox--accept
                                 input.checkbox__input(type="checkbox" name="type")
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
-                                .checkbox__text Тип 4
+                                .checkbox__text Кресло-кровать
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Кресло-трансформер
             .accordion.filters-modal__accordion
                 .accordion__header
                     .accordion__text Цвет
                     +icon('arrow_right', 'icon--primary accordion__header-icon')
-                .accordion__main
-                    .filters-modal__list
+                .accordion__main.filters-modal__accordion-main
+                    .filters-modal__list.filters-modal__list--2
                         .filters-modal__item
-                            label.checkbox.checkbox--accept
-                                input.checkbox__input(type="checkbox" name="color")
-                                .checkbox__switcher
-                                    +icon('check', 'checkbox__icon')
-                                span.checkbox__color(style="background-color: #e5d8d2")
+                            label.checkbox.checkbox--color
+                                input.checkbox__input(type="checkbox" name="color" checked)
+                                span.checkbox__color(style="background-color: #e4bb99")
                                 .checkbox__text Бежевый
                         .filters-modal__item
-                            label.checkbox.checkbox--accept
+                            label.checkbox.checkbox--color
                                 input.checkbox__input(type="checkbox" name="color")
-                                .checkbox__switcher
-                                    +icon('check', 'checkbox__icon')
-                                span.checkbox__color(style="background-color: #ae8979")
-                                .checkbox__text Персиковый
+                                span.checkbox__color(style="background-color: #cc0000")
+                                .checkbox__text Красный
                         .filters-modal__item
-                            label.checkbox.checkbox--accept
+                            label.checkbox.checkbox--color
+                                input.checkbox__input(type="checkbox" name="color" checked)
+                                span.checkbox__color(style="background-color: #ffffff")
+                                .checkbox__text Белый
+                        .filters-modal__item
+                            label.checkbox.checkbox--color
                                 input.checkbox__input(type="checkbox" name="color")
-                                .checkbox__switcher
-                                    +icon('check', 'checkbox__icon')
-                                span.checkbox__color(style="background-color: #9d9f9e")
+                                span.checkbox__color(style="background-color: #ff9901")
+                                .checkbox__text Оранжевый
+                        .filters-modal__item
+                            label.checkbox.checkbox--color
+                                input.checkbox__input(type="checkbox" name="color")
+                                span.checkbox__color(style="background-color: #6ea8dc")
+                                .checkbox__text Голубой
+                        .filters-modal__item
+                            label.checkbox.checkbox--color
+                                input.checkbox__input(type="checkbox" name="color" checked)
+                                span.checkbox__color(style="background-color: #e99899")
+                                .checkbox__text Розовый
+                        .filters-modal__item
+                            label.checkbox.checkbox--color
+                                input.checkbox__input(type="checkbox" name="color")
+                                span.checkbox__color(style="background-color: #ffd966")
+                                .checkbox__text Желтый
+                        .filters-modal__item
+                            label.checkbox.checkbox--color
+                                input.checkbox__input(type="checkbox" name="color")
+                                span.checkbox__color(style="background-color: #cccccc")
                                 .checkbox__text Серый
                         .filters-modal__item
-                            label.checkbox.checkbox--accept
+                            label.checkbox.checkbox--color
                                 input.checkbox__input(type="checkbox" name="color")
-                                .checkbox__switcher
-                                    +icon('check', 'checkbox__icon')
-                                span.checkbox__color(style="background-color: #6c685a")
-                                .checkbox__text Хаки
+                                span.checkbox__color(style="background-color: #6aa84f")
+                                .checkbox__text Зеленый
                         .filters-modal__item
-                            label.checkbox.checkbox--accept
+                            label.checkbox.checkbox--color
                                 input.checkbox__input(type="checkbox" name="color")
-                                .checkbox__switcher
-                                    +icon('check', 'checkbox__icon')
-                                span.checkbox__color(style="background-color: #6e6872")
+                                span.checkbox__color(style="background-color: #1c4587")
+                                .checkbox__text Синий
+                        .filters-modal__item
+                            label.checkbox.checkbox--color
+                                input.checkbox__input(type="checkbox" name="color")
+                                span.checkbox__color(style="background-color: #40200b")
+                                .checkbox__text Голубой
+                        .filters-modal__item
+                            label.checkbox.checkbox--color
+                                input.checkbox__input(type="checkbox" name="color")
+                                span.checkbox__color(style="background-color: #9900ff")
                                 .checkbox__text Фиолетовый
-                        .filters-modal__item
-                            label.checkbox.checkbox--accept
-                                input.checkbox__input(type="checkbox" name="color")
-                                .checkbox__switcher
-                                    +icon('check', 'checkbox__icon')
-                                span.checkbox__color(style="background-color: #a9adb8")
-                                .checkbox__text Светлосерый
-                        .filters-modal__item
-                            label.checkbox.checkbox--accept
-                                input.checkbox__input(type="checkbox" name="color")
-                                .checkbox__switcher
-                                    +icon('check', 'checkbox__icon')
-                                span.checkbox__color(style="background-color: #a9adb8")
-                                .checkbox__text Светлосерый
             .accordion.filters-modal__accordion
                 .accordion__header
                     .accordion__text Стиль
                     +icon('arrow_right', 'icon--primary accordion__header-icon')
-                .accordion__main
-                    .filters-modal__list.filters-modal__list--2
+                .accordion__main.filters-modal__accordion-main
+                    .filters-modal__list
                         .filters-modal__item
                             label.checkbox.checkbox--accept
                                 input.checkbox__input(type="checkbox" name="style")
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
-                                .checkbox__text Стиль 1
+                                .checkbox__text Минимализм
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="style" checked)
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Скандинавский стиль
                         .filters-modal__item
                             label.checkbox.checkbox--accept
                                 input.checkbox__input(type="checkbox" name="style")
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
-                                .checkbox__text Стиль 2
-                        .filters-modal__item
-                            label.checkbox.checkbox--accept
-                                input.checkbox__input(type="checkbox" name="style")
-                                .checkbox__switcher
-                                    +icon('check', 'checkbox__icon')
-                                .checkbox__text Стиль 3
-                        .filters-modal__item
-                            label.checkbox.checkbox--accept
-                                input.checkbox__input(type="checkbox" name="style")
-                                .checkbox__switcher
-                                    +icon('check', 'checkbox__icon')
-                                .checkbox__text Стиль 4
+                                .checkbox__text Современный стиль
             .accordion.filters-modal__accordion
                 .accordion__header
                     .accordion__text Бренд
                     +icon('arrow_right', 'icon--primary accordion__header-icon')
-                .accordion__main
+                .accordion__main.filters-modal__accordion-main
                     .filters-modal__list
                         .filters-modal__item
                             label.checkbox.checkbox--accept
                                 input.checkbox__input(type="checkbox" name="brand")
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
-                                .checkbox__text Brand 1
+                                .checkbox__text Askona
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="brand" checked)
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Grether
                         .filters-modal__item
                             label.checkbox.checkbox--accept
                                 input.checkbox__input(type="checkbox" name="brand")
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
-                                .checkbox__text Brand 2
+                                .checkbox__text Under Gravity
             .accordion.filters-modal__accordion
                 .accordion__header
-                    .accordion__text Тип механизма дивана
+                    .accordion__text Тип механизма
                     +icon('arrow_right', 'icon--primary accordion__header-icon')
-                .accordion__main
-                    .filters-modal__list
+                .accordion__main.filters-modal__accordion-main
+                    .filters-modal__list.filters-modal__list--2
                         .filters-modal__item
                             label.checkbox.checkbox--accept
-                                input.checkbox__input(type="checkbox" name="type-sofa-mechanism")
+                                input.checkbox__input(type="checkbox" name="type-mechanism")
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
-                                .checkbox__text Тип механизма дивана 1
+                                .checkbox__text Аккордеон
                         .filters-modal__item
                             label.checkbox.checkbox--accept
-                                input.checkbox__input(type="checkbox" name="type-sofa-mechanism")
+                                input.checkbox__input(type="checkbox" name="type-mechanism")
                                 .checkbox__switcher
                                     +icon('check', 'checkbox__icon')
-                                .checkbox__text Тип механизма дивана 2
+                                .checkbox__text Еврокнижка
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type-mechanism" checked)
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Еврософа
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type-mechanism" checked)
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Итальянская раскладушка
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type-mechanism")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Клик-кляк
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type-mechanism")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Лит
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type-mechanism")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Пантограф
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type-mechanism")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Реклайнер
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type-mechanism")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text TikTac
+                        .filters-modal__item
+                            label.checkbox.checkbox--accept
+                                input.checkbox__input(type="checkbox" name="type-mechanism")
+                                .checkbox__switcher
+                                    +icon('check', 'checkbox__icon')
+                                .checkbox__text Серджио
         .filters-modal__footer
             button.btn.filters-modal__btn Применить фильтр
-            button.btn.btn--neutral.filters-modal__btn Сбросить фильтр
+            button.btn.btn--neutral.filters-modal__btn.filters-modal__btn--reset Сбросить фильтр
 
         button.popup__close.filters-modal__close
             +icon('exit', 'popup__close-icon')    

@@ -4,10 +4,11 @@
   left: 0
   display: none
   width: 100%
-  background: #fff
   z-index: 60
   border-bottom: 1px solid #e8e8e8
-  box-shadow: 2px 2px 4px rgba(#000, 0.15)
+  box-shadow: 2px 4px 4px rgba(#000, 0.15)
+  padding-top: 6px
+  overflow: hidden
 
   &::before
     content: ''
@@ -19,11 +20,12 @@
     background: #fff
     transform: rotate(45deg)
     border-radius: 2px
-    top: -5px
+    top: 1px
       
   &__list
     position: relative
     width: calc(((100vw - $container-width + $container-offset) / 2) + 345px)
+    height: 100%
     border-right: 1px solid #eeeeee
     background: #fff
 
@@ -40,7 +42,8 @@
     display: flex
 
   &__item:hover &__sub
-    display: flex
+    @media screen and (min-width: 992px)
+      display: flex
 
   &__link
     font-size: 14px
@@ -70,3 +73,21 @@
 
   &--show
     display: block
+
+  @media screen and (max-width: 1460px)
+    &:before
+      left: calc(4vw + 30px)
+
+    &__list
+      width: 345px
+
+    &__item
+      padding-left: $container-offset
+
+    &__sub
+      left: 345px
+      width: calc(100vw - 345px - $container-offset * 2)
+
+  @media screen and (max-width: 991px)
+    &--show
+      display: none

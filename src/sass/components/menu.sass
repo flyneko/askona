@@ -22,3 +22,20 @@
 
       &:hover
         color: $color-secondary
+
+  @media screen and (max-width: 1440px)
+    &__item
+      &:not(:last-child)
+        margin-right: 36px
+
+  @media screen and (max-width: 1170px)
+    &__item
+      &:not(:last-child)
+        margin-right: 25px
+
+    &__link
+      font-size: 15px
+
+  @media screen and (max-width: 991px)
+    &::before
+      display: none

@@ -4,19 +4,41 @@
   background: #fff
   position: relative
 
-  &:hover
+  &__main
+    display: flex
+    flex-direction: column
+    height: 100%
+
+  &:before
+    content: ''
+    display: none
+    position: absolute
+    z-index: 3
+    left: -7px
+    top: -7px
+    width: calc(100% + 14px)
+    height: calc(100% + 14px)
+    background: #fff
     box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.13)
-    border-bottom-color: transparent
-    border-bottom-left-radius: 0
-    border-bottom-right-radius: 0
-    padding-top: 7px
-    margin-bottom: 9px
+    border-top-left-radius: 4px
+    border-top-right-radius: 4px
+
+  &:hover &__inf
+    margin: 0 -7px
+    padding: 0 7px
+    
+  &:hover
     z-index: 10
 
-  &:hover &__img-box,
-  &:hover &__inf-content
-    margin-left: 7px
-    margin-right: 7px
+    &::before
+      display: block
+
+  &:hover &__status 
+    right: 31px
+
+  &__main
+    position: relative
+    z-index: 4
 
   &:hover &__slider-pagination
     display: flex
@@ -25,9 +47,6 @@
   &:hover &__wishlist,
   &:hover &__compare
     display: block
-
-  &:hover &__status
-    right: 31px
 
   &__img-box
     position: relative
@@ -110,6 +129,7 @@
     position: relative
     z-index: 3
     background: #fff
+    flex: 1 1 auto
 
   &__inf-content
     padding: 20px 22px 24px
@@ -132,6 +152,7 @@
     font-size: 14px
     line-height: 1
     color: #7e7e7e
+    white-space: nowrap
 
   &__price-value
     margin-left: 5px
@@ -143,6 +164,7 @@
     display: flex
     justify-content: space-between
     align-items: center
+    flex-wrap: wrap
 
     &:not(:first-child)
       margin-top: 12px
@@ -178,15 +200,16 @@
 
   &__addition
     position: relative
+    margin-top: auto
 
   &__addition-content
     display: none
     border-top: none
     position: absolute
-    width: calc(100% + 2px)
-    left: -1px
+    width: calc(100% + 16px)
+    left: -8px
     top: 0
-    z-index: 2
+    z-index: 3
     background: #fff
     padding: 0 22px 24px
     border: 1px solid #eeeeee
@@ -196,17 +219,22 @@
     box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.13)
 
   &__installment
+    margin-bottom: 5px
+    margin-right: 10px
+
+  &__installment-value
     color: #262626
     font-size: 15px
     text-decoration: underline
     margin-left: 4px
 
   &__code
+    margin-bottom: 5px
     font-size: 13px
     color: #7e7e7e
 
   &__select
-    margin-top: 12px
+    margin-top: 8px
     width: 100%
     height: 32px
 
@@ -229,3 +257,104 @@
   &__btn
     margin-top: 12px
     flex: 1 1 auto
+
+  @media screen and (max-width: 1280px)
+    &__inf-content
+      padding-bottom: 36px
+
+    &__status
+      bottom: 12px
+
+  @media screen and (max-width: 580px)
+    border: none
+
+    &__slider
+      border-bottom: none
+
+    &__wishlist
+      right: 8px
+      top: 8px
+
+    &__compare
+      left: 8px
+      top: 8px
+
+    &__discount
+      left: 0
+      bottom: 0
+      display: none
+
+    &__label
+      right: 8px
+      bottom: 0
+      display: none
+
+    &__inf-content
+      padding: 0 0 12px
+
+    &__name
+      font-size: 14px
+
+    &__price
+      margin-top: 10px
+      font-size: 10px
+
+    &__price-value
+      font-size: 14px
+      margin-left: 4px
+
+    &__price-old
+      font-size: 12px
+      margin-left: 7px
+
+    &__meta
+      &:not(:first-child)
+        margin-top: 10px
+
+    &__status
+      display: none
+
+    &__addition-content
+      padding: 0 8px 8px
+
+    &__installment-value
+      font-size: 13px
+
+    &__code
+      font-size: 12px
+
+    &__select
+      margin-top: 5px
+
+    &--slide &__discount,
+    &--slide &__label
+      display: inline-flex
+
+    &--slide &__price
+      font-size: 12px
+
+    &--slide &__price-value
+      font-size: 16px
+
+    &__img-box
+      height: 110px
+
+    &__img
+      width: 150px
+      
+    &--slide &__img-box
+      height: 130px
+
+    &--slide &__img
+      max-width: 200px
+
+    &--slide &__inf-content
+      padding-top: 20px
+
+    &__btn-group &__btn
+      margin-left: 2px
+      margin-right: 2px
+      padding: 0 12px
+      
+    &__feature-icon
+      display: none

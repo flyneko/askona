@@ -1,5 +1,6 @@
 .filters-modal
   width: 415px
+  max-width: 100vw
   max-height: 100%
   display: flex
   flex-direction: column
@@ -19,6 +20,12 @@
     padding: 0 44px 0 32px
     max-height: calc(100vh - 260px)
 
+    &.ps--active-y:after
+      box-shadow: 0 15px 7px 17px rgba(#000, 0.17)
+      transform: translateX(-16px)
+      left: -61px
+      width: calc(100% + 45px)
+
   &__accordion
     padding: 25px 0
     border-bottom: 1px solid #eeeeee
@@ -26,15 +33,19 @@
     &:first-child
       border-top: 1px solid #eeeeee
 
+  &__accordion-main
+    padding-top: 18px
+
   &__list
     margin: -8px 0
-
-  &__item
-    margin: 8px 0
-    
-  &__list--2
     display: flex
     flex-wrap: wrap
+
+  &__item
+    width: 100%
+    margin: 8px 0
+
+  &__list--2
     margin: -8px
 
   &__list--2 &__item
@@ -56,3 +67,51 @@
 
   &__close.popup__close
     right: 56px
+
+  @media screen and (max-width: 580px)
+    width: 100vw
+
+    &__header
+      padding: 16px 32px 0 16px
+
+    &__title
+      font-size: 26px
+
+    &__close.popup__close
+      right: 16px
+      top: 24px
+
+      .icon
+        stroke: #373737
+
+    &__main
+      margin-top: 16px
+      margin-right: 0
+      padding: 0 16px
+      max-height: calc(100vh - 175px)
+
+      &:after
+        transform: translateX(0)
+        left: 0
+        width: 100%
+
+    &__accordion
+      padding: 18px 0
+
+    &__price.price-filter
+      width: 100%
+
+    &__footer
+      padding: 0 16px
+      margin-bottom: 16px
+
+    &__btn
+      font-size: 14px
+      height: 40px
+
+      &:not(:first-child)
+        margin-top: 0
+
+      &--reset
+        border: none
+        text-decoration: underline

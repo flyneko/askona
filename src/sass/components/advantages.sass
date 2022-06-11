@@ -1,9 +1,18 @@
 .advantages
   position: relative
 
-  &__list
-    display: flex
-    margin: -16px
+  &__slide
+    height: auto
+    flex: 1 1 392px
+
+    &:not(:last-child)
+      margin-right: 32px
+
+    &.swiper-slide-duplicate
+      display: none
+
+    &--main
+      flex: 1 1 560px
 
   &__item
     position: relative
@@ -11,15 +20,14 @@
     border-radius: 4px
     text-align: center
     padding: 30px 24px 32px
-    margin: 16px
-    flex: 1 1 392px
+    height: 100%
     min-height: 260px
     display: flex
     flex-direction: column
     align-items: center
+    overflow: hidden
 
     &--main
-      flex: 1 1 560px
       align-items: flex-start
 
       .advantages__item-btn
@@ -44,10 +52,10 @@
     line-height: 1.25
     color: #fff
     max-width: 300px
-    margin: 12px auto 0
+    margin: 12px auto 20px
 
   &__item-btn
-    margin-top: 20px
+    margin-top: auto
     position: relative
     z-index: 1
 
@@ -57,3 +65,66 @@
     top: 50%
     transform: translate(-50%, -50%)
     max-height: 100%
+
+  &__slider-pagination
+    display: none
+
+  @media screen and (max-width: 1190px)
+    &__slide
+      &:not(:last-child)
+        margin-right: 16px
+        
+    &__item
+      padding: 20px 16px 22px
+
+    &__item-icon
+      margin-bottom: 12px
+
+    &__item-title
+      font-size: 24px
+
+    &__item-text
+      font-size: 14px
+      margin: 10px 0 15px
+
+  @media screen and (max-width: 991px)
+    &__slide
+      flex: 1 1 392px
+
+  @media screen and (max-width: 860px)
+    &__slider
+      margin-right: 0
+      padding-bottom: 40px
+
+    &__slide
+      flex-basis: auto
+      flex-shrink: 0
+
+      &.swiper-slide-duplicate
+        display: block
+
+    &__slider-pagination
+      display: block
+
+  @media screen and (max-width: 580px)
+    &__slider
+      margin-right: -#{$container-offset}
+      padding-bottom: 30px
+
+    &__item
+      padding: 14px 45px 16px
+      min-height: auto
+
+      &--main
+        align-items: center
+
+    &__item-icon
+      max-width: 34px
+      max-height: 34px
+      margin-bottom: 8px
+      
+    &__item-title
+      font-size: 18px
+
+    &__item-text
+      font-size: 12px

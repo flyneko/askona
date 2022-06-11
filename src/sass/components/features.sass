@@ -12,15 +12,11 @@
   &__text
     margin-top: 20px
 
-  &__list
-    margin: -16px
+  &__slider
     padding-top: 32px
-    display: flex
 
   &__item
-    margin: 16px
     padding: 0 20px
-    width: calc(100% / 12 * 4 - 32px)
     text-align: center
 
   &__item-icon-box
@@ -38,10 +34,10 @@
     max-height: 64px
 
   &__item-title
-      font-size: 18px
-      line-height: 1.33
-      font-weight: 500
-      color: #262626
+    font-size: 18px
+    line-height: 1.33
+    font-weight: 500
+    color: #262626
     
   &__item-text
     margin-top: 18px
@@ -54,4 +50,78 @@
     font-weight: 500
 
     &:hover
+      text-decoration: none
+
+  &__slider-pagination
+    display: none
+
+  @media screen and (max-width: 1440px)
+    &__content
+      &--gray
+        margin: 0 -#{$container-offset}
+        padding-left: $container-offset
+        padding-right: $container-offset
+
+  @media screen and (max-width: 991px)
+    &__content
+      padding-top: 40px
+      padding-bottom: 35px
+
+    &__item
+      padding: 0 12px
+
+  @media screen and (max-width: 860px)
+    &__slider
+      padding-bottom: 40px
+      
+    &__slider-pagination
+      display: block
+
+  @media screen and (max-width: 767px)
+    &__item-title
+      font-size: 16px
+
+    &__item-icon-box
+      margin-bottom: 12px
+
+    &__item-text
+      margin-top: 10px
+
+  @media screen and (max-width: 580px)
+    &__content
+      padding-top: 0
+      padding-bottom: 10px
+
+      &--gray
+        padding-top: 25px
+
+    &__content--gray &__slider
+      padding-bottom: 35px
+      margin-bottom: 0
+
+    &__slider
+      padding-top: 20px
+      padding-bottom: 30px
+      margin-bottom: -10px
+
+    &__title
+      padding: 0 32px
+      line-height: 0.92
+
+    &__text
+      padding: 0 7px
+      margin-top: 12px
+
+    &__item
+      padding: 0
+
+    &__item-link
+      font-size: 12px
+      background-color: $color-primary
+      color: #fff
+      height: 32px
+      border-radius: 4px
+      display: inline-flex
+      align-items: center
+      padding: 0 26px
       text-decoration: none

@@ -6,7 +6,6 @@ block title
 block content
 	main.main
 		section.events
-			.container 
 			.events__slider
 				.events__slider-main.swiper.js-events-slider
 					.swiper-wrapper
@@ -110,7 +109,7 @@ block content
 						.swiper-wrapper
 							each i in [0, 1, 2, 4, 5]
 								.swiper-slide
-									+card(i, {class: 'products__slider-item'})
+									+card(i, {class: 'product--slide products__slider-item'})
 						.swiper-pagination.products__slider-pagination.js-products-slider-pagination
 					.products__slider-navigation
 						button.btn-next.products__slider-next.js-products-slider-next
@@ -126,7 +125,7 @@ block content
 						.swiper-wrapper
 							each i in [11, 5, 6, 7, 1]
 								.swiper-slide
-									+card(i, {class: 'products__slider-item'})
+									+card(i, {class: 'product--slide products__slider-item'})
 						.swiper-pagination.products__slider-pagination.js-products-slider-pagination
 					.products__slider-navigation
 						button.btn-next.products__slider-next.js-products-slider-next
@@ -136,60 +135,66 @@ block content
 
 		section.section.advantages
 			.container
-				.advantages__list
-					.advantages__item
-						+icon('adresa_magazinov', 'advantages__item-icon')
-						h3.advantages__item-title Адреса магазинов
-						p.advantages__item-text 
-							| Найдите ближайший салон 
-							| или удобный для вас пункт самовывоза
-						button.btn.btn--white.advantages__item-btn Показать на карте
-
-					.advantages__item.advantages__item--main
-						img.advantages__item-img(src="assets/img/advantages/discount.jpg" alt="")
-						button.btn.btn--white.advantages__item-btn Узнать больше
-
-					.advantages__item
-						+icon('club_sna', 'advantages__item-icon')
-						h3.advantages__item-title Клуб здорового сна
-						p.advantages__item-text 
-							| Вступайте в клуб и получайте скидки 
-							| и дополнительные привилегии
-						button.btn.btn--white.advantages__item-btn Получить скидку								
+				.advantages__slider.swiper
+					.swiper-wrapper
+						.swiper-slide.advantages__slide
+							.advantages__item
+								+icon('adresa_magazinov', 'advantages__item-icon')
+								h3.advantages__item-title Адреса магазинов
+								p.advantages__item-text 
+									| Найдите ближайший салон 
+									| или удобный для вас пункт самовывоза
+								button.btn.btn--white.advantages__item-btn Показать на карте
+						.swiper-slide.advantages__slide.advantages__slide--main
+							.advantages__item.advantages__item--main
+								img.advantages__item-img(src="assets/img/advantages/discount.jpg" alt="")
+								button.btn.btn--white.advantages__item-btn Узнать больше
+						.swiper-slide.advantages__slide
+							.advantages__item
+								+icon('club_sna', 'advantages__item-icon')
+								h3.advantages__item-title Клуб здорового сна
+								p.advantages__item-text 
+									| Вступайте в клуб и получайте скидки 
+									| и дополнительные привилегии
+								button.btn.btn--white.advantages__item-btn Получить скидку								
+					.swiper-pagination.advantages__slider-pagination
 
 		section.section.features 
 			.container 
 				.features__content
 					.features__header 
-						h2.title2 Askona заряжает сном
+						h2.title2.features__title Askona заряжает сном
 						p.text.features__text
 							| Мы постоянно разрабатываем инновационные решения и выпускаем только такую продукцию, в которой уверены на 100%.
 							| День за днем мы работаем для того, чтобы каждую ночь вы погружались в здоровый сон, набираясь сил для новых свершений.
-					.features__list 
-						.features__item
-							.features__item-icon-box
-								+icon('laboratory', 'features__item-icon')
-							h3.features__item-title Единственная в России лаборатория сна
-							p.text.features__item-text
-								| Сертифицированная по стандартам ISO. В ней мы создаем будущее.
-								| И тестируем все новые модели матрасов, диванов и кроватей Askona.
-
-						.features__item
-							.features__item-icon-box
-								+icon('marka_n1', 'features__item-icon')
-							h3.features__item-title Марка №1 в России
-							p.text.features__item-text
-								| По результатам народного голосования. Мы прошли 
-								| стажировку в лучших немецких и  шведских компаниях, 
-								| чтобы перенять стандарты качества и поднять их на еще более высокий уровень.
-
-						.features__item
-							.features__item-icon-box
-								+icon('eco', 'features__item-icon')
-							h3.features__item-title Забота об окружающей среде
-							p.text.features__item-text
-								| Мы максимально бережно взаимодействуем с природой, обеспечивая её сохранность.
-								| Доля перерабатываемых отходов в Askona составляет 100%.			
+					.features__slider.swiper
+						.swiper-wrapper
+							.swiper-slide
+								.features__item
+									.features__item-icon-box
+										+icon('laboratory', 'features__item-icon')
+									h3.features__item-title Единственная в России лаборатория сна
+									p.text.features__item-text
+										| Сертифицированная по стандартам ISO. В ней мы создаем будущее.
+										| И тестируем все новые модели матрасов, диванов и кроватей Askona.
+							.swiper-slide
+								.features__item
+									.features__item-icon-box
+										+icon('marka_n1', 'features__item-icon')
+									h3.features__item-title Марка №1 в России
+									p.text.features__item-text
+										| По результатам народного голосования. Мы прошли 
+										| стажировку в лучших немецких и  шведских компаниях, 
+										| чтобы перенять стандарты качества и поднять их на еще более высокий уровень.
+							.swiper-slide
+								.features__item
+									.features__item-icon-box
+										+icon('eco', 'features__item-icon')
+									h3.features__item-title Забота об окружающей среде
+									p.text.features__item-text
+										| Мы максимально бережно взаимодействуем с природой, обеспечивая её сохранность.
+										| Доля перерабатываемых отходов в Askona составляет 100%.			
+						.swiper-pagination.features__slider-pagination
 
 		section.section.features
 			.container
@@ -199,30 +204,33 @@ block content
 						p.text.features__text
 							| Мы постоянно разрабатываем инновационные решения и выпускаем только такую продукцию, в которой уверены на 100%.
 							| День за днем мы работаем для того, чтобы каждую ночь вы погружались в здоровый сон, набираясь сил для новых свершений.
-					.features__list 
-						.features__item
-							.features__item-icon-box
-								+icon('napishite_zvonite', 'features__item-icon')
-							h3.title3.features__item-title Напишите или позвоните нам
-							p.text.features__item-text
-								| Констультанты Askona готовы ответить на любой <br>
-								| ваш вопрос в режиме онлайн.
-							a.link.link--primary.features__item-link(href="#") Задать вопрос
-
-						.features__item
-							.features__item-icon-box
-								+icon('videokonsultaciya', 'features__item-icon')
-							h3.title3.features__item-title Получите видеоконсультацию
-							p.text.features__item-text
-								| Констультанты Askona покажут вам товар онлайн <br>
-								| и ответят на любые вопросы.
-							a.link.link--primary.features__item-link(href="#") Позвонить по видео
-
-						.features__item
-							.features__item-icon-box
-								+icon('faq', 'features__item-icon')
-							h3.title3.features__item-title Узнайте ответы на частые вопросы
-							p.text.features__item-text
-								| Мы собрали самые популярные вопросы пользователей <br>
-								| в одном удобном разделе.
-							a.link.link--primary.features__item-link(href="#") Открыть раздел
+					.features__slider.swiper
+						.swiper-wrapper
+							.swiper-slide.features__slide
+								.features__item
+									.features__item-icon-box
+										+icon('napishite_zvonite', 'features__item-icon')
+									h3.title3.features__item-title Напишите или позвоните нам
+									p.text.features__item-text
+										| Констультанты Askona готовы ответить на любой <br>
+										| ваш вопрос в режиме онлайн.
+									a.link.link--primary.features__item-link(href="#") Задать вопрос
+							.swiper-slide.features__slide
+								.features__item
+									.features__item-icon-box
+										+icon('videokonsultaciya', 'features__item-icon')
+									h3.title3.features__item-title Получите видеоконсультацию
+									p.text.features__item-text
+										| Констультанты Askona покажут вам товар онлайн <br>
+										| и ответят на любые вопросы.
+									a.link.link--primary.features__item-link(href="#") Позвонить по видео
+							.swiper-slide.features__slide
+								.features__item
+									.features__item-icon-box
+										+icon('faq', 'features__item-icon')
+									h3.title3.features__item-title Узнайте ответы на частые вопросы
+									p.text.features__item-text
+										| Мы собрали самые популярные вопросы пользователей <br>
+										| в одном удобном разделе.
+									a.link.link--primary.features__item-link(href="#") Открыть раздел
+						.swiper-pagination.features__slider-pagination

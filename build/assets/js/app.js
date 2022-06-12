@@ -203,19 +203,28 @@ window.addEventListener('load', () => {
       scrollbar: {
         el: '.products__slider-scrollbar',
         draggable: true,
-        dragSize: 372,
+        dragSize: 47,
       },
       breakpoints: {
         1280: {
           slidesPerView,
           spaceBetween: 32,
+          scrollbar: {
+            dragSize: 372,
+          },
         },
         860: {
           slidesPerView: 3,
+          scrollbar: {
+            dragSize: 186,
+          },
         },
         580: {
           slidesPerView: 2,
           spaceBetween: 16,
+          scrollbar: {
+            dragSize: 93,
+          },
         },
       }
     });
@@ -300,10 +309,16 @@ window.addEventListener('load', () => {
     updateOnWindowResize: false,
     centeredSlidesBounds: true,
     watchOverflow: true,
+    enabled: false,
     navigation: {
       prevEl: '.single-product__nav-prev',
       nextEl: '.single-product__nav-next',
-      clickable: true
+      clickable: true,
+    },
+    breakpoints: {
+      991: {
+        enabled: true,
+      },
     }
   });
   if (singleProdNavSlider.params.slidesPerView < singleProdNavSlider.slides.length) {
@@ -320,6 +335,10 @@ window.addEventListener('load', () => {
     mousewheel: {
       sensitivity: 1.4,
     },
+    pagination: {
+      el: '.single-product__big-slider-pagination',
+      clickable: true
+    }
   });
   big.controller.control = singleProdNavSlider;
 
@@ -332,9 +351,44 @@ window.addEventListener('load', () => {
     scrollbar: {
       el: '.reviews__common-scrollbar',
       draggable: true,
-      dragSize: 372,
+      dragSize: 47,
     },
+    breakpoints: {
+      1280: {
+        scrollbar: {
+          dragSize: 372,
+        },
+      },
+      860: {
+        scrollbar: {
+          dragSize: 186,
+        },
+      },
+      580: {
+        scrollbar: {
+          dragSize: 93,
+        },
+      }
+    }
   });
+
+  /**
+   * Отзывы
+   */
+  const $reviews = document.querySelector('.reviews');
+  if ($reviews) {
+    moveAddReviewBtn();
+    window.addEventListener('resize', moveAddReviewBtn);
+
+    function moveAddReviewBtn() {
+      moveElement({
+        element: '.reviews__add-btn',
+        from: '.reviews__common-header',
+        to: '.reviews__common-footer',
+        width: 991
+      });
+    }
+  }
 
 
   /**
@@ -393,6 +447,24 @@ window.addEventListener('load', () => {
   });
 
   /**
+   * Описание товара
+   */
+  const $singleProduct = document.querySelector('.single-product');
+  if ($singleProduct) {
+    moveProductInfo();
+    window.addEventListener('resize', moveProductInfo);
+
+    function moveProductInfo() {
+      moveElement({
+        element: '.single-product__info',
+        from: '.single-product__sidebar',
+        to: '.single-product__mobile-info',
+        width: 991
+      });
+    }
+  }
+
+  /**
    * Конфигураторы карточки товара
    */
   const $configures = document.querySelectorAll('.configure');
@@ -430,7 +502,6 @@ window.addEventListener('load', () => {
         window.scrollTo(0, 0);
         $body.classList.add('body--lock');
         $productConfig.classList.add('product-config--show');
-        closeShowedConfigure();
       });
     });
 
@@ -475,7 +546,6 @@ window.addEventListener('load', () => {
     loop: true,
     mousewheel: true,
     slideEndAnimation: false,
-    thumbnail: true,
   });
 
   const $reviewImagesBoxes = document.querySelectorAll('.review__images');
@@ -725,11 +795,19 @@ window.addEventListener('load', () => {
     const $popup = document.querySelector(`.popup[data-name="${popupName}"]`);
 
     if (!popupName || !$popup) {
-      return
+      return;
     }
 
-    $btn.addEventListener('click', () => {
+    $btn.addEventListener('click', e => {
       closeShowedPopup();
+
+      const isPopupMobile = $popup.classList.contains('popup--mobile');
+      if (isPopupMobile && window.innerWidth > 991) {
+        return
+      }
+
+      e.preventDefault();
+
       $popup.classList.add('popup--show');
 
       const lockWidth = $popup.dataset.lockWidth;
@@ -750,14 +828,28 @@ window.addEventListener('load', () => {
   });
 
   window.addEventListener('click', e => {
-    if (e.target.closest('.js-open-popup') || e.target.classList.contains('js-open-popup')) {
+    const $showedPopup = document.querySelector('.popup--show');
+
+    if (!$showedPopup ||
+      e.target.closest('.js-open-popup') ||
+      e.target.classList.contains('js-open-popup')) {
       return;
+    }
+    
+    const $clickedPopup = e.target.closest('.popup');
+    if ($clickedPopup && $showedPopup !== $clickedPopup) {
+      closeShowedPopup();
+      return
+    }
+
+    const isPopupMobile = $showedPopup.classList.contains('popup--mobile');
+    if (isPopupMobile && window.innerWidth > 991) {
+      closeShowedPopup();
+      return
     }
 
     const ignoreClass = 'swiper-pagination-bullet';
-    const $showedPopup = document.querySelector('.popup--show');
-
-    if ($showedPopup && !e.target.closest('.popup') && !e.target.closest(`.${ignoreClass}`)) {
+    if (!e.target.closest('.popup') && !e.target.closest(`.${ignoreClass}`)) {
       closeShowedPopup();
     }
   });
@@ -766,8 +858,8 @@ window.addEventListener('load', () => {
     const $popup = document.querySelector('.popup--show');
     if ($popup) {
       $popup.classList.remove('popup--show');
+      document.body.classList.remove('body--lock');
     }
-    document.body.classList.remove('body--lock');
   }
 
   /**
@@ -885,7 +977,7 @@ function getHeaderHeight() {
     return $header.offsetHeight;
   }
 
-  return 0
+  return 0;
 }
 
 function getBannerHeight() {
@@ -894,7 +986,7 @@ function getBannerHeight() {
     return $banner.offsetHeight;
   }
 
-  return 0
+  return 0;
 }
 
 function createScrollbar($scrollbar) {
@@ -906,4 +998,22 @@ function createScrollbar($scrollbar) {
     wheelPropagation: false,
     suppressScrollX: offXScroll,
   })
+}
+
+function moveElement({ element, from, to, width }) {
+  const $elem = document.querySelector(element);
+  const $from = document.querySelector(from);
+  const $to = document.querySelector(to);
+
+  if (!$elem || !$from || !$to) {
+    return;
+  }
+
+  setTimeout(() => {
+    if (window.innerWidth <= width && $elem.parentNode === $from) {
+      $to.append($elem);
+    } else if (window.innerWidth >= width && $elem.parentNode !== $from) {
+      $from.append($elem);
+    }
+  });
 }

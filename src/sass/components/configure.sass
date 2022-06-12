@@ -21,9 +21,8 @@
   &__list
     display: flex
     flex-wrap: wrap
-    margin: 15px -8px -10px
+    margin: 15px 24px -10px -8px
     padding-right: 24px
-    margin-right: 24px
     padding-left: 32px
     max-height: calc(100vh - 180px)
     position: relative
@@ -100,13 +99,13 @@
       margin-right: 4px
 
   .ps__rail-y
-    z-index: 99999
+    z-index: 9
 
   &__footer
     margin-top: auto
     display: flex
     position: relative
-    z-index: 11111
+    z-index: 11
     background: #fff
     padding: 16px 32px
 
@@ -117,3 +116,49 @@
 
     &:not(:last-child)
       margin-right: 16px
+
+  @media screen and (max-width: 767px)
+    width: 100%
+
+    &__title
+      font-size: 26px
+
+    &__header
+      padding: 24px 24px 0
+
+    &__list
+      padding-right: 16px
+      margin-right: 16px
+      padding-left: 16px
+      max-height: calc(100vh - 200px)
+
+      &.ps--active-y:before
+        box-shadow: 0px 0px 25px 20px rgba(255, 255, 255, 0.9)
+
+      &.ps--active-y:after
+        box-shadow: 0px -10px 25px 20px rgba(255, 255, 255, 0.9)
+
+    &__footer
+      flex-direction: column
+      padding: 16px
+
+    &__btn
+      font-size: 14px
+      height: 40px
+
+      &:not(:last-child)
+        margin-right: 0
+        margin-bottom: 16px
+
+    &__close.popup__close
+      top: 24px
+
+  @media screen and (max-width: 480px)
+    &__item
+      width: calc(50% - 16px)
+
+      &--big
+        width: 100%
+
+    &__header
+      padding: 16px 16px 0

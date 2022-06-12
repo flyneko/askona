@@ -1,13 +1,14 @@
 .popup
-  position: fixed
-  right: 0
-  top: 0
-  z-index: 70
-  height: 100%
-  opacity: 0
-  transform: translateX(100%)
-  visibility: hidden
-  transition: opacity .3s, transform .3s, visibility .3s
+  &:not(.popup--mobile)
+    position: fixed
+    right: 0
+    top: 0
+    z-index: 70
+    height: 100%
+    opacity: 0
+    transform: translateX(100%)
+    visibility: hidden
+    transition: opacity .3s, transform .3s, visibility .3s
 
   &__content
     position: relative
@@ -27,6 +28,25 @@
     height: 16px
 
   &--show
-    transform: translateX(0)
-    opacity: 1
-    visibility: visible
+    &:not(.popup--mobile)
+      transform: translateX(0)
+      opacity: 1
+      visibility: visible
+
+  @media screen and (max-width: 991px)
+    &--mobile
+      position: fixed
+      right: 0
+      top: 0
+      z-index: 70
+      height: 100%
+      width: 100%
+      opacity: 0
+      transform: translateX(100%)
+      visibility: hidden
+      transition: opacity .3s, transform .3s, visibility .3s
+
+    &--show
+      transform: translateX(0)
+      opacity: 1
+      visibility: visible

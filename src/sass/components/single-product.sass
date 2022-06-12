@@ -63,6 +63,9 @@
       justify-content: center
       cursor: pointer
 
+  &__big-slider-pagination
+    display: none
+
   &__labels
     position: absolute
     z-index: 1
@@ -104,14 +107,21 @@
     &:not(:first-child)
       margin-left: 8px
 
+  &__mobile-info
+    display: none
+
   &__details
     margin-top: 16px
 
   &__desc
     margin-top: 40px
+    background: #fff
 
     h3
-      @extend .title3
+      font-size: 24px
+      line-height: 1.33
+      font-weight: 600
+      color: #212121
 
     h4
       margin-top: 22px
@@ -127,6 +137,7 @@
   &__desc-main
     margin-top: 18px
     display: flex
+    align-items: flex-start
 
     img
       max-width: 345px
@@ -140,6 +151,11 @@
 
   &__img-text
     margin-top: 16px
+  
+  &__details-close,
+  &__desc-close,
+  &__reviews-close
+    display: none
 
   &__reviews
     margin-top: 45px
@@ -179,7 +195,7 @@
     margin-top: 12px
     display: flex
     align-items: center
-  
+
   &__price-value
     font-size: 28px
     font-weight: 600
@@ -205,6 +221,7 @@
     margin-top: 16px
     display: flex
     align-items: center
+    line-height: 1
 
   &__scores-icon
     margin-right: 7px
@@ -290,13 +307,19 @@
     &:hover
       color: $color-primary
 
+  &__menu-link--recommend &__menu-arrow,
+  &__menu-link--delivery &__menu-arrow
+    display: inline-block
+
   &__menu-icon
     margin-right: 11px
+    stroke-width: 1.4
 
   &__menu-arrow
     width: 5px
     height: 8px
     margin-left: auto
+    display: none
 
   &__aside-footer
     margin-top: 32px
@@ -309,3 +332,194 @@
     margin-top: 20px
     height: 48px
     width: 100%
+
+  @media screen and (max-width: 1280px)
+    &__desc-main
+      display: block
+
+    &__sidebar
+      flex: 0 0 375px
+      margin-left: 24px
+
+  @media screen and (max-width: 991px)
+    &__content
+      display: block
+
+    &__main
+      overflow: visible
+
+    &__nav-slider,
+    &__sidebar
+      display: none
+
+    &__big-slider
+      border: none
+      padding-bottom: 50px
+      height: auto
+      width: calc(100vw - $container-offset * 2)
+
+    &__play-btns
+      left: 0
+      justify-content: space-between
+      width: 100%
+
+    &__mobile-info
+      display: block
+
+    &__info
+      position: relative
+      margin-top: 30px
+
+    &__icon-btns
+      position: absolute
+      right: 0
+      top: 10px
+
+    &__big-slider-pagination
+      display: block
+
+    &__menu-item
+      &:first-child
+        border-top: 1px solid #eeeeee
+
+    &__menu-link
+      font-size: 14px
+
+    &__menu-arrow
+      display: inline-block
+
+    &__aside-footer
+      margin-top: 20px
+
+    &__details
+      margin-top: 0
+      background-color: #fff
+
+      .details__title
+        padding-bottom: 5px
+
+    &__details .details__body,
+    &__desc-body
+      overflow-y: auto
+      overflow-x: hidden
+      padding-right: 16px
+      max-height: calc(100vh - 55px)
+      padding-bottom: 24px
+
+    &__desc
+      margin-top: 0
+      padding: 16px 0 16px 16px
+
+    &__desc h3
+      padding-bottom: 10px
+
+    &__desc-main
+      margin-top: 0
+
+    &__details-close.popup__close,
+    &__desc-close.popup__close,
+    &__reviews-close.popup__close
+      display: inline-block
+      top: 24px
+      right: 16px
+
+      .popup__close-icon
+        stroke: #373737
+
+    &__reviews
+      margin-top: 0
+      padding: 16px 16px 24px 16px
+      background: #fff
+      overflow: hidden
+      overflow-y: auto
+      overflow-x: hidden
+
+  @media screen and (max-width: 767px)
+    &__label
+      font-size: 12px
+      height: 28px
+      padding: 0 12px
+
+    &__desc
+      h3
+        font-size: 26px
+
+  @media screen and (max-width: 580px)
+    &__labels
+      top: 0
+      right: 0
+
+    &__label
+      font-size: 10px
+      height: 18px
+      padding: 0 11px
+
+      &:not(:first-child)
+        margin-top: 4px
+
+    &__info
+      margin-top: 8px
+
+    &__event
+      margin-top: 8px
+      font-size: 12px
+
+    &__price-value
+      font-size: 24px
+
+    &__price-old
+      margin-left: 15px
+      font-size: 16px
+
+    &__discount
+      margin-left: 15px
+
+    &__installment
+      margin-top: 5px
+
+    &__scores
+      margin-top: 14px
+
+    &__scores-value
+      font-size: 14px
+
+    &__form-text
+      margin-bottom: 5px
+      font-size: 14px
+
+    &__form-group
+      &:not(:first-child)
+        margin-top: 12px
+
+    &__form-btns
+      margin-top: 8px
+      display: flex
+      flex-direction: column
+
+    &__form-btn-group
+      display: block
+      margin: 0
+
+    &__form-btn-group &__form-btn
+      margin-left: 0
+      margin-right: 0
+
+    &__form-btn
+      font-size: 14px
+      margin-top: 8px
+
+      &:first-child
+        order: -2
+
+      &--installment
+        height: 32px
+        border: none
+        text-decoration: underline dotted
+
+    &__form-footer
+      order: -1
+      padding-top: 8px
+      padding-bottom: 0
+
+    &__menu
+      margin-top: 16px

@@ -30,6 +30,7 @@
 
   &__item-name
     color: #444
+    padding-right: 10px
 
   &__item-value
     display: flex
@@ -56,3 +57,52 @@
     .link__icon
       width: 21px
       height: 26px
+
+  &__close
+    display: none
+
+  @media screen and (max-width: 1140px)
+    padding: 16px 24px 24px
+
+    &__list
+      margin: 0 -12px
+
+    &__item
+      margin: 0 12px
+
+    &__column
+      margin: 0 12px
+      width: calc(50% - 24px)
+
+    &__footer
+      margin-top: 30px
+
+  @media screen and (max-width: 991px)
+    padding: 16px 0 16px 16px
+
+    &__list
+      margin: 0
+      padding-top: 0
+
+    &__item
+      margin: 0
+
+    &__column
+      width: 100%
+      margin: 0
+
+      &:not(:first-child)
+        margin-top: 21px
+        border-top: 1px solid #e1e1e1
+
+    &__close.popup__close
+      display: inline-block
+      top: 24px
+      right: 16px
+      
+      .popup__close-icon
+        stroke: #373737
+
+  @media screen and (max-width: 767px)
+    &__title.title3
+      font-size: 26px

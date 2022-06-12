@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css?v=53891464">
+    <link rel="stylesheet" href="assets/css/styles.css?v=75087407">
   </head>
   <body class="body">
     <div class="banner"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
@@ -123,6 +123,7 @@
                     <div class="swiper-slide" data-src="temp/single-products/matrasi/3.jpg"><img src="temp/single-products/matrasi/3.jpg" alt=""></div>
                     <div class="swiper-slide" data-src="temp/single-products/matrasi/4.jpg"><img src="temp/single-products/matrasi/4.jpg" alt=""></div>
                   </div>
+                  <div class="swiper-pagination single-product__big-slider-pagination"></div>
                   <div class="single-product__labels">
                     <div class="single-product__label single-product__label--week">Товар недели</div>
                     <div class="single-product__label single-product__label--delivery">Доставка 1 день</div>
@@ -141,87 +142,102 @@
                   </div>
                 </div>
               </div>
-              <div class="details single-product__details" id="details">
-                <div class="title3">Характеристики</div>
-                <div class="details__list">
-                  <div class="details__item"><span class="text details__item-name">Жесткость</span><span class="text details__item-value">Средней жесткости</span></div>
-                  <div class="details__item"><span class="text details__item-name">Количество пружин</span><span class="text details__item-value">720<a href="#"> 
-                        <svg class="icon icon--primary details__item-icon"> 
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#vopros"></use>
-                        </svg></a></span></div>
-                  <div class="details__item"><span class="text details__item-name">Наполнитель</span><span class="text details__item-value">Анатомическая пена</span></div>
-                  <div class="details__item"><span class="text details__item-name">Высота ножек, см</span><span class="text details__item-value">24 см<a href="#"> 
-                        <svg class="icon icon--primary details__item-icon"> 
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#vopros"></use>
-                        </svg></a></span></div>
-                  <div class="details__item"><span class="text details__item-name">Вес на спальное место</span><span class="text details__item-value">свыше 140 кг.</span></div>
+              <div class="single-product__mobile-info"></div>
+              <div class="details single-product__details popup popup--mobile" id="details" data-name="details" data-lock-width="991">
+                <div class="title3 details__title">Характеристики</div>
+                <div class="details__body">
+                  <div class="details__list">
+                    <div class="details__item"><span class="text details__item-name">Жесткость</span><span class="text details__item-value">Средней жесткости</span></div>
+                    <div class="details__item"><span class="text details__item-name">Количество пружин</span><span class="text details__item-value">720<a href="#"> 
+                          <svg class="icon icon--primary details__item-icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#vopros"></use>
+                          </svg></a></span></div>
+                    <div class="details__item"><span class="text details__item-name">Наполнитель</span><span class="text details__item-value">Анатомическая пена</span></div>
+                    <div class="details__item"><span class="text details__item-name">Высота ножек, см</span><span class="text details__item-value">24 см<a href="#"> 
+                          <svg class="icon icon--primary details__item-icon"> 
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#vopros"></use>
+                          </svg></a></span></div>
+                    <div class="details__item"><span class="text details__item-name">Вес на спальное место</span><span class="text details__item-value">свыше 140 кг.</span></div>
+                  </div>
+                  <div class="details__footer">
+                    <div class="title3">Инструкции</div><a class="link link--line link--icon details__download" href="#"> 
+                      <svg class="icon icon--primary link__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skachat"></use>
+                      </svg>Скачать инструкцию по сборке</a>
+                  </div>
                 </div>
-                <div class="details__footer">
-                  <div class="title3">Инструкции</div><a class="link link--line link--icon details__download" href="#"> 
-                    <svg class="icon icon--primary link__icon"> 
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skachat"></use>
-                    </svg>Скачать инструкцию по сборке</a>
-                </div>
+                <button class="popup__close single-product__details-close">
+                  <svg class="icon popup__close-icon"> 
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#exit"></use>
+                  </svg>
+                </button>
               </div>
-              <div class="single-product__desc" id="desc">
+              <div class="single-product__desc popup popup--mobile" id="desc" data-name="desc" data-lock-width="991">
                 <h3>Описание</h3>
-                <div class="single-product__desc-main"><img src="temp/single-products/krovati/desc/1.jpg" alt="">
+                <div class="single-product__desc-body">
+                  <div class="single-product__desc-main"><img src="temp/single-products/krovati/desc/1.jpg" alt="">
+                    <p>
+                      Прямой анатомический диван Talo – мягкий и на высоких деревянных ножках, в духе ультрамодных тенденций.
+                      Сдержанный дизайн и продуманная до мелочей функциональность – в актуальном скандинавском стиле.
+                      Компактный Talo освободит пространство даже на небольших площадях. Диван трансформируется в полноценную кровать,
+                      с ровным, без заломов спальным местом. Усиленный механизм «Клик-кляк» обеспечит ежедневную трансформацию без 
+                      особых усилий. Геометрическая стежка чехла подчеркивает лаконичность и выразительность модели.
+                      Плавные линии, мягкие углы и ребра делают Talo безопасным даже для детей.
+                    </p>
+                  </div>
+                  <h4>Важно знать</h4>
+                  <p>В базовую комплектацию входят диван, матрас, бельевой короб и чехол.</p>
+                  <h4>Матрас:</h4>
                   <p>
-                    Прямой анатомический диван Talo – мягкий и на высоких деревянных ножках, в духе ультрамодных тенденций.
-                    Сдержанный дизайн и продуманная до мелочей функциональность – в актуальном скандинавском стиле.
-                    Компактный Talo освободит пространство даже на небольших площадях. Диван трансформируется в полноценную кровать,
-                    с ровным, без заломов спальным местом. Усиленный механизм «Клик-кляк» обеспечит ежедневную трансформацию без 
-                    особых усилий. Геометрическая стежка чехла подчеркивает лаконичность и выразительность модели.
-                    Плавные линии, мягкие углы и ребра делают Talo безопасным даже для детей.
+                    Высокий анатомический матрас – 16 см. В его основе – 7-зональный блок независимых пружин и высокоэластичная пена Orto Foam,
+                    поддерживают тело в физиологически правильном положении. Периметр матраса усилен пеной повышенной плотности и защищает края от провисания.
+                    Жесткость матраса – средняя (Medium). 	
                   </p>
-                </div>
-                <h4>Важно знать</h4>
-                <p>В базовую комплектацию входят диван, матрас, бельевой короб и чехол.</p>
-                <h4>Матрас:</h4>
-                <p>
-                  Высокий анатомический матрас – 16 см. В его основе – 7-зональный блок независимых пружин и высокоэластичная пена Orto Foam,
-                  поддерживают тело в физиологически правильном положении. Периметр матраса усилен пеной повышенной плотности и защищает края от провисания.
-                  Жесткость матраса – средняя (Medium). 	
-                </p>
-                <h4>Ткани</h4>
-                <div class="img-text single-product__img-text"><img src="temp/single-products/krovati/desc/tkani/1.jpg" alt="">
-                  <div class="img-text__content">
-                    <h5>Sky velvel</h5>
-                    <p>
-                       Sky velvet (микровелюр) изготовлена по инновационным технологиям. Ее главное преимущество – водоотталкивающая поверхность.
-                      Ткань практична в уходе: самые стойкие загрязнения можно отчистить водой. Sky velvet устойчива к истиранию (60 тыс. циклов)
-                      и прямым солнечным лучам, срок ее службы значительно выше, чем у стандартных мебельных тканей. Гипоаллергенная и экологичная.
-                    </p>
+                  <h4>Ткани</h4>
+                  <div class="img-text single-product__img-text"><img src="temp/single-products/krovati/desc/tkani/1.jpg" alt="">
+                    <div class="img-text__content">
+                      <h5>Sky velvel</h5>
+                      <p>
+                         Sky velvet (микровелюр) изготовлена по инновационным технологиям. Ее главное преимущество – водоотталкивающая поверхность.
+                        Ткань практична в уходе: самые стойкие загрязнения можно отчистить водой. Sky velvet устойчива к истиранию (60 тыс. циклов)
+                        и прямым солнечным лучам, срок ее службы значительно выше, чем у стандартных мебельных тканей. Гипоаллергенная и экологичная.
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div class="img-text single-product__img-text"><img src="temp/single-products/krovati/desc/tkani/2.jpg" alt="">
-                  <div class="img-text__content">
-                    <h5>Sky velvel</h5>
-                    <p>
-                       Sky velvet (микровелюр) изготовлена по инновационным технологиям. Ее главное преимущество – водоотталкивающая поверхность.
-                      Ткань практична в уходе: самые стойкие загрязнения можно отчистить водой. Sky velvet устойчива к истиранию (60 тыс. циклов)
-                      и прямым солнечным лучам, срок ее службы значительно выше, чем у стандартных мебельных тканей. Гипоаллергенная и экологичная.
-                    </p>
+                  <div class="img-text single-product__img-text"><img src="temp/single-products/krovati/desc/tkani/2.jpg" alt="">
+                    <div class="img-text__content">
+                      <h5>Sky velvel</h5>
+                      <p>
+                         Sky velvet (микровелюр) изготовлена по инновационным технологиям. Ее главное преимущество – водоотталкивающая поверхность.
+                        Ткань практична в уходе: самые стойкие загрязнения можно отчистить водой. Sky velvet устойчива к истиранию (60 тыс. циклов)
+                        и прямым солнечным лучам, срок ее службы значительно выше, чем у стандартных мебельных тканей. Гипоаллергенная и экологичная.
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div class="img-text single-product__img-text"><img src="temp/single-products/krovati/desc/tkani/3.jpg" alt="">
-                  <div class="img-text__content">
-                    <h5>Sky velvel</h5>
-                    <p>Sky velvet (микровелюр) изготовлена по инновационным технологиям. Ее главное преимущество – водоотталкивающая поверхность. Ткань практична в уходе: самые стойкие загрязнения можно отчистить водой. Sky velvet устойчива к истиранию (60 тыс. циклов) и прямым солнечным лучам, срок ее службы значительно выше, чем у стандартных мебельных тканей. Гипоаллергенная и экологичная.</p>
+                  <div class="img-text single-product__img-text"><img src="temp/single-products/krovati/desc/tkani/3.jpg" alt="">
+                    <div class="img-text__content">
+                      <h5>Sky velvel</h5>
+                      <p>Sky velvet (микровелюр) изготовлена по инновационным технологиям. Ее главное преимущество – водоотталкивающая поверхность. Ткань практична в уходе: самые стойкие загрязнения можно отчистить водой. Sky velvet устойчива к истиранию (60 тыс. циклов) и прямым солнечным лучам, срок ее службы значительно выше, чем у стандартных мебельных тканей. Гипоаллергенная и экологичная.</p>
+                    </div>
                   </div>
+                  <h4>Подушки</h4>
+                  <p>2 мягкие, но упругие подушки под спину в форме перевернутых трапеций создают дополнительный комфорт. Современный наполнитель – синтетическое волокно и поролоновая крошка надолго сохраняют форму. На ночь подушки можно убрать в бельевой короб. Чехлы подушек – съемные, на молнии: «бегунок» скрыт, что предотвращает повреждение ткани.</p>
+                  <h4>Чехол</h4>
+                  <p>Чехол посадочной части полностью съемный, что делает диван-кровать Lily практичным в уходе. Мебельные липучки обеспечивают надежную фиксацию чехла к основанию дивана. Ткань Casanova – микрофибра (100% полиэстер) с мягким ворсом и пластичной структурой из тончайших полимерных волокон. Внешне похожа на натуральную замшу. Главная особенность – покрытие Ever Clean Plus: создает водоотталкивающий эффект и делает ткань устойчивой к маслянистым и водным загрязнениям. Покрытие не стирается при химчистке. Безопасно для человека, сохраняет свойства ткани.</p><br>
+                  <p>Casanova практична в уходе: стойкие загрязнения легко удалить – тефлоновое покрытие не пропускает их внутрь волокна.</p><br>
+                  <p>Диван-кровать Lily: динамичный дизайн – для новых граней комфорта!</p>
                 </div>
-                <h4>Подушки</h4>
-                <p>2 мягкие, но упругие подушки под спину в форме перевернутых трапеций создают дополнительный комфорт. Современный наполнитель – синтетическое волокно и поролоновая крошка надолго сохраняют форму. На ночь подушки можно убрать в бельевой короб. Чехлы подушек – съемные, на молнии: «бегунок» скрыт, что предотвращает повреждение ткани.</p>
-                <h4>Чехол</h4>
-                <p>Чехол посадочной части полностью съемный, что делает диван-кровать Lily практичным в уходе. Мебельные липучки обеспечивают надежную фиксацию чехла к основанию дивана. Ткань Casanova – микрофибра (100% полиэстер) с мягким ворсом и пластичной структурой из тончайших полимерных волокон. Внешне похожа на натуральную замшу. Главная особенность – покрытие Ever Clean Plus: создает водоотталкивающий эффект и делает ткань устойчивой к маслянистым и водным загрязнениям. Покрытие не стирается при химчистке. Безопасно для человека, сохраняет свойства ткани.</p><br>
-                <p>Casanova практична в уходе: стойкие загрязнения легко удалить – тефлоновое покрытие не пропускает их внутрь волокна.</p><br>
-                <p>Диван-кровать Lily: динамичный дизайн – для новых граней комфорта!</p>
+                <button class="popup__close single-product__desc-close">
+                  <svg class="icon popup__close-icon"> 
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#exit"></use>
+                  </svg>
+                </button>
               </div>
-              <div class="reviews single-product__reviews" id="reviews">
+              <div class="reviews single-product__reviews popup popup--mobile" id="reviews" data-name="reviews" data-lock-width="991">
                 <div class="reviews__common">
                   <div class="reviews__common-header">
                     <div class="reviews__common-inf">
-                      <h3 class="title3">Отзывы<sup class="reviews__common-count">24</sup></h3>
+                      <h3 class="title3 reviews__title3">Отзывы<sup class="reviews__common-count">24</sup></h3>
                       <div class="reviews__rate">
                         <div class="rate">
                           <div class="rate__stars"><span class="rate__star"> </span><span class="rate__star"> </span><span class="rate__star"> </span><span class="rate__star"> </span><span class="rate__star"> </span>
@@ -234,18 +250,19 @@
                   </div>
                   <div class="reviews__common-images swiper">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/1.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/1.jpg" alt=""></div>
-                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/2.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/2.jpg" alt=""></div>
-                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/3.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/3.jpg" alt=""></div>
-                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/4.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/4.jpg" alt=""></div>
-                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/5.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/5.jpg" alt=""></div>
-                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/6.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/6.jpg" alt=""></div>
-                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/7.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/7.jpg" alt=""></div>
-                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/1.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/1.jpg" alt=""></div>
-                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/2.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/2.jpg" alt=""></div>
+                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/1.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/1.jpg"></div>
+                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/2.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/2.jpg"></div>
+                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/3.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/3.jpg"></div>
+                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/4.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/4.jpg"></div>
+                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/5.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/5.jpg"></div>
+                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/6.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/6.jpg"></div>
+                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/7.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/7.jpg"></div>
+                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/1.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/1.jpg"></div>
+                      <div class="swiper-slide" data-src="temp/single-products/reviews/all/2.jpg"><img class="reviews__common-img" src="temp/single-products/reviews/all/2.jpg"></div>
                     </div>
                     <div class="swiper-scrollbar reviews__common-scrollbar"></div>
                   </div>
+                  <div class="reviews__common-footer"></div>
                 </div>
                 <div class="reviews__list">
                   <div class="review reviews__item">
@@ -260,7 +277,7 @@
                     <div class="review__content">
                       <p class="text review__text">Приобретали данную кровать в комплекте с матрасом sleep style form. Кровать просто потрясающая! Основание с лёгкостью поднимается, места для хранения вещей под кроватью предостаточно))) покупкой очень довольны! Огромное спасибо менеджеру Хацкевич Анне! Анна была очень внимательна к нашим пожеланиям и помогла нам выбрать подходящую модель кровати!</p>
                     </div>
-                    <div class="review__images"><a href="temp/single-products/reviews/1/1.jpg"> <img class="review__img" src="temp/single-products/reviews/1/1.jpg" alt=""></a><a href="temp/single-products/reviews/1/2.jpg"> <img class="review__img" src="temp/single-products/reviews/1/2.jpg" alt=""></a><a href="temp/single-products/reviews/1/3.jpg"> <img class="review__img" src="temp/single-products/reviews/1/3.jpg" alt=""></a></div>
+                    <div class="review__images"><a class="review__item" href="temp/single-products/reviews/1/1.jpg"> <img class="review__img" src="temp/single-products/reviews/1/1.jpg"></a><a class="review__item" href="temp/single-products/reviews/1/2.jpg"> <img class="review__img" src="temp/single-products/reviews/1/2.jpg"></a><a class="review__item" href="temp/single-products/reviews/1/3.jpg"> <img class="review__img" src="temp/single-products/reviews/1/3.jpg"></a></div>
                     <div class="review__footer"><span class="review__footer-text">Полезный отзыв?</span>
                       <button class="review__like">
                         <svg class="icon icon--primary icon-btn__icon"> 
@@ -282,7 +299,7 @@
                     <div class="review__content">
                       <p class="text review__text">Приобретали данную кровать в комплекте с матрасом sleep style form. Кровать просто потрясающая! Основание с лёгкостью поднимается, места для хранения вещей под кроватью предостаточно))) покупкой очень довольны! Огромное спасибо менеджеру Хацкевич Анне! Анна была очень внимательна к нашим пожеланиям и помогла нам выбрать подходящую модель кровати!</p>
                     </div>
-                    <div class="review__images"><a href="temp/single-products/reviews/2/1.jpg"> <img class="review__img" src="temp/single-products/reviews/2/1.jpg" alt=""></a><a href="temp/single-products/reviews/2/2.jpg"> <img class="review__img" src="temp/single-products/reviews/2/2.jpg" alt=""></a><a href="temp/single-products/reviews/2/3.jpg"> <img class="review__img" src="temp/single-products/reviews/2/3.jpg" alt=""></a><a href="temp/single-products/reviews/2/4.jpg"> <img class="review__img" src="temp/single-products/reviews/2/4.jpg" alt=""></a></div>
+                    <div class="review__images"><a class="review__item" href="temp/single-products/reviews/2/1.jpg"> <img class="review__img" src="temp/single-products/reviews/2/1.jpg"></a><a class="review__item" href="temp/single-products/reviews/2/2.jpg"> <img class="review__img" src="temp/single-products/reviews/2/2.jpg"></a><a class="review__item" href="temp/single-products/reviews/2/3.jpg"> <img class="review__img" src="temp/single-products/reviews/2/3.jpg"></a><a class="review__item" href="temp/single-products/reviews/2/4.jpg"> <img class="review__img" src="temp/single-products/reviews/2/4.jpg"></a></div>
                     <div class="review__footer"><span class="review__footer-text">Полезный отзыв?</span>
                       <button class="review__like">
                         <svg class="icon icon--primary icon-btn__icon"> 
@@ -304,7 +321,7 @@
                     <div class="review__content">
                       <p class="text review__text">Приобретали данную кровать в комплекте с матрасом sleep style form. Кровать просто потрясающая! Основание с лёгкостью поднимается, места для хранения вещей под кроватью предостаточно))) покупкой очень довольны! Огромное спасибо менеджеру Хацкевич Анне! Анна была очень внимательна к нашим пожеланиям и помогла нам выбрать подходящую модель кровати!</p>
                     </div>
-                    <div class="review__images"><a href="temp/single-products/reviews/1/1.jpg"> <img class="review__img" src="temp/single-products/reviews/1/1.jpg" alt=""></a><a href="temp/single-products/reviews/1/2.jpg"> <img class="review__img" src="temp/single-products/reviews/1/2.jpg" alt=""></a><a href="temp/single-products/reviews/1/3.jpg"> <img class="review__img" src="temp/single-products/reviews/1/3.jpg" alt=""></a></div>
+                    <div class="review__images"><a class="review__item" href="temp/single-products/reviews/1/1.jpg"> <img class="review__img" src="temp/single-products/reviews/1/1.jpg"></a><a class="review__item" href="temp/single-products/reviews/1/2.jpg"> <img class="review__img" src="temp/single-products/reviews/1/2.jpg"></a><a class="review__item" href="temp/single-products/reviews/1/3.jpg"> <img class="review__img" src="temp/single-products/reviews/1/3.jpg"></a></div>
                     <div class="review__footer"><span class="review__footer-text">Полезный отзыв?</span>
                       <button class="review__like">
                         <svg class="icon icon--primary icon-btn__icon"> 
@@ -316,92 +333,117 @@
                   </div>
                 </div>
                 <button class="btn btn--dark reviews__more">Показать ещё (22)</button>
+                <button class="popup__close single-product__reviews-close">
+                  <svg class="icon popup__close-icon"> 
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#exit"></use>
+                  </svg>
+                </button>
               </div>
             </div>
             <aside class="single-product__sidebar">
-              <div class="single-product__icon-btns">
-                <button class="icon-btn icon-btn--gray single-product__icon-btn">
-                  <svg class="icon icon-btn__icon"> 
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#sravnenie"></use>
-                  </svg>
-                </button>
-                <button class="wishlist-btn single-product__icon-btn">
-                  <svg class="icon wishlist-btn__icon"> 
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
-                  </svg>
-                </button>
-              </div>
-              <h1 class="title2 single-product__title">Serta Astoria</h1>
-              <div class="text single-product__code">Код товара: 13241</div>
-              <div class="single-product__event">До конца акции осталось:<span class="single-product__event-value">3 дня 10:16:31</span></div>
-              <div class="single-product__price"><span class="price-new single-product__price-value">116 925 ₸</span><span class="price-old single-product__price-old">779 500 ₸</span><span class="discount single-product__discount">-85%
-                  <svg class="icon discount__bg"> 
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
-                  </svg></span></div>
-              <div class="text single-product__installment">Рассрочка от<span class="single-product__installment-value">1200 ₸</span></div>
-              <div class="text single-product__scores">
-                <svg class="icon icon--primary single-product__scores-icon"> 
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#bonusi"></use>
-                </svg><span class="single-product__scores-value">+ 1590</span>бонусных баллов за покупку
-              </div>
-              <div class="single-product__form">
-                <div class="single-product__form-group">
-                  <div class="single-product__form-text">Размер:</div>
-                  <div class="select single-product__select">
-                    <select class="select__field">
-                      <option value="80x220">80 см х 220 см </option>
-                      <option value="81x220">81 см х 220 см </option>
-                      <option value="82x220">82 см х 220 см</option>
-                    </select>
-                    <svg class="icon icon--primary select__icon"> 
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              <div class="single-product__info">
+                <div class="single-product__icon-btns">
+                  <button class="icon-btn icon-btn--gray single-product__icon-btn">
+                    <svg class="icon icon-btn__icon"> 
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#sravnenie"></use>
                     </svg>
-                  </div>
-                </div>
-                <div class="single-product__form-btns">
-                  <button class="btn btn--gray single-product__form-btn js-open-product-config">
-                    <svg class="icon icon--gray btn__icon"> 
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#configurator"></use>
-                    </svg>Изменить конфигурацию
                   </button>
-                  <div class="single-product__form-btn-group">
-                    <button class="btn single-product__form-btn">Добавить в корзину</button>
-                    <button class="btn btn--neutral single-product__form-btn">Купить в 1 клик</button>
+                  <button class="wishlist-btn single-product__icon-btn">
+                    <svg class="icon wishlist-btn__icon"> 
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
+                    </svg>
+                  </button>
+                </div>
+                <h1 class="title2 single-product__title">Serta Astoria</h1>
+                <div class="text single-product__code">Код товара: 13241</div>
+                <div class="single-product__event">До конца акции осталось:<span class="single-product__event-value">3 дня 10:16:31</span></div>
+                <div class="single-product__price"><span class="price-new single-product__price-value">116 925 ₸</span><span class="price-old single-product__price-old">779 500 ₸</span><span class="discount single-product__discount">-85%
+                    <svg class="icon discount__bg"> 
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#skidka"></use>
+                    </svg></span></div>
+                <div class="text single-product__installment">Рассрочка от<span class="single-product__installment-value">1200 ₸</span></div>
+                <div class="text single-product__scores">
+                  <svg class="icon icon--primary single-product__scores-icon"> 
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#bonusi"></use>
+                  </svg><span class="single-product__scores-value">+ 1590</span>бонусных баллов за покупку
+                </div>
+                <div class="single-product__form">
+                  <div class="single-product__form-group">
+                    <div class="single-product__form-text">Размер:</div>
+                    <div class="select single-product__select">
+                      <select class="select__field">
+                        <option value="80x220">80 см х 220 см </option>
+                        <option value="81x220">81 см х 220 см </option>
+                        <option value="82x220">82 см х 220 см</option>
+                      </select>
+                      <svg class="icon icon--primary select__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                      </svg>
+                    </div>
                   </div>
-                  <button class="btn btn--neutral single-product__form-btn">Рассрочка/Кредит</button>
-                  <div class="single-product__form-footer">
-                    <div class="text single-product__addition">В наличии:<span class="single-product__have">12</span></div>
-                    <div class="text single-product__addition">Под заказ: <span class="single-product__delivery-time">10 дней</span></div>
+                  <div class="single-product__form-btns">
+                    <button class="btn btn--gray single-product__form-btn js-open-product-config">
+                      <svg class="icon icon--gray btn__icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#configurator"></use>
+                      </svg>Изменить конфигурацию
+                    </button>
+                    <div class="single-product__form-btn-group">
+                      <button class="btn single-product__form-btn">Добавить в корзину</button>
+                      <button class="btn btn--neutral single-product__form-btn">Купить в 1 клик</button>
+                    </div>
+                    <button class="btn btn--neutral single-product__form-btn">Рассрочка/Кредит</button>
+                    <div class="single-product__form-footer">
+                      <div class="text single-product__addition">В наличии:<span class="single-product__have">12</span></div>
+                      <div class="text single-product__addition">Под заказ: <span class="single-product__delivery-time">10 дней</span></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="single-product__menu">
-                <div class="single-product__menu-item"><a class="single-product__menu-link" href="#">
-                    <svg class="icon icon--primary single-product__menu-icon"> 
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#rekomenduem"></use>
-                    </svg>Мы рекомендуем к товару
-                    <svg class="icon icon--primary single-product__menu-arrow"> 
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
-                    </svg></a></div>
-                <div class="single-product__menu-item"><a class="single-product__menu-link" href="#">
-                    <svg class="icon icon--primary single-product__menu-icon"> 
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#dostavka"></use>
-                    </svg>Доставка и самовывоз
-                    <svg class="icon icon--primary single-product__menu-arrow"> 
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
-                    </svg></a></div>
-                <div class="single-product__menu-item"><a class="single-product__menu-link" href="#details">Характеристики</a></div>
-                <div class="single-product__menu-item"><a class="single-product__menu-link" href="#desc">Описание</a></div>
-                <div class="single-product__menu-item"><a class="single-product__menu-link" href="#reviews">Отзывы (24)</a></div>
-              </div>
-              <div class="single-product__aside-footer">
-                <div class="title3">Заинтересовал товар?</div>
-                <div class="text single-product__aside-footer-text">Вы можете пообщаться по видео с нашим продавцом. Он покажет товар онлайн и ответит на ваши вопросы. Вам не понадобиться включать камеру.</div>
-                <button class="btn btn--black single-product__video-btn">
-                  <svg class="icon icon--white btn__icon"> 
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#pozvonit_video"></use>
-                  </svg>Позвонить по видео
-                </button>
+                <div class="single-product__menu">
+                  <div class="single-product__menu-item"><a class="single-product__menu-link single-product__menu-link--recommend" href="#">
+                      <svg class="icon icon--primary single-product__menu-icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#rekomenduem"></use>
+                      </svg>Мы рекомендуем к товару
+                      <svg class="icon icon--primary single-product__menu-arrow"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                      </svg></a></div>
+                  <div class="single-product__menu-item"><a class="single-product__menu-link single-product__menu-link--delivery" href="#">
+                      <svg class="icon icon--primary single-product__menu-icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#dostavka"></use>
+                      </svg>Доставка и самовывоз
+                      <svg class="icon icon--primary single-product__menu-arrow"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                      </svg></a></div>
+                  <div class="single-product__menu-item"><a class="single-product__menu-link js-open-popup" href="#details" data-popup-name="details">
+                      <svg class="icon icon--stroke-primary single-product__menu-icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#harakteristiki"></use>
+                      </svg>Характеристики
+                      <svg class="icon icon--primary single-product__menu-arrow"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                      </svg></a></div>
+                  <div class="single-product__menu-item"><a class="single-product__menu-link js-open-popup" href="#desc" data-popup-name="desc">
+                      <svg class="icon icon--stroke-primary single-product__menu-icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#opisanie"></use>
+                      </svg>Описание
+                      <svg class="icon icon--primary single-product__menu-arrow"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                      </svg></a></div>
+                  <div class="single-product__menu-item"><a class="single-product__menu-link js-open-popup" href="#reviews" data-popup-name="reviews">
+                      <svg class="icon icon--stroke-primary single-product__menu-icon"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#otzyvy"></use>
+                      </svg>Отзывы (24)
+                      <svg class="icon icon--primary single-product__menu-arrow"> 
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                      </svg></a></div>
+                </div>
+                <div class="single-product__aside-footer">
+                  <div class="title3">Заинтересовал товар?</div>
+                  <div class="text single-product__aside-footer-text">Вы можете пообщаться по видео с нашим продавцом. Он покажет товар онлайн и ответит на ваши вопросы. Вам не понадобиться включать камеру.</div>
+                  <button class="btn btn--black single-product__video-btn">
+                    <svg class="icon icon--white btn__icon"> 
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#pozvonit_video"></use>
+                    </svg>Позвонить по видео
+                  </button>
+                </div>
               </div>
             </aside>
           </div>
@@ -2589,6 +2631,6 @@
       </div>
     </div>
     <script src="assets/js/vendors.min.js"></script>
-    <script src="assets/js/app.js?v=52821132"></script>
+    <script src="assets/js/app.js?v=67346416"></script>
   </body>
 </html>

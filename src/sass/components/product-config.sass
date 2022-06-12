@@ -16,6 +16,7 @@
   &__left
     flex: 1 1 67%
     padding-top: 30px
+    position: relative
 
   &__close
     display: flex
@@ -44,6 +45,7 @@
   &__price-old
     margin-left: 32px
     font-size: 18px
+    text-decoration: line-through
 
   &__discount
     margin-left: 28px
@@ -60,8 +62,44 @@
     position: absolute
     bottom: 54px
     left: 0
+    display: flex
 
   &--show
     visibility: visible
     transform: translateX(0)
     opacity: 1
+
+  @media screen and (max-width: 991px)
+    overflow-y: auto
+
+    &__content
+      flex-direction: column
+
+    &__left
+      padding-top: 15px
+      flex: none
+
+    &__price-value
+      font-size: 22px
+
+    &__price-old
+      font-size: 14px
+      margin-left: 20px
+
+    &__discount
+      margin-left: 20px
+
+    &__play-btns
+      bottom: 0
+      justify-content: space-between
+      width: 100%
+
+    &__play-btn
+      &:not(:first-child)
+        margin-left: auto
+
+    &__right
+      flex: 1 1 100%
+      margin-top: 20px
+      border-left: none
+      flex: none

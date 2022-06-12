@@ -30,6 +30,9 @@
   &--dark
     fill: #313131
 
+  &--stroke-primary
+    stroke: $color-primary
+
 .icon-menu
   position: relative
 
@@ -351,12 +354,15 @@
 
 .img-text
   display: flex
-  align-items: center
+  align-items: flex-start
 
   img
     margin-right: 16px
     border-radius: 4px
     width: 120px
+
+  &__content
+    margin-top: 5px
 
   p
     @extend .text

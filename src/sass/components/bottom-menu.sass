@@ -1,0 +1,43 @@
+.bottom-menu
+  position: fixed
+  z-index: 60
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 55px
+  border-top: 1px solid #eeeeee
+  background: #fff
+  display: none
+
+  &__list
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0 16px
+
+  &__link
+    font-size: 11px
+    font-weight: 500
+    color: #878787
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  &__link--active &__icon
+    fill: $color-primary
+
+    &--catalog
+      stroke: $color-primary
+
+  &__icon
+    margin-bottom: 4px
+    fill: #b1b1b1
+
+    &--catalog
+      stroke: #b1b1b1
+      stroke-width: 1.5px
+      width: 21px
+
+  @media screen and (max-width: 991px)
+    display: block

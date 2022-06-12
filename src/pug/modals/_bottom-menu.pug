@@ -1,0 +1,22 @@
+.bottom-menu
+    .bottom-menu__list
+        .bottom-menu__item
+            a.bottom-menu__link.bottom-menu__link--active(href="#")
+                +icon('glavnaya', 'bottom-menu__icon')
+                | Главная
+        .bottom-menu__item 
+            a.bottom-menu__link(href="#")
+                +icon('catalog', 'bottom-menu__icon bottom-menu__icon--catalog')
+                | Каталог
+        .bottom-menu__item 
+            a.bottom-menu__link(href="#")
+                +icon('cart', 'bottom-menu__icon')
+                | Корзина
+        .bottom-menu__item 
+            a.bottom-menu__link(href="#")
+                +icon('izbrannoe', 'bottom-menu__icon')
+                | Избранное
+        .bottom-menu__item
+            button.bottom-menu__link(data-fancybox data-src="#modal-login")
+                +icon('login', 'bottom-menu__icon')
+                | Профиль

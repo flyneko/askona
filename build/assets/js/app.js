@@ -321,9 +321,32 @@ window.addEventListener('load', () => {
       },
     }
   });
-  if (singleProdNavSlider.params.slidesPerView < singleProdNavSlider.slides.length) {
+
+  singleSlidersHandler();
+  window.addEventListener('resize', singleSlidersHandler);
+
+  function singleSlidersHandler() {
+    const $navSlider = document.querySelector('.single-product__nav-slider');
+    const activeClass = 'single-product__nav-slider--active';
+    if (window.innerWidth > 991 && !$navSlider.classList.contains(activeClass)) {
+      $navSlider.classList.add(activeClass);
+      singleSlidersCenteringHandler();
+
+      singleProdNavSlider.update();
+    } else if (window.innerWidth <= 991 && $navSlider.classList.contains(activeClass)) {
+      $navSlider.classList.remove(activeClass);
+      singleSlidersCenteringHandler();
+    }
+  }
+
+  function singleSlidersCenteringHandler() {
+    console.log(singleProdNavSlider.params.slidesPerView, singleProdNavSlider.slides.length);
     const $singleProductSliders = document.querySelector('.single-product__sliders');
-    $singleProductSliders.classList.add('single-product__sliders--center')
+    if (singleProdNavSlider.params.slidesPerView < singleProdNavSlider.slides.length) {
+      $singleProductSliders.classList.add('single-product__sliders--center')
+    } else {
+      $singleProductSliders.classList.remove('single-product__sliders--center')
+    }
   }
 
   const big = new Swiper('.single-product__big-slider', {
@@ -835,7 +858,7 @@ window.addEventListener('load', () => {
       e.target.classList.contains('js-open-popup')) {
       return;
     }
-    
+
     const $clickedPopup = e.target.closest('.popup');
     if ($clickedPopup && $showedPopup !== $clickedPopup) {
       closeShowedPopup();
@@ -848,8 +871,14 @@ window.addEventListener('load', () => {
       return
     }
 
-    const ignoreClass = 'swiper-pagination-bullet';
-    if (!e.target.closest('.popup') && !e.target.closest(`.${ignoreClass}`)) {
+    const ignoreClasses = ['swiper-pagination-bullet', 'lg-container'];
+    for (let ignoreClass of ignoreClasses) {
+      if (e.target.closest(`.${ignoreClass}`)) {
+        return
+      }
+    }
+
+    if (!e.target.closest('.popup')) {
       closeShowedPopup();
     }
   });

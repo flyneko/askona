@@ -50,3 +50,36 @@
         width: 2px
         height: 10px
         background-color: $color-primary
+
+  @media screen and (max-width: 767px)
+    display: inline-flex
+    
+    &__content
+      border: 1px solid #d8d8d8
+      margin: 0
+    
+    &__value
+      height: 24px
+      width: 26px
+      border-top: none
+      border-bottom: none
+      margin: 0
+      font-size: 12px
+
+    &__btn
+      height: 24px
+      width: 22px
+
+      &--minus
+        &:before
+          width: 8px
+          height: 1px
+
+      &--plus
+        &:before
+          width: 7px
+          height: 1px
+
+        &:after
+          width: 1px
+          height: 7px

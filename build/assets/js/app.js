@@ -322,8 +322,11 @@ window.addEventListener('load', () => {
     }
   });
 
-  singleSlidersHandler();
-  window.addEventListener('resize', singleSlidersHandler);
+  const $singleProdSliders = document.querySelector('.single-product__sliders');
+  if ($singleProdSliders) {
+    singleSlidersHandler();
+    window.addEventListener('resize', singleSlidersHandler);
+  }
 
   function singleSlidersHandler() {
     const $navSlider = document.querySelector('.single-product__nav-slider');
@@ -340,7 +343,6 @@ window.addEventListener('load', () => {
   }
 
   function singleSlidersCenteringHandler() {
-    console.log(singleProdNavSlider.params.slidesPerView, singleProdNavSlider.slides.length);
     const $singleProductSliders = document.querySelector('.single-product__sliders');
     if (singleProdNavSlider.params.slidesPerView < singleProdNavSlider.slides.length) {
       $singleProductSliders.classList.add('single-product__sliders--center')
@@ -644,12 +646,16 @@ window.addEventListener('load', () => {
   /**
    * Корзина/Оформление заказа
    */
-  const $discount = document.querySelector('.cart__discount');
-  if ($discount) {
-    const $toggleDiscount = document.querySelector('.cart__discount-btn');
-    $toggleDiscount.addEventListener('click', () => {
-      $discount.classList.toggle('cart__discount--show');
-    });
+  moveOrderResultInfo();
+  window.addEventListener('resize', moveOrderResultInfo);
+
+  function moveOrderResultInfo() {
+    moveElement({
+      element: '.order-result__info',
+      from: '.order__result',
+      to: '.order-form__mobile-result',
+      width: 767
+    });  
   }
 
   /**
@@ -965,14 +971,11 @@ window.addEventListener('load', () => {
           $icon.classList.toggle('icon-menu--active')
         }
 
-        console.log($mobileMenu);
-        console.log(document.body.classList);
         if ($mobileMenu.classList.contains('mobile-menu--show')) {
           document.body.classList.add('body--lock');
         } else {
           document.body.classList.remove('body--lock');
         }
-        console.log(document.body.classList);
       });
     });
 

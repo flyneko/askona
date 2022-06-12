@@ -1,10 +1,12 @@
 .cart-item
-  display: flex
-  align-items: center
   padding: 32px 0
-  
+
   &:not(:last-child)
     border-bottom: 1px solid #eeeeee
+
+  &__main
+    display: flex
+    align-items: center
 
   &__img-box
     margin-right: 40px
@@ -68,6 +70,9 @@
     font-weight: 500
     color: #00b9c0
 
+  &__mobile-price
+    display: none
+
   &__delete
     width: 32px
     height: 32px
@@ -86,6 +91,16 @@
     height: 8px
     stroke: #2d2d2d
     stroke-width: 2px
+
+  &__mobile-footer
+    margin-top: 19px
+    display: none
+    align-items: center
+    justify-content: space-between
+
+  &__mobile-btn
+    font-size: 14px
+    text-decoration: underline dotted
 
   &--order
     padding-bottom: 15px
@@ -113,3 +128,76 @@
 
   &--order &__price-new
     font-size: 10px
+
+  @media screen and (max-width: 991px)
+    &__status
+      display: none
+
+    &__img-box
+      margin-right: 25px
+
+    &__inf
+      max-width: 290px
+
+    &--order
+      margin-right: 10px
+
+    &--order &__inf
+      width: 165px
+
+  @media screen and (max-width: 767px)
+    &__count,
+    &__price,
+    &__delete
+      display: none
+
+    &__name
+      font-size: 16px
+
+    &__desc
+      margin-top: 10px
+
+    &__mobile-price
+      margin-top: 5px
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+    &__mobile-footer
+      display: flex
+
+  @media screen and (max-width: 580px)
+    &__img-box
+      margin: 10px 16px 0 7px
+
+    &__img
+      width: 110px
+
+    &__name
+      font-size: 13px
+
+    &__price-value
+      font-size: 16px
+
+    &__price-old
+      font-size: 12px
+      margin-left: 4px
+      margin-bottom: 0
+
+  @media screen and (max-width: 340px)
+    &__img-box
+      margin-left: 0
+      margin-right: 12px
+
+    &__img
+      width: 100px
+
+    &__mobile-btn
+      font-size: 12px
+
+    &__price-value
+      font-size: 14px
+
+    &__price-old
+      margin-left: 0
+      font-size: 11px

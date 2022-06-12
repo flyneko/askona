@@ -4,6 +4,7 @@
   background: #fff
   border-radius: 4px
   display: none
+  max-width: 82vw
 
   &__title
     font-size: 32px
@@ -24,3 +25,9 @@
       stroke-linecap: unset
       width: 1.25em
       height: 1.25em
+
+  @media screen and (max-width: 767px)
+    padding: 16px 16px 24px
+
+    &__title
+      font-size: 26px

@@ -31,6 +31,7 @@
 
   &__checkbox
     margin-left: 120px
+    width: 100%
 
     &:not(:first-child)
       margin-top: 16px
@@ -58,3 +59,77 @@
     margin-top: 20px
     font-size: 14px
     color: #262626
+
+  &__mobile-comment
+    display: none
+
+  &__mobile-comment-btn
+    font-size: 14px
+    text-decoration: underline dotted
+    margin-top: 20px
+
+  &__mobile-comment-area
+    margin-top: 10px
+
+  @media screen and (max-width: 991px)
+    &__label
+      display: block
+
+      &:not(:first-child)
+        margin-top: 20px
+
+    &__label:first-child &__text
+      margin-top: 0
+
+    &__title
+      margin-left: 0
+
+      &:not(:first-child)
+        margin-top: 32px
+
+    &__text
+      margin-bottom: 5px
+      font-size: 14px
+
+    &__checkbox
+      margin-left: 0
+      font-size: 14px
+
+    &__message
+      margin-left: 0
+      font-size: 12px
+
+    &__submit
+      height: 40px
+      font-size: 14px
+
+    &__privacy
+      font-size: 12px
+
+  @media screen and (max-width: 767px)
+    &__select.select
+      height: 40px
+
+    &__title
+      font-size: 18px
+
+      &:not(:first-child)
+        margin-top: 25px
+
+    &__accept .checkbox__text
+      font-size: 12px
+
+    &__submit
+      margin-top: 16px
+
+    &__privacy
+      margin-top: 12px
+
+    &__desktop-comment
+      display: none
+
+    &__mobile-comment
+      display: block
+
+    &__message
+      margin-top: 12px

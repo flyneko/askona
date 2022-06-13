@@ -655,7 +655,7 @@ window.addEventListener('load', () => {
       from: '.order__result',
       to: '.order-form__mobile-result',
       width: 767
-    });  
+    });
   }
 
   /**
@@ -995,6 +995,34 @@ window.addEventListener('load', () => {
       $menu.style.top = `calc(${offsetTop}px - 1px)`;
       $mobileMenu.style.height = `calc(100vh - ${offsetTop}px)`;
       $content.style.maxHeight = `calc(100vh - ${offsetTop}px)`;
+    }
+  }
+
+  /**
+   * Логотип
+   */
+  const $logo = document.querySelector('.logo');
+  if ($logo) {
+    const $object = $logo.querySelector('.logo__object');
+    const $svg = $object.contentDocument;
+    const $circles = $svg.querySelectorAll('.circle');
+    const circlesRadiuse = [...$circles].map($circle => $circle.getAttribute('r'))
+    const minRadiuse = 1.2;
+    const delay = 1500;
+
+    circlesAnimate();
+    setInterval(circlesAnimate, delay + 200 * $circles.length);
+
+    function circlesAnimate() {
+      $circles.forEach(($circle, index) => {
+        setTimeout(() => {
+          $circle.setAttribute('r', minRadiuse);
+          
+          setTimeout(() => {
+            $circle.setAttribute('r', circlesRadiuse[index]);
+          }, 300);
+        }, 200 * (index))
+      });
     }
   }
 });

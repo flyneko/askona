@@ -1004,6 +1004,10 @@ window.addEventListener('load', () => {
   if ($logo) {
     const $object = $logo.querySelector('.logo__object');
     const $svg = $object.contentDocument;
+    if (!$svg) {
+      return;
+    }
+    
     const $circles = $svg.querySelectorAll('.circle');
     const circlesRadiuse = [...$circles].map($circle => $circle.getAttribute('r'))
     const minRadiuse = 1.2;

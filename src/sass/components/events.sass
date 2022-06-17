@@ -31,6 +31,10 @@
     padding: 24px 16px 0
 
     &__slider-main
+      margin-left: -#{$container-offset}
+      margin-right: -#{$container-offset}
+      padding-left: $container-offset
+      padding-right: $container-offset
       .swiper-slide
         position: relative
         padding-top: 18.5%
@@ -45,6 +49,7 @@
     
     &__slider-img
       height: auto
+      width: 100%
 
   @media screen and (max-width: 767px)
     padding-top: 16px
@@ -61,3 +66,6 @@
     &__slider-main
       .swiper-slide
         padding-top: 57%
+
+    &__slider-item
+      transform: translateY(5px)

@@ -64,7 +64,7 @@
 
   &__program.accordion--active &__program-arrow
     transform: rotate(-90deg)
-  
+
   &__program-toggle
     font-size: 14px
     display: flex
@@ -135,7 +135,10 @@
 
     &__promo
       margin-top: 0
-    
+
+    &__promo + &__promo-form
+      border-top: none
+
     &__bonus-value
       font-size: 14px
 
@@ -157,3 +160,12 @@
     &__promo-arrow
       width: 5px
       height: 8px
+
+    &__program,
+    &__promo,
+    &__promo-form,
+    &__bonus
+      margin-left: -#{$container-offset}
+      margin-right: -#{$container-offset}
+      padding-left: $container-offset
+      padding-right: $container-offset

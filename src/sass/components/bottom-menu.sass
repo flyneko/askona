@@ -17,6 +17,7 @@
     padding: 0 16px
 
   &__link
+    position: relative
     font-size: 11px
     font-weight: 500
     color: #878787
@@ -38,6 +39,32 @@
       stroke: #b1b1b1
       stroke-width: 1.5px
       width: 21px
+
+  &__value
+    position: absolute
+    width: 18px
+    height: 18px
+    right: 3px
+    top: -5px
+    border-radius: 50%
+    font-size: 8px
+    font-weight: 500
+    background: #fff
+    color: #343434
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &:before
+      content: ''
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      width: calc(100% - 6px) 
+      height: calc(100% - 6px)
+      border: 1px solid #b1b1b1
+      border-radius: 50%
 
   @media screen and (max-width: 991px)
     display: block

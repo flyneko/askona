@@ -72,13 +72,14 @@ footer.footer
             .footer__partners
                 .footer__partners-item
                     +picon('hilding-anders')
-                .footer__payments.footer__partners-item
-                    .footer__payment
-                        +picon('mastercard')
-                    .footer__payment
-                        +picon('visa')
-                .footer__partners-item
-                    +picon('number-one')
+                .footer__partners-item.footer__partners-item--middle
+                    .footer__payments
+                        .footer__payment
+                            +picon('mastercard')
+                        .footer__payment
+                            +picon('visa')
+                    .footer__number-one
+                        +picon('number-one')
                 .footer__partners-item
                     a(href="https://sdvv.ru" target="_blank") 
                         +icon('denisov', 'footer__partners-icon')

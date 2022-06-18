@@ -9,44 +9,45 @@
     flex-direction: column
     height: 100%
 
-  &:before
-    content: ''
-    display: none
-    position: absolute
-    z-index: 3
-    left: -7px
-    top: -7px
-    width: calc(100% + 14px)
-    height: calc(100% + 14px)
-    background: #fff
-    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.13)
-    border-top-left-radius: 4px
-    border-top-right-radius: 4px
+  @media screen and (min-width: 767px)
+    &:before
+      content: ''
+      display: none
+      position: absolute
+      z-index: 3
+      left: -7px
+      top: -7px
+      width: calc(100% + 14px)
+      height: calc(100% + 14px)
+      background: #fff
+      box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.13)
+      border-top-left-radius: 4px
+      border-top-right-radius: 4px
 
-  &:hover &__inf
-    margin: 0 -7px
-    padding: 0 7px
-    
-  &:hover
-    z-index: 10
+    &:hover &__inf
+      margin: 0 -7px
+      padding: 0 7px
 
-    &::before
+    &:hover
+      z-index: 10
+
+      &::before
+        display: block
+
+    &:hover &__status
+      right: 31px
+
+    &:hover &__slider-pagination
+      display: flex
+
+    &:hover &__addition-content,
+    &:hover &__wishlist,
+    &:hover &__compare
       display: block
-
-  &:hover &__status 
-    right: 31px
 
   &__main
     position: relative
     z-index: 4
-
-  &:hover &__slider-pagination
-    display: flex
-
-  &:hover &__addition-content,
-  &:hover &__wishlist,
-  &:hover &__compare
-    display: block
 
   &__img-box
     position: relative
@@ -341,12 +342,12 @@
 
     &__img
       width: 150px
-      
+
     &--slide &__img-box
       height: 130px
 
     &--slide &__img
-      max-width: 200px
+      width: 190px
 
     &--slide &__inf-content
       padding-top: 20px
@@ -355,6 +356,6 @@
       margin-left: 2px
       margin-right: 2px
       padding: 0 12px
-      
+
     &__feature-icon
       display: none

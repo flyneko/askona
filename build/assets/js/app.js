@@ -53,11 +53,10 @@ window.addEventListener('load', () => {
   /**
    * Слайдеры
    */
-
   new Swiper('.js-events-slider', {
     slidesPerView: 1,
     loop: true,
-    centeredSlides: false,
+    centeredSlides: true,
     loopedSlides: 20,
     spaceBetween: 8,
     pagination: {
@@ -760,7 +759,7 @@ window.addEventListener('load', () => {
       const $catalogMenu = document.querySelector('.catalog-menu');
       const $catalogMenuList = $catalogMenu.querySelector('.catalog-menu__list');
       const offsetTop = getBannerHeaderHeight();
-      $catalogMenu.style.top = `calc(${offsetTop}px - 6px)`;
+      $catalogMenu.style.top = `calc(${offsetTop}px)`;
       $catalogMenu.style.minHeight = `calc(100vh - ${offsetTop}px - 1px)`;
       $catalogMenuList.style.minHeight = `calc(100vh - ${offsetTop}px - 1px)`;
     }
@@ -1005,19 +1004,27 @@ window.addEventListener('load', () => {
   if ($logo) {
     const $object = $logo.querySelector('.logo__object');
     const $svg = $object.contentDocument;
+    if (!$svg) {
+      return;
+    }
+    
     const $circles = $svg.querySelectorAll('.circle');
     const circlesRadiuse = [...$circles].map($circle => $circle.getAttribute('r'))
     const minRadiuse = 1.2;
     const delay = 1500;
 
     circlesAnimate();
-    setInterval(circlesAnimate, delay + 200 * $circles.length);
+    setInterval(() => {
+      if (!document.hidden) {
+        circlesAnimate();
+      }
+    }, delay + 200 * $circles.length);
 
     function circlesAnimate() {
       $circles.forEach(($circle, index) => {
         setTimeout(() => {
           $circle.setAttribute('r', minRadiuse);
-          
+
           setTimeout(() => {
             $circle.setAttribute('r', circlesRadiuse[index]);
           }, 300);

@@ -7,10 +7,9 @@
   z-index: 60
   border-bottom: 1px solid #e8e8e8
   box-shadow: 2px 4px 4px rgba(#000, 0.15)
-  padding-top: 6px
-  overflow: hidden
+  background: #fff
 
-  &::before
+  &:before
     content: ''
     position: absolute
     left: calc((100vw - $container-width + $container-offset) / 2 + 72px)
@@ -20,8 +19,8 @@
     background: #fff
     transform: rotate(45deg)
     border-radius: 2px
-    top: 1px
-      
+    top: -6px
+
   &__list
     position: relative
     width: calc(((100vw - $container-width + $container-offset) / 2) + 345px)
@@ -89,5 +88,7 @@
       width: calc(100vw - 345px - $container-offset * 2)
 
   @media screen and (max-width: 991px)
+    overflow: hidden
+    
     &--show
       display: none

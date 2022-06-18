@@ -186,7 +186,7 @@ window.addEventListener('load', () => {
     const slidesPerView = $slider.dataset.perView || 4;
     new Swiper($slider, {
       direction: 'horizontal',
-      loop,
+      loop: false,
       slidesPerView: 1.5,
       spaceBetween: 24,
       watchSlidesProgress: true,
@@ -221,6 +221,7 @@ window.addEventListener('load', () => {
         580: {
           slidesPerView: 2,
           spaceBetween: 16,
+          loop,
           scrollbar: {
             dragSize: 93,
           },

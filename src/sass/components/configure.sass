@@ -6,8 +6,55 @@
   box-shadow: -2px 0 9px rgba(0, 0, 0, 0.1)
   overflow: hidden
 
+  &__content
+    display: flex
+    flex-direction: column
+    height: 100%
+
+  &__mobile-info
+    display: none
+    align-items: center
+    padding: 8px 16px
+    border-bottom: 1px solid #eeeeee
+
+  &__mobile-img-box
+    display: flex
+    align-items: center
+
+  &__mobile-img
+    max-height: 65px
+    margin-left: 20px
+
+  &__back-btn.popup__close
+    position: static
+    width: 24px
+    height: 24px
+    border-radius: 50%
+    border: 1px solid #eee
+    display: flex
+    align-items: center
+    justify-content: center
+
+  &__back-btn-arrow
+    width: 5px
+    height: 8px
+    transform: rotate(180deg)
+
+  &__full-btn
+    margin-left: 16px
+
+  &__mobile-price
+    margin-left: auto
+
   &__header
-    padding: 40px 32px 0
+    padding-top: 40px
+    margin-left: 32px
+    margin-right: 24px
+
+    &--border
+      border-bottom: 1px solid #eeeeee
+      padding-bottom: 32px
+      margin-bottom: 24px
 
   &__title
     padding-right: 18px
@@ -18,14 +65,34 @@
   &__text
     margin-top: 10px
 
+  &__main
+    position: relative
+    flex: 1 1 auto
+    margin-top: 15px
+    margin-left: 32px
+    margin-right: 24px
+    padding-right: 24px
+
+    .ps__rail-y
+      z-index: 9
+
+  &__filters
+    margin-bottom: 14px
+    display: flex
+    align-items: center
+
+  &__filter-btn
+    &:not(:first-child)
+      margin-left: 8px
+
+  &__sort
+    margin-left: auto
+
   &__list
     display: flex
     flex-wrap: wrap
-    margin: 15px 24px -10px -8px
-    padding-right: 24px
-    padding-left: 32px
-    max-height: calc(100vh - 180px)
-    position: relative
+    margin-left: -8px
+    margin-bottom: -10px
 
   &__item
     margin: 10px 8px
@@ -98,9 +165,6 @@
     &:before
       margin-right: 4px
 
-  .ps__rail-y
-    z-index: 9
-
   &__footer
     margin-top: auto
     display: flex
@@ -109,6 +173,14 @@
     background: #fff
     padding: 16px 32px
 
+    &--vertical
+      flex-direction: column
+
+  &__footer--vertical &__btn
+    &:not(:last-child)
+      margin-right: 0
+      margin-bottom: 16px
+      
   &__btn
     height: 48px
     padding: 0 51px
@@ -117,19 +189,49 @@
     &:not(:last-child)
       margin-right: 16px
 
+  &__options
+    margin-right: -24px
+
+    &:not(:first-child)
+      margin-top: 39px
+      padding-top: 32px
+      border-top: 1px solid #eeeeee
+
+  &__options-list
+    display: flex
+    flex-wrap: wrap
+    margin: -4px
+
+  &__options-item
+    margin: 4px
+
+  &__options-text
+    margin-bottom: 12px
+
   @media screen and (max-width: 767px)
     width: 100%
 
     &__title
-      font-size: 26px
+      font-size: 24px
+
+    &__mobile-info
+      display: flex
 
     &__header
-      padding: 24px 24px 0
-
-    &__list
-      padding-right: 16px
+      padding-top: 24px
+      margin-left: 24px
       margin-right: 16px
+
+      &--border
+        padding-bottom: 0
+        margin-bottom: 0
+        border-bottom: none
+
+    &__main
+      padding-right: 16px
       padding-left: 16px
+      margin-right: 0
+      margin-left: 0
       max-height: calc(100vh - 200px)
 
       &.ps--active-y:before
@@ -138,9 +240,34 @@
       &.ps--active-y:after
         box-shadow: 0px -10px 25px 20px rgba(255, 255, 255, 0.9)
 
+    &__item
+      width: calc(50% - 16px)
+      display: flex
+
+    &__item-img-box
+      width: 64px
+      height: 64px
+
+    &__item-inf
+      margin-left: 8px
+
+    &__item-name
+      margin-top: 0
+      font-size: 14px
+
+    &__item-desc
+      font-size: 10px
+
+    &__item-price
+      font-size: 14px
+
+    &__item-status
+      display: none
+
     &__footer
       flex-direction: column
       padding: 16px
+      border-top: 1px solid #eee
 
     &__btn
       font-size: 14px
@@ -150,8 +277,40 @@
         margin-right: 0
         margin-bottom: 16px
 
-    &__close.popup__close
-      top: 24px
+      &--reset
+        border: none
+        text-decoration: underline
+        height: auto
+
+    &__filters
+      margin-bottom: 10px
+      
+    &__filter-btn
+      height: auto
+      padding: 0
+      border: none
+
+      &:not(:first-child)
+        margin-left: 25px
+
+    &__options-text
+      margin-bottom: 20px
+
+    &__options-list
+      margin-top: -8px
+      margin-bottom: -8px
+
+    &__options-item
+      width: calc(50% - 8px)
+      margin-top: 8px
+      margin-bottom: 8px
+
+    &__close
+      &.popup__close
+        top: 24px
+
+      &--desktop
+        display: none
 
   @media screen and (max-width: 480px)
     &__item
@@ -161,4 +320,18 @@
         width: 100%
 
     &__header
-      padding: 16px 16px 0
+      padding-top: 16px
+      margin-left: 16px
+
+  @media screen and (max-width: 340px)
+    &__filter-btn
+      font-size: 12px
+
+      &:not(:first-child)
+        margin-left: 15px
+
+    &__sort.select
+      min-width: 140px
+
+      .choices__inner
+        font-size: 12px

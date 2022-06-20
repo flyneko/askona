@@ -4,7 +4,7 @@
   left: 0
   display: none
   width: 100%
-  z-index: 60
+  z-index: 76
   border-bottom: 1px solid #e8e8e8
   box-shadow: 2px 4px 4px rgba(#000, 0.15)
   background: #fff
@@ -12,7 +12,7 @@
   &:before
     content: ''
     position: absolute
-    left: calc((100vw - $container-width + $container-offset) / 2 + 72px)
+    left: calc((100vw - $container-width) / 2 + $container-offset + 72px)
     width: 9px
     height: 9px
     border: 1px solid #e8e8e8
@@ -23,13 +23,13 @@
 
   &__list
     position: relative
-    width: calc(((100vw - $container-width + $container-offset) / 2) + 345px)
+    width: calc(((100vw - $container-width) / 2 + $container-offset) + 345px)
     height: 100%
     border-right: 1px solid #eeeeee
     background: #fff
 
   &__item
-    padding-left: calc((100vw - $container-width + $container-offset) / 2)
+    padding-left: calc((100vw - $container-width) / 2 + $container-offset)
 
     &:hover
       background-color: #f4f4f4
@@ -64,7 +64,7 @@
 
   &__sub
     position: absolute
-    left: calc(((100vw - $container-width + $container-offset) / 2) + 345px)
+    left: calc(((100vw - $container-width) / 2 + $container-offset) + 345px)
     top: 0
     width: calc($container-width - $container-offset * 2 - 345px)
     height: 100%

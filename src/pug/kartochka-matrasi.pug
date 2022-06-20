@@ -383,23 +383,319 @@ block content
 						.swiper-scrollbar.products__slider-scrollbar
 
 	.product-config
-		.container
-			.product-config__content
-				.product-config__left
-					button.product-config__close
-						+icon('arrow_left', 'icon--primary product-config__close-arrow')
-						| Назад к товару
-					.title2.product-config__title Serta Astoria
-					.product-config__price
-						span.price-new.product-config__price-value 116 925 ₸
-						span.price-old.product-config__price-old 779 500 ₸
-						span.discount.product-config__discount
-							| -85%
-							+icon('skidka', 'discount__bg')
-					img.product-config__img(src="temp/single-products/matrasi/1.jpg" alt="")
-					.product-config__play-btns
-						button.btn-play.single-product__play-btn
-							+icon('play_video', 'btn-play__icon')
-						button.btn-360.single-product__play-btn
-							+icon('360', 'btn-360__icon')
-				.product-config__right
+		.product-config__content
+			.product-config__left
+				button.product-config__close
+					+icon('arrow_left', 'icon--primary product-config__close-arrow')
+					span.product-config__close-text Назад к товару
+				.title2.product-config__title Serta Astoria
+				.product-config__price
+					span.price-new.product-config__price-value 116 925 ₸
+					span.price-old.product-config__price-old 779 500 ₸
+					span.discount.product-config__discount
+						| -85%
+						+icon('skidka', 'discount__bg')
+				img.product-config__img(src="temp/single-products/matrasi/1.jpg" alt="")
+				.product-config__play-btns
+					button.btn-play.single-product__play-btn
+						+icon('play_video', 'btn-play__icon')
+					button.btn-360.single-product__play-btn
+						+icon('360', 'btn-360__icon')
+			.product-config__right.js-custom-scrollbar(data-min-width="992")
+				button.dark-text.product-config__btn.product-config__btn--mobile.js-open-popup(data-popup-name="product-config-1")
+					| Обивка
+					+icon('arrow_right', 'icon--primary product-config__btn-arrow')
+				button.dark-text.product-config__btn.product-config__btn--mobile.js-open-popup(data-popup-name="product-config-2")
+					| Опции
+					+icon('arrow_right', 'icon--primary product-config__btn-arrow')
+
+				.product-config__title2.product-config__title2--desktop Обивка
+				button.dark-text.product-config__btn.js-open-popup(data-popup-name="product-config-1")
+					| Цвет
+					+icon('arrow_right', 'icon--primary product-config__btn-arrow')
+				button.dark-text.product-config__btn.js-open-popup(data-popup-name="product-config-1")
+					| Материал
+					+icon('arrow_right', 'icon--primary product-config__btn-arrow')
+
+				.product-config__title2.product-config__title2--desktop Опции
+				button.dark-text.product-config__btn.js-open-popup(data-popup-name="product-config-2")
+					| Измененить размер спального места
+					+icon('arrow_right', 'icon--primary product-config__btn-arrow')
+				button.dark-text.product-config__btn.js-open-popup(data-popup-name="product-config-2")
+					| Измененить жесткость матраса
+					+icon('arrow_right', 'icon--primary product-config__btn-arrow')
+				button.dark-text.product-config__btn.js-open-popup(data-popup-name="product-config-2")
+					| Выбрать угол дивана
+					+icon('arrow_right', 'icon--primary product-config__btn-arrow')
+				button.dark-text.product-config__btn.js-open-popup(data-popup-name="product-config-2")
+					| Размер угловой секции
+					+icon('arrow_right', 'icon--primary product-config__btn-arrow')
+				button.dark-text.product-config__btn.js-open-popup(data-popup-name="product-config-2")
+					| Подлокотник
+					+icon('arrow_right', 'icon--primary product-config__btn-arrow')
+
+				.product-config__title2 Характеристики
+				.product-config__properties
+					.product-config__property
+						span.dark-text.product-config__property-text Размер:
+						span.product-config__property-value Высота 85 см  х  Ширина 105 см  х  Длина 227 см
+					.product-config__property
+						span.dark-text.product-config__property-text Спальное место:
+						span.product-config__property-value Высота 44 см  х  Ширина 143 см  х  Длина 206 см
+				button.btn.product-config__submit Добавить в корзину
+
+	.popup(data-name="product-config-1" data-lock-width="767")
+		.popup__content.configure
+			.configure__content
+				.configure__mobile-info
+					button.popup__close.configure__back-btn
+						+icon('arrow_right', 'configure__back-btn-arrow')
+					.configure__mobile-img-box
+						img.configure__mobile-img(src="temp/single-products/matrasi/1.jpg")
+						button.full-btn.configure__full-btn(data-src="temp/single-products/matrasi/1.jpg")
+							+icon('arrow_left', 'full-btn__arrow full-btn__arrow--left')
+							+icon('arrow_right', 'full-btn__arrow full-btn__arrow--right')
+					.price-new.configure__mobile-price 116 925 ₸
+				.configure__header.configure__header--border
+					.configure__title Обивка
+				.configure__main.js-custom-scrollbar
+					.configure__filters
+						button.filter-btn.configure__filter-btn(type="button")
+							| Цвет
+							+icon('arrow_right', 'icon--primary filter-btn__icon')
+						button.filter-btn.configure__filter-btn(type="button")
+							| Материал
+							+icon('arrow_right', 'icon--primary filter-btn__icon')
+						.select.select--sort.configure__sort
+							select.select__field
+								option(value="popular") Самые популярные
+								option(value="new") Самые новые
+								option(value="price") Самые недорогие
+								option(value="price") Самые дорогие
+							+icon('arrow_right', 'icon--primary select__icon')
+					.configure__list
+						.configure__item.configure__item--active.is-selected
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/1.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Sky Velvet
+								.configure__item-desc Серый <br> Микровелюр
+								.price-new.configure__item-price 925 000 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/2.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Arbus
+								.configure__item-desc Серый <br> Рогожка
+								.price-new.configure__item-price 927 000 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/3.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Casanova
+								.configure__item-desc Шоколадный <br> Микровелюр
+								.price-new.configure__item-price 923 400 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/4.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
+								.configure__item-desc Шоколадный <br> Микровелюр
+								.price-new.configure__item-price 921 100 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/5.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
+								.configure__item-desc Шоколадный <br> Микровелюр
+								.price-new.configure__item-price 917 600 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/6.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Bluemarin
+								.configure__item-desc Шоколадный <br> Микровелюр
+								.price-new.configure__item-price 918 900 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/7.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
+								.configure__item-desc Шоколадный <br> Микровелюр
+								.price-new.configure__item-price 21 100 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/8.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
+								.configure__item-desc Шоколадный <br> Микровелюр
+								.price-new.configure__item-price 17 600 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/9.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Bluemarin
+								.configure__item-desc Шоколадный <br> Микровелюр
+								.price-new.configure__item-price 18 900 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/4.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 23
+								.configure__item-desc Шоколадный <br> Микровелюр
+								.price-new.configure__item-price 921 100 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/5.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Sky Velvet 15
+								.configure__item-desc Шоколадный <br> Микровелюр
+								.price-new.configure__item-price 917 600 ₸
+								.status.status--have.configure__item-status В наличии
+
+						.configure__item
+							a.configure__item-img-box.configure__item-btn(href="#") 
+								img.configure__item-img(src="temp/single-products/divany/colors-2/6.jpg" alt="")
+							.configure__item-inf
+								a.configure__item-name.configure__item-btn(href="#")  Bluemarin
+								.configure__item-desc Шоколадный <br> Микровелюр
+								.price-new.configure__item-price 918 900 ₸
+								.status.status--have.configure__item-status В наличии
+				.configure__footer.configure__footer--vertical
+					button.btn.configure__btn Применить фильтр
+					button.btn.btn--neutral.configure__btn.configure__btn--reset Сбросить фильтр
+
+			button.popup__close.configure__close.configure__close--desktop
+				+icon('exit', 'popup__close-icon')
+
+	.popup(data-name="product-config-2" data-lock-width="767")
+		.popup__content.configure
+			.configure__content
+				.configure__mobile-info
+					button.popup__close.configure__back-btn
+						+icon('arrow_right', 'configure__back-btn-arrow')
+					.configure__mobile-img-box
+						img.configure__mobile-img(src="temp/single-products/matrasi/1.jpg")
+						button.full-btn.configure__full-btn(data-src="temp/single-products/matrasi/1.jpg")
+							+icon('arrow_left', 'full-btn__arrow full-btn__arrow--left')
+							+icon('arrow_right', 'full-btn__arrow full-btn__arrow--right')
+					.price-new.configure__mobile-price 116 925 ₸
+				.configure__header.configure__header--border
+					.configure__title Опции
+				.configure__main.js-custom-scrollbar
+					.configure__options
+						.dark-text.configure__options-text Размер спального места:
+						.configure__options-list
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="size" checked)
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text 140 см
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="size")
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text 145 см
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="size")
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text 150 см
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="size")
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text 155 см
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="size")
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text 180 см
+					.configure__options
+						.dark-text.configure__options-text Жесткость матраса:
+						.configure__options-list
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="stiffness" checked)
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text Средний
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="stiffness")
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text Жесткий
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="stiffness")
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text Мягкий
+					.configure__options
+						.dark-text.configure__options-text Угол дивана:
+						.configure__options-list
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="corner")
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text Левый
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="corner" checked)
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text Правый
+					.configure__options
+						.dark-text.configure__options-text Размер угловой секции:
+						.configure__options-list
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="corner-size")
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text 70 см
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="corner-size")
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text 80 см
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="corner-size" checked)
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text 90 см
+					.configure__options
+						.dark-text.configure__options-text Подлокотник:
+						.configure__options-list
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="armrest")
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text Нет
+							label.configure__options-item.checkbox.checkbox--accept.checkbox--full
+								input.checkbox__input(type="radio" name="armrest" checked)
+								.checkbox__switcher
+									+icon('check', 'checkbox__icon')
+								.checkbox__text Есть
+				.configure__footer.configure__footer--vertical
+					button.btn.configure__btn Применить фильтр
+					button.btn.btn--neutral.configure__btn.configure__btn--reset Сбросить фильтр
+
+			button.popup__close.configure__close.configure__close--desktop
+				+icon('exit', 'popup__close-icon')

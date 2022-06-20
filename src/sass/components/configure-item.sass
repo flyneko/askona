@@ -1,0 +1,67 @@
+.configure-item
+  &__content
+    padding: 18px 24px
+
+  &__img-box
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 136px
+    height: 136px
+    border: 1px solid #eeeeee
+    border-radius: 4px
+    overflow: hidden
+
+  &__img
+    width: 100%
+
+  &__btn
+    width: 100%
+
+  &__name
+    margin-top: 10px
+    display: block
+    font-weight: 500
+    color: #262626
+
+  &__desc
+    margin-top: 3px
+    font-size: 12px
+    font-weight: 500
+    line-height: 1.33
+    color: #7e7e7e
+
+  &__price
+    margin-top: 3px
+
+  &__status
+    font-size: 12px
+
+    &:before
+      margin-right: 4px
+
+  &--big
+    border: 1px solid #eeeeee
+    border-radius: 4px
+    width: 100%
+    cursor: pointer
+
+    &.configure-item--active
+      border-color: #212121
+
+  &--big &__inf
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &--active &__img-box
+    border-color: #212121
+    padding: 8px
+
+  &--big &__img-box
+    border: none
+    padding: 0
+    margin: 0 auto
+
+  &--big &__name
+    margin-top: 0

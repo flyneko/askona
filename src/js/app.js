@@ -497,7 +497,7 @@ window.addEventListener('load', () => {
     $configure.addEventListener('click', e => {
       if (e.target.classList.contains('configure__item-btn') ||
         e.target.closest('.configure__item-btn')) {
-        const $activeItem = $configure.querySelector('.is-selected')
+        const $activeItem = $configure.querySelector('.configure__item--active.is-selected');
         $activeItem.classList.remove('configure__item--active', 'is-selected');
 
         const $item = e.target.closest('.configure__item');
@@ -508,10 +508,11 @@ window.addEventListener('load', () => {
 
   setProductConfigPosition();
   window.addEventListener('resize', setProductConfigPosition);
+  
   function setProductConfigPosition() {
     const $productConfig = document.querySelector('.product-config');
     if ($productConfig) {
-      const offsetTop = getBannerHeaderHeight() + 2;
+      const offsetTop = window.innerWidth > 991 ? getBannerHeaderHeight() + 1 : 0;
       $productConfig.style.top = `${offsetTop}px`;
       $productConfig.style.height = `calc(100vh - ${offsetTop}px`;
     }
@@ -524,9 +525,11 @@ window.addEventListener('load', () => {
     const $openProductConfigBtns = document.querySelectorAll('.js-open-product-config');
     $openProductConfigBtns.forEach($btn => {
       $btn.addEventListener('click', () => {
-        window.scrollTo(0, 0);
-        $body.classList.add('body--lock');
-        $productConfig.classList.add('product-config--show');
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          $body.classList.add('body--lock');
+          $productConfig.classList.add('product-config--show');
+        });
       });
     });
 
@@ -587,12 +590,37 @@ window.addEventListener('load', () => {
     });
   });
 
+  const $configureMobileImages = document.querySelectorAll('.configure__mobile-img-box');
+  $configureMobileImages.forEach($img => {
+    lightGallery($img, {
+      speed: 500,
+      download: false,
+      loop: true,
+      mousewheel: true,
+      slideEndAnimation: false,
+      selector: '.configure__full-btn',
+    });
+  });
+
   /**
    * Скроллбар
    */
   const $customScrollbars = document.querySelectorAll('.js-custom-scrollbar');
   $customScrollbars.forEach($scrollbar => {
-    let ps = createScrollbar($scrollbar);
+    const minWidth = $scrollbar.dataset.minWidth;
+    let ps = { element: null };
+
+    if (!minWidth || window.innerWidth >= minWidth) {
+      ps = createScrollbar($scrollbar);
+    }
+
+    window.addEventListener('resize', () => {
+      if (minWidth && !ps.element && window.innerWidth >= minWidth) {
+        ps = createScrollbar($scrollbar);
+      } else if (minWidth && ps.element && window.innerWidth < minWidth) {
+        ps.destroy();
+      }
+    });
 
     if ($scrollbar.classList.contains('mobile-menu__content')) {
       const $mobileMenuItems = $scrollbar.querySelectorAll('.mobile-menu__item');
@@ -719,6 +747,8 @@ window.addEventListener('load', () => {
     const $openCatalogMenuBtns = document.querySelectorAll('.js-open-catalog-menu');
     $openCatalogMenuBtns.forEach($btn => {
       $btn.addEventListener('click', () => {
+        closeProductConfig();
+
         $catalogMenu.classList.toggle('catalog-menu--show');
 
         const $icon = $btn.querySelector('.icon-menu');
@@ -848,12 +878,10 @@ window.addEventListener('load', () => {
 
   const $popups = document.querySelectorAll('.popup');
   $popups.forEach($popup => {
-    const $closeBtn = $popup.querySelector('.popup__close');
-    if ($closeBtn) {
-      $closeBtn.addEventListener('click', () => {
-        closeShowedPopup();
-      });
-    }
+    const $closeBtns = $popup.querySelectorAll('.popup__close');
+    $closeBtns.forEach($btn => {
+      $btn.addEventListener('click', closeShowedPopup);
+    });
   });
 
   window.addEventListener('click', e => {
@@ -893,7 +921,11 @@ window.addEventListener('load', () => {
     const $popup = document.querySelector('.popup--show');
     if ($popup) {
       $popup.classList.remove('popup--show');
-      document.body.classList.remove('body--lock');
+
+      const lockWidth = $popup.dataset.lockWidth;
+      if (lockWidth && window.innerWidth <= +lockWidth) {
+        document.body.classList.remove('body--lock');
+      }
     }
   }
 
@@ -1008,7 +1040,7 @@ window.addEventListener('load', () => {
     if (!$svg) {
       return;
     }
-    
+
     const $circles = $svg.querySelectorAll('.circle');
     const circlesRadiuse = [...$circles].map($circle => $circle.getAttribute('r'))
     const minRadiuse = 1.2;

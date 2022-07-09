@@ -1,0 +1,85 @@
+.compare
+  &__filters
+    margin-top: 5px
+    display: flex
+    align-items: center
+
+  &__filter-diff
+    margin-left: auto
+
+  &__filter-btn
+    margin-left: 38px
+    min-width: 184px
+
+  &__tabs-btn
+    display: flex
+    align-items: flex-start
+    padding-bottom: 8px
+
+    &:not(:last-child)
+      margin-right: 48px
+
+  &__tabs-btn-text
+    position: relative
+    display: block
+    font-size: 24px
+    font-weight: 600
+    color: #878787
+
+  &__tabs-btn.tabs__btn--active &__tabs-btn-text
+    color: #212121
+
+    &:after
+      content: ''
+      position: absolute
+      bottom: -8px
+      left: 0
+      z-index: 1
+      height: 2px
+      width: 100%
+      background: $color-primary
+
+  &__tabs-btn-value
+    font-size: 14px
+    color: #7e7e7e
+    top: -1px
+    margin-left: 3px
+    line-height: 1
+
+  &__tabs-list
+    opacity: 0
+
+    &--active
+      opacity: 1
+
+  &__slider
+    position: relative
+    margin-top: 24px
+
+  &__slider-main
+    padding-left: 1px
+
+  &__slide
+    height: auto
+    width: 263px
+
+  &__item
+    height: 100%
+    display: flex
+    flex-direction: column
+
+  &__slider-next,
+  &__slider-prev
+    position: absolute
+    z-index: 1
+    top: 170px
+    transform: translateY(-50%)
+
+    &.swiper-button-lock
+      display: none
+
+  &__slider-next
+    right: -16px
+
+  &__slider-prev
+    left: -16px

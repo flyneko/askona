@@ -11,6 +11,7 @@ export const scripts = () => {
     'node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js',
     'node_modules/@fancyapps/ui/dist/fancybox.umd.js',
     'node_modules/nouislider/dist/nouislider.min.js',
+    'node_modules/air-datepicker/air-datepicker.js',
   ])
   .pipe(concat('vendors.min.js'))
   .pipe(uglify())

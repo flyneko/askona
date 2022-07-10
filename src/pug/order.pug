@@ -39,8 +39,8 @@ block content
 							.cart-item__price
 								.cart-item__price-old 1 191 300 ₸
 								.cart-item__price-new 329 400 ₸
-							button.cart-item__delete
-								+icon('exit', 'cart-item__delete-icon')
+							button.exit-btn.cart-item__delete
+								+icon('exit', 'exit-btn__icon')
 						.cart-item__mobile-footer
 							button.dark-text.cart-item__mobile-btn Добавить в избранное
 							button.dark-text.cart-item__mobile-btn Удалить
@@ -74,8 +74,8 @@ block content
 							.cart-item__price
 								.cart-item__price-old 3 189 372 ₸
 								.cart-item__price-new 1 913 624 ₸
-							button.cart-item__delete
-								+icon('exit', 'cart-item__delete-icon')
+							button.exit-btn.cart-item__delete
+								+icon('exit', 'exit-btn__icon')
 						.cart-item__mobile-footer
 							button.dark-text.cart-item__mobile-btn Добавить в избранное
 							button.dark-text.cart-item__mobile-btn Удалить
@@ -100,7 +100,7 @@ block content
 
 		section.section.products.products--like
 			.container.container--small
-				h2.title2.title2--left.products__title Вам может понравиться
+				h2.title2.products__title Вам может понравиться
 				.products__slider
 					.products__slider-main.js-products-slider.swiper(data-per-view="3")
 						.swiper-wrapper
@@ -115,7 +115,7 @@ block content
 
 		section.bonus.main__bonus
 			.container.container--small
-				h2.title2.title2--left Бонусная программа
+				h2.title2 Бонусная программа
 				button.bonus__login-btn(data-fancybox data-src="#modal-login") Авторизуйтесь, чтобы потратить бонусы
 				.bonus__main
 					.bonus__info
@@ -141,7 +141,7 @@ block content
 
 		section.order
 			.container.container--small
-				h2.title2.title2--left.order__title Оформление заказа
+				h2.title2.order__title Оформление заказа
 				.order__main
 					.order-form.order__form
 						.order-form__group

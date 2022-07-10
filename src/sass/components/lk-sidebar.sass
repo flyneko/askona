@@ -1,0 +1,38 @@
+.lk-sidebar
+  padding: 32px
+  border: 1px solid #eeeeee
+  border-radius: 4px
+
+  &__item
+    &:not(:first-child)
+      margin-top: 32px
+
+  &__item--active &__icon
+    fill: $color-primary
+
+    &--stroke
+      stroke: $color-primary
+
+  &__link
+    font-size: 17px
+    display: flex
+    align-items: center
+
+  &__icon
+    margin-right: 12px
+    width: 18px
+    height: 18px
+
+    &--stroke
+      stroke: #c7c7c7
+
+    &--personal
+      width: 24px
+      height: 24px
+
+  &__value
+    margin-left: auto
+    width: 26px
+    height: 26px
+    font-size: 12px
+    font-weight: 400

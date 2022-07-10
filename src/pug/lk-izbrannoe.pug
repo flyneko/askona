@@ -1,0 +1,53 @@
+extends layouts/_layout.pug
+
+block title
+    | Кабинет - Избранное
+
+block content
+    main.main
+        .container
+            .lk
+                aside.lk-sidebar.lk__sidebar
+                    ul.lk-sidebar__list
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="lk-personal.html")
+                                +icon('personal', 'icon--gray lk-sidebar__icon lk-sidebar__icon--stroke lk-sidebar__icon--personal')
+                                | Персональные данные
+                        li.lk-sidebar__item.lk-sidebar__item--active
+                            a.dark-text.lk-sidebar__link(href="lk-izbrannoe.html")
+                                +icon('izbrannoe', 'icon--gray lk-sidebar__icon')
+                                | Избранное
+                                span.value.lk-sidebar__value 4
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="order.html")
+                                +icon('cart', 'icon--gray lk-sidebar__icon')
+                                | Корзина
+                                span.value.lk-sidebar__value 2
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="lk-sravnenie.html")
+                                +icon('sravnenie', 'icon--gray lk-sidebar__icon')
+                                | Сравнение
+                                span.value.lk-sidebar__value 16
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="lk-zakazi.html")
+                                +icon('zakazi', 'icon--gray lk-sidebar__icon lk-sidebar__icon--stroke')
+                                | Заказы
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="lk-bonusi.html")
+                                +icon('bonusi', 'icon--gray lk-sidebar__icon')
+                                | Бонусная программа
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="#")
+                                +icon('logout', 'icon--gray lk-sidebar__icon lk-sidebar__icon--stroke')
+                                | Выход
+                .lk__main
+                    .favorites.lk__favorites
+                        h1.title2.favorites__title Избранное
+                        .favorites__header
+                            span.text Товаров: 4
+                            .favorites__header-btns
+                                button.btn.favorites__header-btn Сравнить все
+                                button.btn.btn--transparent.favorites__header-btn Очистить список
+                        .favorites__list
+                            each i in [13, 4, 6, 6]
+                                +card_favorite(i, { class: 'favorites__item' })

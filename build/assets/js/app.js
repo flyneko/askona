@@ -397,6 +397,25 @@ window.addEventListener('load', () => {
     }
   });
 
+  const $compareSlidersBoxes = document.querySelectorAll('.compare__slider');
+  $compareSlidersBoxes.forEach($box => {
+    const $slider = $box.querySelector('.compare__slider-main');
+    const $nextBtn = $box.querySelector('.compare__slider-next');
+    const $prevBtn = $box.querySelector('.compare__slider-prev');
+
+    new Swiper($slider, {
+      slidesPerView: 'auto',
+      spaceBetween: -1,
+      watchSlidesProgress: true,
+      navigation: {
+        nextEl: $nextBtn,
+        prevEl: $prevBtn,
+        clickable: true
+      },
+    });
+  })
+
+
   /**
    * Отзывы
    */
@@ -508,7 +527,7 @@ window.addEventListener('load', () => {
 
   setProductConfigPosition();
   window.addEventListener('resize', setProductConfigPosition);
-  
+
   function setProductConfigPosition() {
     const $productConfig = document.querySelector('.product-config');
     if ($productConfig) {
@@ -1064,6 +1083,81 @@ window.addEventListener('load', () => {
         }, 200 * (index))
       });
     }
+  }
+
+  /**
+   * Поле "Дата"
+   */
+  const $dateFields = document.querySelectorAll('.date-field');
+  $dateFields.forEach(($field) => {
+    const $input = $field.querySelector('.date-field__input');
+    const $btn = $field.querySelector('.date-field__btn');
+
+    const picker = new AirDatepicker($input, {
+      showEvent: '',
+      autoClose: true,
+    });
+
+    $btn.addEventListener('click', () => {
+      picker.show();
+      $input.focus();
+    });
+  });
+
+  /**
+   * Табы
+   */
+  const $tabsBtns = document.querySelectorAll('.tabs__btn');
+  $tabsBtns.forEach(($btn, index) => {
+    $btn.addEventListener('click', () => {
+      const $tabs = $btn.closest('.tabs');
+
+      const $oldActiveBtn = $tabs.querySelector('.tabs__btn--active');
+      $oldActiveBtn.classList.remove('tabs__btn--active');
+
+      const $newActiveBtn = $tabs.querySelectorAll('.tabs__btn')[index];
+      $newActiveBtn.classList.add('tabs__btn--active');
+
+      const $oldActiveTab = $tabs.querySelector('.tabs__item--active');
+      $oldActiveTab.classList.remove('tabs__item--active');
+
+      const $newActiveTab = $tabs.querySelectorAll('.tabs__item')[index];
+      $newActiveTab.classList.add('tabs__item--active');
+    });
+  });
+
+  /**
+   * Кабинет - Сравнение
+   */
+  const $compare = document.querySelector('.compare');
+  if ($compare) {
+    setCompareDetailsHeights();
+    window.addEventListener('resize', setCompareDetailsHeights)
+
+    const $tabsList = $compare.querySelector('.compare__tabs-list');
+    $tabsList.classList.add('compare__tabs-list--active');
+  }
+
+  function setCompareDetailsHeights() {
+    const $compareItems = document.querySelectorAll('.compare-item');
+    const $firstCompareDetails = $compareItems[0].querySelectorAll('.compare-item__detail');
+    const detailsMaxHeights = [...$firstCompareDetails].map($detail => $detail.offsetHeight);
+
+    $compareItems.forEach($item => {
+      const $details = $item.querySelectorAll('.compare-item__detail');
+      $details.forEach(($detail, index) => {
+        if (detailsMaxHeights[index] < $detail.offsetHeight) {
+          detailsMaxHeights[index] = $detail.offsetHeight;
+        }
+      });
+    });
+
+    $compareItems.forEach($item => {
+      const $details = $item.querySelectorAll('.compare-item__detail');
+      $details.forEach(($detail, index) => {
+        $detail.style.height = `${detailsMaxHeights[index]}px`;
+      });
+    });
   }
 });
 

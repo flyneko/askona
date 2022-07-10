@@ -1,0 +1,27 @@
+.favorites
+  &__title
+    text-align: left
+
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__header-btns
+    display: flex
+
+  &__header-btn
+    min-width: 184px
+
+    &:not(:last-child)
+      margin-right: 16px
+
+  &__list
+    padding-top: 24px
+    display: flex
+    flex-wrap: wrap
+    margin: -16px
+
+  &__item
+    width: calc(100% / 3 - 32px)
+    margin: 16px

@@ -1,0 +1,86 @@
+extends layouts/_layout.pug
+
+block title
+    | Кабинет - Заказы
+
+block content
+    main.main
+        .container
+            .lk
+                aside.lk-sidebar.lk__sidebar
+                    ul.lk-sidebar__list
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="lk-personal.html")
+                                +icon('personal', 'icon--gray lk-sidebar__icon lk-sidebar__icon--stroke lk-sidebar__icon--personal')
+                                | Персональные данные
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="lk-izbrannoe.html")
+                                +icon('izbrannoe', 'icon--gray lk-sidebar__icon')
+                                | Избранное
+                                span.value.lk-sidebar__value 4
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="order.html")
+                                +icon('cart', 'icon--gray lk-sidebar__icon')
+                                | Корзина
+                                span.value.lk-sidebar__value 2
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="lk-sravnenie.html")
+                                +icon('sravnenie', 'icon--gray lk-sidebar__icon')
+                                | Сравнение
+                                span.value.lk-sidebar__value 16
+                        li.lk-sidebar__item.lk-sidebar__item--active
+                            a.dark-text.lk-sidebar__link(href="lk-zakazi.html")
+                                +icon('zakazi', 'icon--gray lk-sidebar__icon lk-sidebar__icon--stroke')
+                                | Заказы
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="lk-bonusi.html")
+                                +icon('bonusi', 'icon--gray lk-sidebar__icon')
+                                | Бонусная программа
+                        li.lk-sidebar__item
+                            a.dark-text.lk-sidebar__link(href="#")
+                                +icon('logout', 'icon--gray lk-sidebar__icon lk-sidebar__icon--stroke')
+                                | Выход
+                .lk__main
+                    .lk-orders
+                        h1.title2.lk-orders__title Заказы
+                        .lk-orders__list
+                            .lk-order.lk-orders__item
+                                .lk-order__header
+                                    .lk-order__info
+                                        h2.lk-order__title ИМ6-004245
+                                        .lk-order__date 09.07.2021
+                                    .lk-order__status Выполнен
+                                .lk-order__list
+                                    .lk-order__item
+                                        .lk-order__item-name Матрас 200*90 Askona Flash
+                                        .lk-order__item-count x 1 шт.
+                                        .lk-order__item-price 45 600 тг.
+                                    .lk-order__item
+                                        .lk-order__item-name Утилизация матраса
+                                        .lk-order__item-count x 1 шт.
+                                        .lk-order__item-price 5 600 тг.
+                                .lk-order__footer
+                                    .lk-order__address
+                                        b Доставка: <br>
+                                        | 655993, г. Алматы, <br>
+                                        | ул. Кабдолова, дом 1/8, кв. 90
+                                    .lk-order__price-text Сумма заказа:
+                                    .lk-order__price-value 51 200 тг.
+                            .lk-order.lk-orders__item
+                                .lk-order__header
+                                    .lk-order__info
+                                        h2.lk-order__title ИМ1-3614
+                                        .lk-order__date 17..01.2020
+                                    .lk-order__status.lk-order__status--error Отменен
+                                .lk-order__list
+                                    .lk-order__item
+                                        .lk-order__item-name Тумба Vesta (Веста) соснаБР цв. Venge 2
+                                        .lk-order__item-count x 2 шт.
+                                        .lk-order__item-price 149 000 тг.
+                                .lk-order__footer
+                                    .lk-order__address
+                                        b Доставка: <br>
+                                        | 655993, г. Алматы, <br>
+                                        | ул. Кабдолова, дом 1/8, кв. 90
+                                    .lk-order__price-text Сумма заказа:
+                                    .lk-order__price-value 149 000 тг.

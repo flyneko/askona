@@ -99,7 +99,8 @@
   &__discount,
   &__label,
   &__wishlist,
-  &__compare
+  &__compare,
+  &__close
     position: absolute
     z-index: 5
 
@@ -126,6 +127,10 @@
     top: 21px
     left: 23px
 
+  &__close
+    right: 16px
+    top: 16px
+
   &__inf
     position: relative
     z-index: 3
@@ -134,7 +139,9 @@
 
   &__inf-content
     padding: 20px 22px 24px
-    padding-bottom: 23.5px
+    height: 100%
+    display: flex
+    flex-direction: column
 
   &__name
     font-size: 16px
@@ -219,6 +226,9 @@
     border-bottom-right-radius: 4px
     box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.13)
 
+  &__footer
+    margin-top: auto
+
   &__installment
     margin-bottom: 5px
     margin-right: 10px
@@ -258,6 +268,19 @@
   &__btn
     margin-top: 12px
     flex: 1 1 auto
+
+  &--no-hover:hover
+    &:before
+      display: none
+
+  &--no-hover:hover &__inf
+    margin: 0
+    padding: 0
+
+  &--no-hover:hover &__addition-content,
+  &--no-hover:hover &__wishlist,
+  &--no-hover:hover &__compare
+    display: block
 
   @media screen and (max-width: 1280px)
     &__inf-content

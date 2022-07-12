@@ -1,23 +1,23 @@
 .bottom-menu
     .bottom-menu__list
         .bottom-menu__item
-            a.bottom-menu__link.bottom-menu__link--active(href="home.html")
+            a.bottom-menu__link(href="home.html" class=`${bottom_menu_link === 'home' ? 'bottom-menu__link--active' : ''}`)
                 +icon('glavnaya', 'bottom-menu__icon')
                 | Главная
         .bottom-menu__item 
-            a.bottom-menu__link(href="catalog-divany.html")
+            a.bottom-menu__link(href="catalog-divany.html" class=`${bottom_menu_link === 'catalog' ? 'bottom-menu__link--active' : ''}`)
                 +icon('catalog', 'bottom-menu__icon bottom-menu__icon--catalog')
                 | Каталог
         .bottom-menu__item 
-            a.bottom-menu__link(href="order.html")
+            a.bottom-menu__link(href="order.html" class=`${bottom_menu_link === 'cart' ? 'bottom-menu__link--active' : ''}`)
                 +icon('cart', 'bottom-menu__icon')
                 | Корзина
                 span.bottom-menu__value 2
         .bottom-menu__item 
-            a.bottom-menu__link(href="#")
+            a.bottom-menu__link(href="lk-izbrannoe.html" class=`${bottom_menu_link === 'favorites' ? 'bottom-menu__link--active' : ''}`)
                 +icon('izbrannoe', 'bottom-menu__icon')
                 | Избранное
         .bottom-menu__item
-            button.bottom-menu__link(data-fancybox data-src="#modal-login")
+            button.bottom-menu__link(data-fancybox data-src="#modal-login" class=`${bottom_menu_link === 'profile' ? 'bottom-menu__link--active' : ''}`)
                 +icon('login', 'bottom-menu__icon')
                 | Профиль

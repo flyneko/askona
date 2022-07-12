@@ -292,7 +292,7 @@ window.addEventListener('load', () => {
 
       $paginationClone = $pagination.cloneNode(true);
       $paginationClone.classList.add('swiper-pagination--clone');
-      $pagination.parentNode.appendChild($paginationClone);
+      $pagination.parentNode.append($paginationClone);
     };
   });
 
@@ -404,14 +404,20 @@ window.addEventListener('load', () => {
     const $prevBtn = $box.querySelector('.compare__slider-prev');
 
     new Swiper($slider, {
-      slidesPerView: 'auto',
-      spaceBetween: -1,
+      slidesPerView: 2,
+      spaceBetween: 0,
       watchSlidesProgress: true,
       navigation: {
         nextEl: $nextBtn,
         prevEl: $prevBtn,
         clickable: true
       },
+      breakpoints: {
+        580: {
+          slidesPerView: 'auto',
+          spaceBetween: -1
+        }
+      }
     });
   })
 
@@ -1159,6 +1165,49 @@ window.addEventListener('load', () => {
       });
     });
   }
+
+  /**
+   * Кабинет - Бонусная программа
+   */
+  moveBonusElements();
+  window.addEventListener('resize', moveBonusElements);
+
+  function moveBonusElements() {
+    moveElement({
+      element: '.lk-bonus__btn',
+      from: '.lk-bonus__inf-main',
+      to: '.lk-bonus__footer',
+      width: 767,
+      fromInsertType: 'prepend'
+    });
+
+    moveElement({
+      element: '.lk-bonus__text',
+      from: '.lk-bonus__inf',
+      to: '.lk-bonus__footer',
+      toInsertType: 'prepend',
+      width: 767,
+    });
+  }
+
+  /**
+   * Кабинет - Заказы
+   */
+  const $lkOrders = document.querySelectorAll('.lk-order');
+  $lkOrders.forEach($order => {
+    const $list = $order.querySelector('.lk-order__list');
+
+    const $moreBtn = $order.querySelector('.lk-order__more');
+    $moreBtn.addEventListener('click', () => {
+      $list.classList.toggle('lk-order__list--active');
+      $moreBtn.classList.toggle('lk-order__more--active');
+
+      const $btnText = $moreBtn.querySelector('.lk-order__more-text');
+      const toggleText = $moreBtn.dataset.toggleText;
+      $moreBtn.setAttribute('data-toggle-text', $btnText.innerText);
+      $btnText.innerText = toggleText;
+    });
+  })
 });
 
 function getBannerHeaderHeight() {
@@ -1194,7 +1243,16 @@ function createScrollbar($scrollbar) {
   })
 }
 
-function moveElement({ element, from, to, width }) {
+function moveElement(options) {
+  const {
+    element,
+    from,
+    to,
+    width,
+    fromInsertType = 'append',
+    toInsertType = 'append'
+  } = options;
+
   const $elem = document.querySelector(element);
   const $from = document.querySelector(from);
   const $to = document.querySelector(to);
@@ -1205,9 +1263,9 @@ function moveElement({ element, from, to, width }) {
 
   setTimeout(() => {
     if (window.innerWidth <= width && $elem.parentNode === $from) {
-      $to.append($elem);
+      toInsertType === 'append' ? $to.append($elem) : $to.prepend($elem);
     } else if (window.innerWidth >= width && $elem.parentNode !== $from) {
-      $from.append($elem);
+      fromInsertType === 'append' ? $from.append($elem) : $from.prepend($elem);
     }
   });
 }

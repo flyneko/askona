@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css?v=21161915">
+    <link rel="stylesheet" href="assets/css/styles.css?v=36930140">
   </head>
   <body class="body">
-    <div class="banner"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
-    <header class="header">
+    <div class="banner banner--lk"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
+    <header class="header header--lk">
       <div class="container">
         <div class="header__top"><a class="logo header__logo" href="index.html"><object class="logo__object" data="assets/img/logo.svg" type="image/svg+xml"></object></a>
           <div class="cities-menu header__cities-menu">
@@ -89,7 +89,7 @@
         </div>
       </div>
     </header>
-    <main class="main">
+    <main class="main main--lk">
       <div class="container">
         <div class="lk">
           <aside class="lk-sidebar lk__sidebar">
@@ -126,7 +126,12 @@
           </aside>
           <div class="lk__main">
             <div class="favorites lk__favorites">
-              <h1 class="title2 favorites__title">Избранное</h1>
+              <h1 class="title2 lk__title">Избранное
+                <div class="value lk__mobile-count">11</div>
+                <svg class="icon icon--primary lk__title-arrow"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                </svg>
+              </h1>
               <div class="favorites__header"><span class="text">Товаров: 4</span>
                 <div class="favorites__header-btns">
                   <button class="btn favorites__header-btn">Сравнить все</button>
@@ -200,6 +205,14 @@
                             <button class="btn product__btn">Добавить в корзину</button>
                           </div>
                         </div>
+                        <div class="product__mobile-footer">
+                          <button class="dark-text product__delete-text-btn">Удалить</button>
+                          <button class="btn product__cart-btn">
+                            <svg class="icon icon--white product__cart-btn-icon"> 
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#cart"></use>
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -271,6 +284,14 @@
                             <button class="btn product__btn">Добавить в корзину</button>
                           </div>
                         </div>
+                        <div class="product__mobile-footer">
+                          <button class="dark-text product__delete-text-btn">Удалить</button>
+                          <button class="btn product__cart-btn">
+                            <svg class="icon icon--white product__cart-btn-icon"> 
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#cart"></use>
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -342,6 +363,14 @@
                             <button class="btn product__btn">Добавить в корзину</button>
                           </div>
                         </div>
+                        <div class="product__mobile-footer">
+                          <button class="dark-text product__delete-text-btn">Удалить</button>
+                          <button class="btn product__cart-btn">
+                            <svg class="icon icon--white product__cart-btn-icon"> 
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#cart"></use>
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -412,6 +441,14 @@
                           <div class="product__btn-group">
                             <button class="btn product__btn">Добавить в корзину</button>
                           </div>
+                        </div>
+                        <div class="product__mobile-footer">
+                          <button class="dark-text product__delete-text-btn">Удалить</button>
+                          <button class="btn product__cart-btn">
+                            <svg class="icon icon--white product__cart-btn-icon"> 
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#cart"></use>
+                            </svg>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -2003,7 +2040,7 @@
     </div>
     <div class="bottom-menu">
       <div class="bottom-menu__list">
-        <div class="bottom-menu__item"><a class="bottom-menu__link bottom-menu__link--active" href="home.html">
+        <div class="bottom-menu__item"><a class="bottom-menu__link" href="home.html">
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#glavnaya"></use>
             </svg>Главная</a></div>
@@ -2015,7 +2052,7 @@
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#cart"></use>
             </svg>Корзина<span class="bottom-menu__value">2</span></a></div>
-        <div class="bottom-menu__item"> <a class="bottom-menu__link" href="#">
+        <div class="bottom-menu__item"> <a class="bottom-menu__link bottom-menu__link--active" href="lk-izbrannoe.html">
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
             </svg>Избранное</a></div>
@@ -2029,6 +2066,6 @@
       </div>
     </div>
     <script src="assets/js/vendors.min.js"></script>
-    <script src="assets/js/app.js?v=95419400"></script>
+    <script src="assets/js/app.js?v=40334052"></script>
   </body>
 </html>

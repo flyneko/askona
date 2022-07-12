@@ -4,6 +4,7 @@ extends layouts/_layout.pug
 block vars
 	- var header_name = 'order'
 	- var hide_footer = true
+	- var bottom_menu_link = 'cart'
 
 block title
 	| Оформление заказа
@@ -200,7 +201,7 @@ block content
 								.checkbox__switcher
 								.checkbox__text Оплата по счету (для ИП и юр. лиц)
 							.text.order-form__message Оплата осуществляется только картой или наличными. Заранее проговорите этот момент с менеджером.
-						
+
 						.order-form__mobile-result
 
 						label.checkbox.checkbox--accept.order-form__accept

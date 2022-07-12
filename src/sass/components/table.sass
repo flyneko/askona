@@ -8,13 +8,13 @@
     font-weight: 500
     text-align: left
     height: 54px
-    line-height: 54px
 
     &:first-child
       padding-left: 31px
       width: 320px
 
     &:last-child
+      padding-right: 31px
       width: 150px
 
   td
@@ -36,3 +36,30 @@
 
     &.table__minus
       color: #f00
+
+  @media screen and (max-width: 1360px)
+    th,
+    td
+      &:first-child
+        width: auto
+
+  @media screen and (max-width: 767px)
+    th,
+    td
+      font-size: 12px
+      padding: 0 5px
+      text-align: center
+
+      &:first-child
+        padding-left: 16px
+        text-align: left
+
+      &:last-child
+        width: auto
+        padding-right: 16px
+
+    th
+      height: 40px
+
+    td
+      text-align: center

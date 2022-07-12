@@ -1,5 +1,8 @@
 extends layouts/_layout.pug
 
+block vars
+	- var bottom_menu_link = 'catalog'
+
 block title
 	| Карточка товара - Диваны
 
@@ -65,9 +68,9 @@ block content
 										+icon('play_video', 'btn-play__icon')
 									button.btn-360.single-product__play-btn
 										+icon('360', 'btn-360__icon')
-										
+
 						.single-product__mobile-info
-						
+
 						.details.single-product__details.popup.popup--mobile#details(data-name="details" data-lock-width="991")
 							.title3.details__title Характеристики
 							.details__body
@@ -112,7 +115,7 @@ block content
 							button.popup__close.single-product__details-close
 								+icon('exit', 'popup__close-icon')
 
-						
+
 						.single-product__desc.popup.popup--mobile#desc(data-name="desc" data-lock-width="991")
 							h3 Описание
 							.single-product__desc-body

@@ -35,8 +35,38 @@
 
   &__accept
     margin-top: 20px
+    display: flex
     
   &__submit
     min-width: 216px
     margin-top: 24px
     height: 48px
+
+  @media screen and (max-width: 991px)
+    width: 100%
+
+    &__label
+      max-width: 100%
+
+  @media screen and (max-width: 767px)
+    &__label
+      &:not(:first-child)
+        margin-top: 20px
+
+    &__input
+      font-size: 16px
+      padding-bottom: 12px
+
+    &__accept
+      margin-top: 24px
+
+    &__submit
+      height: 40px
+
+    &__accept
+      .checkbox__text
+        font-size: 12px
+
+  @media screen and (max-width: 480px)
+    &__submit
+      width: 100%

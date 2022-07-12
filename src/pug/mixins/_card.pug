@@ -1,0 +1,69 @@
+mixin card(index, options = {})
+
+    - var item = cards_list[index || 0]
+    .product(class=(options.class || ''))
+        .product__main
+            a.product__img-box(href="#") 
+                .product__slider.swiper
+                    .swiper-wrapper
+                        each i in item.img_indexes
+                            .swiper-slide
+                                img.product__img(src='temp/products/' + item.category + '/' + i + '.jpg')                
+                    .product__slider-pagination.js-product-slider-pagination
+                if item.discount
+                    span.discount.product__discount(class=options.discount_class)
+                        | -#{item.discount}%
+                        +icon('skidka', 'discount__bg')
+                if item.label
+                    span.product-label.product__label(class='product-label--' + item.label.type) #{item.label.text}
+                button.wishlist-btn.product__wishlist(class=`${item.wishlist ? 'wishlist-btn--active' : ''}`)
+                    +icon('izbrannoe', 'wishlist-btn__icon')
+                button.icon-btn.icon-btn--gray.product__compare
+                    +icon('sravnenie', 'icon-btn__icon')
+            .product__inf
+                .product__inf-content
+                    h3.product__name
+                        a.link(href="#") !{item.name}
+                    if item.desc
+                        span.text.product__desc !{item.desc}
+                    .product__price 
+                        | от
+                        span.price-new.product__price-value #{item.price} ₸
+                        span.price-old.product__price-old #{item.price_old} ₸
+                    if item.features
+                        .product__meta
+                            .product__features
+                                each feature in item.features
+                                    .product__feature
+                                        +icon(feature.icon, 'icon--gray product__feature-icon')
+                                        .product__feature-inf
+                                            span.product__feature-name #{feature.name}:
+                                            span.text.product__feature-value #{feature.value}
+                    if item.colors
+                        .product__meta
+                            .color-switcher.product__colors
+                                .color-switcher__list
+                                    each color in item.colors
+                                        label.color-switcher__label
+                                            input.color-switcher__input(type='radio' name='color' + item.id)
+                                            .color-switcher__elem(style='background-color: ' + color)
+                                if item.colors_count
+                                    .color-switcher__count +#{item.colors_count}
+                    if item.status
+                        .status.product__status(class='status--' + item.status.type) #{item.status.text}
+        .product__addition
+            .product__addition-content
+                .product__meta
+                    span.text.product__installment
+                        | Рассрочка от
+                        span.product__installment-value 1200 ₸
+                    span.product__code Код товара: 13241
+                .product__footer
+                    .select.select--small.product__select
+                        select.select__field
+                            option(value="80x220") 80 см х 220 см 
+                            option(value="81x220") 81 см х 220 см 
+                            option(value="82x220") 82 см х 220 см
+                        +icon('arrow_right', 'icon--primary select__icon')
+                    .product__btn-group
+                        button.btn.product__btn Подробнее

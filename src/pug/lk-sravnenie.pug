@@ -1,15 +1,22 @@
 extends layouts/_layout.pug
 
+block vars
+    - var header_name = 'lk'
+    - var bottom_menu_link = 'profile'
+
 block title
     | Кабинет - Сравнение
 
 block content
-    main.main
+    main.main.main--lk
         .container
             .lk
                 .lk__main
                     .compare
-                        h1.title2.compare__title Сравнение
+                        h1.title2.lk__title
+                            | Сравнение
+                            .value.lk__mobile-count 16
+                            +icon('arrow_right', 'icon--primary lk__title-arrow')
                         .compare__filters
                             span.text.compare__count Товаров: 16
                             label.checkbox.checkbox--accept.compare__filter-diff
@@ -53,7 +60,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.9
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 24
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -90,7 +97,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.7
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 15
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -122,7 +129,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.9
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 24
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -154,7 +161,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.7
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 15
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -186,7 +193,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.9
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 24
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -218,7 +225,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.7
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 15
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -250,7 +257,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.9
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 24
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -291,7 +298,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.9
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 24
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -328,7 +335,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.7
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 15
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -360,7 +367,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.9
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 24
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -401,7 +408,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.9
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 24
                                                         .compare-item__details
                                                             .compare-item__detail
@@ -438,7 +445,7 @@ block content
                                                                         span.rate__star
                                                             .dark-text.compare-item__rate-value 4.7
                                                             .compare-item__reviews-count
-                                                                | Отзывов:
+                                                                span.compare-item__reviews-count-text Отзывов:
                                                                 span.compare-item__reviews-count-value 15
                                                         .compare-item__details
                                                             .compare-item__detail

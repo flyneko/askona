@@ -45,8 +45,8 @@
 
   @media screen and (max-width: 580px)
     &__product
-      padding-right: 16px
-      padding-left: 16px
+      padding-right: calc($container-offset / 2 + 1px)
+      padding-left: calc($container-offset / 2 + 1px)
 
       .product__img-box
         height: 120px
@@ -65,7 +65,7 @@
 
     &__reviews
       margin-top: 15px
-      padding: 12px $container-offset
+      padding: 12px calc($container-offset / 2)
       border-top: 1px solid #eee
 
     &__reviews-count
@@ -88,6 +88,10 @@
     &__rate-value
       font-size: 12px
       margin-left: 7px
+
+    &__details
+      margin-left: calc(-#{$container-offset} / 2)
+      margin-right: calc(-#{$container-offset} / 2)
 
     &__detail
       font-size: 12px

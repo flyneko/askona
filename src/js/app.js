@@ -419,9 +419,47 @@ window.addEventListener('load', () => {
         }
       }
     });
-  })
+  });
 
+  const $compareMobileSlidersBoxes = document.querySelectorAll('.compare__mobile-slider');
+  $compareMobileSlidersBoxes.forEach($box => {
+    const $slider = $box.querySelector('.compare__mobile-slider-main');
+    const $pagination = $box.querySelector('.compare__mobile-slider-pagination');
+    const initialSlide = $slider.dataset.initialSlide ? $slider.dataset.initialSlide : 0;
 
+    new Swiper($slider, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      watchSlidesProgress: true,
+      initialSlide,
+      enabled: true,
+      breakpoints: {
+        580: {
+          enabled: false
+        }
+      },
+      pagination: {
+        el: $pagination,
+        clickable: true
+      },
+      on: {
+        init() {
+          setTimeout(() => updateFraction(this, 'compare__mobile-slider-fraction'), 0);
+        },
+        slideChange() {
+          updateFraction(this, 'compare__mobile-slider-fraction');
+        },
+        resize() {
+          updateFraction(this, 'compare__mobile-slider-fraction');
+        },
+      }
+    });
+  });
+
+  function updateFraction(slider, fractionClass) {
+    const $fraction = slider.$el[0].querySelector(`.${fractionClass}`);
+    $fraction.innerText = `${slider.realIndex + 1} из ${slider.slides.length}`;
+  }
   /**
    * Отзывы
    */
@@ -1113,22 +1151,28 @@ window.addEventListener('load', () => {
   /**
    * Табы
    */
-  const $tabsBtns = document.querySelectorAll('.tabs__btn');
-  $tabsBtns.forEach(($btn, index) => {
-    $btn.addEventListener('click', () => {
-      const $tabs = $btn.closest('.tabs');
+  const $tabsLists = document.querySelectorAll('.tabs');
+  $tabsLists.forEach($tabs => {
+    const $btns = $tabs.querySelectorAll('.tabs__btn');
+    $btns.forEach(($btn, index) => {
+      const delay = $btn.dataset.delay || 0;
 
-      const $oldActiveBtn = $tabs.querySelector('.tabs__btn--active');
-      $oldActiveBtn.classList.remove('tabs__btn--active');
+      $btn.addEventListener('click', () => {
+        const $oldActiveBtn = $tabs.querySelector('.tabs__btn--active');
+        const $oldActiveTab = $tabs.querySelector('.tabs__item--active');
+        const $newActiveBtn = $tabs.querySelectorAll('.tabs__btn')[index];
+        const $newActiveTab = $tabs.querySelectorAll('.tabs__item')[index];
 
-      const $newActiveBtn = $tabs.querySelectorAll('.tabs__btn')[index];
-      $newActiveBtn.classList.add('tabs__btn--active');
+        $oldActiveTab.classList.remove('tabs__item--active');
+        $newActiveTab.classList.add('tabs__item--active', 'tabs__item--hide');
 
-      const $oldActiveTab = $tabs.querySelector('.tabs__item--active');
-      $oldActiveTab.classList.remove('tabs__item--active');
+        $oldActiveBtn.classList.remove('tabs__btn--active');
 
-      const $newActiveTab = $tabs.querySelectorAll('.tabs__item')[index];
-      $newActiveTab.classList.add('tabs__item--active');
+        setTimeout(() => {
+          $newActiveBtn.classList.add('tabs__btn--active');
+          $newActiveTab.classList.remove('tabs__item--hide');
+        }, delay);
+      });
     });
   });
 
@@ -1140,18 +1184,65 @@ window.addEventListener('load', () => {
     setCompareDetailsHeights();
     window.addEventListener('resize', setCompareDetailsHeights)
 
-    const $tabsList = $compare.querySelector('.compare__tabs-list');
-    $tabsList.classList.add('compare__tabs-list--active');
+    const $tabsLists = $compare.querySelectorAll('.compare__tabs-list');
+    $tabsLists.forEach($list => $list.classList.add('compare__tabs-list--active'));
+
+    compareProductsHeightsHandler();
+    const $compareTabsBtns = $compare.querySelectorAll('.compare__tabs-btn');
+    $compareTabsBtns.forEach($btn => {
+      $btn.addEventListener('click', compareProductsHeightsHandler);
+    })
+  }
+
+  function compareProductsHeightsHandler() {
+    if (window.innerWidth <= 580) {
+      setCompareProductsHeights();
+    }
+  }
+
+  function setCompareProductsHeights() {
+    const $mobileTabsItems = $compare.querySelectorAll('.compare__tabs--mobile .tabs__item');
+    $mobileTabsItems.forEach($item => {
+      const $compareFilters = $compare.querySelector('.compare__filters');
+      $compareFilters.classList.add('compare__filters--hide');
+
+      setTimeout(() => {
+        const $products = $item.querySelectorAll('.compare__tabs--mobile .compare-item__product');
+        const productsHeights = [...$products].map($product => $product.offsetHeight);
+        const maxHeight = Math.max(...productsHeights);
+
+        if (maxHeight !== 0) {
+          $products.forEach($product => $product.style.height = `${maxHeight}px`);
+          const additionHeaderHeight = 115;
+          $compareFilters.style.top = `${maxHeight + additionHeaderHeight}px`;
+        }
+
+        $compareFilters.classList.remove('compare__filters--hide');
+      }, 200);
+    });
   }
 
   function setCompareDetailsHeights() {
-    const $compareItems = document.querySelectorAll('.compare-item');
+    let $compareItems;
+    if (window.innerWidth <= 580) {
+      $compareItems = document.querySelectorAll('.compare__tabs--mobile .compare-item');
+    } else {
+      $compareItems = document.querySelectorAll('.compare__tabs--desktop .compare-item');
+    }
+
+    $compareItems.forEach($item => {
+      const $details = $item.querySelectorAll('.compare-item__detail');
+      $details.forEach($detail => $detail.setAttribute('style', ''));
+    });
+
     const $firstCompareDetails = $compareItems[0].querySelectorAll('.compare-item__detail');
     const detailsMaxHeights = [...$firstCompareDetails].map($detail => $detail.offsetHeight);
 
     $compareItems.forEach($item => {
       const $details = $item.querySelectorAll('.compare-item__detail');
       $details.forEach(($detail, index) => {
+        $detail.setAttribute('style', '');
+
         if (detailsMaxHeights[index] < $detail.offsetHeight) {
           detailsMaxHeights[index] = $detail.offsetHeight;
         }

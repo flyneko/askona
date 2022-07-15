@@ -34,6 +34,11 @@ html(lang="ru")
         include ../modals/_mobile-menu.pug
         include ../modals/_bottom-menu.pug
 
+        if is_login
+            include ../modals/_profile-menu-login.pug
+        else 
+            include ../modals/_profile-menu-not-login.pug
+
         block scripts
         script(src='assets/js/vendors.min.js')
         script(src='assets/js/app.js?v=' + Math.round(Math.random() * 100000000))

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css?v=92299319">
+    <link rel="stylesheet" href="assets/css/styles.css?v=14643518">
   </head>
   <body class="body">
     <div class="banner banner--lk"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
@@ -1795,7 +1795,7 @@
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
             </svg>Избранное</a></div>
         <div class="bottom-menu__item">
-          <button class="bottom-menu__link bottom-menu__link--active" data-fancybox data-src="#modal-login">
+          <button class="bottom-menu__link js-open-profile-menu">
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#login"></use>
             </svg>Профиль
@@ -1803,7 +1803,70 @@
         </div>
       </div>
     </div>
+    <div class="profile-menu">
+      <div class="profile-menu__content js-custom-scrollbar" data-speed="0.5">
+        <div class="profile-menu__user">
+          <div class="profile-menu__user-avatar">
+            <svg class="icon profile-menu__user-icon"> 
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#login"></use>
+            </svg>
+          </div>
+          <div class="profile-menu__user-inf">
+            <div class="profile-menu__user-title">Сергей Григорян</div>
+            <div class="profile-menu__user-text">Бонусов:<span class="profile-menu__user-value">20 000</span></div>
+          </div>
+        </div>
+        <ul class="profile-menu__list">
+          <li class="profile-menu__item"><a class="profile-menu__link" href="#"> 
+              <svg class="icon icon--stroke-dark profile-menu__item-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#location"></use>
+              </svg><span class="profile-menu__text">Выбор города:</span><span class="dark-text profile-menu__city-value">Алмата</span>
+              <svg class="icon icon--gray profile-menu__arrow"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg></a></li>
+          <li class="profile-menu__item"><a class="profile-menu__link" href="lk-izbrannoe.html"> 
+              <svg class="icon profile-menu__item-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
+              </svg><span class="profile-menu__text">Избранное</span><span class="value profile-menu__value">11</span>
+              <svg class="icon icon--gray profile-menu__arrow"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg></a></li>
+          <li class="profile-menu__item"><a class="profile-menu__link" href="lk-sravnenie.html"> 
+              <svg class="icon profile-menu__item-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#sravnenie"></use>
+              </svg><span class="profile-menu__text">Сравнение</span><span class="value profile-menu__value">8</span>
+              <svg class="icon icon--gray profile-menu__arrow"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg></a></li>
+          <li class="profile-menu__item"><a class="profile-menu__link" href="#"> 
+              <svg class="icon icon--stroke-dark profile-menu__item-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#time"></use>
+              </svg><span class="profile-menu__text">Статус заказа</span>
+              <svg class="icon icon--gray profile-menu__arrow"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg></a></li>
+        </ul>
+        <div class="dark-text profile-menu__title">Помощь</div>
+        <ul class="profile-menu__list">
+          <li class="profile-menu__item"><a class="profile-menu__link" href="#"> 
+              <svg class="icon profile-menu__item-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#shop"></use>
+              </svg><span class="profile-menu__text">Магазины</span>
+              <svg class="icon icon--gray profile-menu__arrow"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg></a></li>
+          <li class="profile-menu__item"><a class="profile-menu__link" href="#"> 
+              <svg class="icon profile-menu__item-icon"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#dostavka"></use>
+              </svg><span class="profile-menu__text">Доставка</span>
+              <svg class="icon icon--gray profile-menu__arrow"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg></a></li>
+          <li class="profile-menu__item"><a class="profile-menu__link" href="#"> <span class="profile-menu__text">Выйти из аккаунта</span></a></li>
+        </ul>
+      </div>
+    </div>
     <script src="assets/js/vendors.min.js"></script>
-    <script src="assets/js/app.js?v=72564821"></script>
+    <script src="assets/js/app.js?v=5522230"></script>
   </body>
 </html>

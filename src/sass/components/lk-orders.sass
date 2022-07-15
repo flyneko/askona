@@ -1,7 +1,21 @@
 .lk-orders
-  &__title
-    margin-bottom: 20px
+  &__list
+    margin-top: 20px
 
   &__item
     &:not(:first-child)
       margin-top: 16px
+
+  @media screen and (max-width: 767px)
+    &__list
+      margin-top: 16px
+      
+    &__item
+      margin-left: -#{$container-offset}
+      margin-right: -#{$container-offset}
+      padding-left: $container-offset
+      padding-right: $container-offset
+
+      &:not(:first-child)
+        border-top: 1px solid #eee
+        padding-top: 16px

@@ -4,6 +4,15 @@
   justify-content: space-between
   align-items: flex-start
 
+  &__mobile-count
+    margin-left: auto
+    flex: 0 0 auto
+    width: 26px
+    height: 26px
+    font-size: 12px
+    font-weight: 400
+    display: none
+
   &__sidebar
     margin-right: 32px
     flex: 0 0 328px
@@ -13,12 +22,64 @@
     min-width: 0
 
   &__title
-    text-align: left
     max-width: 560px
     line-height: 0.89
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__title-arrow
+    margin-left: 15px
+    display: none
+    flex: 0 0 auto
+    width: 5px
+    height: 8px
+    transform: rotate(90deg)
 
   &__bonus
     margin-top: 30px
 
-  &__table
+  &__table-box
     margin-top: 32px
+
+  @media screen and (max-width: 1360px)
+    padding-top: 32px
+    
+    &__sidebar
+      flex-basis: 312px
+      margin-right: 24px
+      padding: 24px
+
+  @media screen and (max-width: 1140px)
+    &__sidebar
+      flex-basis: 296px
+      margin-right: 20px
+      padding: 16px
+
+  @media screen and (max-width: 991px)
+    padding-bottom: 32px
+    
+    &__sidebar
+      display: none
+
+  @media screen and (max-width: 767px)
+    padding-top: 16px
+    padding-bottom: 24px
+
+    &__bonus
+      margin-top: 24px
+
+    &__title
+      padding: 0 $container-offset $container-offset
+      margin: 0 -#{$container-offset}
+      border-bottom: 1px solid #eeeeee
+      max-width: none
+
+    &__mobile-count
+      display: flex
+
+    &__title-arrow
+      display: inline-block
+    
+    &__table-box
+      margin: 16px -#{$container-offset} 0

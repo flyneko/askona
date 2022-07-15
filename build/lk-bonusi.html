@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css?v=51024975">
+    <link rel="stylesheet" href="assets/css/styles.css?v=92299319">
   </head>
   <body class="body">
-    <div class="banner"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
-    <header class="header">
+    <div class="banner banner--lk"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
+    <header class="header header--lk">
       <div class="container">
         <div class="header__top"><a class="logo header__logo" href="index.html"><object class="logo__object" data="assets/img/logo.svg" type="image/svg+xml"></object></a>
           <div class="cities-menu header__cities-menu">
@@ -89,7 +89,7 @@
         </div>
       </div>
     </header>
-    <main class="main">
+    <main class="main main--lk">
       <div class="container">
         <div class="lk">
           <aside class="lk-sidebar lk__sidebar">
@@ -125,66 +125,75 @@
             </ul>
           </aside>
           <div class="lk__main">
-            <h1 class="title2 lk__title">Вступайте в клуб здорового сна и получайте привилегии</h1>
-            <div class="lk-bonus lk__bonus"><img class="lk-bonus__img" src="assets/img/bonus.png" alt="">
-              <div class="lk-bonus__inf">
-                <div class="lk-bonus__main">
-                  <button class="btn btn--yellow lk-bonus__btn">Поделиться или получить бонусы</button>
-                  <div class="lk-bonus__item">Активные бонусы:<span class="lk-bonus__value">20 000</span></div>
-                  <div class="lk-bonus__item">Неактивные бонусы:<span class="lk-bonus__value">20 000</span></div>
-                  <div class="lk-bonus__item">Дата сгорания бонусов:<span class="lk-bonus__date">22.07.2022</span></div>
+            <h1 class="title2 lk__title">Вступайте в клуб здорового сна и получайте привилегии
+              <svg class="icon icon--primary lk__title-arrow"> 
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+              </svg>
+            </h1>
+            <div class="lk-bonus lk__bonus">
+              <div class="lk-bonus__main"><img class="lk-bonus__img" src="assets/img/bonus.png" alt="">
+                <div class="lk-bonus__inf">
+                  <div class="lk-bonus__inf-main">
+                    <button class="btn btn--yellow lk-bonus__btn">Поделиться или получить бонусы</button>
+                    <div class="lk-bonus__item">Активные бонусы:<span class="lk-bonus__value">20 000</span></div>
+                    <div class="lk-bonus__item">Неактивные бонусы:<span class="lk-bonus__value">20 000</span></div>
+                    <div class="lk-bonus__item">Дата сгорания бонусов:<span class="lk-bonus__date">22.07.2022</span></div>
+                  </div>
+                  <p class="text lk-bonus__text">Вы можете использовать при покупке товаров до 50% активных бонусов от общей суммы.</p>
                 </div>
-                <p class="text lk-bonus__text">Вы можете использовать при покупке товаров до 50% активных бонусов от общей суммы.</p>
               </div>
+              <div class="lk-bonus__footer"></div>
             </div>
-            <table class="table lk__table">
-              <thead>
-                <tr>
-                  <th>Дата</th>
-                  <th>Количество</th>
-                  <th>Дата активации</th>
-                  <th>Дата сгорания</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>30.11.2021</td>
-                  <td class="table__plus">+ 10 000</td>
-                  <td>30.11.2021</td>
-                  <td>26.12.2021</td>
-                </tr>
-                <tr>
-                  <td>28.08.2021</td>
-                  <td class="table__minus">- 3 000</td>
-                  <td>28.08.2021</td>
-                  <td>27.09.2021</td>
-                </tr>
-                <tr>
-                  <td>28.08.2021</td>
-                  <td class="table__minus">- 3 000</td>
-                  <td>28.08.2021</td>
-                  <td>27.09.2021</td>
-                </tr>
-                <tr>
-                  <td>30.11.2021</td>
-                  <td class="table__minus">- 10 000</td>
-                  <td>30.11.2021</td>
-                  <td>26.12.2021</td>
-                </tr>
-                <tr>
-                  <td>28.08.2021</td>
-                  <td class="table__plus">+ 3 000</td>
-                  <td>28.08.2021</td>
-                  <td>27.09.2021</td>
-                </tr>
-                <tr>
-                  <td>28.08.2021</td>
-                  <td class="table__plus">+ 3 000</td>
-                  <td>28.08.2021</td>
-                  <td>27.09.2021</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="lk__table-box">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Дата</th>
+                    <th>Количество</th>
+                    <th>Дата активации</th>
+                    <th>Дата сгорания</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>30.11.2021</td>
+                    <td class="table__plus">+ 10 000</td>
+                    <td>30.11.2021</td>
+                    <td>26.12.2021</td>
+                  </tr>
+                  <tr>
+                    <td>28.08.2021</td>
+                    <td class="table__minus">- 3 000</td>
+                    <td>28.08.2021</td>
+                    <td>27.09.2021</td>
+                  </tr>
+                  <tr>
+                    <td>28.08.2021</td>
+                    <td class="table__minus">- 3 000</td>
+                    <td>28.08.2021</td>
+                    <td>27.09.2021</td>
+                  </tr>
+                  <tr>
+                    <td>30.11.2021</td>
+                    <td class="table__minus">- 10 000</td>
+                    <td>30.11.2021</td>
+                    <td>26.12.2021</td>
+                  </tr>
+                  <tr>
+                    <td>28.08.2021</td>
+                    <td class="table__plus">+ 3 000</td>
+                    <td>28.08.2021</td>
+                    <td>27.09.2021</td>
+                  </tr>
+                  <tr>
+                    <td>28.08.2021</td>
+                    <td class="table__plus">+ 3 000</td>
+                    <td>28.08.2021</td>
+                    <td>27.09.2021</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -1769,7 +1778,7 @@
     </div>
     <div class="bottom-menu">
       <div class="bottom-menu__list">
-        <div class="bottom-menu__item"><a class="bottom-menu__link bottom-menu__link--active" href="home.html">
+        <div class="bottom-menu__item"><a class="bottom-menu__link" href="home.html">
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#glavnaya"></use>
             </svg>Главная</a></div>
@@ -1781,12 +1790,12 @@
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#cart"></use>
             </svg>Корзина<span class="bottom-menu__value">2</span></a></div>
-        <div class="bottom-menu__item"> <a class="bottom-menu__link" href="#">
+        <div class="bottom-menu__item"> <a class="bottom-menu__link" href="lk-izbrannoe.html">
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
             </svg>Избранное</a></div>
         <div class="bottom-menu__item">
-          <button class="bottom-menu__link" data-fancybox data-src="#modal-login">
+          <button class="bottom-menu__link bottom-menu__link--active" data-fancybox data-src="#modal-login">
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#login"></use>
             </svg>Профиль
@@ -1795,6 +1804,6 @@
       </div>
     </div>
     <script src="assets/js/vendors.min.js"></script>
-    <script src="assets/js/app.js?v=66471431"></script>
+    <script src="assets/js/app.js?v=72564821"></script>
   </body>
 </html>

@@ -1,10 +1,14 @@
 extends layouts/_layout.pug
 
+block vars
+    - var header_name = 'lk'
+    - var bottom_menu_link = 'profile'
+
 block title
     | Кабинет - Персональные данные
 
 block content
-    main.main
+    main.main.main--lk
         .container
             .lk
                 aside.lk-sidebar.lk__sidebar
@@ -42,7 +46,9 @@ block content
                                 | Выход
                 .lk__main
                     .personal
-                        h1.title2.personal__title Персональные данные
+                        h1.title2.lk__title
+                            | Персональные данные
+                            +icon('arrow_right', 'icon--primary lk__title-arrow')
                         form.personal-form.personal__form(autocomplete="off")
                             label.personal-form__label
                                 span.personal-form__text Имя:

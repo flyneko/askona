@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css?v=62410668">
+    <link rel="stylesheet" href="assets/css/styles.css?v=52647177">
   </head>
   <body class="body">
-    <div class="banner"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
-    <header class="header">
+    <div class="banner banner--lk"><img class="banner__img" src="assets/img/banner.jpg" alt=""></div>
+    <header class="header header--lk">
       <div class="container">
         <div class="header__top"><a class="logo header__logo" href="index.html"><object class="logo__object" data="assets/img/logo.svg" type="image/svg+xml"></object></a>
           <div class="cities-menu header__cities-menu">
@@ -89,7 +89,7 @@
         </div>
       </div>
     </header>
-    <main class="main">
+    <main class="main main--lk">
       <div class="container">
         <div class="lk">
           <aside class="lk-sidebar lk__sidebar">
@@ -126,7 +126,12 @@
           </aside>
           <div class="lk__main">
             <div class="lk-orders">
-              <h1 class="title2 lk-orders__title">Заказы</h1>
+              <h1 class="title2 lk__title">
+                 Заказы
+                <svg class="icon icon--primary lk__title-arrow"> 
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                </svg>
+              </h1>
               <div class="lk-orders__list">
                 <div class="lk-order lk-orders__item">
                   <div class="lk-order__header">
@@ -149,12 +154,16 @@
                     </div>
                   </div>
                   <div class="lk-order__footer">
-                    <div class="lk-order__address"><b>Доставка: <br></b>655993, г. Алматы, <br>
-                      ул. Кабдолова, дом 1/8, кв. 90
-                    </div>
+                    <div class="lk-order__address"><b>Доставка: <br></b><span class="lk-order__address-item">655993, г. Алматы,</span><span class="lk-order__address-item">ул. Кабдолова, дом 1/8, кв. 90</span></div>
+                    <div class="lk-order__mobile-count">Товаров: 2</div>
                     <div class="lk-order__price-text">Сумма заказа:</div>
                     <div class="lk-order__price-value">51 200 тг.</div>
                   </div>
+                  <button class="lk-order__more" data-toggle-text="Свернуть"><span class="lk-order__more-text">Подробнее</span>
+                    <svg class="icon icon--primary lk-order__more-arrow"> 
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                    </svg>
+                  </button>
                 </div>
                 <div class="lk-order lk-orders__item">
                   <div class="lk-order__header">
@@ -172,12 +181,16 @@
                     </div>
                   </div>
                   <div class="lk-order__footer">
-                    <div class="lk-order__address"><b>Доставка: <br></b>655993, г. Алматы, <br>
-                      ул. Кабдолова, дом 1/8, кв. 90
-                    </div>
+                    <div class="lk-order__address"><b>Доставка: <br></b><span class="lk-order__address-item">655993, г. Алматы,</span><span class="lk-order__address-item">ул. Кабдолова, дом 1/8, кв. 90</span></div>
+                    <div class="lk-order__mobile-count">Товаров: 1</div>
                     <div class="lk-order__price-text">Сумма заказа:</div>
                     <div class="lk-order__price-value">149 000 тг.</div>
                   </div>
+                  <button class="lk-order__more" data-toggle-text="Свернуть"><span class="lk-order__more-text">Подробнее</span>
+                    <svg class="icon icon--primary lk-order__more-arrow"> 
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#arrow_right"></use>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1765,7 +1778,7 @@
     </div>
     <div class="bottom-menu">
       <div class="bottom-menu__list">
-        <div class="bottom-menu__item"><a class="bottom-menu__link bottom-menu__link--active" href="home.html">
+        <div class="bottom-menu__item"><a class="bottom-menu__link" href="home.html">
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#glavnaya"></use>
             </svg>Главная</a></div>
@@ -1777,12 +1790,12 @@
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#cart"></use>
             </svg>Корзина<span class="bottom-menu__value">2</span></a></div>
-        <div class="bottom-menu__item"> <a class="bottom-menu__link" href="#">
+        <div class="bottom-menu__item"> <a class="bottom-menu__link" href="lk-izbrannoe.html">
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#izbrannoe"></use>
             </svg>Избранное</a></div>
         <div class="bottom-menu__item">
-          <button class="bottom-menu__link" data-fancybox data-src="#modal-login">
+          <button class="bottom-menu__link bottom-menu__link--active" data-fancybox data-src="#modal-login">
             <svg class="icon bottom-menu__icon"> 
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/icons/icons.svg#login"></use>
             </svg>Профиль
@@ -1791,6 +1804,6 @@
       </div>
     </div>
     <script src="assets/js/vendors.min.js"></script>
-    <script src="assets/js/app.js?v=22745788"></script>
+    <script src="assets/js/app.js?v=89776378"></script>
   </body>
 </html>

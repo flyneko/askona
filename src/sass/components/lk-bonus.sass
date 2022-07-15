@@ -1,6 +1,7 @@
 .lk-bonus
-  display: flex
-  align-items: flex-start
+  &__main
+    display: flex
+    align-items: flex-start
 
   &__img
     margin-right: 32px
@@ -15,7 +16,7 @@
     &:not(:first-child)
       margin-top: 18px
   
-  &__main
+  &__inf-main
     max-width: 320px
     border-bottom: 1px solid #eeeeee
     padding-bottom: 24px
@@ -29,8 +30,69 @@
     font-size: 22px
     font-weight: 600
     color: $color-secondary
+    margin-left: 2px
+    flex: 0 0 auto
+
+  &__date
+    margin-left: 2px
+    flex: 0 0 auto
 
   &__text
     margin-top: 26px
     max-width: 560px
     font-size: 16px
+
+  @media screen and (max-width: 1140px)
+    &__img
+      margin-right: 24px
+      max-width: 320px
+
+    &__text
+      font-size: 15px
+
+  @media screen and (max-width: 767px)
+    &__main
+      align-items: center
+
+    &__img
+      margin-right: 15px
+      max-width: 230px
+
+    &__inf &__text
+      display: none
+
+    &__inf-main
+      border-bottom: none
+      padding-bottom: 0
+
+    &__inf-main &__btn
+      display: none
+
+    &__item
+      font-size: 14px
+      align-items: flex-end
+      
+    &__value
+      font-size: 16px
+
+    &__date
+      font-size: 14px
+
+    &__btn
+      margin-top: 10px
+      font-size: 14px
+      height: 40px
+
+    &__text
+      margin-top: 20px
+
+  @media screen and (max-width: 480px)
+    &__img
+      margin-left: -70px
+
+  @media screen and (max-width: 340px)
+    &__img
+      max-width: 220px
+
+    &__item
+      font-size: 12px

@@ -1,7 +1,4 @@
 .favorites
-  &__title
-    text-align: left
-
   &__header
     display: flex
     align-items: center
@@ -25,3 +22,53 @@
   &__item
     width: calc(100% / 3 - 32px)
     margin: 16px
+
+  @media screen and (max-width: 1140px)
+    &__item
+      width: calc(50% - 32px)
+
+  @media screen and (max-width: 991px)
+    &__item
+      width: calc(100% / 3 - 32px)
+
+  @media screen and (max-width: 860px)
+    &__list
+      margin: -12px
+
+    &__item
+      width: calc(50% - 24px)
+      margin: 12px
+
+  @media screen and (max-width: 767px)
+    &__header
+      display: none
+
+  @media screen and (max-width: 580px)
+    &__list
+      margin-left: 0
+      margin-right: 0
+
+    &__item.product
+      width: 100% 
+      margin-left: 0
+      margin-right: 0
+
+      &:not(:last-child)
+        border-bottom: 1px solid #eeeeee
+
+      .product__main
+        align-items: center
+        flex-direction: row
+
+      .product__img-box
+        flex: 0 0 53%
+        max-width: 172px
+
+      .product__img
+        width: auto
+
+      .product__close,
+      .product__footer,
+      .product__code,
+      .product__installment
+        display: none

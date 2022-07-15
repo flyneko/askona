@@ -1,0 +1,32 @@
+mixin compare_item(product_index, options = {})
+    .compare-item.compare__item
+        +card_favorite(product_index, { class: 'product--no-hover compare-item__product' })
+        .compare-item__reviews
+            .rate.compare-item__rate
+                .rate__stars
+                    span.rate__star 
+                    span.rate__star 
+                    span.rate__star 
+                    span.rate__star 
+                    span.rate__star 
+                    .rate__active(style="width: 90%;")
+                        span.rate__star 
+                        span.rate__star 
+                        span.rate__star 
+                        span.rate__star 
+                        span.rate__star
+            .dark-text.compare-item__rate-value !{options.rate_value}
+            .compare-item__reviews-count
+                span.compare-item__reviews-count-text Отзывов:
+                span.compare-item__reviews-count-value !{options.rate_count}
+        if options.details_values && options.details_names
+            .compare-item__details
+                each detail, index in options.details_values
+                    .compare-item__detail
+                        .compare-item__detail-text !{options.details_names[index]}:
+                        .compare-item__detail-value !{detail}
+        else if options.details_values
+            .compare-item__details
+                each detail in options.details_values
+                    .compare-item__detail
+                        .compare-item__detail-value !{detail}

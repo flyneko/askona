@@ -1,10 +1,14 @@
 extends layouts/_layout.pug
 
+block vars
+    - var header_name = 'lk'
+    - var bottom_menu_link = 'profile'
+
 block title
     | Кабинет - Заказы
 
 block content
-    main.main
+    main.main.main--lk
         .container
             .lk
                 aside.lk-sidebar.lk__sidebar
@@ -42,7 +46,9 @@ block content
                                 | Выход
                 .lk__main
                     .lk-orders
-                        h1.title2.lk-orders__title Заказы
+                        h1.title2.lk__title 
+                            | Заказы
+                            +icon('arrow_right', 'icon--primary lk__title-arrow')
                         .lk-orders__list
                             .lk-order.lk-orders__item
                                 .lk-order__header
@@ -62,10 +68,14 @@ block content
                                 .lk-order__footer
                                     .lk-order__address
                                         b Доставка: <br>
-                                        | 655993, г. Алматы, <br>
-                                        | ул. Кабдолова, дом 1/8, кв. 90
+                                        span.lk-order__address-item 655993, г. Алматы,
+                                        span.lk-order__address-item ул. Кабдолова, дом 1/8, кв. 90
+                                    .lk-order__mobile-count Товаров: 2
                                     .lk-order__price-text Сумма заказа:
                                     .lk-order__price-value 51 200 тг.
+                                button.lk-order__more(data-toggle-text="Свернуть")
+                                    span.lk-order__more-text Подробнее
+                                    +icon('arrow_right', 'icon--primary lk-order__more-arrow')
                             .lk-order.lk-orders__item
                                 .lk-order__header
                                     .lk-order__info
@@ -73,14 +83,18 @@ block content
                                         .lk-order__date 17..01.2020
                                     .lk-order__status.lk-order__status--error Отменен
                                 .lk-order__list
-                                    .lk-order__item
-                                        .lk-order__item-name Тумба Vesta (Веста) соснаБР цв. Venge 2
-                                        .lk-order__item-count x 2 шт.
-                                        .lk-order__item-price 149 000 тг.
+                                        .lk-order__item
+                                            .lk-order__item-name Тумба Vesta (Веста) соснаБР цв. Venge 2
+                                            .lk-order__item-count x 2 шт.
+                                            .lk-order__item-price 149 000 тг.
                                 .lk-order__footer
                                     .lk-order__address
                                         b Доставка: <br>
-                                        | 655993, г. Алматы, <br>
-                                        | ул. Кабдолова, дом 1/8, кв. 90
+                                        span.lk-order__address-item 655993, г. Алматы,
+                                        span.lk-order__address-item ул. Кабдолова, дом 1/8, кв. 90
+                                    .lk-order__mobile-count Товаров: 1
                                     .lk-order__price-text Сумма заказа:
                                     .lk-order__price-value 149 000 тг.
+                                button.lk-order__more(data-toggle-text="Свернуть")
+                                    span.lk-order__more-text Подробнее
+                                    +icon('arrow_right', 'icon--primary lk-order__more-arrow')

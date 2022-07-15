@@ -1,10 +1,14 @@
 extends layouts/_layout.pug
 
+block vars
+    - var header_name = 'lk'
+    - var bottom_menu_link = 'favorites'
+
 block title
     | Кабинет - Избранное
 
 block content
-    main.main
+    main.main.main--lk
         .container
             .lk
                 aside.lk-sidebar.lk__sidebar
@@ -42,7 +46,10 @@ block content
                                 | Выход
                 .lk__main
                     .favorites.lk__favorites
-                        h1.title2.favorites__title Избранное
+                        h1.title2.lk__title
+                            | Избранное
+                            .value.lk__mobile-count 11
+                            +icon('arrow_right', 'icon--primary lk__title-arrow')
                         .favorites__header
                             span.text Товаров: 4
                             .favorites__header-btns

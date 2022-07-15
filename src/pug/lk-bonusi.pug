@@ -1,10 +1,14 @@
 extends layouts/_layout.pug
 
+block vars
+    - var header_name = 'lk'
+    - var bottom_menu_link = 'profile'
+
 block title
     | Кабинет - Бонусы
 
 block content
-    main.main
+    main.main.main--lk
         .container
             .lk
                 aside.lk-sidebar.lk__sidebar
@@ -41,57 +45,62 @@ block content
                                 +icon('logout', 'icon--gray lk-sidebar__icon lk-sidebar__icon--stroke')
                                 | Выход
                 .lk__main
-                    h1.title2.lk__title Вступайте в клуб здорового сна и получайте привилегии
+                    h1.title2.lk__title
+                        | Вступайте в клуб здорового сна и получайте привилегии
+                        +icon('arrow_right', 'icon--primary lk__title-arrow')
                     .lk-bonus.lk__bonus
-                        img.lk-bonus__img(src="assets/img/bonus.png" alt="")
-                        .lk-bonus__inf
-                            .lk-bonus__main
-                                button.btn.btn--yellow.lk-bonus__btn Поделиться или получить бонусы
-                                .lk-bonus__item
-                                    | Активные бонусы:
-                                    span.lk-bonus__value 20 000
-                                .lk-bonus__item
-                                    | Неактивные бонусы:
-                                    span.lk-bonus__value 20 000
-                                .lk-bonus__item
-                                    | Дата сгорания бонусов:
-                                    span.lk-bonus__date 22.07.2022
-                            p.text.lk-bonus__text Вы можете использовать при покупке товаров до 50% активных бонусов от общей суммы.
-                    table.table.lk__table
-                        thead
-                            tr
-                                th Дата
-                                th Количество
-                                th Дата активации
-                                th Дата сгорания
-                        tbody
-                            tr
-                                td 30.11.2021
-                                td.table__plus + 10 000
-                                td 30.11.2021
-                                td 26.12.2021
-                            tr
-                                td 28.08.2021
-                                td.table__minus - 3 000
-                                td 28.08.2021
-                                td 27.09.2021
-                            tr
-                                td 28.08.2021
-                                td.table__minus - 3 000
-                                td 28.08.2021
-                                td 27.09.2021
-                            tr
-                                td 30.11.2021
-                                td.table__minus - 10 000
-                                td 30.11.2021
-                                td 26.12.2021
-                            tr
-                                td 28.08.2021
-                                td.table__plus + 3 000
-                                td 28.08.2021
-                                td 27.09.2021
-                            tr
-                                td 28.08.2021
-                                td.table__plus + 3 000
-                                td 28.08.2021
-                                td 27.09.2021
+                        .lk-bonus__main
+                            img.lk-bonus__img(src="assets/img/bonus.png" alt="")
+                            .lk-bonus__inf
+                                .lk-bonus__inf-main
+                                    button.btn.btn--yellow.lk-bonus__btn Поделиться или получить бонусы
+                                    .lk-bonus__item
+                                        | Активные бонусы:
+                                        span.lk-bonus__value 20 000
+                                    .lk-bonus__item
+                                        | Неактивные бонусы:
+                                        span.lk-bonus__value 20 000
+                                    .lk-bonus__item
+                                        | Дата сгорания бонусов:
+                                        span.lk-bonus__date 22.07.2022
+                                p.text.lk-bonus__text Вы можете использовать при покупке товаров до 50% активных бонусов от общей суммы.
+                        .lk-bonus__footer
+                    .lk__table-box
+                        table.table
+                            thead
+                                tr
+                                    th Дата
+                                    th Количество
+                                    th Дата активации
+                                    th Дата сгорания
+                            tbody
+                                tr
+                                    td 30.11.2021
+                                    td.table__plus + 10 000
+                                    td 30.11.2021
+                                    td 26.12.2021
+                                tr
+                                    td 28.08.2021
+                                    td.table__minus - 3 000
+                                    td 28.08.2021
+                                    td 27.09.2021
+                                tr
+                                    td 28.08.2021
+                                    td.table__minus - 3 000
+                                    td 28.08.2021
+                                    td 27.09.2021
+                                tr
+                                    td 30.11.2021
+                                    td.table__minus - 10 000
+                                    td 30.11.2021
+                                    td 26.12.2021
+                                tr
+                                    td 28.08.2021
+                                    td.table__plus + 3 000
+                                    td 28.08.2021
+                                    td 27.09.2021
+                                tr
+                                    td 28.08.2021
+                                    td.table__plus + 3 000
+                                    td 28.08.2021
+                                    td 27.09.2021

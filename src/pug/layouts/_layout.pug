@@ -33,7 +33,11 @@ html(lang="ru")
         include ../modals/_catalog-menu.pug
         include ../modals/_mobile-menu.pug
         include ../modals/_bottom-menu.pug
-        include ../modals/_profile-menu.pug
+
+        if is_login
+            include ../modals/_profile-menu-login.pug
+        else 
+            include ../modals/_profile-menu-not-login.pug
 
         block scripts
         script(src='assets/js/vendors.min.js')

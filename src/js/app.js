@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
 
   function headerHandler() {
     const $header = document.querySelector('.header');
-    const offsetTop = 48;
+    const offsetTop = getBannerHeight();
 
     if (window.scrollY >= offsetTop && !$header.classList.contains('header--fixed')) {
       $header.classList.add('header--fixed');
@@ -207,6 +207,7 @@ window.addEventListener('load', () => {
       breakpoints: {
         1280: {
           slidesPerView,
+          loop,
           spaceBetween: 32,
           scrollbar: {
             dragSize: 372,
@@ -214,6 +215,7 @@ window.addEventListener('load', () => {
         },
         860: {
           slidesPerView: 3,
+          loop,
           scrollbar: {
             dragSize: 186,
           },
@@ -1078,7 +1080,7 @@ window.addEventListener('load', () => {
 
     function setMobileMenuPosition() {
       const $menu = document.querySelector('.mobile-menu');
-      const $content = $mobileMenu.querySelector('.mobile-menu__content');
+      const $content = $menu.querySelector('.mobile-menu__content');
       const headerHeight = getHeaderHeight();
       const bannerHeight = getBannerHeight();
 
@@ -1088,10 +1090,55 @@ window.addEventListener('load', () => {
       }
 
       $menu.style.top = `calc(${offsetTop}px - 1px)`;
-      $mobileMenu.style.height = `calc(100vh - ${offsetTop}px)`;
+      $menu.style.height = `calc(100vh - ${offsetTop}px)`;
       $content.style.maxHeight = `calc(100vh - ${offsetTop}px)`;
     }
   }
+
+  /**
+   * Мобильное меню профиля
+   */
+   const $profileMenu = document.querySelector('.profile-menu');
+   if ($profileMenu) {
+    const $openProfileMenuBtns = document.querySelectorAll('.js-open-profile-menu');
+    $openProfileMenuBtns.forEach($btn => {
+      $btn.addEventListener('click', () => {
+        setProfileMenuPosition();
+
+        $profileMenu.classList.toggle('profile-menu--show');
+
+        const $icon = $btn.querySelector('.icon');
+        if ($icon) {
+          $icon.classList.toggle('icon--active')
+        }
+
+        if ($profileMenu.classList.contains('profile-menu--show')) {
+          document.body.classList.add('body--lock');
+        } else {
+          document.body.classList.remove('body--lock');
+        }
+      });
+    });
+
+    setProfileMenuPosition();
+
+    function setProfileMenuPosition() {
+      const $menu = document.querySelector('.profile-menu');
+      const $content = $menu.querySelector('.profile-menu__content');
+      const headerHeight = getHeaderHeight();
+      const bannerHeight = getBannerHeight();
+      const bottomMenuHeight = getBottomMenuHeight();
+
+      let offsetTop = headerHeight;
+      if (window.scrollY < bannerHeight) {
+        offsetTop += bannerHeight - window.scrollY;
+      }
+
+      $menu.style.top = `calc(${offsetTop}px)`;
+      $menu.style.height = `calc(100vh - ${offsetTop + bottomMenuHeight}px)`;
+      $content.style.maxHeight = `calc(100vh - ${offsetTop + bottomMenuHeight}px)`;
+    }
+   }
 
   /**
    * Логотип
@@ -1318,6 +1365,15 @@ function getBannerHeight() {
   const $banner = document.querySelector('.banner');
   if ($banner) {
     return $banner.offsetHeight;
+  }
+
+  return 0;
+}
+
+function getBottomMenuHeight() {
+  const $bottomMenu = document.querySelector('.bottom-menu');
+  if ($bottomMenu) {
+    return $bottomMenu.offsetHeight;
   }
 
   return 0;

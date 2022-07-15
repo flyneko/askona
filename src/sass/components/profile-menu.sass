@@ -1,0 +1,109 @@
+.profile-menu
+  position: fixed
+  z-index: 55
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  background: #fff
+  border-top: 1px solid #fcfdfe
+  visibility: hidden
+  transform: translateX(100%)
+  transition: visibility .4s, transform .4s
+  display: none
+
+  &--show
+    transform: translateX(0)
+    visibility: visible
+
+  &__content
+    position: relative
+    max-height: 100vh
+    padding: 0 $container-offset
+
+  &__user
+    margin: 0 -#{$container-offset}
+    padding: 15px $container-offset
+    display: flex
+    align-items: center
+    border-bottom: 1px solid #eee
+
+  &__user-avatar
+    margin-right: 15px
+    flex: 0 0 auto
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    background: #f4f4f4
+    display: flex
+    align-items: center
+    justify-content: center
+
+  &__user-title
+    font-weight: 500
+    color: #262626
+
+  &__user-text
+    margin-top: 3px
+    font-size: 12px
+    color: #878787
+
+  &__user-value
+    font-size: 14px
+    font-weight: 500
+    color: $color-secondary
+    margin-left: 4px
+
+  &__link
+    display: flex
+    align-items: center
+    height: 56px
+    border-bottom: 1px solid #eee
+    margin: 0 -#{$container-offset}
+    padding: 0 $container-offset
+
+  &__item-icon
+    margin-right: 16px
+    width: 18px
+    height: 18px
+
+  &__value
+    width: 24px
+    height: 24px
+    font-size: 12px
+    font-weight: 500
+
+  &__city-value
+    font-size: 14px
+
+  &__text
+    margin-right: auto
+    font-size: 14px
+    color: #878787
+
+  &__arrow
+    width: 5px
+    height: 8px
+    margin-left: 19px
+
+  &__title
+    margin-bottom: 5px
+    font-size: 18px
+
+    &:not(:first-child)
+      margin-top: 25px
+
+  @media screen and (max-width: 991px)
+    display: block
+
+  @media screen and (max-width: 340px)
+    &__user-avatar
+      margin-right: 12px
+      width: 46px
+      height: 46px
+
+    &__user-title
+      font-size: 15px
+
+    &__user-text
+      font-size: 11px

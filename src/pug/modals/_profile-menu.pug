@@ -1,0 +1,52 @@
+.profile-menu
+    .profile-menu__content.js-custom-scrollbar(data-speed="0.5")
+        .profile-menu__user
+            .profile-menu__user-avatar
+                +icon('login', 'profile-menu__user-icon')
+            .profile-menu__user-inf
+                .profile-menu__user-title Сергей Григорян
+                .profile-menu__user-text
+                    | Бонусов:
+                    span.profile-menu__user-value 20 000
+            //- .profile-menu__user-inf
+            //-     .profile-menu__user-title Войдите или зарегистрируйтесь
+            //-     .profile-menu__user-text Чтобы управлять заказами и бонусным счётом
+        ul.profile-menu__list
+            li.profile-menu__item
+                a.profile-menu__link(href="#") 
+                    +icon('location', 'icon--stroke-dark profile-menu__item-icon')
+                    span.profile-menu__text Выбор города:
+                    span.dark-text.profile-menu__city-value Алмата
+                    +icon('arrow_right', 'icon--gray profile-menu__arrow')
+            li.profile-menu__item
+                a.profile-menu__link(href="lk-izbrannoe.html") 
+                    +icon('izbrannoe', 'profile-menu__item-icon')
+                    span.profile-menu__text Избранное
+                    span.value.profile-menu__value 11
+                    +icon('arrow_right', 'icon--gray profile-menu__arrow')
+            li.profile-menu__item
+                a.profile-menu__link(href="lk-sravnenie.html") 
+                    +icon('sravnenie', 'profile-menu__item-icon')
+                    span.profile-menu__text Сравнение
+                    span.value.profile-menu__value 8
+                    +icon('arrow_right', 'icon--gray profile-menu__arrow')
+            li.profile-menu__item
+                a.profile-menu__link(href="#") 
+                    +icon('time', 'icon--stroke-dark profile-menu__item-icon')
+                    span.profile-menu__text Статус заказа
+                    +icon('arrow_right', 'icon--gray profile-menu__arrow')
+        .dark-text.profile-menu__title Помощь
+        ul.profile-menu__list
+            li.profile-menu__item
+                a.profile-menu__link(href="#") 
+                    +icon('shop', 'profile-menu__item-icon')
+                    span.profile-menu__text Магазины
+                    +icon('arrow_right', 'icon--gray profile-menu__arrow')
+            li.profile-menu__item
+                a.profile-menu__link(href="#") 
+                    +icon('dostavka', 'profile-menu__item-icon')
+                    span.profile-menu__text Доставка
+                    +icon('arrow_right', 'icon--gray profile-menu__arrow')
+            li.profile-menu__item
+                a.profile-menu__link(href="#") 
+                    span.profile-menu__text Выйти из аккаунта

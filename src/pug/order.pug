@@ -273,11 +273,6 @@ block content
 													| Осталось бонусов:
 													span.bonus__value 0
 												.text.bonus__text Вы можете использовать при покупке товаров до 50% активных бонусов от общей суммы
-							.order-result__promo
-								span.order-result__text.order-result__promo-text Использован промокод:
-								span.order-result__promo-value FREEDOM43
-								button.order-result__promo-delete
-									+icon('exit', 'order-result__promo-delete-icon')
 							.order-result__promo-form.accordion
 								button.dark-text.order-result__promo-toggle.accordion__header
 									| У меня есть промокод
@@ -286,6 +281,11 @@ block content
 									form.discount-form.cart__discount-form.accordion__main(action="#" autocomplete="off") 
 										input.field.discount-form__field(type="text" placeholder="Введите промокод...")
 										button.btn.btn--black.discount-form__submit Применить
+							.order-result__promo
+								span.order-result__text.order-result__promo-text Использован промокод:
+								span.order-result__promo-value FREEDOM43
+								button.order-result__promo-delete
+									+icon('exit', 'order-result__promo-delete-icon')
 
 							.order-result__bonus
 								.order-result__bonus-item

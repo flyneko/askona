@@ -19,6 +19,7 @@
   &__link
     position: relative
     font-size: 11px
+    padding-top: 2px
     font-weight: 500
     color: #878787
     display: flex
@@ -38,26 +39,31 @@
       border-color: $color-primary
 
   &__icon
-    margin-bottom: 4px
     fill: #b1b1b1
+    width: 18px
+    height: 22px
+    margin-bottom: 2px
     
     &.icon--active
       fill: $color-primary
 
+    &--home
+      width: 19px
+
     &--catalog
       stroke: #b1b1b1
-      stroke-width: 1.5px
-      width: 21px
+      width: 22px
 
   &__value
     position: absolute
     width: 18px
     height: 18px
-    right: 3px
-    top: -5px
+    right: 2px
+    top: -2px
     border-radius: 50%
     font-size: 8px
     font-weight: 500
+    line-height: 1
     background: #fff
     color: #343434
     display: flex
@@ -74,6 +80,22 @@
       height: calc(100% - 6px)
       border: 1px solid #b1b1b1
       border-radius: 50%
+
+  &--profile-active &__link--active &__icon
+    fill: #b1b1b1
+
+    &--catalog
+      stroke: #b1b1b1
+
+  &--profile-active &__link--active
+    &.bottom-menu__link--profile .bottom-menu__icon
+      fill: $color-primary
+
+  &--profile-active &__link--active &__value
+    color: #b1b1b1
+
+    &::before
+      border-color: #b1b1b1
 
   @media screen and (max-width: 991px)
     display: block

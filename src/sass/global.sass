@@ -571,8 +571,9 @@
   &__icon
     fill: #adadad
 
-  &:hover &__icon
-    fill: #323232
+  @media screen and (min-width: 992px)
+    &:hover &__icon
+      fill: #323232
 
   &--active &__icon,
   &--active:hover &__icon

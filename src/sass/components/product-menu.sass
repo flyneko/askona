@@ -1,0 +1,34 @@
+.product-menu
+  position: fixed
+  bottom: 55px
+  left: 0
+  z-index: 60
+  width: 100%
+  padding: 10px $container-offset
+  background: #f6f6f6
+  display: flex
+  justify-content: center
+  align-items: center
+  visibility: hidden
+  opacity: 0
+  transform: translateY(55px)
+  transition: visibility .3s, opacity .3s, transform .3s
+
+  &__btn
+    height: 38px
+    width: 207px
+
+    &:not(:last-child)
+      margin-right: 24px
+
+  &__icon-btn
+    display: flex
+    align-items: center
+
+    &:not(:last-child)
+      margin-right: 17px
+
+  &--show
+    transform: translateY(0)
+    visibility: visible
+    opacity: 1

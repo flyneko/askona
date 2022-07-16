@@ -30,9 +30,8 @@ window.addEventListener('load', () => {
   if ($header) {
     headerHandler();
 
-    window.addEventListener('scroll', () => {
-      headerHandler();
-    });
+    window.addEventListener('scroll', headerHandler);
+    window.addEventListener('resize', headerHandler);
   }
 
   function headerHandler() {
@@ -810,17 +809,27 @@ window.addEventListener('load', () => {
   if ($catalogMenu) {
     setCatalogMenuPosition();
     window.addEventListener('resize', setCatalogMenuPosition)
+    window.addEventListener('scroll', () => {
+      setCatalogMenuPosition();
+    });
 
     const $openCatalogMenuBtns = document.querySelectorAll('.js-open-catalog-menu');
     $openCatalogMenuBtns.forEach($btn => {
       $btn.addEventListener('click', () => {
         closeProductConfig();
+        setCatalogMenuPosition();
 
         $catalogMenu.classList.toggle('catalog-menu--show');
 
         const $icon = $btn.querySelector('.icon-menu');
         if ($icon) {
           $icon.classList.toggle('icon-menu--active')
+        }
+
+        if ($catalogMenu.classList.contains('catalog-menu--show')) {
+          document.body.classList.add('body--lock');
+        } else {
+          document.body.classList.remove('body--lock');
         }
       });
     });
@@ -855,11 +864,18 @@ window.addEventListener('load', () => {
 
     function setCatalogMenuPosition() {
       const $catalogMenu = document.querySelector('.catalog-menu');
+      const $catalogMenuContent = $catalogMenu.querySelector('.catalog-menu__list');
       const $catalogMenuList = $catalogMenu.querySelector('.catalog-menu__list');
-      const offsetTop = getBannerHeaderHeight();
-      $catalogMenu.style.top = `calc(${offsetTop}px)`;
-      $catalogMenu.style.minHeight = `calc(100vh - ${offsetTop}px - 1px)`;
-      $catalogMenuList.style.minHeight = `calc(100vh - ${offsetTop}px - 1px)`;
+
+      let offsetTop = 0;
+      if (window.scrollY > getBannerHeight()) {
+        offsetTop = getHeaderHeight();
+      } else {
+        offsetTop = getBannerHeaderHeight() - window.scrollY;
+      }
+
+      $catalogMenu.style.transform = `translateY(${offsetTop}px)`;
+      $catalogMenuContent.style.height = `calc(100vh - ${offsetTop}px)`;
     }
   }
 

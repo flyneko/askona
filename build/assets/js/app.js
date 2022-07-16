@@ -825,12 +825,6 @@ window.addEventListener('load', () => {
         if ($icon) {
           $icon.classList.toggle('icon-menu--active')
         }
-
-        if ($catalogMenu.classList.contains('catalog-menu--show')) {
-          document.body.classList.add('body--lock');
-        } else {
-          document.body.classList.remove('body--lock');
-        }
       });
     });
 
@@ -864,8 +858,7 @@ window.addEventListener('load', () => {
 
     function setCatalogMenuPosition() {
       const $catalogMenu = document.querySelector('.catalog-menu');
-      const $catalogMenuContent = $catalogMenu.querySelector('.catalog-menu__list');
-      const $catalogMenuList = $catalogMenu.querySelector('.catalog-menu__list');
+      const $catalogMenuContent = $catalogMenu.querySelector('.catalog-menu__content');
 
       let offsetTop = 0;
       if (window.scrollY > getBannerHeight()) {

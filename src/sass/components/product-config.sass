@@ -20,14 +20,14 @@
     padding-top: 30px
     position: relative
 
-  &__close
+  &__back
     display: flex
     align-items: center
     font-size: 14px
     color: #212121
     margin-bottom: 22px
   
-  &__close-arrow
+  &__back-arrow
     width: 5px
     height: 8px
     margin-right: 11px
@@ -64,6 +64,14 @@
     bottom: 24px
     left: 0
     display: flex
+
+  &__exit
+    position: absolute
+    top: 20px
+    right: 20px
+
+  &__exit-icon
+    stroke: $color-primary
 
   &__title2
     height: 64px
@@ -141,7 +149,7 @@
       margin: 0 $container-offset
       flex: none
 
-    &__close
+    &__back
       position: absolute
       left: 0
       top: 22px
@@ -154,11 +162,14 @@
       align-items: center
       justify-content: center
 
-    &__close-arrow
+    &__back-arrow
       margin-right: 0
       fill: #212121
 
-    &__close-text
+    &__back-text
+      display: none
+
+    &__exit
       display: none
 
     &__title.title2

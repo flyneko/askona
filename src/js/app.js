@@ -28,25 +28,24 @@ window.addEventListener('load', () => {
    */
   const $header = document.querySelector('.header');
   if ($header) {
-    if (window.innerWidth <= 991) {
-      headerHandler();
-    }
+    headerHandler();
 
-    window.addEventListener('scroll', () => {
-      if (window.innerWidth <= 991) {
-        headerHandler();
-      }
-    });
+    window.addEventListener('scroll', headerHandler);
+    window.addEventListener('resize', headerHandler);
   }
 
   function headerHandler() {
     const $header = document.querySelector('.header');
-    const offsetTop = getBannerHeight();
+    const bannerHeight = getBannerHeight();
 
-    if (window.scrollY >= offsetTop && !$header.classList.contains('header--fixed')) {
+    if (window.scrollY >= bannerHeight && !$header.classList.contains('header--fixed')) {
       $header.classList.add('header--fixed');
-    } else if (window.scrollY < offsetTop && $header.classList.contains('header--fixed')) {
+      $header.style.top = '0';
+    } else if (window.scrollY < bannerHeight && $header.classList.contains('header--fixed')) {
       $header.classList.remove('header--fixed');
+      $header.style.top = `${bannerHeight}px`;
+    } else if (window.scrollY < bannerHeight && $header.offsetTop !== bannerHeight) {
+      $header.style.top = `${bannerHeight}px`;
     }
   }
 
@@ -577,7 +576,7 @@ window.addEventListener('load', () => {
   function setProductConfigPosition() {
     const $productConfig = document.querySelector('.product-config');
     if ($productConfig) {
-      const offsetTop = window.innerWidth > 991 ? getBannerHeaderHeight() + 1 : 0;
+      const offsetTop = window.innerWidth > 991 ? getBannerHeaderHeight() : 0;
       $productConfig.style.top = `${offsetTop}px`;
       $productConfig.style.height = `calc(100vh - ${offsetTop}px`;
     }
@@ -598,8 +597,10 @@ window.addEventListener('load', () => {
       });
     });
 
-    const $closeBtn = $productConfig.querySelector('.product-config__close');
-    $closeBtn.addEventListener('click', closeProductConfig);
+    const $closeBtns = $productConfig.querySelectorAll('.product-config__close');
+    $closeBtns.forEach($btn => {
+      $btn.addEventListener('click', closeProductConfig);
+    });
   }
 
   function closeProductConfig() {
@@ -808,11 +809,15 @@ window.addEventListener('load', () => {
   if ($catalogMenu) {
     setCatalogMenuPosition();
     window.addEventListener('resize', setCatalogMenuPosition)
+    window.addEventListener('scroll', () => {
+      setCatalogMenuPosition();
+    });
 
     const $openCatalogMenuBtns = document.querySelectorAll('.js-open-catalog-menu');
     $openCatalogMenuBtns.forEach($btn => {
       $btn.addEventListener('click', () => {
         closeProductConfig();
+        setCatalogMenuPosition();
 
         $catalogMenu.classList.toggle('catalog-menu--show');
 
@@ -853,11 +858,17 @@ window.addEventListener('load', () => {
 
     function setCatalogMenuPosition() {
       const $catalogMenu = document.querySelector('.catalog-menu');
-      const $catalogMenuList = $catalogMenu.querySelector('.catalog-menu__list');
-      const offsetTop = getBannerHeaderHeight();
-      $catalogMenu.style.top = `calc(${offsetTop}px)`;
-      $catalogMenu.style.minHeight = `calc(100vh - ${offsetTop}px - 1px)`;
-      $catalogMenuList.style.minHeight = `calc(100vh - ${offsetTop}px - 1px)`;
+      const $catalogMenuContent = $catalogMenu.querySelector('.catalog-menu__content');
+
+      let offsetTop = 0;
+      if (window.scrollY > getBannerHeight()) {
+        offsetTop = getHeaderHeight();
+      } else {
+        offsetTop = getBannerHeaderHeight() - window.scrollY;
+      }
+
+      $catalogMenu.style.transform = `translateY(${offsetTop}px)`;
+      $catalogMenuContent.style.height = `calc(100vh - ${offsetTop}px)`;
     }
   }
 
@@ -1080,7 +1091,6 @@ window.addEventListener('load', () => {
 
     function setMobileMenuPosition() {
       const $menu = document.querySelector('.mobile-menu');
-      const $content = $menu.querySelector('.mobile-menu__content');
       const headerHeight = getHeaderHeight();
       const bannerHeight = getBannerHeight();
 
@@ -1090,27 +1100,21 @@ window.addEventListener('load', () => {
       }
 
       $menu.style.top = `calc(${offsetTop}px - 1px)`;
-      $menu.style.height = `calc(100vh - ${offsetTop}px)`;
-      $content.style.maxHeight = `calc(100vh - ${offsetTop}px)`;
+      $menu.style.height = `calc(100% - ${offsetTop}px)`;
     }
   }
 
   /**
    * Мобильное меню профиля
    */
-   const $profileMenu = document.querySelector('.profile-menu');
-   if ($profileMenu) {
+  const $profileMenu = document.querySelector('.profile-menu');
+  if ($profileMenu) {
     const $openProfileMenuBtns = document.querySelectorAll('.js-open-profile-menu');
     $openProfileMenuBtns.forEach($btn => {
       $btn.addEventListener('click', () => {
         setProfileMenuPosition();
 
         $profileMenu.classList.toggle('profile-menu--show');
-
-        const $icon = $btn.querySelector('.icon');
-        if ($icon) {
-          $icon.classList.toggle('icon--active')
-        }
 
         if ($profileMenu.classList.contains('profile-menu--show')) {
           document.body.classList.add('body--lock');
@@ -1124,7 +1128,6 @@ window.addEventListener('load', () => {
 
     function setProfileMenuPosition() {
       const $menu = document.querySelector('.profile-menu');
-      const $content = $menu.querySelector('.profile-menu__content');
       const headerHeight = getHeaderHeight();
       const bannerHeight = getBannerHeight();
       const bottomMenuHeight = getBottomMenuHeight();
@@ -1135,10 +1138,43 @@ window.addEventListener('load', () => {
       }
 
       $menu.style.top = `calc(${offsetTop}px)`;
-      $menu.style.height = `calc(100vh - ${offsetTop + bottomMenuHeight}px)`;
-      $content.style.maxHeight = `calc(100vh - ${offsetTop + bottomMenuHeight}px)`;
+      $menu.style.height = `calc(100% - ${offsetTop + bottomMenuHeight}px)`;
     }
-   }
+  }
+
+  /**
+   * Нижнее меню
+   */
+  const $bottomMenu = document.querySelector('.bottom-menu');
+  if ($bottomMenu) {
+    const $profileLink = $bottomMenu.querySelector('.bottom-menu__link--profile');
+    $profileLink.addEventListener('click', () => {
+      $bottomMenu.classList.toggle('bottom-menu--profile-active');
+      $profileLink.classList.toggle('bottom-menu__link--active');
+    });
+  }
+
+  /**
+   * Нижнее меню карточки товара
+   */
+  const $productMenu = document.querySelector('.product-menu');
+  if ($productMenu) {
+    menuHandler();
+    window.addEventListener('scroll', menuHandler);
+
+    const bottomMenuHeight = getBottomMenuHeight();
+    $productMenu.style.bottom = `${bottomMenuHeight}px`;
+
+    function menuHandler() {
+      const scrollValue = 100;
+      if (window.scrollY >= scrollValue && !$productMenu.classList.contains('product-menu--show')) {
+        $productMenu.classList.add('product-menu--show');
+      } else if (window.scrollY < scrollValue && $productMenu.classList.contains('product-menu--show')) {
+        $productMenu.classList.remove('product-menu--show');
+      }
+    }
+  }
+  
 
   /**
    * Логотип

@@ -385,6 +385,13 @@ block content
 									+card(i, {class: 'product--slide products__slider-item', discount_class: 'discount--white'})
 						.swiper-scrollbar.products__slider-scrollbar
 
+	.product-menu
+		button.btn.product-menu__btn Добавить в корзину
+		button.icon-btn.icon-btn--gray.product-menu__icon-btn
+			+icon('sravnenie', 'icon-btn__icon')
+		button.wishlist-btn.product-menu__icon-btn
+			+icon('izbrannoe', 'wishlist-btn__icon')
+
 	.popup(data-name="configure-1" data-lock-width="767")
 		.popup__content.configure
 			.configure__content
@@ -438,9 +445,9 @@ block content
 	.product-config
 		.product-config__content
 			.product-config__left
-				button.product-config__close
-					+icon('arrow_left', 'icon--primary product-config__close-arrow')
-					span.product-config__close-text Назад к товару
+				button.product-config__back.product-config__close
+					+icon('arrow_left', 'icon--primary product-config__back-arrow')
+					span.product-config__back-text Назад к товару
 				.title2.product-config__title Vardi
 				.product-config__price
 					span.price-new.product-config__price-value 342 950 ₸
@@ -454,6 +461,8 @@ block content
 						+icon('play_video', 'btn-play__icon')
 					button.btn-360.single-product__play-btn
 						+icon('360', 'btn-360__icon')
+				button.product-config__exit.product-config__close
+					+icon('exit', 'product-config__exit-icon')
 			.product-config__right.js-custom-scrollbar(data-min-width="992")
 				button.dark-text.product-config__btn.product-config__btn--mobile.js-open-popup(data-popup-name="product-config-1")
 					| Обивка

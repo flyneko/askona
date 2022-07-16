@@ -1,4 +1,11 @@
 window.addEventListener('load', () => {
+  /**
+   * Прелоадер
+   */
+  const $preloader = document.querySelector('.preloader');
+  if ($preloader) {
+    $preloader.classList.add('preloader--hide')
+  }
 
   /**
    * Функционал для кнопок "Показать номер"
@@ -1174,7 +1181,7 @@ window.addEventListener('load', () => {
       }
     }
   }
-  
+
 
   /**
    * Логотип

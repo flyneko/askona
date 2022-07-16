@@ -8,9 +8,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="shortcut icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css?v=8907449">
-  </head>
-  <body class="body">
+    <link rel="stylesheet" href="assets/css/styles.css?v=57434353">
+    <style type="text/css">
+      .preloader {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99;
+          width: 100%;
+          height: 100%;
+          background: #fff;
+          transition: visibility .4s, opacity .4s;
+      }
+      
+      .preloader--hide {
+          visibility: hidden;
+          opacity: 0;
+      }
+      
+    </style>
+    <div class="preloader"></div>
     <header class="header header--order">
       <div class="container container--small">
         <div class="header__top"><a class="logo" href="index.html"><object class="logo__object" data="assets/img/logo.svg" type="image/svg+xml"></object></a>
@@ -2359,6 +2376,6 @@
       </div>
     </div>
     <script src="assets/js/vendors.min.js"></script>
-    <script src="assets/js/app.js?v=86188929"></script>
-  </body>
+    <script src="assets/js/app.js?v=1813911"></script>
+  </head>
 </html>

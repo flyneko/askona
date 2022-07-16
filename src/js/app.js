@@ -1091,7 +1091,7 @@ window.addEventListener('load', () => {
       }
 
       $menu.style.top = `calc(${offsetTop}px - 1px)`;
-      $menu.style.height = `calc(100vh - ${offsetTop}px)`;
+      $menu.style.height = `calc(100% - ${offsetTop}px)`;
     }
   }
 
@@ -1129,7 +1129,7 @@ window.addEventListener('load', () => {
       }
 
       $menu.style.top = `calc(${offsetTop}px)`;
-      $menu.style.height = `calc(100vh - ${offsetTop + bottomMenuHeight}px)`;
+      $menu.style.height = `calc(100% - ${offsetTop + bottomMenuHeight}px)`;
     }
   }
 

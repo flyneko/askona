@@ -419,6 +419,13 @@ block content
 									+card(i, {class: 'product--slide products__slider-item', discount_class: 'discount--white'})
 						.swiper-scrollbar.products__slider-scrollbar
 
+	.product-menu
+		button.btn.product-menu__btn Добавить в корзину
+		button.icon-btn.icon-btn--gray.product-menu__icon-btn
+			+icon('sravnenie', 'icon-btn__icon')
+		button.wishlist-btn.product-menu__icon-btn
+			+icon('izbrannoe', 'wishlist-btn__icon')
+
 	.popup(data-name="configure-1" data-lock-width="767")
 		.popup__content.configure
 			.configure__content
@@ -539,13 +546,6 @@ block content
 
 				button.popup__close.configure__close
 					+icon('exit', 'popup__close-icon')
-
-	.product-menu
-		button.btn.product-menu__btn Добавить в корзину
-		button.icon-btn.icon-btn--gray.product-menu__icon-btn
-			+icon('sravnenie', 'icon-btn__icon')
-		button.wishlist-btn.product-menu__icon-btn
-			+icon('izbrannoe', 'wishlist-btn__icon')
 
 	.product-config
 		.product-config__content

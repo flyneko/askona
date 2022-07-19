@@ -36,6 +36,12 @@ block content
                                 button.tabs__btn.compare__tabs-btn
                                     span.compare__tabs-btn-text Кровати
                                     sup.compare__tabs-btn-value 2
+                                button.tabs__btn.compare__tabs-btn
+                                    span.compare__tabs-btn-text Одеяла
+                                    sup.compare__tabs-btn-value 3
+                                button.tabs__btn.compare__tabs-btn
+                                    span.compare__tabs-btn-text Подушки
+                                    sup.compare__tabs-btn-value 2
                             .tabs__list.compare__tabs-list
                                 .tabs__item.tabs__item--active
                                     .compare__slider
@@ -143,7 +149,62 @@ block content
                                                     +compare_item(2, {
                                                         rate_value: '4.7',
                                                         rate_count: '15',
+                                                        details_values: ['Нет', 'Askona', 'Вьетнам', '60 см.', 'до 80 кг.'],
+                                                        show_details_names: true
+                                                    })
+                                        .compare__slider-navigation
+                                            button.btn-next.compare__slider-next
+                                                +icon('arrow_right', 'icon--primary btn-next__icon')
+                                            button.btn-prev.compare__slider-prev
+                                                +icon('arrow_left', 'icon--primary btn-prev__icon')
+                                .tabs__item.compare__tabs-item
+                                    .compare__slider
+                                        .compare__slider-main.swiper
+                                            .swiper-wrapper
+                                                .swiper-slide.compare__slide
+                                                    +compare_item(3, {
+                                                        rate_value: '4.9',
+                                                        rate_count: '24',
+                                                        details_names: ['Бельевой короб', 'Бренд', 'Страна производитель', 'Глубина посадки', 'Макс. нагрузка, кг'],
+                                                        details_values: ['Нет', 'Askona', 'Китай', '60 см.', 'до 80 кг.'],
+                                                        show_details_names: true
+                                                    })
+                                                .swiper-slide.compare__slide
+                                                    +compare_item(4, {
+                                                        rate_value: '4.7',
+                                                        rate_count: '15',
+                                                        details_values: ['Нет', 'Askona', 'Вьетнам', '60 см.', 'до 80 кг.'],
+                                                        show_details_names: true
+                                                    })
+                                                .swiper-slide.compare__slide
+                                                    +compare_item(5, {
+                                                        rate_value: '4.9',
+                                                        rate_count: '24',
                                                         details_values: ['Нет', 'Askona', 'Россия', '60 см.', 'до 80 кг.'],
+                                                        show_details_names: true
+                                                    })
+                                        .compare__slider-navigation
+                                            button.btn-next.compare__slider-next
+                                                +icon('arrow_right', 'icon--primary btn-next__icon')
+                                            button.btn-prev.compare__slider-prev
+                                                +icon('arrow_left', 'icon--primary btn-prev__icon')
+                                .tabs__item.compare__tabs-item
+                                    .compare__slider
+                                        .compare__slider-main.swiper
+                                            .swiper-wrapper
+                                                .swiper-slide.compare__slide
+                                                    +compare_item(6, {
+                                                        rate_value: '4.9',
+                                                        rate_count: '24',
+                                                        details_names: ['Бельевой короб', 'Бренд', 'Страна производитель', 'Глубина посадки', 'Макс. нагрузка, кг'],
+                                                        details_values: ['Нет', 'Askona', 'Китай', '60 см.', 'до 80 кг.'],
+                                                        show_details_names: true
+                                                    })
+                                                .swiper-slide.compare__slide
+                                                    +compare_item(7, {
+                                                        rate_value: '4.7',
+                                                        rate_count: '15',
+                                                        details_values: ['Нет', 'Askona', 'Вьетнам', '60 см.', 'до 80 кг.'],
                                                         show_details_names: true
                                                     })
                                         .compare__slider-navigation
@@ -162,6 +223,12 @@ block content
                                     sup.compare__tabs-btn-value 3
                                 button.tabs__btn.compare__tabs-btn(data-delay="250")
                                     span.compare__tabs-btn-text Кровати
+                                    sup.compare__tabs-btn-value 2
+                                button.tabs__btn.compare__tabs-btn
+                                    span.compare__tabs-btn-text Одеяла
+                                    sup.compare__tabs-btn-value 3
+                                button.tabs__btn.compare__tabs-btn
+                                    span.compare__tabs-btn-text Подушки
                                     sup.compare__tabs-btn-value 2
                             .tabs__list.compare__tabs-list
                                 .tabs__item.tabs__item--active
@@ -377,6 +444,105 @@ block content
                                                         })
                                                     .swiper-slide.compare__slide
                                                         +compare_item(2, {
+                                                            rate_value: '4.7',
+                                                            rate_count: '15',
+                                                            details_values: ['Нет', 'Askona', 'Россия', '60 см.', 'до 80 кг.'],
+                                                            show_details_names: true
+                                                        })
+                                                .compare__mobile-slider-fraction
+                                                .swiper-pagination.compare__mobile-slider-pagination
+                                .tabs__item.compare__tabs-item
+                                    .compare__mobile-sliders
+                                        .compare__mobile-slider
+                                            .compare__mobile-slider-main.swiper
+                                                .swiper-wrapper
+                                                    .swiper-slide.compare__slide
+                                                        +compare_item(3, {
+                                                            rate_value: '4.9',
+                                                            rate_count: '24',
+                                                            details_names: ['Бельевой короб', 'Бренд', 'Страна производитель', 'Глубина посадки', 'Макс. нагрузка, кг'],
+                                                            details_values: ['Нет', 'Askona', 'Китай', '60 см.', 'до 80 кг.'],
+                                                            show_details_names: true
+                                                        })
+                                                    .swiper-slide.compare__slide
+                                                        +compare_item(4, {
+                                                            rate_value: '4.7',
+                                                            rate_count: '15',
+                                                            details_names: ['Бельевой короб', 'Бренд', 'Страна производитель', 'Глубина посадки', 'Макс. нагрузка, кг'],
+                                                            details_values: ['Нет', 'Askona', 'Вьетнам', '60 см.', 'до 80 кг.'],
+                                                            show_details_names: true
+                                                        })
+                                                    .swiper-slide.compare__slide
+                                                        +compare_item(5, {
+                                                            rate_value: '4.9',
+                                                            rate_count: '24',
+                                                            details_names: ['Бельевой короб', 'Бренд', 'Страна производитель', 'Глубина посадки', 'Макс. нагрузка, кг'],
+                                                            details_values: ['Нет', 'Askona', 'Россия', '60 см.', 'до 80 кг.'],
+                                                            show_details_names: true
+                                                        })
+                                                .compare__mobile-slider-fraction
+                                                .swiper-pagination.compare__mobile-slider-pagination
+                                        .compare__mobile-slider
+                                            .compare__mobile-slider-main.swiper(data-initial-slide=1)
+                                                .swiper-wrapper
+                                                    .swiper-slide.compare__slide
+                                                        +compare_item(3, {
+                                                            rate_value: '4.9',
+                                                            rate_count: '24',
+                                                            details_values: ['Нет', 'Askona', 'Китай', '60 см.', 'до 80 кг.'],
+                                                            show_details_names: true
+                                                        })
+                                                    .swiper-slide.compare__slide
+                                                        +compare_item(4, {
+                                                            rate_value: '4.7',
+                                                            rate_count: '15',
+                                                            details_values: ['Нет', 'Askona', 'Вьетнам', '60 см.', 'до 80 кг.'],
+                                                            show_details_names: true
+                                                        })
+                                                    .swiper-slide.compare__slide
+                                                        +compare_item(5, {
+                                                            rate_value: '4.9',
+                                                            rate_count: '24',
+                                                            details_values: ['Нет', 'Askona', 'Россия', '60 см.', 'до 80 кг.'],
+                                                            show_details_names: true
+                                                        })
+                                                .compare__mobile-slider-fraction
+                                                .swiper-pagination.compare__mobile-slider-pagination
+                                .tabs__item.compare__tabs-item
+                                    .compare__mobile-sliders
+                                        .compare__mobile-slider
+                                            .compare__mobile-slider-main.swiper
+                                                .swiper-wrapper
+                                                    .swiper-slide.compare__slide
+                                                        +compare_item(6, {
+                                                            rate_value: '4.9',
+                                                            rate_count: '24',
+                                                            details_names: ['Бельевой короб', 'Бренд', 'Страна производитель', 'Глубина посадки', 'Макс. нагрузка, кг'],
+                                                            details_values: ['Нет', 'Askona', 'Китай', '60 см.', 'до 80 кг.'],
+                                                            show_details_names: true
+                                                        })
+                                                    .swiper-slide.compare__slide
+                                                        +compare_item(7, {
+                                                            rate_value: '4.7',
+                                                            rate_count: '15',
+                                                            details_names: ['Бельевой короб', 'Бренд', 'Страна производитель', 'Глубина посадки', 'Макс. нагрузка, кг'],
+                                                            details_values: ['Нет', 'Askona', 'Россия', '60 см.', 'до 80 кг.'],
+                                                            show_details_names: true
+                                                        })
+                                                .compare__mobile-slider-fraction
+                                                .swiper-pagination.compare__mobile-slider-pagination
+                                        .compare__mobile-slider
+                                            .compare__mobile-slider-main.swiper(data-initial-slide=1)
+                                                .swiper-wrapper
+                                                    .swiper-slide.compare__slide
+                                                        +compare_item(6, {
+                                                            rate_value: '4.9',
+                                                            rate_count: '24',
+                                                            details_values: ['Нет', 'Askona', 'Китай', '60 см.', 'до 80 кг.'],
+                                                            show_details_names: true
+                                                        })
+                                                    .swiper-slide.compare__slide
+                                                        +compare_item(7, {
                                                             rate_value: '4.7',
                                                             rate_count: '15',
                                                             details_values: ['Нет', 'Askona', 'Россия', '60 см.', 'до 80 кг.'],
